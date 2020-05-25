@@ -3,16 +3,29 @@ $dark-blue: #172430;
 $main-orange: #FF593E;
 $darkest-blue: #101A23;
 $grey: #F2F2F2;
+$nav-width: 70px;
 
 *{
     margin: 0;
     padding: 0;
+    font-family: bebas-neue-pro, sans-serif;
 }
 
 body{
     background-color: $dark-blue;
+    position: relative;
 }
 
+html{
+    overflow-y: auto;
+	scroll-behavior: smooth;
+}
+
+
 #content{
-    margin-left: 80px;
+    margin-left: $nav-width;
+    width: -webkit-calc(100vw - $nav-width);
+    width:    -moz-calc(100vw - $nav-width);
+    width:         calc(100vw - $nav-width);
+    position: relative;
 }

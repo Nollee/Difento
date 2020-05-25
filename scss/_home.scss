@@ -12,6 +12,7 @@
 .hero-forside{
     display: flex;
     flex-direction: row;
+    width: 100%;
 }
 
 .vanta-canvas{
@@ -19,25 +20,6 @@
     height: 100vh !important;
 }
 
-.logo{
-    display: flex;
-    align-items: center;
-    width: 250px;
-    margin-left: 4%;
-    margin-top: 5vh;
-    height: 5vh;
-    justify-content: space-around;
-    img{
-        height: 90%;
-    }
-    #butterfly{
-        width: 25%;
-    }
-    #logo-text{
-        width: 65%;
-    }
-
-}
 
 .gradient-left{
     background: rgb(23,36,48);
@@ -62,3 +44,23 @@ z-index: 20;
 }
 
 
+.case-sub{
+    width: 100%;
+    height: 100vh;
+}
+
+#cases{
+    background-color: green;
+}
+
+#services{
+    background-color: red;
+}
+
+#about{
+    background-color: yellow;
+}
+
+#contact{
+    background-color: blue;
+}
