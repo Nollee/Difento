@@ -42,10 +42,26 @@ VANTA.BIRDS({
     <nav class="tabbar">
       <div class="nav-container">
       <img id="nav-logo" src="./images/logo-sign.svg" alt="logo">
-      <a href="#cases"><i class="fas fa-user-friends"></i></a>
-      <a href="#services"><i class="fas fa-layer-group"></i></a>
-      <a href="#about"><i class="fas fa-paper-plane"></i></a>
-      <a href="#contact"><i class="fas fa-hourglass-half"></i></a>
+      <a id="caselink" href="#cases"><i class="fas fa-layer-group"></i>
+      <div id="casedesc" class="link-desc">
+      <p>Cases</p>
+      </div>
+      </a>
+      <a id="servicelink" href="#services"><i class="fas fa-hourglass-half"></i>
+      <div id="procesdesc" class="link-desc">
+      <p>Proces</p>
+      </div>
+      </a>
+      <a id="aboutlink" href="#about"><i class="fas fa-user-friends"></i>
+      <div id="aboutdesc" class="link-desc">
+      <p>Om os</p>
+      </div>
+      </a>
+      <a id="contactlink" href="#contact"><i class="fas fa-paper-plane" ></i>
+      <div id="contactdesc" class="link-desc">
+      <p>Kontakt</p>
+      </div>
+      </a>
       </div>
       </nav>
 
@@ -61,25 +77,29 @@ VANTA.BIRDS({
     <div class="top-links">
     <a href="#cases">
     <i class="fas fa-layer-group"></i>
-    <p>CASES</p>
+    <p>Cases</p>
     </a>
-    <a href="#">
+    <a href="#services">
     <i class="fas fa-hourglass-half"></i>
-    <p>PROCES</p>
+    <p>Proces</p>
     </a>
-    <a href="#cases">
+    <a href="#about">
     <i class="fas fa-user-friends"></i>
-    <p>OM OS</p>
+    <p>Om os</p>
     </a>
-    <a href="#cases">
+    <a href="#contact">
     <i class="fas fa-paper-plane"></i>
-    <p>KONTAKT</p>
+    <p>Kontakt</p>
     </a>
     </div>
     </nav>
 
     <div class="hero-text">
-    <h1>TEST23131</h1>
+    <div class="hero-head">
+    <h1>VI SKABER MINDER</h1>
+    <div class="square"></div>
+    </div>
+    <p>Lorem Ipsum er ganske enkelt fyldtekst fra print- og typografiindustrien. Lorem Ipsum har været standard fyldtekst siden 1500-tallet, hvor en ukendt trykker sammensatte en tilfældig spalte for at trykke en bog til sammenligning af forskellige skrifttyper. Lorem Ipsum har ikke alene overlevet fem århundreder, men har også vundet indpas i elektronisk typografi uden væsentlige ændringer. Sætningen blev gjordt kendt i 1960'erne med lanceringen af Letraset-ark, som indeholdt afsnit med Lorem Ipsum, og senere med layoutprogrammer som Aldus PageMaker, som også indeholdt en udgave af Lorem Ipsum.</p>
     </div>
     <div id="birds">
     <div class="gradient-left"></div>
