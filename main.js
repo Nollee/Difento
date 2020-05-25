@@ -33,7 +33,7 @@ VANTA.BIRDS({
 
      }  else {
         document.querySelector(".tabbar").classList.remove("pop")
-    } 
+    }
   }
 
 
@@ -50,7 +50,7 @@ VANTA.BIRDS({
       </nav>
 
     <article id="hero" class="hero-forside">
-    
+
     <nav class="top-nav">
 
     <div class="logo">
@@ -60,20 +60,20 @@ VANTA.BIRDS({
 
     <div class="top-links">
     <a href="#cases">
-    <i class="fas fa-user-friends"></i>
-    <p>Cases</p>
+    <i class="fas fa-layer-group"></i>
+    <p>CASES</p>
     </a>
     <a href="#">
-    <i class="fas fa-layer-group"></i>
-    <p>Proces</p>
+    <i class="fas fa-hourglass-half"></i>
+    <p>PROCES</p>
+    </a>
+    <a href="#cases">
+    <i class="fas fa-user-friends"></i>
+    <p>OM OS</p>
     </a>
     <a href="#cases">
     <i class="fas fa-paper-plane"></i>
-    <p>Om os</p>
-    </a>
-    <a href="#cases">
-    <i class="fas fa-hourglass-half"></i>
-    <p>Kontakt</p>
+    <p>KONTAKT</p>
     </a>
     </div>
     </nav>
@@ -86,17 +86,17 @@ VANTA.BIRDS({
     <div class="gradient-bot"></div>
     </div>
     </article>
-    <article id="cases" class="case-sub"> 
-    
+    <article id="cases" class="case-sub">
+
     </article>
-    <article id="services" class="case-sub"> 
-    
+    <article id="services" class="case-sub">
+
     </article>
-    <article id="about" class="case-sub"> 
-    
+    <article id="about" class="case-sub">
+
     </article>
-    <article id="contact" class="case-sub"> 
-    
+    <article id="contact" class="case-sub">
+
     </article>
   `;
 
@@ -106,7 +106,7 @@ VANTA.BIRDS({
 
 // ====================== LAVER RINGENE RUNDT OM NAVIGATION ====================================
 
-document.addEventListener('DOMContentLoaded', function(){ 
+document.addEventListener('DOMContentLoaded', function(){
 
     const sections = document.querySelectorAll(".case-sub");
     const menu_links = document.querySelectorAll(".nav-container a");
@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
   let currentActive = 0;
   window.addEventListener("scroll", () => {
-    
+
     // check in reverse order so we find the last section
     // that's present - checking in non-reverse order would
     // report true for all sections up to and including
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', function(){
     //                     [...sections] turns this into an array so we can
     //                     use array options like reverse() and findIndex()
     // section.offsetTop - is the vertical offset of the section from the top of the page
-    // 
+    //
     // basically this lets us compare each section (by offsetTop) against the
     // viewport's current position (by window.scrollY) to figure out what section
     // the user is currently viewing
@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 
-// ====================== GÅR OP I TOPPEN ============================================= 
+// ====================== GÅR OP I TOPPEN =============================================
 document.getElementById("nav-logo").addEventListener("click", function(){
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
