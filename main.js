@@ -44,22 +44,22 @@ VANTA.BIRDS({
       <img id="nav-logo" src="./images/logo-sign.svg" alt="logo">
       <a id="caselink" href="#cases"><i class="fas fa-layer-group"></i>
       <div id="casedesc" class="link-desc">
-      <p>Cases</p>
+      <p>CASES</p>
       </div>
       </a>
       <a id="servicelink" href="#services"><i class="fas fa-hourglass-half"></i>
       <div id="procesdesc" class="link-desc">
-      <p>Proces</p>
+      <p>PROCES</p>
       </div>
       </a>
       <a id="aboutlink" href="#about"><i class="fas fa-user-friends"></i>
       <div id="aboutdesc" class="link-desc">
-      <p>Om os</p>
+      <p>OM OS</p>
       </div>
       </a>
       <a id="contactlink" href="#contact"><i class="fas fa-paper-plane" ></i>
       <div id="contactdesc" class="link-desc">
-      <p>Kontakt</p>
+      <p>KONTAKT</p>
       </div>
       </a>
       </div>
@@ -77,19 +77,19 @@ VANTA.BIRDS({
     <div class="top-links">
     <a href="#cases">
     <i class="fas fa-layer-group"></i>
-    <p>Cases</p>
+    <p>CASES</p>
     </a>
     <a href="#services">
     <i class="fas fa-hourglass-half"></i>
-    <p>Proces</p>
+    <p>PROCES</p>
     </a>
     <a href="#about">
     <i class="fas fa-user-friends"></i>
-    <p>Om os</p>
+    <p>OM OS</p>
     </a>
     <a href="#contact">
     <i class="fas fa-paper-plane"></i>
-    <p>Kontakt</p>
+    <p>KONTAKT</p>
     </a>
     </div>
     </nav>
