@@ -1,0 +1,18 @@
+
+$dark-blue: #172430;
+$main-orange: #FF593E;
+$darkest-blue: #101A23;
+$grey: #F2F2F2;
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    background-color: $dark-blue;
+}
+
+#content{
+    margin-left: 80px;
+}

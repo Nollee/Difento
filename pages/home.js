@@ -4,13 +4,20 @@ export default class HomePage {
   }
 
   template() {
-    document.querySelector('#app').innerHTML += /*html*/ `
+    document.querySelector('#content').innerHTML += /*html*/ `
       <section id="home" class="page">
-        <header class="topbar">
-          <h2>Home</h2>
-        </header>
-        <h3>Webpack SPA Template</h3>
-        <p>My Single Page Web App Template</p>
+      <div class="hero-forside">
+      <div class="hero-text">
+      <div class="logo">
+      <img id="butterfly" src="./images/logo-sign.svg" alt="logo">
+      <img id="logo-text"src="./images/logo-word.svg" alt="logo">
+      </div>
+      </div>
+      <div id="birds">
+      <div class="gradient-left"></div>
+      <div class="gradient-bot"></div>
+      </div>
+      </div>
       </section>
     `;
   }
