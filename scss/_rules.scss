@@ -3,6 +3,7 @@ $dark-blue: #172430;
 $main-orange: #FF593E;
 $darkest-blue: #101A23;
 $grey: #F2F2F2;
+$light-orange: #FB7C67;
 $nav-width: 70px;
 
 *{
@@ -28,4 +29,10 @@ html{
     width:    -moz-calc(100vw - $nav-width);
     width:         calc(100vw - $nav-width);
     position: relative;
+}
+
+h1{
+    font-family: bebas-neue-pro-expanded, sans-serif;
+    font-weight: 700;
+    font-style: normal;
 }

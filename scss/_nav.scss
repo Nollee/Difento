@@ -26,23 +26,49 @@
     i{
         font-size: 23px;
         color: white;
+        -webkit-transition: 0.3s ease;
+        -o-transition: 0.3s ease;
+        transition: 0.3s ease;
+
+      
     }
 
     a{
-        height: 45px;
-        width: 45px;
         display: flex;
         align-items: center;
         justify-content: center;
         text-decoration: none;
+        -webkit-transition: 0.3s ease;
+        -o-transition: 0.3s ease;
+        transition: 0.3s ease;
+        width: 45px;
+        height: 45px;
     }
 
-    a.active {
+    a.active{
         border-radius: 90px;
         border: 3px solid $main-orange;
         box-sizing: border-box;
         -moz-box-sizing: border-box;
         -webkit-box-sizing: border-box;
+        -webkit-transition: 0.3s ease;
+        -o-transition: 0.3s ease;
+        transition: 0.3s ease;
+    }
+
+    a:hover{
+        .link-desc{
+            display: block;
+            -webkit-transition: 0.3s ease;
+            -o-transition: 0.3s ease;
+            transition: 0.3s ease;
+        }
+        i{
+            color: $main-orange;
+            -webkit-transition: 0.3s ease;
+            -o-transition: 0.3s ease;
+            transition: 0.3s ease;
+        }
     }
 }
 
@@ -54,6 +80,25 @@
     -o-transition: 0.4s ease;
     transition: 0.4s ease;
 }
+
+.link-desc{
+    text-align: center;
+    padding: 5px 12px;
+    padding-left: 30px;
+     background-color: $grey;
+     display: none;
+    clip-path: polygon(20% 0, 100% 0, 100% 100%, 20% 100%, 0 50%);
+    margin-right: -100px;
+    position: absolute;
+    left: $nav-width+5px;
+    font-size: 1.5rem;
+    color: $main-orange;
+    -webkit-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+    transition: 0.3s ease;
+
+    }
+
 
 // =============================== TABBAR TIL VENSTRE =========================================
 
@@ -72,23 +117,36 @@
     margin: auto;
     left: 0;
     right: 0;
-    margin-left: calc(auto + $nav-width);
-    z-index: 21;
+    z-index: 41;
     top: 5vh;
     .top-links{
         display: flex;
         align-items: center;
         justify-content: space-around;
         width: 50%;
+        padding: 12px;
         a{
             display: flex;
             align-items: center;
             color: white;
             font-size: 1.5rem;
             text-decoration: none;
+            -webkit-transition: 0.3s ease;
+            -o-transition: 0.3s ease;
+            transition: 0.3s ease;
             i{
                 margin-right: 12px;
             }
+        }
+        a:hover{
+            cursor: pointer;
+            -webkit-transform: scale(1.05);
+                -ms-transform: scale(1.05);
+                    transform: scale(1.05);
+            color: $light-orange;
+            -webkit-transition: 0.3s ease;
+            -o-transition: 0.3s ease;
+            transition: 0.3s ease;
         }
     }
 }
