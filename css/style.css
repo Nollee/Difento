@@ -282,4 +282,8 @@ article {
   .logo #logo-text {
     width: 65%; }
 
+.sub-wrapper {
+  height: 100vh;
+  margin: 10vh auto; }
+
 /*# sourceMappingURL=style.css.map */
