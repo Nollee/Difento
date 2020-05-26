@@ -30,6 +30,15 @@ document.addEventListener('DOMContentLoaded', function(){
   })
 
 
+/* weather api */
+const apiCall = 'https://api.openweathermap.org/data/2.5/weather?q=aarhus&appid=b892cb50e6b072e2bd37a1bc8049ee3a';
+
+fetch(apiCall)
+.then(response => response.json())
+.then(data => console.log(data));
+
+
+
 
 
 
@@ -110,16 +119,33 @@ document.addEventListener('DOMContentLoaded', function(){
     </nav>
 
     <div class="hero-text">
-    <div class="hero-head">
-    <h1>VI SKABER MINDER</h1>
-    <div class="square"></div>
+      <div class="hero-head">
+        <h1>VI SKABER MINDER</h1>
+        <div class="square"></div>
     </div>
-    <p>Lorem Ipsum er ganske enkelt fyldtekst fra print- og typografiindustrien. Lorem Ipsum har været standard fyldtekst siden 1500-tallet, hvor en ukendt trykker sammensatte en tilfældig spalte for at trykke en bog til sammenligning af forskellige skrifttyper. Lorem Ipsum har ikke alene overlevet fem århundreder, men har også vundet indpas i elektronisk typografi uden væsentlige ændringer. Sætningen blev gjordt kendt i 1960'erne med lanceringen af Letraset-ark, som indeholdt afsnit med Lorem Ipsum, og senere med layoutprogrammer som Aldus PageMaker, som også indeholdt en udgave af Lorem Ipsum.</p>
+      <p>Lorem Ipsum er ganske enkelt fyldtekst fra print- og typografiindustrien. Lorem Ipsum har været standard fyldtekst siden 1500-tallet, hvor en ukendt trykker sammensatte en tilfældig spalte for at trykke en bog til sammenligning af forskellige skrifttyper. Lorem Ipsum har ikke alene.</p>
+      <div class="hero-btns">
+      <a class="btn-grey" href="#cases-anchor">cases <i class="fas fa-layer-group"></i></a>
+      <a class="btn-orange" href="#contact-anchor">kontakt <i class="fas fa-paper-plane" ></i></a>
+      </div>
     </div>
     <div id="birds">
     <div class="gradient-left"></div>
     <div class="gradient-bot"></div>
     </div>
+
+    <div id="hero-bottom-content">
+
+
+
+
+     </div>
+
+
+
+
+
+
     </article>
     
     <article id="cases" class="sub">
@@ -171,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function(){
   window.addEventListener("scroll", () => {
     const current = sections.length - [...sections].reverse().findIndex((section) => window.scrollY >= section.offsetTop - sectionMargin ) - 1
     console.log(current);
-    
+
 
     if (current !== currentActive) {
       removeAllActive();
@@ -209,6 +235,6 @@ document.getElementById("nav-logo").addEventListener("click", function(){
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   });
-  
-  
+
+
 }, false);

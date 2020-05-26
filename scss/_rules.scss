@@ -35,4 +35,24 @@ h1{
     font-family: bebas-neue-pro-expanded, sans-serif;
     font-weight: 700;
     font-style: normal;
+    text-transform: uppercase;
+}
+
+.btn-orange {
+    background-color: $main-orange; color: white;}
+.btn-grey {
+    background-color: $grey; color: $darkest-blue;}
+
+.btn-orange, .btn-grey {
+    padding: 2% 2%;
+    width: 50px;
+    height: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    -webkit-transition: .4s ease;
+    -o-transition: .4s ease;
+    transition: .4s ease;
+    &:hover {transform: scale(1.1);}
+    i {margin-left: 1%;}
 }
