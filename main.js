@@ -1,7 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
   content();
-
-  const sections = document.querySelectorAll(".sub");
+  
+  const sections = [...document.querySelectorAll('.sub')]
+  console.log(sections);
+  
 
 
 
@@ -172,36 +174,29 @@ document.addEventListener('DOMContentLoaded', function () {
     </article>
     <article id="services" class="case-sub">
     </article>
+    
     <article id="cases" class="sub">
-    <div id="cases-anchor">anchor</div>
+    <div class="anchor" id="cases-anchor">anchor</div>
     </article>
+    
     <article id="services" class="sub">
     <div id="services-anchor">anchor</div>
     </article>
+    
     <article id="about" class="sub">
     <div id="about-anchor"></div>
-    <div class="about-wrapper sub-wrapper">
-    <h2>OM DIFENTO<h2>
-
-    <div class="about-left">
-    <div class="about-text">
-    <h3>IDEEN BAG DIFENTO</H3>
-    <p>Lorem Ipsum er ganske enkelt fyldtekst fra print- og typografiindustrien. Lorem Ipsum har været standard fyldtekst siden 1500-tallet, hvor en ukendt trykker sammensatte en tilfældig spalte for at trykke en bog til sammenligning af forskellige skrifttyper. Lorem Ipsum har ikke alene overlevet fem århundreder, men har også vundet indpas i elektronisk typografi uden væsentlige ændringer. Sætningen blev gjordt kendt i 1960'erne med lanceringen af Letraset-ark, som indeholdt afsnit med Lorem Ipsum, og senere med layoutprogrammer som Aldus PageMaker, som også indeholdt en udgave af Lorem Ipsum.</p>
-    </div>
-    </div>
-    <div class="about-right"></div>
-    </div>
-
-
     </article>
+
+
     <article id="recommend" class="sub">
     <div id="recommend-anchor">anchor</div>
     </article>
+    
     <article id="contact" class="sub">
     <div id="contact-anchor">anchor</div>
 
     </article>
-    <footer>
+    <footer class=>
 
     </footer>
   `;
@@ -241,8 +236,11 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   });
 
-  /* changes color of the background when the page is scrolled */
-  const colors = ['darkblue', 'darkBlue', 'grey', 'darkBlue', 'grey']
+  /* =========================changes color of the background when the page is scrolled  ===========*/
+
+
+  const colors = ['', 'darkBlue', 'grey', 'darkBlue', 'darkBlue', 'grey']
+
 
   window.addEventListener('scroll', changeColorOnScroll);
 
