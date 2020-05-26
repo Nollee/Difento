@@ -49,22 +49,21 @@ VANTA.BIRDS({
       <p>CASES</p>
       </div>
       </a>
-      <a id="servicelink" href="#services"><i class="fas fa-hourglass-half"></i>
+      <a id="servicelink" href="#services-anchor"><i class="fas fa-hourglass-half"></i>
       <div id="procesdesc" class="link-desc">
       <p>PROCES</p>
       </div>
       </a>
-      <a id="aboutlink" href="#about"><i class="fas fa-user-friends"></i>
+      <a id="aboutlink" href="#about-anchor"><i class="fas fa-user-friends"></i>
       <div id="aboutdesc" class="link-desc">
       <p>OM OS</p>
       </div>
       </a>
-      <a id="recommendlink" href="#recommend"><i class="fas fa-laugh"></i>
+      <a id="recommendlink" href="#recommend-anchor"><i class="fas fa-laugh"></i>
       <div id="contactdesc" class="link-desc">
       <p>ANBEFALINGER</p>
       </div>
-      </a>
-      <a id="contactlink" href="#contact"><i class="fas fa-paper-plane" ></i>
+      <a id="contactlink" href="#contact-anchor"><i class="fas fa-paper-plane" ></i>
       <div id="contactdesc" class="link-desc">
       <p>KONTAKT</p>
       </div>
@@ -82,23 +81,23 @@ VANTA.BIRDS({
     </div>
 
     <div class="top-links">
-    <a href="#cases">
+    <a href="#cases-anchor">
     <i class="fas fa-layer-group"></i>
     <p>CASES</p>
     </a>
-    <a href="#services">
+    <a href="#services-anchor">
     <i class="fas fa-hourglass-half"></i>
     <p>PROCES</p>
     </a>
-    <a href="#about">
+    <a href="#about-anchor">
     <i class="fas fa-user-friends"></i>
     <p>OM OS</p>
     </a>
-    <a href="#recommend">
+    <a href="#recommend-anchor">
     <i class="fas fa-laugh"></i>
     <p>ANBEFALINGER</p>
     </a>
-    <a href="#contact">
+    <a href="#contact-anchor">
     <i class="fas fa-paper-plane"></i>
     <p>KONTAKT</p>
     </a>
@@ -118,20 +117,24 @@ VANTA.BIRDS({
     </div>
     </article>
     <article id="cases" class="sub">
-
+    <div id="cases-anchor">anchor</div>
     </article>
     <article id="services" class="sub">
-
+    <div id="services-anchor">anchor</div>
     </article>
     <article id="about" class="sub">
-
+    <div id="about-anchor">anchor</div>
     </article>
     <article id="recommend" class="sub">
-
+    <div id="recommend-anchor">anchor</div>
     </article>
     <article id="contact" class="sub">
+    <div id="contact-anchor">anchor</div>
 
     </article>
+    <footer>
+
+    </footer>
   `;
 
 }
@@ -164,9 +167,33 @@ VANTA.BIRDS({
   });
 
   // ====================== GÅR OP I TOPPEN =============================================
-document.getElementById("nav-logo").addEventListener("click", function(){
-  document.body.scrollTop = 0;
-  document.documentElement.scrollTop = 0;
-});
 
-}, false);
+
+  /* jasidasjdjsaid */
+  const colors = ['darkBlue', 'grey', 'darkBlue', 'darkBlue', 'grey']
+
+const sections = [...document.getElementsByClassName('case-sub')]
+
+window.addEventListener('scroll', changeColorOnScroll);
+
+function changeColorOnScroll () {
+
+  const scrollFromTop = window.pageYOffset
+
+  for (let i = 0; sections.length > i; i++) {
+
+    if (scrollFromTop <= sections[i].offsetTop) {
+      document.body.className = colors[i]
+      break
+    }
+
+  }
+
+}
+
+document.getElementById("nav-logo").addEventListener("click", function(){
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  });
+  
+  }, false);
