@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function(){
+document.addEventListener('DOMContentLoaded', function () {
   content();
   
   const sections = [...document.querySelectorAll('.sub')]
@@ -7,53 +7,53 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 
-//  =========================VANTA BIRDS FRA VANTAJS ===================================
+  //  =========================VANTA BIRDS FRA VANTAJS ===================================
   VANTA.BIRDS({
     el: "#birds",
     mouseControls: true,
-  touchControls: true,
-  minHeight: 200.00,
-  minWidth: 200.00,
-  scale: 1.00,
-  scaleMobile: 1.00,
-  backgroundColor: 0x172430,
-  color1: 0xff593e,
-  color2: 0xfe2806,
-  colorMode: "varianceGradient",
-  birdSize: 1.20,
-  wingSpan: 14.00,
-  speedLimit: 1.90,
-  separation: 50.00,
-  alignment: 59.00,
-  cohesion: 16.00,
-  quantity: 3.00
+    touchControls: true,
+    minHeight: 200.00,
+    minWidth: 200.00,
+    scale: 1.00,
+    scaleMobile: 1.00,
+    backgroundColor: 0x172430,
+    color1: 0xff593e,
+    color2: 0xfe2806,
+    colorMode: "varianceGradient",
+    birdSize: 1.20,
+    wingSpan: 14.00,
+    speedLimit: 1.90,
+    separation: 50.00,
+    alignment: 59.00,
+    cohesion: 16.00,
+    quantity: 3.00
   })
 
 
-/* weather api */
-const apiCall = 'https://api.openweathermap.org/data/2.5/weather?q=aarhus&appid=b892cb50e6b072e2bd37a1bc8049ee3a';
+  /* weather api */
+  const apiCall = 'https://api.openweathermap.org/data/2.5/weather?q=aarhus&appid=b892cb50e6b072e2bd37a1bc8049ee3a';
 
-fetch(apiCall)
-.then(response => response.json())
-.then(data => console.log(data));
-
-
+  fetch(apiCall)
+    .then(response => response.json())
+    .then(data => console.log(data));
 
 
 
 
-  window.addEventListener("scroll", () => {    
-    
+
+
+  window.addEventListener("scroll", () => {
+
     if (document.body.scrollTop > 90 || document.documentElement.scrollTop > 90) {
       document.querySelector(".tabbar").classList.add("pop")
 
-     }  else {
-        document.querySelector(".tabbar").classList.remove("pop")
+    } else {
+      document.querySelector(".tabbar").classList.remove("pop")
     }
   });
 
 
-  function content(){
+  function content() {
     document.querySelector('#content').innerHTML += /*html*/ `
     <nav class="tabbar">
       <div class="nav-container">
@@ -133,19 +133,46 @@ fetch(apiCall)
     <div class="gradient-left"></div>
     <div class="gradient-bot"></div>
     </div>
+<div id="hero-bottom-content"></div>    
+</article>
+    
+    <article id="cases" class="case-sub">
+    <div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="overlay">
+    <h4 class="slider-count">01</h4>
+    <h4 class="slider-job">website</h4>
+    <div class="slider-year">
+      <div class="line"></div>
+      <h4>2019</h4> 
+    </div>
+    <h4 class="slider-company">BUTIK TINC</h4>
+    </div>
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <img src="./images/tinc.png">
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/ry.png">
+        </div>
+        <div class="swiper-slide">
+        <img src="./images/beton.png">
+        </div>
+        ...
+    </div>
+    <!-- 
+  
+    <div class="swiper-pagination"></div>
 
-    <div id="hero-bottom-content">
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
 
-
-
-
-     </div>
-
-
-
-
-
-
+    <div class="swiper-scrollbar"></div>
+    -->
+</div>
+    </article>
+    <article id="services" class="case-sub">
     </article>
     
     <article id="cases" class="sub">
@@ -174,28 +201,31 @@ fetch(apiCall)
     </footer>
   `;
 
-}
+  }
 
 
 
-// ====================== LAVER RINGENE RUNDT OM NAVIGATION ====================================
-      /* https://medium.com/p1xts-blog/scrollspy-with-just-javascript-3131c114abdc */
-    const menu_links = document.querySelectorAll(".nav-container a");
+  // ====================== LAVER RINGENE RUNDT OM NAVIGATION ====================================
 
-    const makeActive = (link) => menu_links[link].classList.add("active");
+
+  /* https://medium.com/p1xts-blog/scrollspy-with-just-javascript-3131c114abdc */
+  const sections = document.querySelectorAll(".case-sub");
+  const menu_links = document.querySelectorAll(".nav-container a");
+
+  const makeActive = (link) => menu_links[link].classList.add("active");
   const removeActive = (link) => menu_links[link].classList.remove("active");
   const removeAllActive = () => [...Array(sections.length).keys()].forEach((link) => removeActive(link));
 
   console.log([...Array(sections.length).keys()]);
-  
+
   const sectionMargin = 50;
   let currentActive = 0;
 
   console.log(menu_links);
-  
+
 
   window.addEventListener("scroll", () => {
-    const current = sections.length - [...sections].reverse().findIndex((section) => window.scrollY >= section.offsetTop - sectionMargin ) - 1
+    const current = sections.length - [...sections].reverse().findIndex((section) => window.scrollY >= section.offsetTop - sectionMargin) - 1
     console.log(current);
 
 
@@ -213,17 +243,19 @@ fetch(apiCall)
   const colors = ['', 'darkBlue', 'grey', 'darkBlue', 'darkBlue', 'grey']
 
 
-window.addEventListener('scroll', changeColorOnScroll);
+  window.addEventListener('scroll', changeColorOnScroll);
 
-function changeColorOnScroll () {
+  function changeColorOnScroll() {
 
-  const scrollFromTop = window.pageYOffset
+    const scrollFromTop = window.pageYOffset
 
-  for (let i = 0; sections.length > i; i++) {
+    for (let i = 0; sections.length > i; i++) {
 
-    if (scrollFromTop <= sections[i].offsetTop) {
-      document.body.className = colors[i]
-      break
+      if (scrollFromTop <= sections[i].offsetTop) {
+        document.body.className = colors[i]
+        break
+      }
+
     }
 
   }
@@ -232,7 +264,7 @@ function changeColorOnScroll () {
 
 
   // ====================== GÅR OP I TOPPEN =============================================
-document.getElementById("nav-logo").addEventListener("click", function(){
+  document.getElementById("nav-logo").addEventListener("click", function () {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   });

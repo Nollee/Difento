@@ -8,14 +8,15 @@
   <meta name="description" content="Work in progress">
   <meta name="author" content="Difento">
   <link rel="stylesheet" href="css/style.css">
-  <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+  <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
   <script src="https://kit.fontawesome.com/d6495a71d9.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://unpkg.com/swiper/css/swiper.min.css">
   <link rel="stylesheet" href="https://use.typekit.net/wxx4rio.css">
 </head>
 
 <body data-spy="scroll" data-target=".tabbar" data-offset="50">
   <main id="app">
-  <section id="content"></section>
+    <section id="content"></section>
   </main>
 <script>
 /* weather api */
@@ -28,9 +29,34 @@ fetch(apiCall).then(response => response.json()).then(data => console.log(data))
   <!-- main js file -->
   <script src="./services/three.r95.min.js"></script>
   <script src="./services/vanta.birds.min.js"></script>
+  <script src="https://unpkg.com/swiper/js/swiper.min.js"></script>
   <script src="main.js"></script>
 
+  <script>
+    var mySwiper = new Swiper('.swiper-container', {
+      // Optional parameters
+      direction: 'horizontal',
+      slidesPerView: 2,
+      spaceBetween: 200,
+      centeredSlides: true,
+      // If we need pagination
+      pagination: {
+        el: '.swiper-pagination',
+      },
+      /*
+      // Navigation arrows
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
 
+      // And if we need scrollbar
+      scrollbar: {
+        el: '.swiper-scrollbar',
+      },
+      */
+    })
+  </script>
 </body>
 
 </html>
