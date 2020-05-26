@@ -204,10 +204,11 @@ fetch(apiCall)
       currentActive = current;
       makeActive(current);
     }
+
   });
 
   /* =========================changes color of the background when the page is scrolled  ===========*/
-
+/* 
 
   const colors = ['', 'darkBlue', 'grey', 'darkBlue', 'darkBlue', 'grey']
 
@@ -227,7 +228,7 @@ function changeColorOnScroll () {
 
   }
 
-}
+} */
 
 
   // ====================== GÅR OP I TOPPEN =============================================
