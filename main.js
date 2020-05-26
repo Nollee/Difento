@@ -57,6 +57,10 @@ VANTA.BIRDS({
       <p>OM OS</p>
       </div>
       </a>
+      <a id="recommendlink" href="#recommend"><i class="fas fa-laugh"></i>
+      <div id="contactdesc" class="link-desc">
+      <p>ANBEFALINGER</p>
+      </div>
       <a id="contactlink" href="#contact"><i class="fas fa-paper-plane" ></i>
       <div id="contactdesc" class="link-desc">
       <p>KONTAKT</p>
@@ -87,6 +91,10 @@ VANTA.BIRDS({
     <i class="fas fa-user-friends"></i>
     <p>OM OS</p>
     </a>
+    <a href="#recommend">
+    <i class="fas fa-laugh"></i>
+    <p>ANBEFALINGER</p>
+    </a>
     <a href="#contact">
     <i class="fas fa-paper-plane"></i>
     <p>KONTAKT</p>
@@ -113,6 +121,9 @@ VANTA.BIRDS({
 
     </article>
     <article id="about" class="case-sub">
+
+    </article>
+    <article id="recommend" class="case-sub">
 
     </article>
     <article id="contact" class="case-sub">
