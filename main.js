@@ -132,6 +132,8 @@ fetch(apiCall)
     <div id="hero-bottom-content">
 
 
+
+
      </div>
 
 
