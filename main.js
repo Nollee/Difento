@@ -199,8 +199,8 @@ document.getElementById("nav-logo").addEventListener("click", function(){
 
 
 
-  /* jasidasjdjsaid */
-  const colors = ['darkBlue', 'grey', 'darkBlue', 'darkBlue', 'grey']
+  /* changes color of the background when the page is scrolled */
+  const colors = ['darkblue', 'darkBlue', 'grey', 'darkBlue', 'grey']
 
 const sections = [...document.getElementsByClassName('case-sub')]
 
