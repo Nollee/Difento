@@ -27,7 +27,34 @@ document.addEventListener('DOMContentLoaded', function () {
     alignment: 59.00,
     cohesion: 16.00,
     quantity: 3.00
-  })
+  });
+
+
+  // SWIPER SLIDER
+
+  let mySwiper = new Swiper('.swiper-container', {
+    // Optional parameters
+    direction: 'horizontal',
+    slidesPerView: 2,
+    spaceBetween: 200,
+    centeredSlides: true,
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+    },
+    /*
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+    // And if we need scrollbar
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+    */
+  });
 
 
   /* weather api */
@@ -136,7 +163,8 @@ document.addEventListener('DOMContentLoaded', function () {
 <div id="hero-bottom-content"></div>    
 </article>
     
-    <article id="cases" class="case-sub">
+    <article id="cases" class="sub">
+
     <div class="swiper-container">
     <!-- Additional required wrapper -->
     <div class="overlay">
@@ -172,14 +200,7 @@ document.addEventListener('DOMContentLoaded', function () {
     -->
 </div>
     </article>
-    <article id="services" class="case-sub">
-    </article>
-    
-    <article id="cases" class="sub">
-    <div class="anchor" id="cases-anchor">anchor</div>
-    </article>
-    
-    <article id="services" class="sub">
+     <article id="services" class="sub">
     <div id="services-anchor">anchor</div>
     </article>
     
@@ -233,6 +254,8 @@ document.addEventListener('DOMContentLoaded', function () {
       currentActive = current;
       makeActive(current);
     }
+
+
 
   });
 
