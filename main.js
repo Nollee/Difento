@@ -209,7 +209,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   /* https://medium.com/p1xts-blog/scrollspy-with-just-javascript-3131c114abdc */
-  const sections = document.querySelectorAll(".case-sub");
   const menu_links = document.querySelectorAll(".nav-container a");
 
   const makeActive = (link) => menu_links[link].classList.add("active");
