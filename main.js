@@ -166,13 +166,8 @@ VANTA.BIRDS({
     }
   });
 
-  // ====================== GÅR OP I TOPPEN =============================================
-
-
   /* jasidasjdjsaid */
   const colors = ['darkBlue', 'grey', 'darkBlue', 'darkBlue', 'grey']
-
-const sections = [...document.getElementsByClassName('case-sub')]
 
 window.addEventListener('scroll', changeColorOnScroll);
 
@@ -191,9 +186,12 @@ function changeColorOnScroll () {
 
 }
 
+
+  // ====================== GÅR OP I TOPPEN =============================================
 document.getElementById("nav-logo").addEventListener("click", function(){
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   });
   
-  }, false);
+  
+}, false);
