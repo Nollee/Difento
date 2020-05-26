@@ -47,7 +47,7 @@ VANTA.BIRDS({
       <p>CASES</p>
       </div>
       </a>
-      <a id="servicelink" href="#services"><i class="fas fa-hourglass-half"></i>
+      <a id="servicelink" href="#services-anchor"><i class="fas fa-hourglass-half"></i>
       <div id="procesdesc" class="link-desc">
       <p>PROCES</p>
       </div>
@@ -61,7 +61,7 @@ VANTA.BIRDS({
       <div id="contactdesc" class="link-desc">
       <p>ANBEFALINGER</p>
       </div>
-      <a id="contactlink" href="#contact"><i class="fas fa-paper-plane" ></i>
+      <a id="contactlink" href="#contact-anchor"><i class="fas fa-paper-plane" ></i>
       <div id="contactdesc" class="link-desc">
       <p>KONTAKT</p>
       </div>
@@ -83,7 +83,7 @@ VANTA.BIRDS({
     <i class="fas fa-layer-group"></i>
     <p>CASES</p>
     </a>
-    <a href="#services">
+    <a href="#services-anchor">
     <i class="fas fa-hourglass-half"></i>
     <p>PROCES</p>
     </a>
@@ -118,7 +118,7 @@ VANTA.BIRDS({
 
     </article>
     <article id="services" class="case-sub">
-
+    <div id="services-anchor">anchor</div>
     </article>
     <article id="about" class="case-sub">
 
@@ -127,8 +127,12 @@ VANTA.BIRDS({
 
     </article>
     <article id="contact" class="case-sub">
+    <div id="contact-anchor">anchor</div>
 
     </article>
+    <footer>
+
+    </footer>
   `;
 
 }
@@ -188,3 +192,31 @@ document.getElementById("nav-logo").addEventListener("click", function(){
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   });
+
+
+
+
+
+
+
+  /* jasidasjdjsaid */
+  const colors = ['darkBlue', 'grey', 'darkBlue', 'darkBlue', 'grey']
+
+const sections = [...document.getElementsByClassName('case-sub')]
+
+window.addEventListener('scroll', changeColorOnScroll);
+
+function changeColorOnScroll () {
+
+  const scrollFromTop = window.pageYOffset
+
+  for (let i = 0; sections.length > i; i++) {
+
+    if (scrollFromTop <= sections[i].offsetTop) {
+      document.body.className = colors[i]
+      break
+    }
+
+  }
+
+}

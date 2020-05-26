@@ -7,7 +7,7 @@
 .hero-text{
     width: 50%;
     height: 100%;
-    p{  
+    p{
         width: 70%;
         margin: auto;
         margin-left: 10%;
@@ -39,7 +39,7 @@
         padding: 0;
         margin: 0;
         font-weight: 1000;
-    
+
     }
 }
 
@@ -50,7 +50,7 @@
 }
 
 .vanta-canvas{
-    width: 100% !important; 
+    width: 100% !important;
     height: 100vh !important;
 }
 
@@ -78,23 +78,28 @@ z-index: 20;
 }
 
 
-.case-sub{
+.case-sub, footer{
     width: 100%;
     height: 100vh;
 }
 
-#cases{
-    background-color: green;
+footer {
+    background-color: orange;
 }
 
-#services{
-    background-color: red;
+
+ #services, #contact{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-#about{
-    background-color: yellow;
-}
+.darkBlue {
+    background-color: $dark-blue;
+    transition: .2s;
+  }
 
-#contact{
-    background-color: blue;
-}
+  .grey {
+    background-color: $grey;
+    transition: .4s;
+  }

@@ -90,25 +90,36 @@ h1 {
   bottom: 0;
   z-index: 20; }
 
-.case-sub, footer {
+.case-sub {
   width: 100%;
   height: 100vh; }
 
-footer {
-  background-color: orange; }
+/* #cases{
+    background-color: green;
+}
 
-#services, #contact {
-  display: flex;
-  align-items: center;
-  justify-content: center; }
+#services{
+    background-color: red;
+}
 
-.darkBlue {
-  background-color: #172430;
-  transition: .2s; }
+#about{
+    background-color: yellow;
+}
 
-.grey {
-  background-color: #F2F2F2;
-  transition: .4s; }
+#contact{
+    background-color: blue;
+} */
+.lightCyan {
+  background-color: #DFFDFF; }
+
+.darkSkyBlue {
+  background-color: #90BEDE; }
+
+.aquamarine {
+  background-color: #68EDC6; }
+
+.electricBlue {
+  background-color: #90F3FF; }
 
 .tabbar {
   position: fixed;
