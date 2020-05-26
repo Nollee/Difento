@@ -1,8 +1,12 @@
 document.addEventListener('DOMContentLoaded', function(){
+  content();
+  
+  const sections = document.querySelectorAll(".sub");
 
-content();
 
-VANTA.BIRDS({
+
+//  =========================VANTA BIRDS FRA VANTAJS ===================================
+  VANTA.BIRDS({
     el: "#birds",
     mouseControls: true,
   touchControls: true,
@@ -26,17 +30,16 @@ VANTA.BIRDS({
 
 
 
-  window.onscroll = function() {scrollFunction()};
 
-
-  function scrollFunction() {
+  window.addEventListener("scroll", () => {    
+    
     if (document.body.scrollTop > 90 || document.documentElement.scrollTop > 90) {
       document.querySelector(".tabbar").classList.add("pop")
 
      }  else {
         document.querySelector(".tabbar").classList.remove("pop")
     }
-  }
+  });
 
 
   function content(){
@@ -123,7 +126,20 @@ VANTA.BIRDS({
     <div id="services-anchor">anchor</div>
     </article>
     <article id="about" class="sub">
-    <div id="about-anchor">anchor</div>
+    <div id="about-anchor"></div>
+    <div class="about-wrapper sub-wrapper">
+    <h2>OM DIFENTO<h2>
+
+    <div class="about-left">
+    <div class="about-text">
+    <h3>IDEEN BAG DIFENTO</H3>
+    <p>Lorem Ipsum er ganske enkelt fyldtekst fra print- og typografiindustrien. Lorem Ipsum har været standard fyldtekst siden 1500-tallet, hvor en ukendt trykker sammensatte en tilfældig spalte for at trykke en bog til sammenligning af forskellige skrifttyper. Lorem Ipsum har ikke alene overlevet fem århundreder, men har også vundet indpas i elektronisk typografi uden væsentlige ændringer. Sætningen blev gjordt kendt i 1960'erne med lanceringen af Letraset-ark, som indeholdt afsnit med Lorem Ipsum, og senere med layoutprogrammer som Aldus PageMaker, som også indeholdt en udgave af Lorem Ipsum.</p>
+    </div>
+    </div>
+    <div class="about-right"></div>
+    </div>
+
+
     </article>
     <article id="recommend" class="sub">
     <div id="recommend-anchor">anchor</div>
@@ -143,16 +159,19 @@ VANTA.BIRDS({
 
 // ====================== LAVER RINGENE RUNDT OM NAVIGATION ====================================
       /* https://medium.com/p1xts-blog/scrollspy-with-just-javascript-3131c114abdc */
-
-    const sections = document.querySelectorAll(".sub");
     const menu_links = document.querySelectorAll(".nav-container a");
 
     const makeActive = (link) => menu_links[link].classList.add("active");
   const removeActive = (link) => menu_links[link].classList.remove("active");
   const removeAllActive = () => [...Array(sections.length).keys()].forEach((link) => removeActive(link));
 
+  console.log([...Array(sections.length).keys()]);
+  
   const sectionMargin = 50;
   let currentActive = 0;
+
+  console.log(menu_links);
+  
 
   window.addEventListener("scroll", () => {
     const current = sections.length - [...sections].reverse().findIndex((section) => window.scrollY >= section.offsetTop - sectionMargin ) - 1
