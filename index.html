@@ -18,6 +18,14 @@
   <main id="app">
     <section id="content"></section>
   </main>
+<script>
+/* weather api */
+const apiCall = 'https://api.openweathermap.org/data/2.5/weather?q=aarhus&appid=b892cb50e6b072e2bd37a1bc8049ee3a';
+
+fetch(apiCall).then(response => response.json()).then(data => console.log(data));
+</script>
+
+
   <!-- main js file -->
   <script src="./services/three.r95.min.js"></script>
   <script src="./services/vanta.birds.min.js"></script>
