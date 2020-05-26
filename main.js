@@ -52,12 +52,12 @@ VANTA.BIRDS({
       <p>PROCES</p>
       </div>
       </a>
-      <a id="aboutlink" href="#about"><i class="fas fa-user-friends"></i>
+      <a id="aboutlink" href="#about-anchor"><i class="fas fa-user-friends"></i>
       <div id="aboutdesc" class="link-desc">
       <p>OM OS</p>
       </div>
       </a>
-      <a id="recommendlink" href="#recommend"><i class="fas fa-laugh"></i>
+      <a id="recommendlink" href="#recommend-anchor"><i class="fas fa-laugh"></i>
       <div id="contactdesc" class="link-desc">
       <p>ANBEFALINGER</p>
       </div>
@@ -79,7 +79,7 @@ VANTA.BIRDS({
     </div>
 
     <div class="top-links">
-    <a href="#cases">
+    <a href="#cases-anchor">
     <i class="fas fa-layer-group"></i>
     <p>CASES</p>
     </a>
@@ -87,15 +87,15 @@ VANTA.BIRDS({
     <i class="fas fa-hourglass-half"></i>
     <p>PROCES</p>
     </a>
-    <a href="#about">
+    <a href="#about-anchor">
     <i class="fas fa-user-friends"></i>
     <p>OM OS</p>
     </a>
-    <a href="#recommend">
+    <a href="#recommend-anchor">
     <i class="fas fa-laugh"></i>
     <p>ANBEFALINGER</p>
     </a>
-    <a href="#contact">
+    <a href="#contact-anchor">
     <i class="fas fa-paper-plane"></i>
     <p>KONTAKT</p>
     </a>
@@ -115,16 +115,16 @@ VANTA.BIRDS({
     </div>
     </article>
     <article id="cases" class="case-sub">
-
+    <div id="cases-anchor">anchor</div>
     </article>
     <article id="services" class="case-sub">
     <div id="services-anchor">anchor</div>
     </article>
     <article id="about" class="case-sub">
-
+    <div id="about-anchor">anchor</div>
     </article>
     <article id="recommend" class="case-sub">
-
+    <div id="recommend-anchor">anchor</div>
     </article>
     <article id="contact" class="case-sub">
     <div id="contact-anchor">anchor</div>

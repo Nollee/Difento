@@ -80,7 +80,7 @@ z-index: 20;
 
 .case-sub, footer{
     width: 100%;
-    height: 100vh;
+    height: 150vh;
 }
 
 footer {
@@ -90,13 +90,17 @@ footer {
 
  #services, #contact{
     display: flex;
-    align-items: center;
-    justify-content: center;
+
 }
+/* SKAL SLETTES SENERE ER KUN TIL DEMO */
+article {
+    border: solid 5px $darkest-blue;
+}
+/*************************************/
 
 .darkBlue {
     background-color: $dark-blue;
-    transition: .2s;
+    transition: .4s;
   }
 
   .grey {
