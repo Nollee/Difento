@@ -185,8 +185,8 @@ document.addEventListener('DOMContentLoaded', function(){
     }
   });
 
-  /* jasidasjdjsaid */
-  const colors = ['darkBlue', 'grey', 'darkBlue', 'darkBlue', 'grey']
+  /* changes color of the background when the page is scrolled */
+  const colors = ['darkblue', 'darkBlue', 'grey', 'darkBlue', 'grey']
 
 window.addEventListener('scroll', changeColorOnScroll);
 
