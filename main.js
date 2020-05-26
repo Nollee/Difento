@@ -1,3 +1,5 @@
+document.addEventListener('DOMContentLoaded', function(){
+
 content();
 
 VANTA.BIRDS({
@@ -115,19 +117,19 @@ VANTA.BIRDS({
     <div class="gradient-bot"></div>
     </div>
     </article>
-    <article id="cases" class="case-sub">
+    <article id="cases" class="sub">
 
     </article>
-    <article id="services" class="case-sub">
+    <article id="services" class="sub">
 
     </article>
-    <article id="about" class="case-sub">
+    <article id="about" class="sub">
 
     </article>
-    <article id="recommend" class="case-sub">
+    <article id="recommend" class="sub">
 
     </article>
-    <article id="contact" class="case-sub">
+    <article id="contact" class="sub">
 
     </article>
   `;
@@ -137,55 +139,34 @@ VANTA.BIRDS({
 
 
 // ====================== LAVER RINGENE RUNDT OM NAVIGATION ====================================
+      /* https://medium.com/p1xts-blog/scrollspy-with-just-javascript-3131c114abdc */
 
-document.addEventListener('DOMContentLoaded', function(){
-
-    const sections = document.querySelectorAll(".case-sub");
+    const sections = document.querySelectorAll(".sub");
     const menu_links = document.querySelectorAll(".nav-container a");
 
     const makeActive = (link) => menu_links[link].classList.add("active");
   const removeActive = (link) => menu_links[link].classList.remove("active");
   const removeAllActive = () => [...Array(sections.length).keys()].forEach((link) => removeActive(link));
 
-  const sectionMargin = 200;
-
+  const sectionMargin = 50;
   let currentActive = 0;
+
   window.addEventListener("scroll", () => {
-
-    // check in reverse order so we find the last section
-    // that's present - checking in non-reverse order would
-    // report true for all sections up to and including
-    // the section currently in view
-    //
-    // Data in play:
-    // window.scrollY    - is the current vertical position of the window
-    // sections          - is a list of the dom nodes of the sections of the page
-    //                     [...sections] turns this into an array so we can
-    //                     use array options like reverse() and findIndex()
-    // section.offsetTop - is the vertical offset of the section from the top of the page
-    //
-    // basically this lets us compare each section (by offsetTop) against the
-    // viewport's current position (by window.scrollY) to figure out what section
-    // the user is currently viewing
     const current = sections.length - [...sections].reverse().findIndex((section) => window.scrollY >= section.offsetTop - sectionMargin ) - 1
+    console.log(current);
+    
 
-    // only if the section has changed
-    // remove active class from all menu links
-    // and then apply it to the link for the current section
     if (current !== currentActive) {
       removeAllActive();
       currentActive = current;
       makeActive(current);
     }
   });
-}, false);
 
-/* https://medium.com/p1xts-blog/scrollspy-with-just-javascript-3131c114abdc */
-
-
-
-// ====================== GÅR OP I TOPPEN =============================================
+  // ====================== GÅR OP I TOPPEN =============================================
 document.getElementById("nav-logo").addEventListener("click", function(){
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  });
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+});
+
+}, false);
