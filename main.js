@@ -1,8 +1,8 @@
 content();
 
 VANTA.BIRDS({
-    el: "#birds",
-    mouseControls: true,
+  el: "#birds",
+  mouseControls: true,
   touchControls: true,
   minHeight: 200.00,
   minWidth: 200.00,
@@ -19,26 +19,26 @@ VANTA.BIRDS({
   alignment: 59.00,
   cohesion: 16.00,
   quantity: 3.00
-  })
+})
 
 
 
 
-  window.onscroll = function() {scrollFunction()};
+window.onscroll = function () { scrollFunction() };
 
 
-  function scrollFunction() {
-    if (document.body.scrollTop > 90 || document.documentElement.scrollTop > 90) {
-      document.querySelector(".tabbar").classList.add("pop")
+function scrollFunction() {
+  if (document.body.scrollTop > 90 || document.documentElement.scrollTop > 90) {
+    document.querySelector(".tabbar").classList.add("pop")
 
-     }  else {
-        document.querySelector(".tabbar").classList.remove("pop")
-    }
+  } else {
+    document.querySelector(".tabbar").classList.remove("pop")
   }
+}
 
 
-  function content(){
-    document.querySelector('#content').innerHTML += /*html*/ `
+function content() {
+  document.querySelector('#content').innerHTML += /*html*/ `
     <nav class="tabbar">
       <div class="nav-container">
       <img id="nav-logo" src="./images/logo-sign.svg" alt="logo">
@@ -115,8 +115,42 @@ VANTA.BIRDS({
     <div class="gradient-bot"></div>
     </div>
     </article>
+    
     <article id="cases" class="case-sub">
+    <div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="overlay">
+    <h4 class="slider-count">01</h4>
+    <h4 class="slider-job">website</h4>
+    <div class="slider-year">
+      <div class="line"></div>
+      <h4>2019</h4> 
+    </div>
+    <h4 class="slider-company">BUTIK TINC</h4>
+    </div>
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <img src="./images/tinc.png">
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/ry.png">
+        </div>
+        <div class="swiper-slide">
+        <img src="./images/beton.png">
+        </div>
+        ...
+    </div>
+    <!-- 
+  
+    <div class="swiper-pagination"></div>
 
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <div class="swiper-scrollbar"></div>
+    -->
+</div>
     </article>
     <article id="services" class="case-sub">
 
@@ -138,12 +172,12 @@ VANTA.BIRDS({
 
 // ====================== LAVER RINGENE RUNDT OM NAVIGATION ====================================
 
-document.addEventListener('DOMContentLoaded', function(){
+document.addEventListener('DOMContentLoaded', function () {
 
-    const sections = document.querySelectorAll(".case-sub");
-    const menu_links = document.querySelectorAll(".nav-container a");
+  const sections = document.querySelectorAll(".case-sub");
+  const menu_links = document.querySelectorAll(".nav-container a");
 
-    const makeActive = (link) => menu_links[link].classList.add("active");
+  const makeActive = (link) => menu_links[link].classList.add("active");
   const removeActive = (link) => menu_links[link].classList.remove("active");
   const removeAllActive = () => [...Array(sections.length).keys()].forEach((link) => removeActive(link));
 
@@ -167,7 +201,7 @@ document.addEventListener('DOMContentLoaded', function(){
     // basically this lets us compare each section (by offsetTop) against the
     // viewport's current position (by window.scrollY) to figure out what section
     // the user is currently viewing
-    const current = sections.length - [...sections].reverse().findIndex((section) => window.scrollY >= section.offsetTop - sectionMargin ) - 1
+    const current = sections.length - [...sections].reverse().findIndex((section) => window.scrollY >= section.offsetTop - sectionMargin) - 1
 
     // only if the section has changed
     // remove active class from all menu links
@@ -185,7 +219,7 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 // ====================== GÅR OP I TOPPEN =============================================
-document.getElementById("nav-logo").addEventListener("click", function(){
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
-  });
+document.getElementById("nav-logo").addEventListener("click", function () {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
+});
