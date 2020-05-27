@@ -1,11 +1,12 @@
 document.addEventListener('DOMContentLoaded', function () {
   content();
 
-  const sections = [...document.querySelectorAll('.sub')]
+  const sections = document.querySelectorAll('.sub')
   console.log(sections);
 
 
-
+  // INITIALIZE AOS
+  AOS.init();
 
   //  =========================VANTA BIRDS FRA VANTAJS ===================================
   VANTA.BIRDS({
@@ -56,6 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
     */
   });
 
+
 /* weather api */
 const apiCall = 'https://api.openweathermap.org/data/2.5/weather?q=aarhus,dk&units=metric&appid=b892cb50e6b072e2bd37a1bc8049ee3a';
 
@@ -80,7 +82,7 @@ fetch(apiCall)
     let htmlTemplate = "";
     Math.round(data.main.temp);
     let temp = Math.round(`${data.main.temp}`);
-      htmlTemplate += `
+    htmlTemplate += `
         <div id="weather-container">
         <img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png">
           <h3>${data.name}, <span>${temp}</span> ºC</h3>
@@ -219,18 +221,9 @@ fetch(apiCall)
     </div>
     <h4 class="slider-company">BUTIK TINC</h4>
     </div>
-    <div class="swiper-wrapper">
+    <div id="slides" class="swiper-wrapper">
         <!-- Slides -->
-        <div class="swiper-slide">
-          <img src="./images/tinc.png">
-        </div>
-        <div class="swiper-slide">
-          <img src="./images/ry.png">
-        </div>
-        <div class="swiper-slide">
-        <img src="./images/beton.png">
-        </div>
-        ...
+
     </div>
     <!--
 
@@ -274,7 +267,7 @@ fetch(apiCall)
     <div class="about-right">
     <div class="person-container">
     <div class="person">
-    <div class="person-card">
+    <div class="person-card"data-aos="zoom-in" data-aos-delay="300">
     <img src="./images/martin.jpg" alt="martin">
     <h5>Martin Eneberg</h5>
     <a href="tel:+4527884665">+45 27 88 46 64</a>
@@ -283,7 +276,7 @@ fetch(apiCall)
     </div>
     <div class="person">
     <div class="person-card">
-    <img src="./images/mikkel.jpg" alt="mikkel">
+    <img src="./images/mikkel.jpg" alt="mikkel" data-aos="zoom-in" data-aos-delay="400">
     <h5>Mikkel Faartoft</h5>
     <a href="tel:+4523677669">+45 23 67 76 69</a>
     <a href="mailto:mj@difento.dk">mj@difento.dk</a>
@@ -331,7 +324,77 @@ fetch(apiCall)
       </div>
     </article>
     <footer class="sub">
+    <div class="footer-wrapper">
+    <div class="footer-top">
+    <div class="logo footer-logo">
+    <img id="butterfly" src="./images/logo-sign.svg" alt="logo" data-aos="zoom-in" data-aos-delay="300">
+    <img id="logo-text"src="./images/logo-word.svg" alt="logo" data-aos="zoom-in" data-aos-delay="400">
+    </div>
+    <div class="footer-topdesc">
+    <p>Lorem Ipsum er ganske enkelt fyldtekst fra print- og typografiindustrien. Lorem Ipsum har været standard fyldtekst siden 1500-tallet, hvor en ukendt trykker sammensatte en tilfældig spalte for at trykke en bog til sammenligning af forskellige skrifttyper. Lorem Ipsum har ikke alene.</p>
+    <div class="footer-icons">
+    <a href="https://wordpress.com/"> <i class="fab fa-wordpress-simple"></i></a>
+    <a href="https://www.shopify.com/"<i class="fab fa-shopify"></i></a>
+    </div>
+    </div>
+    </div>
+    <div class="footer-line"></div>
+    <div class="footer-bot">
+    <div class="footer-botleft">
+    <div class="adresse">
+    <h4>Adresse</h4>
+    <!-- LAV DETTE TIL ET LINK TIL GOOGLE MAPS, NÅR I HAR FÅET KONTOR OG GOOGLE MY BUSINESS -->
+    <p>Dr Holsts Vej 50 <br>8230 Åbyhøj</p>
+    </div>
+    <div class="contact">
+    <h4>Kontakt</h4>
+    <a href="mailto:kontakt@difento.dk">kontakt@difento.dk</a>
+    <div class="footer-phone">
+    <a href="tel:+4523677669">+45 23 67 76 69</a>
+    <span class="phone-active"></span>
+    </div>
+    </div>
+    </div>
+    <div class="footer-botmid">
+    <div class="boring">
+    <h4>Det Kedelige</h4>
+    <a href="#">Cookies</a>
+    <a href="#">Persondatapolitik</a>
+    <a href="#">Handelsbetingelser</a>
+    <a href="#">Serviceaftale</a>
+    </div>
+    <div class="cvr">
+    <h4>CVR</h4>
+    <a href="https://cvrapi.dk/virksomhed/dk/fento-is/41056924">41056924</a>
+    </div>
+    </div>
+    <div class="footer-botright">
+    <h4>Åbningstider</h4>
+    <div class="opening">
+    <div class="days">
+    <p>Mandag</p>
+    <p>Tirsdag</p>
+    <p>Onsdag</p>
+    <p>Torsdag</p>
+    <p>Fredag</p>
+    <p>Lørdag</p>
+    <p>Søndag</p>
+    </div>
+    <div class="times">
+    <p>9-21</p>
+    <p>9-21</p>
+    <p>9-21</p>
+    <p>9-21</p>
+    <p>9-21</p>
+    <p>9-21</p>
+    <p>9-21</p>
+    </div>
+    </div>
+    </div>
 
+    </div>
+    </div>
+    <div class="footer-img" data-aos="fade-left" data-aos-delay="600"></div>
     </footer>
   `;
 
@@ -370,16 +433,16 @@ fetch(apiCall)
 
 
     // ==================== ÆNDRER BAGGRUNDEN ==============================
-    let descriptions =  document.querySelectorAll(".link-desc");
+    let descriptions = document.querySelectorAll(".link-desc");
 
-    if (current == 1 || current == 4 ) {
+    if (current == 1 || current == 4) {
       document.querySelector("body").style.backgroundColor = "#F2F2F2"
-      for (let desc  of descriptions) {
+      for (let desc of descriptions) {
         desc.style.backgroundColor = "#172430"
       }
     } else {
       document.querySelector("body").style.backgroundColor = "#172430"
-      for (let desc  of descriptions) {
+      for (let desc of descriptions) {
         desc.style.backgroundColor = "#F2F2F2"
       }
 
@@ -400,6 +463,23 @@ fetch(apiCall)
   });
 
 
+  // ==================== ÆNDRER FARVEN PÅ CIRKLEN I FOOTER
+
+  function time(){
+    let t = new Date();
+    let h = t.getHours()
+
+    if (h >= 9 && h <= 21) {
+      document.querySelector(".phone-active").style.backgroundColor = "lightgreen"
+    } else {
+      document.querySelector(".phone-active").style.backgroundColor = "red"
+    }
+
+  }
+
+  time();
+
+
 }, false);
 
 grecaptcha.ready(function() {
@@ -408,3 +488,40 @@ grecaptcha.ready(function() {
      document.getElementById("token").value = token;
   });
 });
+
+//
+
+let projects = [];
+
+
+function getProjects() {
+  fetch('https://difento.dk/wordpress/wp-json/wp/v2/posts?_embed')
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (json) {
+      console.log(json);
+      appendCases(json);
+      projects = json;
+      setTimeout(function () {
+      }, 200);
+    });
+}
+
+console.log(projects);
+getProjects();
+
+// append projects to the DOM
+function appendCases(projects) {
+  let htmlTemplate = "";
+
+  for (let project of projects) {
+    htmlTemplate += `
+      <div class="swiper-slide">
+        <img src="${project.acf.image}"></h2>
+      </div>
+    `;
+  }
+
+  document.querySelector('#slides').innerHTML = htmlTemplate;
+}
