@@ -2,6 +2,7 @@
 $dark-blue: #172430;
 $main-orange: #FF593E;
 $darkest-blue: #101A23;
+$light-blue: #424E58;
 $grey: #F2F2F2;
 $light-orange: #FB7C67;
 $nav-width: 70px;
@@ -99,6 +100,7 @@ h1{
         margin-right: -2.45em;
         margin-top: 0.34em;
         text-align: end;
+        color: $light-blue;
     }
 }
 
