@@ -2,6 +2,7 @@
 $dark-blue: #172430;
 $main-orange: #FF593E;
 $darkest-blue: #101A23;
+$light-blue: #424E58;
 $grey: #F2F2F2;
 $light-orange: #FB7C67;
 $nav-width: 70px;
@@ -106,24 +107,54 @@ a{
         margin-right: -2.45em;
         margin-top: 0.34em;
         text-align: end;
+        color: $light-blue;
     }
 }
 
-.btn-orange {
+.btn-orange div{
     background-color: $main-orange; color: white;}
-.btn-grey {
+.btn-grey div{
     background-color: $grey; color: $darkest-blue;}
 
 .btn-orange, .btn-grey {
-    padding: 2% 2%;
-    width: 50px;
-    height: 20px;
     text-decoration: none;
     text-transform: uppercase;
-    font-weight: bold;
-    -webkit-transition: .4s ease;
-    -o-transition: .4s ease;
-    transition: .4s ease;
+    div {
+        width: 6vw;
+        height: 6vh;
+        display: flex; flex-direction: row; align-items: center; justify-content: center;
+        i {margin-left: 10%;}
+        transition: .4s ease;
     &:hover {transform: scale(1.1);}
-    i {margin-left: 1%;}
+    }
 }
+
+/* SCROLLBAR STYLING */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: $darkest-blue;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $light-orange;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: $main-orange;
+  }
+
+  /* mark selection */
+  ::selection {
+    background: #ffb7b723; /* WebKit/Blink Browsers */
+    color: $light-orange;
+  }
+  ::-moz-selection {
+    background: #ffb7b7; /* Gecko Browsers */
+  }
