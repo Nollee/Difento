@@ -1,10 +1,24 @@
 .proc{
-    background-color: $grey;
+    background-color: $dark-blue;
+    -webkit-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+    transition: 0.3s ease !important;
 }
 
 .swiper2{
-    height: 50vh;
+    height: 65vh;
+    width: 70%;
+    margin: auto;
     .swiper-pagination2{
         text-align: center;
+        .swiper-pagination-bullet{
+            width: 70px;
+            height: 70px;
+            background-color: transparent;
+            i{
+                font-size: 40px;
+                color: $dark-blue;
+            }
+        }
     }
 }
