@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // SWIPER SLIDER
 
-  let mySwiper = new Swiper('.swiper-container', {
+  let mySwiper = new Swiper('.swiper1', {
     // Optional parameters
     direction: 'horizontal',
     slidesPerView: 2,
@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
     centeredSlides: true,
     // If we need pagination
     pagination: {
-      el: '.swiper-pagination',
+      el: '.swiper-pagination1',
     },
     /*
     // Navigation arrows
@@ -55,6 +55,19 @@ document.addEventListener('DOMContentLoaded', function () {
       el: '.swiper-scrollbar',
     },
     */
+  });
+
+  let swiper2 = new Swiper('.swiper2', {
+    spaceBetween: 30,
+    effect: 'fade',
+    pagination: {
+      el: '.swiper-pagination2',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
   });
 
 
@@ -210,7 +223,7 @@ fetch(apiCall)
 
     <article id="cases" class="sub">
 
-    <div class="swiper-container">
+    <div class="swiper-container swiper1">
     <!-- Additional required wrapper -->
     <div class="overlay">
     <h4 class="slider-count">01</h4>
@@ -236,7 +249,7 @@ fetch(apiCall)
     </div>
     <!--
 
-    <div class="swiper-pagination"></div>
+    <div class="swiper-pagination1"></div>
 
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
@@ -247,12 +260,35 @@ fetch(apiCall)
     </article>
      <article id="services" class="sub">
     <div id="services-anchor">anchor</div>
+    <div class="sub-wrapper dark">
+    <h2 class="darkh2">Proces</h2>
+
+    <div class="swiper-container swiper2">
+    
+    <div class="swiper-wrapper">
+    
+    <div class="swiper-slide proc">hej</div>
+    <div class="swiper-slide proc">test</div>
+    <div class="swiper-slide proc">3</div>
+    <div class="swiper-slide proc">4</div>
+    <div class="swiper-slide proc">5</div>
+    
+    </div>
+
+    <div class="swiper-pagination2"></div>
+    
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    
+    </div>
+
+    </div>
     </article>
 
     <article id="about" class="sub">
     <div id="about-anchor"></div>
     <div class="sub-wrapper">
-    <h2>OM OS</h2>
+    <h2 class="lighth2">OM OS</h2>
     <div class="about-container">
     <div class="about-left">
     <div class="text-box">
@@ -416,16 +452,24 @@ fetch(apiCall)
 
     // ==================== ÆNDRER BAGGRUNDEN ==============================
     let descriptions =  document.querySelectorAll(".link-desc");
-
+    let procSlides = document.querySelectorAll(".proc");
     if (current == 1 || current == 4 ) {
       document.querySelector("body").style.backgroundColor = "#F2F2F2"
       for (let desc  of descriptions) {
         desc.style.backgroundColor = "#172430"
       }
+
+      for (let slide  of procSlides) {
+        slide.style.backgroundColor = "#F2F2F2"
+      }
     } else {
       document.querySelector("body").style.backgroundColor = "#172430"
       for (let desc  of descriptions) {
         desc.style.backgroundColor = "#F2F2F2"
+      }
+
+      for (let slide  of procSlides) {
+        slide.style.backgroundColor = "#172430"
       }
 
     }
