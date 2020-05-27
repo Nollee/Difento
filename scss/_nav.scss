@@ -18,6 +18,7 @@
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    z-index: 99;
     img{
         width: 40px;
     }
@@ -49,6 +50,7 @@
         -webkit-transition: 0.1s ease;
         -o-transition: 0.1s ease;
         transition: 0.1s ease;
+        z-index: 99;
 
     }
 
@@ -64,11 +66,14 @@
     }
 
     a:hover{
+        z-index: 99;
+
         .link-desc{
             display: block;
             -webkit-transition: 0.3s ease;
             -o-transition: 0.3s ease;
             transition: 0.3s ease;
+            z-index: 999;
         }
         i{
             color: $main-orange;
@@ -117,6 +122,7 @@
     -webkit-transition: 0.3s ease;
     -o-transition: 0.3s ease;
     transition: 0.3s ease;
+    z-index: 99 !important;
 
     }
 
