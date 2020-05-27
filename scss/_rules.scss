@@ -101,14 +101,15 @@ a{
         margin-right: 5%;
     }
     .slider-company{
+        display: flex;
         font-size: 3vw;
-        align-self: flex-end;
-        transform: rotate(90deg);
-        margin-right: -2.45em;
-        margin-top: 0.34em;
-        text-align: end;
         color: $light-blue;
+        transform:rotate(-90deg);
+        margin-top: -3.54em;
+        margin-left: 5.8em;
+        width: 100%;
     }
+
 }
 
 .btn-orange div{
