@@ -10,7 +10,6 @@ $nav-width: 70px;
     margin: 0;
     padding: 0;
     font-family: bebas-neue-pro, sans-serif;
-    overflow-x: hidden;
 }
 
 body{
@@ -106,26 +105,22 @@ h1, h2, h3, h4{
     }
 }
 
-.btn-orange {
+.btn-orange div{
     background-color: $main-orange; color: white;}
-.btn-grey {
+.btn-grey div{
     background-color: $grey; color: $darkest-blue;}
 
 .btn-orange, .btn-grey {
-    padding: 10px 35px;
-    border: none;
-    width: auto;
-    height: auto;
-    display: flex; align-items: center; justify-content: center;
     text-decoration: none;
     text-transform: uppercase;
-    font-weight: bold;
-    -webkit-transition: .4s ease;
-    -o-transition: .4s ease;
-    transition: .4s ease;
-    cursor: pointer;
+    div {
+        width: 6vw;
+        height: 6vh;
+        display: flex; flex-direction: row; align-items: center; justify-content: center;
+        i {margin-left: 10%;}
+        transition: .4s ease;
     &:hover {transform: scale(1.1);}
-    i {margin: 0% 5%;}
+    }
 }
 
 /* SCROLLBAR STYLING */

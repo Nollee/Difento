@@ -91,7 +91,7 @@ fetch(apiCall)
 
 
 
-  window.addEventListener("scroll", () => {
+
 
 
   window.addEventListener("scroll", () => {
@@ -137,6 +137,11 @@ fetch(apiCall)
       <a href="#" id="vanish">
       </a>
       </div>
+      <div class="tabbar-some">
+          <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+          <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-instagram-square"></i></a>
+        </div>
       </nav>
 
     <article id="hero" class="hero-forside">
@@ -174,13 +179,15 @@ fetch(apiCall)
 
     <div class="hero-text">
       <div class="hero-head">
-        <h1>VI SKABER MINDER</h1>
-        <div class="square"></div>
+        <h1>VI SKABER MINDER<span>.</span></h1>
     </div>
       <p>Lorem Ipsum er ganske enkelt fyldtekst fra print- og typografiindustrien. Lorem Ipsum har været standard fyldtekst siden 1500-tallet, hvor en ukendt trykker sammensatte en tilfældig spalte for at trykke en bog til sammenligning af forskellige skrifttyper. Lorem Ipsum har ikke alene.</p>
+      <!-- buttons -->
       <div class="hero-btns">
-      <a class="btn-grey" href="#cases-anchor"><div>cases <i class="fas fa-layer-group"></i></div></a>
-      <a class="btn-orange" href="#contact-anchor"><div>kontakt <i class="fas fa-paper-plane" ></i></div></a>
+            <!-- grey button -->
+        <a class="btn-grey" href="#cases"><div>cases <i class="fas fa-layer-group"></i></div></a>
+              <!-- orange button -->
+        <a class="btn-orange" href="#contact-anchor"><div>kontakt <i class="fas fa-paper-plane" ></i></div></a>
       </div>
     </div>
     <div id="birds">
