@@ -57,12 +57,16 @@ document.addEventListener('DOMContentLoaded', function () {
     */
   });
 
+  let procesIcons = ['fas fa-search', 'fas fa-paint-brush', 'fas fa-comment-dots', 'fas fa-desktop', 'fas fa-user-circle']
   let swiper2 = new Swiper('.swiper2', {
     spaceBetween: 30,
     effect: 'fade',
     pagination: {
       el: '.swiper-pagination2',
       clickable: true,
+      renderBullet: function (index, className) {
+        return '<span class="' + className + '"> <i class="' + (procesIcons[index]) + '"/>' + '</i></span>'; }
+
     },
     navigation: {
       nextEl: '.swiper-button-next',
@@ -249,8 +253,10 @@ fetch(apiCall)
     -->
 </div>
     </article>
+
+
      <article id="services" class="sub">
-    <div id="services-anchor">anchor</div>
+    <div id="services-anchor" class="anchor"></div>
     <div class="sub-wrapper dark">
     <h2 class="darkh2">Proces</h2>
 
@@ -267,9 +273,6 @@ fetch(apiCall)
     </div>
 
     <div class="swiper-pagination2"></div>
-
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
 
     </div>
 
@@ -311,8 +314,8 @@ fetch(apiCall)
     </div>
     </div>
     <div class="person">
-    <div class="person-card">
-    <img src="./images/mikkel.jpg" alt="mikkel" data-aos="zoom-in" data-aos-delay="400">
+    <div class="person-card" data-aos="zoom-in" data-aos-delay="400">
+    <img src="./images/mikkel.jpg" alt="mikkel">
     <h5>Mikkel Faartoft</h5>
     <a href="tel:+4523677669">+45 23 67 76 69</a>
     <a href="mailto:mj@difento.dk">mj@difento.dk</a>
@@ -493,6 +496,7 @@ fetch(apiCall)
       for (let slide  of procSlides) {
         slide.style.backgroundColor = "#F2F2F2"
       }
+
     } else {
       document.querySelector("body").style.backgroundColor = "#172430"
       for (let desc of descriptions) {

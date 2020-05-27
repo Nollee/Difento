@@ -652,11 +652,23 @@ footer {
       margin-left: 0.5vw; }
 
 .proc {
-  background-color: #F2F2F2; }
+  background-color: #172430;
+  -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease !important; }
 
 .swiper2 {
-  height: 50vh; }
+  height: 65vh;
+  width: 70%;
+  margin: auto; }
   .swiper2 .swiper-pagination2 {
     text-align: center; }
+    .swiper2 .swiper-pagination2 .swiper-pagination-bullet {
+      width: 70px;
+      height: 70px;
+      background-color: transparent; }
+      .swiper2 .swiper-pagination2 .swiper-pagination-bullet i {
+        font-size: 40px;
+        color: #172430; }
 
 /*# sourceMappingURL=style.css.map */
