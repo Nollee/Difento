@@ -249,7 +249,7 @@ fetch(apiCall)
 
     <article id="about" class="sub">
     <div id="about-anchor"></div>
-    <div class="about-wrapper">
+    <div class="sub-wrapper">
     <h2>OM OS</h2>
     <div class="about-container">
     <div class="about-left">
