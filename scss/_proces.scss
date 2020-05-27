@@ -1,8 +1,25 @@
 .proc{
-    background-color: $dark-blue;
     -webkit-transition: 0.3s ease;
     -o-transition: 0.3s ease;
     transition: 0.3s ease !important;
+    display: flex;
+    justify-content: space-around;
+    img{
+        width: 25%;
+    }
+    .proces-text{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        h3{
+           font-size: 5vw; 
+           margin-bottom: 3vh;
+        }
+        p{
+            font-size: 1.5vw;
+        }
+    }
+
 }
 
 .swiper2{
@@ -12,8 +29,9 @@
     .swiper-pagination2{
         text-align: center;
         .swiper-pagination-bullet{
+            margin: 0 25px !important;
             width: 70px;
-            height: 70px;
+            height: 40px;
             background-color: transparent;
             i{
                 font-size: 40px;
