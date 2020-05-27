@@ -1,9 +1,9 @@
 document.addEventListener('DOMContentLoaded', function () {
   content();
-  
+
   const sections = [...document.querySelectorAll('.sub')]
   console.log(sections);
-  
+
 
 
 
@@ -56,13 +56,38 @@ document.addEventListener('DOMContentLoaded', function () {
     */
   });
 
+/* weather api */
+const apiCall = 'https://api.openweathermap.org/data/2.5/weather?q=aarhus,dk&units=metric&appid=b892cb50e6b072e2bd37a1bc8049ee3a';
 
-  /* weather api */
-  const apiCall = 'https://api.openweathermap.org/data/2.5/weather?q=aarhus&appid=b892cb50e6b072e2bd37a1bc8049ee3a';
+/* fetch(apiCall)
+.then(response => response.json())
+.then(data => console.log(data)); */
+
+fetch(apiCall)
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(data) {
+    console.log(data);
+    appendWeather(data);
+  });
 
   fetch(apiCall)
     .then(response => response.json())
     .then(data => console.log(data));
+
+  function appendWeather(data) {
+    let htmlTemplate = "";
+    Math.round(data.main.temp);
+    let temp = Math.round(`${data.main.temp}`);
+      htmlTemplate += `
+        <div id="weather-container">
+        <img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png">
+          <h2>${data.name}, <span>${temp}</span> ºC</h2>
+        </div>
+      `;
+    document.querySelector("#weather").innerHTML = htmlTemplate;
+  }
 
 
 
@@ -104,7 +129,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <div id="contactdesc" class="link-desc">
       <p>ANBEFALINGER</p>
       </div>
-      <a id="contactlink" href="#contact-anchor"><i class="fas fa-paper-plane" ></i>
+      <a id="contactlink" href="#contact-anchor"><i class="fas fa-paper-plane"></i>
       <div id="contactdesc" class="link-desc">
       <p>KONTAKT</p>
       </div>
@@ -112,6 +137,11 @@ document.addEventListener('DOMContentLoaded', function () {
       <a href="#" id="vanish">
       </a>
       </div>
+      <div class="tabbar-some">
+          <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+          <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-instagram-square"></i></a>
+        </div>
       </nav>
 
     <article id="hero" class="hero-forside">
@@ -149,22 +179,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
     <div class="hero-text">
       <div class="hero-head">
-        <h1>VI SKABER MINDER</h1>
-        <div class="square"></div>
+        <h1>VI SKABER MINDER<span>.</span></h1>
     </div>
       <p>Lorem Ipsum er ganske enkelt fyldtekst fra print- og typografiindustrien. Lorem Ipsum har været standard fyldtekst siden 1500-tallet, hvor en ukendt trykker sammensatte en tilfældig spalte for at trykke en bog til sammenligning af forskellige skrifttyper. Lorem Ipsum har ikke alene.</p>
+      <!-- buttons -->
       <div class="hero-btns">
-      <a class="btn-grey" href="#cases-anchor">cases <i class="fas fa-layer-group"></i></a>
-      <a class="btn-orange" href="#contact-anchor">kontakt <i class="fas fa-paper-plane" ></i></a>
+            <!-- grey button -->
+        <a class="btn-grey" href="#cases"><div>cases <i class="fas fa-layer-group"></i></div></a>
+              <!-- orange button -->
+        <a class="btn-orange" href="#contact-anchor"><div>kontakt <i class="fas fa-paper-plane" ></i></div></a>
       </div>
     </div>
     <div id="birds">
     <div class="gradient-left"></div>
     <div class="gradient-bot"></div>
     </div>
-<div id="hero-bottom-content"></div>    
+<div id="hero-bottom-content">
+<div id="weather"></div><!---- container for the wather api --->
+      <div id="hero-bottom-arrow"><a href="#cases"><i class="fas fa-angle-down"></i></a></div>
+        <div id="hero-bottom-some">
+          <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+          <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram-square"></i></a>
+        </div>
+    </div>
+</div>
 </article>
-    
+
     <article id="cases" class="sub">
 
     <div class="swiper-container">
@@ -174,7 +215,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <h4 class="slider-job">website</h4>
     <div class="slider-year">
       <div class="line"></div>
-      <h4>2019</h4> 
+      <h4>2019</h4>
     </div>
     <h4 class="slider-company">BUTIK TINC</h4>
     </div>
@@ -191,8 +232,8 @@ document.addEventListener('DOMContentLoaded', function () {
         </div>
         ...
     </div>
-    <!-- 
-  
+    <!--
+
     <div class="swiper-pagination"></div>
 
     <div class="swiper-button-prev"></div>
@@ -205,7 +246,7 @@ document.addEventListener('DOMContentLoaded', function () {
      <article id="services" class="sub">
     <div id="services-anchor">anchor</div>
     </article>
-    
+
     <article id="about" class="sub">
     <div id="about-anchor"></div>
     <div class="about-wrapper">
@@ -238,7 +279,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="person">
     <div class="person-card">
     <img src="./images/martin.jpg" alt="martin">
-    
+
     </div>
     </div>
     </div>
@@ -250,7 +291,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <article id="recommend" class="sub">
     <div id="recommend-anchor">anchor</div>
     </article>
-    
+
     <article id="contact" class="sub">
     <div id="contact-anchor">anchor</div>
 
