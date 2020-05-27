@@ -56,21 +56,21 @@ document.addEventListener('DOMContentLoaded', function () {
     */
   });
 
-/* weather api */
-const apiCall = 'https://api.openweathermap.org/data/2.5/weather?q=aarhus,dk&units=metric&appid=b892cb50e6b072e2bd37a1bc8049ee3a';
+  /* weather api */
+  const apiCall = 'https://api.openweathermap.org/data/2.5/weather?q=aarhus,dk&units=metric&appid=b892cb50e6b072e2bd37a1bc8049ee3a';
 
-/* fetch(apiCall)
-.then(response => response.json())
-.then(data => console.log(data)); */
+  /* fetch(apiCall)
+  .then(response => response.json())
+  .then(data => console.log(data)); */
 
-fetch(apiCall)
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(data) {
-    console.log(data);
-    appendWeather(data);
-  });
+  fetch(apiCall)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      appendWeather(data);
+    });
 
   fetch(apiCall)
     .then(response => response.json())
@@ -80,7 +80,7 @@ fetch(apiCall)
     let htmlTemplate = "";
     Math.round(data.main.temp);
     let temp = Math.round(`${data.main.temp}`);
-      htmlTemplate += `
+    htmlTemplate += `
         <div id="weather-container">
         <img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png">
           <h2>${data.name}, <span>${temp}</span> ºC</h2>
@@ -219,18 +219,9 @@ fetch(apiCall)
     </div>
     <h4 class="slider-company">BUTIK TINC</h4>
     </div>
-    <div class="swiper-wrapper">
+    <div id="slides" class="swiper-wrapper">
         <!-- Slides -->
-        <div class="swiper-slide">
-          <img src="./images/tinc.png">
-        </div>
-        <div class="swiper-slide">
-          <img src="./images/ry.png">
-        </div>
-        <div class="swiper-slide">
-        <img src="./images/beton.png">
-        </div>
-        ...
+
     </div>
     <!--
 
@@ -343,16 +334,16 @@ fetch(apiCall)
 
 
     // ==================== ÆNDRER BAGGRUNDEN ==============================
-    let descriptions =  document.querySelectorAll(".link-desc");
+    let descriptions = document.querySelectorAll(".link-desc");
 
-    if (current == 1 || current == 4 ) {
+    if (current == 1 || current == 4) {
       document.querySelector("body").style.backgroundColor = "#F2F2F2"
-      for (let desc  of descriptions) {
+      for (let desc of descriptions) {
         desc.style.backgroundColor = "#172430"
       }
     } else {
       document.querySelector("body").style.backgroundColor = "#172430"
-      for (let desc  of descriptions) {
+      for (let desc of descriptions) {
         desc.style.backgroundColor = "#F2F2F2"
       }
 
@@ -374,3 +365,41 @@ fetch(apiCall)
 
 
 }, false);
+
+
+// 
+
+let projects = [];
+
+
+function getProjects() {
+  fetch('https://difento.dk/wordpress/wp-json/wp/v2/posts?_embed')
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (json) {
+      console.log(json);
+      appendCases(json);
+      projects = json;
+      setTimeout(function () {
+      }, 200);
+    });
+}
+
+console.log(projects);
+getProjects();
+
+// append projects to the DOM
+function appendCases(projects) {
+  let htmlTemplate = "";
+
+  for (let project of projects) {
+    htmlTemplate += `
+      <div class="swiper-slide">
+        <img src="${project.acf.image}"></h2>
+      </div>
+    `;
+  }
+
+  document.querySelector('#slides').innerHTML = htmlTemplate;
+}
