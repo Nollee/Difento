@@ -23,6 +23,7 @@ body{
 
 html{
     overflow-y: auto;
+    overflow-x: hidden;
 	scroll-behavior: smooth;
 }
 
@@ -33,6 +34,10 @@ html{
     width:    -moz-calc(100vw - $nav-width);
     width:         calc(100vw - $nav-width);
     position: relative;
+}
+
+.anchor {
+    margin-top: 100px;
 }
 
 h1, h2, h3, h4{

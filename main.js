@@ -83,7 +83,7 @@ fetch(apiCall)
       htmlTemplate += `
         <div id="weather-container">
         <img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png">
-          <h2>${data.name}, <span>${temp}</span> ºC</h2>
+          <h3>${data.name}, <span>${temp}</span> ºC</h3>
         </div>
       `;
     document.querySelector("#weather").innerHTML = htmlTemplate;
@@ -244,11 +244,11 @@ fetch(apiCall)
 </div>
     </article>
      <article id="services" class="sub">
-    <div id="services-anchor">anchor</div>
+    <div id="services-anchor" class="anchor">anchor</div>
     </article>
 
     <article id="about" class="sub">
-    <div id="about-anchor"></div>
+    <div id="about-anchor" class="anchor"></div>
     <div class="sub-wrapper">
     <h2>OM OS</h2>
     <div class="about-container">
@@ -283,8 +283,8 @@ fetch(apiCall)
     </div>
     <div class="person">
     <div class="person-card">
-    <img src="./images/mikkel.jpg" alt="martin">
-    <h5>Mikkel Jensen</h5>
+    <img src="./images/mikkel.jpg" alt="mikkel">
+    <h5>Mikkel Faartoft</h5>
     <a href="tel:+4523677669">+45 23 67 76 69</a>
     <a href="mailto:mj@difento.dk">mj@difento.dk</a>
     </div>
@@ -296,12 +296,39 @@ fetch(apiCall)
 
 
     <article id="recommend" class="sub">
-    <div id="recommend-anchor">anchor</div>
+    <div id="recommend-anchor" class="anchor">anchor</div>
     </article>
 
     <article id="contact" class="sub">
-    <div id="contact-anchor">anchor</div>
+    <div id="contact-anchor" class="anchor"></div>
+      <div class="sub-wrapper">
+      <h2>Kontakt</h2>
 
+
+      <!-- contact form --->
+      <!------------------------------------CONTACT FORM--------------------->
+      <form role="form" method="post" action="contact-fomr-handler.php" class="form-horizontal">
+
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" required>
+
+	            	<input type="email" class="form-control" id="email" name="email" placeholder="Email Address" required>
+
+	                <textarea class="form-control" id="msg" name="msg" placeholder="Enter your message" rows="5" required></textarea>
+
+                    <input type="submit" value="Post" class="" name="post">
+
+                <input type="hidden" id="token" name="token">
+
+            </form>
+
+
+
+
+
+      <!------ end ------->
+
+
+      </div>
     </article>
     <footer class="sub">
 
@@ -374,3 +401,10 @@ fetch(apiCall)
 
 
 }, false);
+
+grecaptcha.ready(function() {
+  grecaptcha.execute('6LdwzfwUAAAAALCr3M_nRgn8-TN7_KYXWatiF7ML', {action: 'homepage'}).then(function(token) {
+     // console.log(token);
+     document.getElementById("token").value = token;
+  });
+});

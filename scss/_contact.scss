@@ -1,0 +1,11 @@
+   #contact {
+       .sub-wrapper {
+           h2 {color: transparent;
+            -webkit-text-stroke-width: $dark-blue;
+            -webkit-text-stroke-color: $dark-blue;
+            position: absolute;
+            right: -50px;
+
+        }
+       }
+   }
