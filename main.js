@@ -95,7 +95,7 @@ fetch(apiCall)
     let htmlTemplate = "";
     Math.round(data.main.temp);
     let temp = Math.round(`${data.main.temp}`);
-      htmlTemplate += `
+    htmlTemplate += `
         <div id="weather-container">
         <img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png">
           <h2>${data.name}, <span>${temp}</span> ºC</h2>
@@ -234,18 +234,9 @@ fetch(apiCall)
     </div>
     <h4 class="slider-company">BUTIK TINC</h4>
     </div>
-    <div class="swiper-wrapper">
+    <div id="slides" class="swiper-wrapper">
         <!-- Slides -->
-        <div class="swiper-slide">
-          <img src="./images/tinc.png">
-        </div>
-        <div class="swiper-slide">
-          <img src="./images/ry.png">
-        </div>
-        <div class="swiper-slide">
-        <img src="./images/beton.png">
-        </div>
-        ...
+
     </div>
     <!--
 
@@ -453,9 +444,10 @@ fetch(apiCall)
     // ==================== ÆNDRER BAGGRUNDEN ==============================
     let descriptions =  document.querySelectorAll(".link-desc");
     let procSlides = document.querySelectorAll(".proc");
+    
     if (current == 1 || current == 4 ) {
       document.querySelector("body").style.backgroundColor = "#F2F2F2"
-      for (let desc  of descriptions) {
+      for (let desc of descriptions) {
         desc.style.backgroundColor = "#172430"
       }
 
@@ -464,7 +456,7 @@ fetch(apiCall)
       }
     } else {
       document.querySelector("body").style.backgroundColor = "#172430"
-      for (let desc  of descriptions) {
+      for (let desc of descriptions) {
         desc.style.backgroundColor = "#F2F2F2"
       }
 
@@ -507,3 +499,41 @@ fetch(apiCall)
 
 
 }, false);
+
+
+// 
+
+let projects = [];
+
+
+function getProjects() {
+  fetch('https://difento.dk/wordpress/wp-json/wp/v2/posts?_embed')
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (json) {
+      console.log(json);
+      appendCases(json);
+      projects = json;
+      setTimeout(function () {
+      }, 200);
+    });
+}
+
+console.log(projects);
+getProjects();
+
+// append projects to the DOM
+function appendCases(projects) {
+  let htmlTemplate = "";
+
+  for (let project of projects) {
+    htmlTemplate += `
+      <div class="swiper-slide">
+        <img src="${project.acf.image}"></h2>
+      </div>
+    `;
+  }
+
+  document.querySelector('#slides').innerHTML = htmlTemplate;
+}
