@@ -1,32 +1,60 @@
-document.addEventListener('DOMContentLoaded', function(){
+document.addEventListener('DOMContentLoaded', function () {
   content();
 
-  const sections = document.querySelectorAll(".sub");
+  const sections = [...document.querySelectorAll('.sub')]
+  console.log(sections);
 
 
 
-//  =========================VANTA BIRDS FRA VANTAJS ===================================
+
+  //  =========================VANTA BIRDS FRA VANTAJS ===================================
   VANTA.BIRDS({
     el: "#birds",
     mouseControls: true,
-  touchControls: true,
-  minHeight: 200.00,
-  minWidth: 200.00,
-  scale: 1.00,
-  scaleMobile: 1.00,
-  backgroundColor: 0x172430,
-  color1: 0xff593e,
-  color2: 0xfe2806,
-  colorMode: "varianceGradient",
-  birdSize: 1.20,
-  wingSpan: 14.00,
-  speedLimit: 1.90,
-  separation: 50.00,
-  alignment: 59.00,
-  cohesion: 16.00,
-  quantity: 3.00
-  })
+    touchControls: true,
+    minHeight: 200.00,
+    minWidth: 200.00,
+    scale: 1.00,
+    scaleMobile: 1.00,
+    backgroundColor: 0x172430,
+    color1: 0xff593e,
+    color2: 0xfe2806,
+    colorMode: "varianceGradient",
+    birdSize: 1.20,
+    wingSpan: 14.00,
+    speedLimit: 1.90,
+    separation: 50.00,
+    alignment: 59.00,
+    cohesion: 16.00,
+    quantity: 3.00
+  });
 
+
+  // SWIPER SLIDER
+
+  let mySwiper = new Swiper('.swiper-container', {
+    // Optional parameters
+    direction: 'horizontal',
+    slidesPerView: 2,
+    spaceBetween: 200,
+    centeredSlides: true,
+    // If we need pagination
+    pagination: {
+      el: '.swiper-pagination',
+    },
+    /*
+    // Navigation arrows
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+
+    // And if we need scrollbar
+    scrollbar: {
+      el: '.swiper-scrollbar',
+    },
+    */
+  });
 
 /* weather api */
 const apiCall = 'https://api.openweathermap.org/data/2.5/weather?q=aarhus,dk&units=metric&appid=b892cb50e6b072e2bd37a1bc8049ee3a';
@@ -44,6 +72,9 @@ fetch(apiCall)
     appendWeather(data);
   });
 
+  fetch(apiCall)
+    .then(response => response.json())
+    .then(data => console.log(data));
 
   function appendWeather(data) {
     let htmlTemplate = "";
@@ -62,16 +93,19 @@ fetch(apiCall)
 
   window.addEventListener("scroll", () => {
 
+
+  window.addEventListener("scroll", () => {
+
     if (document.body.scrollTop > 90 || document.documentElement.scrollTop > 90) {
       document.querySelector(".tabbar").classList.add("pop")
 
-     }  else {
-        document.querySelector(".tabbar").classList.remove("pop")
+    } else {
+      document.querySelector(".tabbar").classList.remove("pop")
     }
   });
 
 
-  function content(){
+  function content() {
     document.querySelector('#content').innerHTML += /*html*/ `
     <nav class="tabbar">
       <div class="nav-container">
@@ -151,9 +185,8 @@ fetch(apiCall)
     <div class="gradient-left"></div>
     <div class="gradient-bot"></div>
     </div>
-
-    <div id="hero-bottom-content">
-      <div id="weather"></div><!---- container for the wather api --->
+<div id="hero-bottom-content">
+<div id="weather"></div><!---- container for the wather api --->
       <div id="hero-bottom-arrow"><a href="#cases"><i class="fas fa-angle-down"></i></a></div>
         <div id="hero-bottom-some">
           <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -161,56 +194,79 @@ fetch(apiCall)
           <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram-square"></i></a>
         </div>
     </div>
+</div>
+</article>
 
-
-
-
-
-
-    </article>
     <article id="cases" class="sub">
-    <div id="cases-anchor">anchor</div>
+
+    <div class="swiper-container">
+    <!-- Additional required wrapper -->
+    <div class="overlay">
+    <h4 class="slider-count">01</h4>
+    <h4 class="slider-job">website</h4>
+    <div class="slider-year">
+      <div class="line"></div>
+      <h4>2019</h4>
+    </div>
+    <h4 class="slider-company">BUTIK TINC</h4>
+    </div>
+    <div class="swiper-wrapper">
+        <!-- Slides -->
+        <div class="swiper-slide">
+          <img src="./images/tinc.png">
+        </div>
+        <div class="swiper-slide">
+          <img src="./images/ry.png">
+        </div>
+        <div class="swiper-slide">
+        <img src="./images/beton.png">
+        </div>
+        ...
+    </div>
+    <!--
+
+    <div class="swiper-pagination"></div>
+
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+
+    <div class="swiper-scrollbar"></div>
+    -->
+</div>
     </article>
-    <article id="services" class="sub">
+     <article id="services" class="sub">
     <div id="services-anchor">anchor</div>
     </article>
+
     <article id="about" class="sub">
     <div id="about-anchor"></div>
-    <div class="about-wrapper sub-wrapper">
-    <h2>OM DIFENTO<h2>
-
-    <div class="about-left">
-    <div class="about-text">
-    <h3>IDEEN BAG DIFENTO</H3>
-    <p>Lorem Ipsum er ganske enkelt fyldtekst fra print- og typografiindustrien. Lorem Ipsum har været standard fyldtekst siden 1500-tallet, hvor en ukendt trykker sammensatte en tilfældig spalte for at trykke en bog til sammenligning af forskellige skrifttyper. Lorem Ipsum har ikke alene overlevet fem århundreder, men har også vundet indpas i elektronisk typografi uden væsentlige ændringer. Sætningen blev gjordt kendt i 1960'erne med lanceringen af Letraset-ark, som indeholdt afsnit med Lorem Ipsum, og senere med layoutprogrammer som Aldus PageMaker, som også indeholdt en udgave af Lorem Ipsum.</p>
-    </div>
-    </div>
-    <div class="about-right"></div>
-    </div>
-
-
     </article>
+
+
     <article id="recommend" class="sub">
     <div id="recommend-anchor">anchor</div>
     </article>
+
     <article id="contact" class="sub">
     <div id="contact-anchor">anchor</div>
 
     </article>
-    <footer>
+    <footer class=>
 
     </footer>
   `;
 
-}
+  }
 
 
 
-// ====================== LAVER RINGENE RUNDT OM NAVIGATION ====================================
-      /* https://medium.com/p1xts-blog/scrollspy-with-just-javascript-3131c114abdc */
-    const menu_links = document.querySelectorAll(".nav-container a");
+  // ====================== LAVER RINGENE RUNDT OM NAVIGATION ====================================
 
-    const makeActive = (link) => menu_links[link].classList.add("active");
+
+  /* https://medium.com/p1xts-blog/scrollspy-with-just-javascript-3131c114abdc */
+  const menu_links = document.querySelectorAll(".nav-container a");
+
+  const makeActive = (link) => menu_links[link].classList.add("active");
   const removeActive = (link) => menu_links[link].classList.remove("active");
   const removeAllActive = () => [...Array(sections.length).keys()].forEach((link) => removeActive(link));
 
@@ -223,7 +279,7 @@ fetch(apiCall)
 
 
   window.addEventListener("scroll", () => {
-    const current = sections.length - [...sections].reverse().findIndex((section) => window.scrollY >= section.offsetTop - sectionMargin ) - 1
+    const current = sections.length - [...sections].reverse().findIndex((section) => window.scrollY >= section.offsetTop - sectionMargin) - 1
     console.log(current);
 
 
@@ -232,22 +288,25 @@ fetch(apiCall)
       currentActive = current;
       makeActive(current);
     }
+
+
+
   });
 
   /* changes color of the background when the page is scrolled */
   const colors = ['darkBlue', 'darkBlue', 'grey', 'darkBlue', 'grey']
 
-window.addEventListener('scroll', changeColorOnScroll);
+  function changeColorOnScroll() {
 
-function changeColorOnScroll () {
+    const scrollFromTop = window.pageYOffset
 
-  const scrollFromTop = window.pageYOffset
+    for (let i = 0; sections.length > i; i++) {
 
-  for (let i = 0; sections.length > i; i++) {
+      if (scrollFromTop <= sections[i].offsetTop) {
+        document.body.className = colors[i]
+        break
+      }
 
-    if (scrollFromTop <= sections[i].offsetTop) {
-      document.body.className = colors[i]
-      break
     }
 
   }
@@ -256,7 +315,7 @@ function changeColorOnScroll () {
 
 
   // ====================== GÅR OP I TOPPEN =============================================
-document.getElementById("nav-logo").addEventListener("click", function(){
+  document.getElementById("nav-logo").addEventListener("click", function () {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
   });
