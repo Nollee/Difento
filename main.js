@@ -233,12 +233,19 @@ document.addEventListener('DOMContentLoaded', function () {
     <div class="about-right">
     <div class="person-container">
     <div class="person">
-    <div class="person-card"></div>
+    <div class="person-card">
+    <img src="./images/martin.jpg" alt="martin">
+    <h5>Martin Eneberg</h5>
+    <a href="tel:+4527884665">+45 27 88 46 64</a>
+    <a href="mailto:me@difento.dk">me@difento.dk</a>
+    </div>
     </div>
     <div class="person">
     <div class="person-card">
-    <img src="./images/martin.jpg" alt="martin">
-    
+    <img src="./images/mikkel.jpg" alt="martin">
+    <h5>Mikkel Jensen</h5>
+    <a href="tel:+4523677669">+45 23 67 76 69</a>
+    <a href="mailto:mj@difento.dk">mj@difento.dk</a>
     </div>
     </div>
     </div>
