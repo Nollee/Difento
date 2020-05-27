@@ -332,19 +332,31 @@ fetch(apiCall)
     <div id="contact-anchor" class="anchor"></div>
       <div class="sub-wrapper">
       <h2>Kontakt</h2>
-
+      <h3>Lad os finde din løsning</h3>
+      <h3 class="h3-big-contact">Ta' kontakt</h3>
 
       <!-- contact form --->
       <!------------------------------------CONTACT FORM--------------------->
-      <form role="form" method="post" action="contact-fomr-handler.php" class="form-horizontal">
+      <form id="contact-form" role="form" method="post" action="#" class="form-horizontal">
 
-                    <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" required>
-
-	            	<input type="email" class="form-control" id="email" name="email" placeholder="Email Address" required>
-
+             <div id="contact-form-top-input">
+             <div>
+             <h4>Navn</h4>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" required>
+                </div>
+                <div>
+              <h4>Email</h4>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email Address" required>
+                </div>
+            </div>
+            <h4>Besked</h4>
 	                <textarea class="form-control" id="msg" name="msg" placeholder="Enter your message" rows="5" required></textarea>
 
-                    <input type="submit" value="Post" class="" name="post">
+
+
+
+                  <div class="btn-orange">
+                    <div><input type="submit" value="SEND"><i class="fas fa-paper-plane"></i></div></div>
 
                 <input type="hidden" id="token" name="token">
 

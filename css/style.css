@@ -519,6 +519,36 @@ a {
   -webkit-text-stroke-color: #172430;
   position: absolute;
   right: -50px; }
+#contact .sub-wrapper h3 {
+  color: #FF593E;
+  font-size: 2rem; }
+
+.h3-big-contact {
+  font-size: 5rem !important;
+  color: #172430 !important;
+  margin: 50px 0px; }
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 50%; }
+  #contact-form h4 {
+    color: #172430;
+    font-size: 2rem; }
+  #contact-form-top-input {
+    display: flex;
+    flex-direction: row; }
+    #contact-form-top-input input[type=text], #contact-form-top-input input[type=email] {
+      width: 40%;
+      margin-bottom: 10%; }
+    #contact-form-top-input div {
+      width: 100%; }
+  #contact-form input, #contact-form textarea {
+    border: none;
+    background-color: transparent;
+    font-size: 1.5rem; }
+  #contact-form input[type=submit] {
+    color: white; }
 
 /* mediaqueries */
 /* @include desktop-sm {width: 125px; top: 20px;}
