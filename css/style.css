@@ -80,7 +80,8 @@ h1, h2, h3, h4 {
     transform: rotate(90deg);
     margin-right: -2.45em;
     margin-top: 0.34em;
-    text-align: end; }
+    text-align: end;
+    color: #424E58; }
 
 .btn-orange div {
   background-color: #FF593E;
