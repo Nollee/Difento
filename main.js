@@ -109,6 +109,8 @@ document.addEventListener('DOMContentLoaded', function () {
       <p>KONTAKT</p>
       </div>
       </a>
+      <a href="#" id="vanish">
+      </a>
       </div>
       </nav>
 
@@ -206,6 +208,42 @@ document.addEventListener('DOMContentLoaded', function () {
     
     <article id="about" class="sub">
     <div id="about-anchor"></div>
+    <div class="about-wrapper">
+    <h2>OM OS</h2>
+    <div class="about-container">
+    <div class="about-left">
+    <div class="text-box">
+    <h3>Difento</h3>
+    <p>
+    Lorem Ipsum er ganske enkelt fyldtekst fra print- og typografiindustrien. Lorem Ipsum har været standard fyldtekst siden 1500-tallet, hvor en ukendt trykker sammensatte en tilfældig spalte for at trykke en bog til sammenligning af forskellige skrifttyper. Lorem Ipsum har ikke alene.
+    </p>
+    </div>
+    <div class="skills">
+    <h4>VORES KOMPETENCER</h4>
+    <div class="skills-container">
+    <p>Responsiv Design</p>
+    <p>Hjemmesider</p>
+    <p>Brugeroplevelse</p>
+    <p>Grafisk Design</p>
+    <p>WordPress</p>
+    <p>Skræddersyet løsninger</p>
+    </div>
+    </div>
+    </div>
+    <div class="about-right">
+    <div class="person-container">
+    <div class="person">
+    <div class="person-card"></div>
+    </div>
+    <div class="person">
+    <div class="person-card">
+    <img src="./images/martin.jpg" alt="martin">
+    
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
     </article>
 
 
@@ -217,7 +255,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <div id="contact-anchor">anchor</div>
 
     </article>
-    <footer class=>
+    <footer class="sub">
 
     </footer>
   `;
@@ -238,7 +276,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   console.log([...Array(sections.length).keys()]);
 
-  const sectionMargin = 50;
+  const sectionMargin = 350;
   let currentActive = 0;
 
   console.log(menu_links);
@@ -253,36 +291,31 @@ document.addEventListener('DOMContentLoaded', function () {
       removeAllActive();
       currentActive = current;
       makeActive(current);
+    };
+
+
+    // ==================== ÆNDRER BAGGRUNDEN ==============================
+    let descriptions =  document.querySelectorAll(".link-desc");
+
+    if (current == 1 || current == 4 ) {
+      document.querySelector("body").style.backgroundColor = "#F2F2F2"
+      for (let desc  of descriptions) {
+        desc.style.backgroundColor = "#172430"
+      }
+    } else {
+      document.querySelector("body").style.backgroundColor = "#172430"
+      for (let desc  of descriptions) {
+        desc.style.backgroundColor = "#F2F2F2"
+      }
+
     }
+
 
 
 
   });
 
-  /* =========================changes color of the background when the page is scrolled  ===========*/
-/* 
 
-  const colors = ['', 'darkBlue', 'grey', 'darkBlue', 'darkBlue', 'grey']
-
-
-  window.addEventListener('scroll', changeColorOnScroll);
-
-  function changeColorOnScroll() {
-
-    const scrollFromTop = window.pageYOffset
-
-    for (let i = 0; sections.length > i; i++) {
-
-      if (scrollFromTop <= sections[i].offsetTop) {
-        document.body.className = colors[i]
-        break
-      }
-
-    }
-
-  }
-
-} */
 
 
   // ====================== GÅR OP I TOPPEN =============================================

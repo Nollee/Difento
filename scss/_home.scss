@@ -18,7 +18,6 @@
 }
 
 .hero-head{
-    font-size: 4rem;
     color: white;
     width: 90%;
     margin: auto;
@@ -34,6 +33,7 @@
         margin-left: 10px;
     }
     h1{
+        font-size: 4rem;
         display: flex;
         align-items: flex-end;
         padding: 0;
@@ -88,7 +88,7 @@ z-index: 20;
 
 .sub, footer{
     width: 100%;
-    height: 150vh;
+    height: 120vh;
 }
 
 footer {
@@ -100,12 +100,7 @@ footer {
     display: flex;
 
 }
-/* SKAL SLETTES SENERE ER KUN TIL DEMO */
-article {
-    border: solid 5px $darkest-blue;
-    box-sizing: border-box;
 
-}
 /*************************************/
 
 .darkBlue {
