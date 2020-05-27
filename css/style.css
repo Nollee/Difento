@@ -464,4 +464,9 @@ footer {
   .about-container .about-right {
     width: 50%; }
 
+/* mediaqueries */
+/* @include desktop-sm {width: 125px; top: 20px;}
+    @include tablet {width: 100px;}
+    @include phone {display: block; width: 125px;}   */
+
 /*# sourceMappingURL=style.css.map */
