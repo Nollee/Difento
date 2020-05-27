@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function(){
   content();
-  
+
   const sections = document.querySelectorAll(".sub");
 
 
@@ -29,19 +29,39 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 /* weather api */
-const apiCall = 'https://api.openweathermap.org/data/2.5/weather?q=aarhus&appid=b892cb50e6b072e2bd37a1bc8049ee3a';
+const apiCall = 'https://api.openweathermap.org/data/2.5/weather?q=aarhus,dk&units=metric&appid=b892cb50e6b072e2bd37a1bc8049ee3a';
+
+/* fetch(apiCall)
+.then(response => response.json())
+.then(data => console.log(data)); */
 
 fetch(apiCall)
-.then(response => response.json())
-.then(data => console.log(data));
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(data) {
+    console.log(data);
+    appendWeather(data);
+  });
+
+
+  function appendWeather(data) {
+    let htmlTemplate = "";
+    Math.round(data.main.temp);
+    let temp = Math.round(`${data.main.temp}`);
+      htmlTemplate += `
+        <div id="weather-container">
+        <img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png">
+          <h2>${data.name}, <span>${temp}</span> ºC</h2>
+        </div>
+      `;
+    document.querySelector("#weather").innerHTML = htmlTemplate;
+  }
 
 
 
+  window.addEventListener("scroll", () => {
 
-
-
-  window.addEventListener("scroll", () => {    
-    
     if (document.body.scrollTop > 90 || document.documentElement.scrollTop > 90) {
       document.querySelector(".tabbar").classList.add("pop")
 
@@ -75,7 +95,7 @@ fetch(apiCall)
       <div id="contactdesc" class="link-desc">
       <p>ANBEFALINGER</p>
       </div>
-      <a id="contactlink" href="#contact-anchor"><i class="fas fa-paper-plane" ></i>
+      <a id="contactlink" href="#contact-anchor"><i class="fas fa-paper-plane"></i>
       <div id="contactdesc" class="link-desc">
       <p>KONTAKT</p>
       </div>
@@ -123,8 +143,8 @@ fetch(apiCall)
     </div>
       <p>Lorem Ipsum er ganske enkelt fyldtekst fra print- og typografiindustrien. Lorem Ipsum har været standard fyldtekst siden 1500-tallet, hvor en ukendt trykker sammensatte en tilfældig spalte for at trykke en bog til sammenligning af forskellige skrifttyper. Lorem Ipsum har ikke alene.</p>
       <div class="hero-btns">
-      <a class="btn-grey" href="#cases-anchor">cases <i class="fas fa-layer-group"></i></a>
-      <a class="btn-orange" href="#contact-anchor">kontakt <i class="fas fa-paper-plane" ></i></a>
+      <a class="btn-grey" href="#cases-anchor"><div>cases <i class="fas fa-layer-group"></i></div></a>
+      <a class="btn-orange" href="#contact-anchor"><div>kontakt <i class="fas fa-paper-plane" ></i></div></a>
       </div>
     </div>
     <div id="birds">
@@ -133,11 +153,14 @@ fetch(apiCall)
     </div>
 
     <div id="hero-bottom-content">
-
-
-
-
-     </div>
+      <div id="weather"></div><!---- container for the wather api --->
+      <div id="hero-bottom-arrow"><a href="#cases"><i class="fas fa-angle-down"></i></a></div>
+        <div id="hero-bottom-some">
+          <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+          <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram-square"></i></a>
+        </div>
+    </div>
 
 
 
@@ -192,12 +215,12 @@ fetch(apiCall)
   const removeAllActive = () => [...Array(sections.length).keys()].forEach((link) => removeActive(link));
 
   console.log([...Array(sections.length).keys()]);
-  
+
   const sectionMargin = 50;
   let currentActive = 0;
 
   console.log(menu_links);
-  
+
 
   window.addEventListener("scroll", () => {
     const current = sections.length - [...sections].reverse().findIndex((section) => window.scrollY >= section.offsetTop - sectionMargin ) - 1
@@ -212,7 +235,7 @@ fetch(apiCall)
   });
 
   /* changes color of the background when the page is scrolled */
-  const colors = ['darkblue', 'darkBlue', 'grey', 'darkBlue', 'grey']
+  const colors = ['darkBlue', 'darkBlue', 'grey', 'darkBlue', 'grey']
 
 window.addEventListener('scroll', changeColorOnScroll);
 
