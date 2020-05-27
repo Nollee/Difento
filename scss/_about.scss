@@ -5,11 +5,10 @@
     width: 90%;
     margin: 10vh auto;
     color: $grey;
-    h2{
-        color: transparent;
-        -webkit-text-stroke-width: 2px;
-        -webkit-text-stroke-color: $grey;
-    }
+}
+
+.dark{
+    color: $dark-blue;
 }
 
 .about-container{
