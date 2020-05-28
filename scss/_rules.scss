@@ -224,4 +224,7 @@ a{
 
   .grecaptcha-badge{
       z-index: 150 !important;
+      @include tablet{
+          margin-bottom: 15vh !important;
+      }
   }

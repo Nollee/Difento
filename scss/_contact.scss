@@ -58,11 +58,22 @@
        right: 100px; */
        font-size: 2.5rem;
        font-weight: bold;
+       display: flex;
+       align-items: center;
        a {color: $dark-blue; transition: ease .4s;
         &:hover {color: $main-orange;}
         }
         @include tablet {margin-top: 5%; font-size: 2rem;}
         @include phone {font-size: 1.5rem; margin-top: 10%;}
+        .available{
+            width: 1vw;
+            height: 1vw;
+            border-radius: 90px;
+            margin-left: 15px;
+            @include tablet{width: 2vw; height: 2vw;}
+            @include phone{width: 3vw; height: 3vw;}
+
+        }
    }
 
    .contact-btn-number {
