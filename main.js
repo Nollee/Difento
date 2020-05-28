@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   let procesIcons = ['fas fa-search', 'fas fa-paint-brush', 'far fa-comment-dots', 'fas fa-desktop', 'far fa-user-circle']
   let swiper2 = new Swiper('.swiper2', {
-    spaceBetween: 30,
+    spaceBetween: 200,
     effect: 'fade',
     pagination: {
       el: '.swiper-pagination2',
@@ -67,10 +67,6 @@ document.addEventListener('DOMContentLoaded', function () {
       renderBullet: function (index, className) {
         return '<span class="' + className + '"> <i class="' + (procesIcons[index]) + '"/>' + '</i></span>'; }
 
-    },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
     },
   });
 

@@ -26,9 +26,25 @@ html {
   width: -moz-calc(100vw - $nav-width);
   width: calc(100vw - $nav-width);
   position: relative; }
+  @media only screen and (max-width: 1050px) {
+    #content {
+      margin-left: 0;
+      width: 100%; } }
+
+.sub-wrapper {
+  height: 100vh;
+  width: 90%;
+  margin: 10vh auto;
+  color: #F2F2F2; }
+
+.dark {
+  color: #172430; }
 
 .anchor {
   margin-top: 100px; }
+  @media only screen and (max-width: 550px) {
+    .anchor {
+      margin-top: 50px; } }
 
 h1, h2, h3, h4 {
   font-family: bebas-neue-pro-expanded, sans-serif;
@@ -40,6 +56,9 @@ h2 {
   font-size: 12rem;
   color: transparent;
   -webkit-text-stroke-width: 2px; }
+  @media only screen and (max-width: 550px) {
+    h2 {
+      font-size: 30vw; } }
 
 .darkh2 {
   -webkit-text-stroke-color: #172430; }
@@ -130,9 +149,17 @@ a {
       margin-left: 10%; }
     .btn-orange div:hover, .btn-grey div:hover {
       transform: scale(1.1); }
-    @media only screen and (max-width: 750px) {
+    @media only screen and (max-width: 1050px) {
       .btn-orange div, .btn-grey div {
-        width: 20vw; } }
+        width: 14vw;
+        height: 8vw;
+        font-size: 2.5vw; } }
+    @media only screen and (max-width: 550px) {
+      .btn-orange div, .btn-grey div {
+        width: 30vw;
+        height: 15vw;
+        font-size: 6vw;
+        margin-top: 4vh; } }
 
 /* SCROLLBAR STYLING */
 /* width */
@@ -165,6 +192,9 @@ a {
   width: 50%;
   height: 100vh;
   position: relative; }
+  @media only screen and (max-width: 1050px) {
+    #birds {
+      display: none; } }
 
 #hero {
   position: relative; }
@@ -172,6 +202,10 @@ a {
 .hero-text {
   width: 50%;
   height: 100%; }
+  @media only screen and (max-width: 1050px) {
+    .hero-text {
+      width: 90%;
+      margin: auto; } }
   .hero-text p {
     width: 70%;
     margin: auto;
@@ -179,6 +213,11 @@ a {
     margin-top: 5vh;
     color: white;
     font-size: 1.3rem; }
+    @media only screen and (max-width: 550px) {
+      .hero-text p {
+        width: 90%;
+        margin: auto;
+        text-align: center; } }
 
 .hero-head {
   color: white;
@@ -188,6 +227,9 @@ a {
   display: flex;
   align-items: flex-end;
   margin-top: 30%; }
+  @media only screen and (max-width: 550px) {
+    .hero-head {
+      margin: auto; } }
   .hero-head h1 {
     font-size: 4rem;
     display: flex;
@@ -195,14 +237,30 @@ a {
     padding: 0;
     margin: 0;
     font-weight: 1000; }
+    @media only screen and (max-width: 550px) {
+      .hero-head h1 {
+        margin: 8vh auto; } }
     .hero-head h1 span {
       color: #FF593E;
       font-size: 5rem; }
+      @media only screen and (max-width: 550px) {
+        .hero-head h1 span {
+          display: none; } }
+    @media only screen and (max-width: 1050px) {
+      .hero-head h1 {
+        font-size: 10vw; } }
+    @media only screen and (max-width: 550px) {
+      .hero-head h1 {
+        font-size: 10vw; } }
 
 .hero-forside {
   display: flex;
   flex-direction: row;
-  width: 100%; }
+  width: 100%;
+  height: 100vh; }
+  @media only screen and (max-width: 550px) {
+    .hero-forside {
+      flex-direction: column; } }
 
 .hero-btns {
   margin-left: 10%;
@@ -213,6 +271,11 @@ a {
   flex-direction: row; }
   .hero-btns a {
     margin-right: 2%; }
+  @media only screen and (max-width: 550px) {
+    .hero-btns {
+      justify-content: space-around;
+      margin: auto;
+      margin-top: 10vh; } }
 
 #hero-bottom-content {
   position: absolute;
@@ -232,6 +295,9 @@ a {
     #hero-bottom-content i:hover {
       color: #FB7C67;
       transform: scale(1.05); }
+  @media only screen and (max-width: 550px) {
+    #hero-bottom-content {
+      display: none; } }
   #hero-bottom-content #weather-container {
     display: flex;
     flex-direction: row;
@@ -239,8 +305,12 @@ a {
     color: white; }
     #hero-bottom-content #weather-container span {
       color: #FB7C67; }
-  #hero-bottom-content #hero-bottom-some i {
-    margin: 0px 5px; }
+  #hero-bottom-content #hero-bottom-some {
+    width: 100%;
+    display: flex;
+    justify-content: center; }
+    #hero-bottom-content #hero-bottom-some i {
+      margin: 0px 5px; }
   #hero-bottom-content #hero-bottom-arrow i {
     font-size: 50px; }
 
@@ -276,6 +346,10 @@ a {
   display: flex; }
 
 /*************************************/
+/* mediaqueries */
+/* @include desktop-sm {width: 125px; top: 20px;}
+    @include tablet {width: 100px;}
+    @include phone {display: block; width: 125px;}   */
 .tabbar {
   position: fixed;
   width: 70px;
@@ -300,12 +374,6 @@ a {
       width: 40px; }
     .tabbar .nav-container img:hover {
       cursor: pointer; }
-    .tabbar .nav-container i {
-      font-size: 23px;
-      color: white;
-      -webkit-transition: 0.3s ease;
-      -o-transition: 0.3s ease;
-      transition: 0.3s ease; }
     .tabbar .nav-container a {
       display: flex;
       align-items: center;
@@ -322,6 +390,26 @@ a {
       -o-transition: 0.1s ease;
       transition: 0.1s ease;
       z-index: 99; }
+      .tabbar .nav-container a i {
+        font-size: 23px;
+        color: white;
+        -webkit-transition: 0.3s ease;
+        -o-transition: 0.3s ease;
+        transition: 0.3s ease; }
+        @media only screen and (max-width: 1050px) {
+          .tabbar .nav-container a i {
+            font-size: 35px; } }
+        @media only screen and (max-width: 550px) {
+          .tabbar .nav-container a i {
+            font-size: 25px; } }
+      @media only screen and (max-width: 1050px) {
+        .tabbar .nav-container a {
+          width: 65px;
+          height: 65px; } }
+      @media only screen and (max-width: 550px) {
+        .tabbar .nav-container a {
+          width: 45px;
+          height: 45px; } }
     .tabbar .nav-container a.active {
       border-radius: 90px;
       border: 3px solid #FF593E;
@@ -339,11 +427,26 @@ a {
         -o-transition: 0.3s ease;
         transition: 0.3s ease;
         z-index: 999; }
+        @media only screen and (max-width: 1050px) {
+          .tabbar .nav-container a:hover .link-desc {
+            display: none; } }
       .tabbar .nav-container a:hover i {
         color: #FF593E;
         -webkit-transition: 0.3s ease;
         -o-transition: 0.3s ease;
         transition: 0.3s ease; }
+  @media only screen and (max-width: 1050px) {
+    .tabbar {
+      width: 100%;
+      height: 7vh;
+      bottom: 0;
+      top: auto;
+      z-index: 999;
+      left: 0; }
+      .tabbar .nav-container {
+        flex-direction: row;
+        width: 90%;
+        margin: auto; } }
 
 .tabbar.pop {
   left: 0;
@@ -366,6 +469,9 @@ a {
     transition: 0.3s ease; }
     .tabbar-some i:hover {
       color: #FF593E; }
+  @media only screen and (max-width: 1050px) {
+    .tabbar-some {
+      display: none; } }
 
 .link-desc {
   text-align: center;
@@ -395,12 +501,19 @@ a {
   right: 0;
   z-index: 41;
   top: 5vh; }
+  @media only screen and (max-width: 550px) {
+    .top-nav {
+      justify-content: center;
+      position: relative; } }
   .top-nav .top-links {
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 60%;
     padding: 12px; }
+    @media only screen and (max-width: 1050px) {
+      .top-nav .top-links {
+        display: none; } }
     .top-nav .top-links a {
       display: flex;
       align-items: center;
@@ -431,10 +544,18 @@ a {
   width: 250px;
   height: 5vh;
   justify-content: space-around; }
+  @media only screen and (max-width: 550px) {
+    .logo {
+      justify-content: center;
+      width: 60%;
+      height: 10vh; } }
   .logo img {
     height: 90%; }
   .logo #butterfly {
     width: 25%; }
+    @media only screen and (max-width: 550px) {
+      .logo #butterfly {
+        margin-right: 20px; } }
   .logo #logo-text {
     width: 65%; }
 
@@ -445,15 +566,6 @@ a {
 /* @include desktop-sm {width: 125px; top: 20px;}
     @include tablet {width: 100px;}
     @include phone {display: block; width: 125px;}   */
-.sub-wrapper {
-  height: 100vh;
-  width: 90%;
-  margin: 10vh auto;
-  color: #F2F2F2; }
-
-.dark {
-  color: #172430; }
-
 .about-container {
   display: flex;
   justify-content: space-between;
@@ -468,6 +580,11 @@ a {
     align-items: flex-end;
     justify-content: space-around;
     height: 100%; }
+    @media only screen and (max-width: 1050px) {
+      .about-container .about-left {
+        width: 100%;
+        align-items: center;
+        height: 60%; } }
     .about-container .about-left p {
       font-size: 1.3rem; }
     .about-container .about-left .text-box {
@@ -486,8 +603,16 @@ a {
       .about-container .about-left .skills p {
         width: 40%;
         margin-top: 2vh; }
+        @media only screen and (max-width: 1050px) {
+          .about-container .about-left .skills p {
+            margin-top: 1vh; } }
   .about-container .about-right {
     width: 50%; }
+    @media only screen and (max-width: 1050px) {
+      .about-container .about-right {
+        width: 90%;
+        margin: auto;
+        height: 60%; } }
   .about-container .person-container {
     display: flex;
     justify-content: space-around;
@@ -498,6 +623,9 @@ a {
       display: flex;
       flex-direction: column;
       height: 80%; }
+      @media only screen and (max-width: 1050px) {
+        .about-container .person-container .person {
+          height: 100%; } }
       .about-container .person-container .person .person-card {
         height: 90%;
         display: flex;
@@ -519,6 +647,13 @@ a {
       justify-content: flex-start; }
     .about-container .person-container :nth-child(even) {
       justify-content: flex-end; }
+      @media only screen and (max-width: 1050px) {
+        .about-container .person-container :nth-child(even) {
+          justify-content: flex-start; } }
+  @media only screen and (max-width: 1050px) {
+    .about-container {
+      flex-direction: column-reverse;
+      height: 80%; } }
 
 /* mediaqueries */
 /* @include desktop-sm {width: 125px; top: 20px;}
@@ -537,7 +672,7 @@ a {
   @media only screen and (max-width: 1200px) {
     #contact .sub-wrapper .h3-contact {
       margin-top: 20%; } }
-  @media only screen and (max-width: 1050px) {
+  @media only screen and (max-width: 1199px) {
     #contact .sub-wrapper .h3-contact {
       margin-top: 30%; } }
 
@@ -562,7 +697,7 @@ a {
       margin-bottom: 10%; }
     #contact-form-top-input div {
       width: 100%; }
-    @media only screen and (max-width: 750px) {
+    @media only screen and (max-width: 1050px) {
       #contact-form-top-input {
         width: 100%; } }
   #contact-form input, #contact-form textarea {
@@ -574,7 +709,7 @@ a {
   #contact-form textarea {
     resize: none;
     width: 60%; }
-    @media only screen and (max-width: 750px) {
+    @media only screen and (max-width: 1050px) {
       #contact-form textarea {
         width: 100%; } }
 
@@ -597,7 +732,7 @@ a {
   flex-direction: row;
   justify-content: space-between;
   width: 100%; }
-  @media only screen and (max-width: 750px) {
+  @media only screen and (max-width: 1050px) {
     .contact-btn-number {
       flex-direction: column; } }
 
@@ -637,8 +772,15 @@ footer {
   display: flex;
   flex-direction: column;
   z-index: 12; }
+  @media only screen and (max-width: 1050px) {
+    .footer-wrapper {
+      width: 90%;
+      margin: auto; } }
   .footer-wrapper .footer-top {
     margin-top: 10vh; }
+    @media only screen and (max-width: 1050px) {
+      .footer-wrapper .footer-top {
+        margin-top: 8vh; } }
   .footer-wrapper .footer-topdesc {
     display: flex;
     justify-content: space-between;
@@ -647,6 +789,9 @@ footer {
       width: 60%;
       font-size: 1.5rem;
       color: #F2F2F2; }
+      @media only screen and (max-width: 1050px) {
+        .footer-wrapper .footer-topdesc p {
+          font-size: 3vw; } }
     .footer-wrapper .footer-topdesc .footer-icons {
       width: 30%;
       display: flex;
@@ -656,6 +801,9 @@ footer {
       .footer-wrapper .footer-topdesc .footer-icons a {
         font-size: 2.5vw;
         color: #F2F2F2; }
+        @media only screen and (max-width: 1050px) {
+          .footer-wrapper .footer-topdesc .footer-icons a {
+            font-size: 6vw; } }
         .footer-wrapper .footer-topdesc .footer-icons a:hover {
           color: #FF593E; }
 
@@ -678,6 +826,9 @@ footer {
   z-index: -1;
   overflow-y: hidden;
   overflow-x: hidden; }
+  @media only screen and (max-width: 1050px) {
+    .footer-img {
+      display: none; } }
 
 .footer-logo {
   width: 40%;
@@ -692,10 +843,17 @@ footer {
     color: #F2F2F2;
     font-size: 1.6vw;
     margin-bottom: 0.3vh; }
+    @media only screen and (max-width: 1050px) {
+      .footer-bot h4 {
+        font-size: 3.5vw;
+        margin-bottom: 0.6vh; } }
   .footer-bot a, .footer-bot p {
     color: #F2F2F2;
     font-size: 1.2vw;
     margin: 0.7vh 0; }
+    @media only screen and (max-width: 1050px) {
+      .footer-bot a, .footer-bot p {
+        font-size: 3vw; } }
   .footer-bot a:hover {
     color: #FF593E; }
   .footer-bot .footer-botleft, .footer-bot .footer-botmid, .footer-bot .footer-botright {
@@ -721,31 +879,54 @@ footer {
       width: 0.5vw;
       height: 0.5vw;
       margin-left: 0.5vw; }
+      @media only screen and (max-width: 1050px) {
+        .footer-bot .footer-phone .phone-active {
+          width: 1.2vw;
+          height: 1.2vw; } }
 
 .proc {
   -webkit-transition: 0.3s ease;
   -o-transition: 0.3s ease;
   transition: 0.3s ease !important;
   display: flex;
-  justify-content: space-around; }
+  justify-content: space-around;
+  align-items: center;
+  z-index: 1 !important; }
   .proc img {
-    width: 25%; }
+    width: 28%; }
+    @media only screen and (max-width: 550px) {
+      .proc img {
+        width: 25%; } }
   .proc .proces-text {
     width: 50%;
     display: flex;
     flex-direction: column; }
+    @media only screen and (max-width: 550px) {
+      .proc .proces-text {
+        width: 60%; } }
     .proc .proces-text h3 {
       font-size: 5vw;
       margin-bottom: 3vh; }
+      @media only screen and (max-width: 550px) {
+        .proc .proces-text h3 {
+          font-size: 10vw; } }
     .proc .proces-text p {
       font-size: 1.5vw; }
+      @media only screen and (max-width: 1050px) {
+        .proc .proces-text p {
+          font-size: 3vw; } }
+      @media only screen and (max-width: 550px) {
+        .proc .proces-text p {
+          font-size: 4vw; } }
 
 .swiper2 {
   height: 65vh;
   width: 70%;
   margin: auto; }
   .swiper2 .swiper-pagination2 {
-    text-align: center; }
+    text-align: center;
+    display: flex !important;
+    justify-content: space-between !important; }
     .swiper2 .swiper-pagination2 .swiper-pagination-bullet {
       margin: 0 25px !important;
       width: 70px;
@@ -754,5 +935,12 @@ footer {
       .swiper2 .swiper-pagination2 .swiper-pagination-bullet i {
         font-size: 40px;
         color: #172430; }
+      @media only screen and (max-width: 550px) {
+        .swiper2 .swiper-pagination2 .swiper-pagination-bullet {
+          margin: 0 8px !important;
+          width: 50px; } }
+  @media only screen and (max-width: 1050px) {
+    .swiper2 {
+      width: 100%; } }
 
 /*# sourceMappingURL=style.css.map */

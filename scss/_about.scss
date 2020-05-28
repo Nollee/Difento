@@ -1,16 +1,5 @@
 @import "_mediaqueries";
 
-.sub-wrapper{
-    height: 100vh;
-    width: 90%;
-    margin: 10vh auto;
-    color: $grey;
-}
-
-.dark{
-    color: $dark-blue;
-}
-
 .about-container{
     display: flex;
     justify-content: space-between;
@@ -25,6 +14,11 @@
         align-items: flex-end;
         justify-content: space-around;
         height: 100%;
+        @include tablet{
+            width: 100%;
+            align-items: center;
+            height: 60%;
+            }
         p{
             font-size: 1.3rem;
         }
@@ -51,11 +45,20 @@
             p{
                 width: 40%;
                 margin-top: 2vh;
+                @include tablet{
+                    margin-top: 1vh;
+                }
+
             }
         }
     }
     .about-right{
         width: 50%;
+        @include tablet{
+            width: 90%;
+            margin: auto;
+            height: 60%;
+            }
     }
     .person-container{
         display: flex;
@@ -67,6 +70,9 @@
             display: flex;
             flex-direction: column;
             height: 80%;
+            @include tablet{
+                height: 100%;
+            }
             .person-card{
                 height: 90%;
                 img{
@@ -94,6 +100,14 @@
         }
         :nth-child(even){
             justify-content: flex-end;
+            @include tablet{
+                justify-content: flex-start;
+            }
         }
     }
+
+    @include tablet{
+        flex-direction: column-reverse;
+        height: 80%;
+        }
 }
