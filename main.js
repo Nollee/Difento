@@ -109,9 +109,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let i = 0;
     let caseInfo = projects[i];
-    let overlayInfo = "";
+    let overlayInfo = `
+      <h4 class="slider-count .animation-fadein">${caseInfo.acf.count}</h4>
+      <h4 class="slider-job">${caseInfo.acf.description}</h4>
+      <div class="slider-year">
+        <div class="line"></div>
+        <h4>${caseInfo.acf.year}</h4>
+      </div>
+      <h4 class="slider-company">${caseInfo.acf.title}</h4>
+      `;
 
-
+    document.querySelector('#caseinfo').innerHTML = overlayInfo;
     document.querySelector('#slides').innerHTML = htmlTemplate;
 
 
@@ -122,19 +130,21 @@ document.addEventListener('DOMContentLoaded', function () {
         if (pro.classList.contains('swiper-slide-active') === true) {
           let data = await fetch(`https://difento.dk/wordpress/wp-json/wp/v2/posts/${pro.id}`).then(res => res.json());
           overlayInfo += `
-          <h4 class="slider-count">${data.acf.count}</h4>
-          <h4 class="slider-job">${data.acf.description}</h4>
-          <div class="slider-year">
+          <h4 class="slider-count animation-fadein">${data.acf.count}</h4>
+          <h4 class="slider-job animation-fadein-delay">${data.acf.description}</h4>
+          <div class="slider-year animation-opacity">
           <div class="line"></div>
           <h4>${data.acf.year}</h4>
           </div>
-          <h4 class="slider-company">${data.acf.title}</h4>
+          <h4 class="slider-company animation-opacity-delay">${data.acf.title}</h4>
           `;
           document.querySelector('#caseinfo').innerHTML = overlayInfo;
         }
       }
     });
   }
+
+
 
 
 
@@ -598,8 +608,8 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
     }
-    
-    if(current == 4){
+
+    if (current == 4) {
       document.querySelector(".grecaptcha-badge").classList.remove("delete")
     }
 
