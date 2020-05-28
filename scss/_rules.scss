@@ -26,7 +26,9 @@ body{
     /* cursor: url('../images/point.png'), pointer; */
 }
 
-a, button, i, input[type=submit], nav p, nav img, ::-webkit-scrollbar, ::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb, .btn-grey, .btn-orange, .btn-orange div, .btn-grey div, ::-webkit-scrollbar-thumb:hover  {cursor: url('../images/point.png'), pointer !important;}
+a, button, i, input[type=submit], nav p, nav img, ::-webkit-scrollbar, ::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb, .btn-grey, .btn-orange, .btn-orange div, .btn-grey div, ::-webkit-scrollbar-thumb:hover, #proces span  {cursor: url('../images/point.png'), pointer !important;}
+
+input[type=text], input[type=text], input[type=email], textarea {cursor: url('../images/text.png'), text !important;}
 
 html{
     overflow-y: auto;
