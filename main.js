@@ -434,7 +434,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <h2>Kontakt</h2>
       <h3 class="h3-contact" data-aos="fade-in" data-aos-delay="100">skal vi finde din løsning?</h3>
       <h3 class="h3-big-contact" data-aos="fade-up"
-      data-aos-anchor-placement="bottom-bottom" data-aos-delay="800">Ta' kontakt</h3>
+      data-aos-anchor-placement="bottom-bottom" data-aos-delay="400">Ta' kontakt</h3>
 
       <!-- contact form --->
       <!------------------------------------CONTACT FORM--------------------->
@@ -464,7 +464,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             </form>
 
-            <div class="call-us" data-aos="fade-in" data-aos-delay="1000">
+            <div class="call-us" data-aos="fade-in" data-aos-delay="600">
               <a href="tel:+4523677669">Ring til os på +45 23 67 76 69</a>
             </div>
           </div>

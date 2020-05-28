@@ -22,7 +22,11 @@ body{
     -o-transition: 0.3s ease;
     transition: 0.3s ease;
     overflow-x: hidden;
+    cursor: url('../images/arrow.png'), auto;
+    /* cursor: url('../images/point.png'), pointer; */
 }
+
+a, button {cursor: url('../images/point.png'), pointer;}
 
 html{
     overflow-y: auto;
