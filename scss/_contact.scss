@@ -1,3 +1,4 @@
+@import "_mediaqueries";
    #contact {
        .sub-wrapper {
            h2 {color: transparent;
@@ -6,7 +7,10 @@
             position: absolute;
             right: -50px;
         }
-        .h3-contact {color: $main-orange; font-size: 2rem; margin-top: 10%;}
+        .h3-contact {color: $main-orange; font-size: 2rem; margin-top: 10%;
+        @include desktop-lg {margin-top: 20%;}
+        @include desktop-sm {margin-top: 30%;}
+    }
        }
    }
 
@@ -24,10 +28,13 @@
            display: flex; flex-direction: row;
            input[type=text], input[type=email] {width: 80%; margin-bottom: 10%;}
            div {width: 100%;}
+           @include tablet {width: 100%;}
        }
        input, textarea {border: none; background-color: transparent; font-size: 1.5rem;}
        input[type=submit] {color: white}
-       textarea {resize: none; width: 60%;}
+       textarea {resize: none; width: 60%;
+        @include tablet {width: 100%;}
+    }
    }
 
    #contact-form, #contact h3 {
@@ -48,6 +55,7 @@
    .contact-btn-number {
        display: flex; flex-direction: row; justify-content: space-between;
        width: 100%;
+       @include tablet {flex-direction: column;}
    }
 
    #alert-success {

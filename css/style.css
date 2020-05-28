@@ -1,3 +1,7 @@
+/* mediaqueries */
+/* @include desktop-sm {width: 125px; top: 20px;}
+    @include tablet {width: 100px;}
+    @include phone {display: block; width: 125px;}   */
 * {
   margin: 0;
   padding: 0;
@@ -126,6 +130,9 @@ a {
       margin-left: 10%; }
     .btn-orange div:hover, .btn-grey div:hover {
       transform: scale(1.1); }
+    @media only screen and (max-width: 750px) {
+      .btn-orange div, .btn-grey div {
+        width: 20vw; } }
 
 /* SCROLLBAR STYLING */
 /* width */
@@ -505,7 +512,7 @@ a {
         .about-container .person-container .person .person-card h5 {
           font-size: 3vw;
           color: #FF593E; }
-          @media only screen and (min-width: 1200px) {
+          @media only screen and (max-width: 1200px) {
             .about-container .person-container .person .person-card h5 {
               font-size: 45px; } }
     .about-container .person-container :nth-child(odd) {
@@ -513,6 +520,10 @@ a {
     .about-container .person-container :nth-child(even) {
       justify-content: flex-end; }
 
+/* mediaqueries */
+/* @include desktop-sm {width: 125px; top: 20px;}
+    @include tablet {width: 100px;}
+    @include phone {display: block; width: 125px;}   */
 #contact .sub-wrapper h2 {
   color: transparent;
   -webkit-text-stroke-width: #172430;
@@ -523,6 +534,12 @@ a {
   color: #FF593E;
   font-size: 2rem;
   margin-top: 10%; }
+  @media only screen and (max-width: 1200px) {
+    #contact .sub-wrapper .h3-contact {
+      margin-top: 20%; } }
+  @media only screen and (max-width: 1050px) {
+    #contact .sub-wrapper .h3-contact {
+      margin-top: 30%; } }
 
 .h3-big-contact {
   font-size: 5rem !important;
@@ -545,6 +562,9 @@ a {
       margin-bottom: 10%; }
     #contact-form-top-input div {
       width: 100%; }
+    @media only screen and (max-width: 750px) {
+      #contact-form-top-input {
+        width: 100%; } }
   #contact-form input, #contact-form textarea {
     border: none;
     background-color: transparent;
@@ -554,6 +574,9 @@ a {
   #contact-form textarea {
     resize: none;
     width: 60%; }
+    @media only screen and (max-width: 750px) {
+      #contact-form textarea {
+        width: 100%; } }
 
 #contact-form, #contact h3 {
   margin-left: 10%; }
@@ -574,6 +597,9 @@ a {
   flex-direction: row;
   justify-content: space-between;
   width: 100%; }
+  @media only screen and (max-width: 750px) {
+    .contact-btn-number {
+      flex-direction: column; } }
 
 #alert-success {
   position: fixed;
