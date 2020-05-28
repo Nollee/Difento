@@ -130,7 +130,7 @@ fetch(apiCall)
       <p>CASES</p>
       </div>
       </a>
-      <a id="servicelink" href="#services-anchor"><i class="fas fa-hourglass-half"></i>
+      <a id="servicelink" href="#proces-anchor"><i class="fas fa-hourglass-half"></i>
       <div id="procesdesc" class="link-desc">
       <p>PROCES</p>
       </div>
@@ -173,7 +173,7 @@ fetch(apiCall)
     <i class="fas fa-layer-group"></i>
     <p>CASES</p>
     </a>
-    <a href="#services-anchor">
+    <a href="#proces-anchor">
     <i class="fas fa-hourglass-half"></i>
     <p>PROCES</p>
     </a>
@@ -251,8 +251,8 @@ fetch(apiCall)
     </article>
 
 
-     <article id="services" class="sub">
-    <div id="services-anchor" class="anchor"></div>
+     <article id="proces" class="sub">
+    <div id="proces-anchor" class="anchor"></div>
     <div class="sub-wrapper dark">
     <h2 class="darkh2">Proces</h2>
 
@@ -526,7 +526,13 @@ fetch(apiCall)
         slide.style.backgroundColor = "#F2F2F2"
       }
 
-    } else {
+    }
+    
+    if(current == 4){
+      document.querySelector(".grecaptcha-badge").classList.remove("delete")
+    }
+
+    else {
       document.querySelector("body").style.backgroundColor = "#172430"
       for (let desc of descriptions) {
         desc.style.backgroundColor = "#F2F2F2"
@@ -535,6 +541,7 @@ fetch(apiCall)
       for (let slide  of procSlides) {
         slide.style.backgroundColor = "#172430"
       }
+      document.querySelector(".grecaptcha-badge").classList.add("delete")
 
     }
 

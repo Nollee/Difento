@@ -1,5 +1,10 @@
 @import "_mediaqueries";
 
+#about{
+    @include phone{
+        height: auto;
+    }
+}
 .about-container{
     display: flex;
     justify-content: space-between;
@@ -19,34 +24,64 @@
             align-items: center;
             height: 60%;
             }
+            @include phone{
+                height: auto;
+            }
         p{
             font-size: 1.3rem;
         }
         .text-box{
             width: 80%;
+            @include phone{
+                margin: auto;
+            }
+
 
             h3{
                 font-size: 2.5rem;
+                @include phone{
+                    margin-top: 4vh;
+                    text-align: center;
+                    font-size: 14vw;
+                    margin-bottom: 4vh;
+                }
             }
         }
         .skills{
             width: 80%;
+            @include phone{
+                width: 100%;
+            }
 
             .skills-container{
                 display: flex;
                 flex-direction: row;
                 flex-wrap: wrap;
                 justify-content: space-between;
+                @include phone{
+                    flex-direction: column;
+                }
 
             }
             h4{
                 font-size: 2.2rem;
+                @include phone{
+                    margin-top: 4vh;
+                    text-align: center;
+                    font-size: 14vw;
+                }
             }
             p{
                 width: 40%;
                 margin-top: 2vh;
                 @include tablet{
                     margin-top: 1vh;
+                }
+                @include phone{
+                    font-size: 8vw;
+                    margin-top: 5vh;
+                    text-align: center;
+                    width: 100%;
                 }
 
             }
@@ -59,17 +94,28 @@
             margin: auto;
             height: 60%;
             }
+            @include phone{
+                height: auto;
+            }
     }
     .person-container{
         display: flex;
         justify-content: space-around;
         align-items: center;
         height: 100%;
+        @include phone{
+            flex-direction: column;
+        }
         .person{
             width: 40%;
             display: flex;
             flex-direction: column;
             height: 80%;
+            @include phone{
+                width: 70%;
+                margin: auto;
+                margin-top: 5vh;
+            }
             @include tablet{
                 height: 100%;
             }
@@ -91,6 +137,10 @@
                     color: $main-orange;
                     @include desktop-lg {
                         font-size: 45px;
+                    }
+                    @include phone{
+                        font-size: 8vw;
+                        text-align: end;
                     }
                 }
             }

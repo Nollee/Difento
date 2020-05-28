@@ -6,6 +6,7 @@
     justify-content: space-around;
     align-items: center;
     z-index: 1 !important;
+    margin: auto !important;
     img{
         width: 28%;
         @include phone{
@@ -49,13 +50,17 @@
     margin: auto;
     .swiper-pagination2{
         text-align: center;
-        display: flex !important;
-        justify-content: space-between !important;
+
+        @include phone{
+            display: flex !important;
+            justify-content: space-between !important;
+        }
         .swiper-pagination-bullet{
             margin: 0 25px !important;
             width: 70px;
             height: 40px;
             background-color: transparent;
+            outline: none;
             i{
                 font-size: 40px;
                 color: $dark-blue;
