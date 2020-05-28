@@ -45,18 +45,18 @@ document.addEventListener('DOMContentLoaded', function () {
     pagination: {
       el: '.swiper-pagination1',
     },
-    /*
+
     // Navigation arrows
     navigation: {
-    nextEl: '.swiper-button-next',
+      nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
 
     // And if we need scrollbar
     scrollbar: {
-    el: '.swiper-scrollbar',
+      el: '.swiper-scrollbar',
     },
-    */
+
   });
 
   let projects = [];
@@ -102,7 +102,7 @@ document.addEventListener('DOMContentLoaded', function () {
     for (let project of projects) {
       htmlTemplate += `
       <div  class="swiper-slide" id="${project.id}">
-        <img  src="${project.acf.image}"></h2>
+        <img src="${project.acf.image}"></h2>
       </div>
     `;
     }
@@ -317,17 +317,15 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
     <div id="slides" class="swiper-wrapper">
         <!-- Slides -->
-
     </div>
+    <div class="swiper-pagination1 slider-progress" ></div>
+
+    
     <!--
-
-    <div class="swiper-pagination1"></div>
-
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
-
-    <div class="swiper-scrollbar"></div>
     -->
+   
 </div>
     </article>
 
@@ -623,10 +621,10 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     // fjerner og viser recaptcha
-    if (current == 4){
+    if (current == 4) {
       document.querySelector(".grecaptcha-badge").classList.remove("delete")
     }
-    else{
+    else {
       document.querySelector(".grecaptcha-badge").classList.add("delete")
 
     }
@@ -636,7 +634,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   });
 
-  function removeG(){
+  function removeG() {
     document.querySelector(".grecaptcha-badge").classList.style.display = "none";
   }
 
