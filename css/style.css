@@ -199,6 +199,9 @@ a {
 .delete {
   display: none !important; }
 
+.grecaptcha-badge {
+  z-index: 150 !important; }
+
 #birds {
   width: 50%;
   height: 100vh;

@@ -599,10 +599,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }
 
-    if(current == 4){
-      document.querySelector(".grecaptcha-badge").classList.remove("delete")
-    }
-
     else {
       document.querySelector("body").style.backgroundColor = "#172430"
       for (let desc of descriptions) {
@@ -612,6 +608,15 @@ document.addEventListener('DOMContentLoaded', function () {
       for (let slide of procSlides) {
         slide.style.backgroundColor = "#172430"
       }
+      document.querySelector(".grecaptcha-badge").classList.remove("delete")
+
+    }
+
+    // fjerner og viser recaptcha
+    if (current == 4){
+      document.querySelector(".grecaptcha-badge").classList.remove("delete")
+    }
+    else{
       document.querySelector(".grecaptcha-badge").classList.add("delete")
 
     }
@@ -620,6 +625,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   });
+
+  function removeG(){
+    document.querySelector(".grecaptcha-badge").classList.style.display = "none";
+  }
 
 
 
@@ -666,3 +675,5 @@ function closeSuccessDiv() {
 
 // close the div in 7 secs
 window.setTimeout(closeSuccessDiv, 7000);
+
+removeG();
