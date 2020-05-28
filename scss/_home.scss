@@ -3,7 +3,8 @@
     height: 100vh;
     position: relative;
     @include tablet{
-        display: none;
+        /* display: none; */
+        width: 100%;
     }
 }
 
@@ -13,8 +14,10 @@
     width: 50%;
     height: 100%;
     @include tablet{
-        width: 90%;
+        width: 100%;
         margin: auto;
+        background-color: transparent;
+        position: absolute; z-index: 99999999;
     }
     p{
         width: 70%;
@@ -41,6 +44,7 @@
     margin-top: 30%;
     @include phone{
         margin: auto;
+        margin-top: 32%;
     }
     h1{
         font-size: 4rem;
@@ -131,6 +135,7 @@
     left: 0;
     top: 0;
     z-index: 20;
+    @include tablet {display: none;}
 }
 
 .gradient-bot{
