@@ -335,8 +335,9 @@ fetch(apiCall)
     <div id="contact-anchor" class="anchor"></div>
       <div class="sub-wrapper">
       <h2>Kontakt</h2>
-      <h3>Lad os finde din løsning</h3>
-      <h3 class="h3-big-contact">Ta' kontakt</h3>
+      <h3 class="h3-contact" data-aos="fade-in" data-aos-delay="100">skal vi finde din løsning?</h3>
+      <h3 class="h3-big-contact" data-aos="fade-up"
+      data-aos-anchor-placement="bottom-bottom" data-aos-delay="800">Ta' kontakt</h3>
 
       <!-- contact form --->
       <!------------------------------------CONTACT FORM--------------------->
@@ -345,29 +346,31 @@ fetch(apiCall)
              <div id="contact-form-top-input">
              <div>
              <h4>Navn</h4>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Full Name" required>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Hvad er dit navn?" required>
                 </div>
                 <div>
               <h4>Email</h4>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Email Address" required>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Hvilken mail skal vi svare på?" required>
                 </div>
             </div>
+            <div>
             <h4>Besked</h4>
-	                <textarea class="form-control" id="msg" name="msg" placeholder="Enter your message" rows="5" required></textarea>
+	                <textarea class="form-control" id="msg" name="msg" placeholder="Fortæl os hvad vi kan hjælpe med" rows="5" required></textarea></div>
 
 
 
-
+          <div class="contact-btn-number">
                   <div class="btn-orange">
-                    <div><input type="submit" value="SEND"><i class="fas fa-paper-plane"></i></div></div>
+                    <div><input type="submit" value="SEND" name="post"><i class="fas fa-paper-plane"></i></div></div>
 
                 <input type="hidden" id="token" name="token">
 
             </form>
 
-
-
-
+            <div class="call-us" data-aos="fade-in" data-aos-delay="1000">
+              <a href="tel:+4523677669">Ring til os på +45 23 67 76 69</a>
+            </div>
+          </div>
 
       <!------ end ------->
 
@@ -586,3 +589,14 @@ function appendCases(projects) {
 
   document.querySelector('#slides').innerHTML = htmlTemplate;
 }
+
+
+
+
+/* close success message div */
+function closeSuccessDiv(){
+  document.getElementById("alert-success").classList.add("hide");
+  }
+
+  // close the div in 7 secs
+  window.setTimeout( closeSuccessDiv, 7000 );
