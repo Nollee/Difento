@@ -148,6 +148,7 @@ z-index: 20;
 .sub{
     width: 100%;
     height: 120vh;
+    @include desktop-lg {min-height: 120vh}
 }
 
 
