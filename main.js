@@ -13,15 +13,15 @@ document.addEventListener('DOMContentLoaded', function () {
     el: "#birds",
     mouseControls: true,
     touchControls: true,
-    minHeight: 800.00,
-    minWidth: 800.00,
+    minHeight: 100.00,
+    minWidth: 100.00,
     scale: 1.00,
     scaleMobile: 1.00,
     backgroundColor: 0x172430,
     color1: 0xff593e,
     color2: 0xfe2806,
     colorMode: "varianceGradient",
-    birdSize: 1.20,
+    birdSize: 3.00,
     wingSpan: 14.00,
     speedLimit: 1.90,
     separation: 50.00,
@@ -444,7 +444,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <h2>Kontakt</h2>
       <h3 class="h3-contact" data-aos="fade-in" data-aos-delay="100">skal vi finde din løsning?</h3>
       <h3 class="h3-big-contact" data-aos="fade-up"
-      data-aos-anchor-placement="bottom-bottom" data-aos-delay="800">Ta' kontakt</h3>
+      data-aos-anchor-placement="bottom-bottom" data-aos-delay="400">Ta' kontakt</h3>
 
       <!-- contact form --->
       <!------------------------------------CONTACT FORM--------------------->
@@ -474,7 +474,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             </form>
 
-            <div class="call-us" data-aos="fade-in" data-aos-delay="1000">
+            <div class="call-us" data-aos="fade-in" data-aos-delay="600">
               <a href="tel:+4523677669">Ring til os på +45 23 67 76 69</a>
             </div>
           </div>
@@ -609,10 +609,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     }
 
-    if (current == 4) {
-      document.querySelector(".grecaptcha-badge").classList.remove("delete")
-    }
-
     else {
       document.querySelector("body").style.backgroundColor = "#172430"
       for (let desc of descriptions) {
@@ -622,6 +618,15 @@ document.addEventListener('DOMContentLoaded', function () {
       for (let slide of procSlides) {
         slide.style.backgroundColor = "#172430"
       }
+      document.querySelector(".grecaptcha-badge").classList.remove("delete")
+
+    }
+
+    // fjerner og viser recaptcha
+    if (current == 4){
+      document.querySelector(".grecaptcha-badge").classList.remove("delete")
+    }
+    else{
       document.querySelector(".grecaptcha-badge").classList.add("delete")
 
     }
@@ -630,6 +635,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   });
+
+  function removeG(){
+    document.querySelector(".grecaptcha-badge").classList.style.display = "none";
+  }
 
 
 
@@ -676,3 +685,5 @@ function closeSuccessDiv() {
 
 // close the div in 7 secs
 window.setTimeout(closeSuccessDiv, 7000);
+
+removeG();
