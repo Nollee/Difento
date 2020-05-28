@@ -1,5 +1,7 @@
 
 // =============================== TABBAR TIL VENSTRE =========================================
+@import "_mediaqueries";
+
 
 .tabbar{
     position: fixed;
@@ -25,16 +27,6 @@
     img:hover{
         cursor: pointer;
     }
-    i{
-        font-size: 23px;
-        color: white;
-        -webkit-transition: 0.3s ease;
-        -o-transition: 0.3s ease;
-        transition: 0.3s ease;
-
-
-    }
-
     a{
         display: flex;
         align-items: center;
@@ -51,6 +43,28 @@
         -o-transition: 0.1s ease;
         transition: 0.1s ease;
         z-index: 99;
+        i{
+            font-size: 23px;
+            color: white;
+            -webkit-transition: 0.3s ease;
+            -o-transition: 0.3s ease;
+            transition: 0.3s ease;
+    
+            @include tablet{
+                font-size: 35px;
+            }
+            @include phone{
+                font-size: 25px;
+            }
+        }
+        @include tablet{
+            width: 65px;
+            height: 65px;
+        }
+        @include phone{
+            width: 45px;
+            height: 45px;
+        }
 
     }
 
@@ -74,6 +88,9 @@
             -o-transition: 0.3s ease;
             transition: 0.3s ease;
             z-index: 999;
+            @include tablet{
+            display: none;
+            }
         }
         i{
             color: $main-orange;
@@ -84,6 +101,20 @@
     }
 }
 
+    @include tablet{
+            width: 100%;
+            height: 7vh;
+            bottom: 0;
+            top: auto;
+            z-index: 999;
+            left: 0;
+            .nav-container{
+                flex-direction: row;
+                width: 90%;
+                margin: auto;
+            }
+    }
+
 }
 
 .tabbar.pop{
@@ -91,6 +122,7 @@
     -webkit-transition: 0.4s ease;
     -o-transition: 0.4s ease;
     transition: 0.4s ease;
+    
 }
 
 .tabbar-some {
@@ -104,6 +136,10 @@
         -o-transition: 0.3s ease;
         transition: 0.3s ease;
         &:hover {color: $main-orange;}
+    }
+
+    @include tablet{
+        display: none;
     }
 }
 
@@ -123,7 +159,6 @@
     -o-transition: 0.3s ease;
     transition: 0.3s ease;
     z-index: 99 !important;
-
     }
 
 
@@ -146,12 +181,19 @@
     right: 0;
     z-index: 41;
     top: 5vh;
+    @include phone{
+        justify-content: center;
+        position: relative;
+    }
     .top-links{
         display: flex;
         align-items: center;
         justify-content: space-around;
         width: 60%;
         padding: 12px;
+        @include tablet{
+            display: none;
+        }
         a{
             display: flex;
             align-items: center;
@@ -187,11 +229,19 @@
     width: 250px;
     height: 5vh;
     justify-content: space-around;
+    @include phone{
+        justify-content: center;
+        width: 60%;
+        height: 10vh;
+    }
     img{
         height: 90%;
     }
     #butterfly{
         width: 25%;
+        @include phone{
+            margin-right: 20px;
+        }
     }
     #logo-text{
         width: 65%;

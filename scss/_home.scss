@@ -2,6 +2,9 @@
     width: 50%;
     height: 100vh;
     position: relative;
+    @include tablet{
+        display: none;
+    }
 }
 
 #hero {position: relative;}
@@ -9,6 +12,10 @@
 .hero-text{
     width: 50%;
     height: 100%;
+    @include tablet{
+        width: 90%;
+        margin: auto;
+    }
     p{
         width: 70%;
         margin: auto;
@@ -16,6 +23,11 @@
         margin-top: 5vh;
         color: white;
         font-size: 1.3rem;
+        @include phone{
+            width: 90%;
+            margin: auto;
+            text-align: center;
+        }
     }
 }
 
@@ -27,6 +39,9 @@
     display: flex;
     align-items: flex-end;
     margin-top: 30%;
+    @include phone{
+        margin: auto;
+    }
     h1{
         font-size: 4rem;
         display: flex;
@@ -34,7 +49,20 @@
         padding: 0;
         margin: 0;
         font-weight: 1000;
-        span {color: $main-orange; font-size: 5rem;}
+        @include phone{
+           margin: 8vh auto;
+        }
+        span {color: $main-orange; font-size: 5rem;
+            @include phone{
+                display: none;
+            }
+        }
+        @include tablet{
+            font-size: 10vw;
+        }
+        @include phone{
+            font-size: 10vw;
+        }
     }
 }
 
@@ -42,6 +70,10 @@
     display: flex;
     flex-direction: row;
     width: 100%;
+    height: 100vh;
+    @include phone{
+        flex-direction: column;
+    }
 }
 
  .hero-btns {
@@ -51,6 +83,11 @@
     height: auto;
     a {margin-right: 2%;}
     display: flex; flex-direction: row;
+    @include phone{
+        justify-content: space-around;
+        margin: auto;
+        margin-top: 10vh;
+    }
 }
 
 #hero-bottom-content {
@@ -61,6 +98,9 @@
     z-index: 999999999999;
     i {color: white; font-size: 35px; transition: .4s ease;
     &:hover {color: $light-orange; transform: scale(1.05);}}
+    @include phone{
+        display: none;
+    }
     #weather-container {
         display: flex;
         flex-direction: row;
@@ -69,9 +109,13 @@
         span {color: $light-orange}
     }
     #hero-bottom-some {
+        width: 100%;
+        display: flex;
+        justify-content: center;
         i {margin: 0px 5px;}
     }
-    #hero-bottom-arrow i {font-size: 50px;}
+    #hero-bottom-arrow i {font-size: 50px;
+    }
 }
 
 
