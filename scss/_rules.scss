@@ -221,3 +221,7 @@ a{
   .delete{
       display: none !important;
   }
+
+  .grecaptcha-badge{
+      z-index: 150 !important;
+  }

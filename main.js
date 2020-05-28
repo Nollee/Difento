@@ -627,10 +627,8 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   function removeG(){
-    document.querySelector(".grecaptcha-badge").classList.remove("delete")
+    document.querySelector(".grecaptcha-badge").classList.style.display = "none";
   }
-
-  removeG();
 
 
 
@@ -677,3 +675,5 @@ function closeSuccessDiv() {
 
 // close the div in 7 secs
 window.setTimeout(closeSuccessDiv, 7000);
+
+removeG();
