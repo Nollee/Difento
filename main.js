@@ -652,12 +652,6 @@ grecaptcha.ready(function () {
 
 //
 
-document.querySelector('#slides').innerHTML = htmlTemplate;
-}
-
-
-
-
 /* close success message div */
 function closeSuccessDiv() {
   document.getElementById("alert-success").classList.add("hide");
