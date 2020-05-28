@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 
-  // SWIPER SLIDER
+  // ======= SWIPER SLIDER TIL CASES =====================
 
   let mySwiper = new Swiper('.swiper1', {
     // Optional parameters
@@ -75,6 +75,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   });
 
+  // ======= SWIPER SLIDER TIL PROCES =====================
+
   let projects = [];
   let procesIcons = ['fas fa-search', 'fas fa-paint-brush', 'far fa-comment-dots', 'fas fa-desktop', 'far fa-user-circle']
   let swiper2 = new Swiper('.swiper2', {
@@ -91,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 
-
+ // =================== WORDPRESS REST API FETCH ====================
   function getProjects() {
     fetch('https://difento.dk/wordpress/wp-json/wp/v2/posts?_embed')
       .then(function (response) {
@@ -112,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-  // append projects to the DOM
+  // APPENDS CASES TIL SLIDEREN
   function appendCases(projects) {
     let htmlTemplate = " ";
     for (let project of projects) {
@@ -138,7 +140,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelector('#caseinfo').innerHTML = overlayInfo;
     document.querySelector('#slides').innerHTML = htmlTemplate;
 
-
+    // ÆNDRER TAL OG TEKST OMKRING BILLEDERNE I CASES SLIDER
     mySwiper.on('slideChangeTransitionEnd', async function findSlide() {
       let pros = document.querySelectorAll('.swiper-slide');
       overlayInfo = " ";
@@ -160,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  /* weather api */
+  /* ============ weather api ======================== */
   const apiCall = 'https://api.openweathermap.org/data/2.5/weather?q=aarhus,dk&units=metric&appid=b892cb50e6b072e2bd37a1bc8049ee3a';
 
   /* fetch(apiCall)
@@ -197,7 +199,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-
+// ======================= FÅR TABBAREN TIL VENSTRE TIL AT FORSVINDE OG KOMME FREM
   window.addEventListener("scroll", () => {
 
     if (document.body.scrollTop > 90 || document.documentElement.scrollTop > 90) {
@@ -207,6 +209,18 @@ document.addEventListener('DOMContentLoaded', function () {
       document.querySelector(".tabbar").classList.remove("pop")
     }
   });
+
+  // Lader tabbaren blive, hvis brugeren reloader
+  function reload(){
+    if (document.body.scrollTop > 90 || document.documentElement.scrollTop > 90) {
+      document.querySelector(".tabbar").classList.add("pop")
+
+    } else {
+      document.querySelector(".tabbar").classList.remove("pop")
+    }
+  };
+
+  reload();
 
 
 
@@ -281,10 +295,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   });
 
-  function removeG() {
-    document.querySelector(".grecaptcha-badge").classList.style.display = "none";
-  }
-
 
 
 
@@ -295,7 +305,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 
-  // ==================== ÆNDRER FARVEN PÅ CIRKLEN VED TELEFONNUMRENE
+  // ======= ÆNDRER FARVEN PÅ CIRKLEN VED TELEFONNUMRENE ============
 
   function time() {
     let t = new Date();
@@ -313,24 +323,23 @@ document.addEventListener('DOMContentLoaded', function () {
 
   time();
 
+ // =========== RECAPTCHA GOOGLE ===================
+  grecaptcha.ready(function () {
+    grecaptcha.execute('6LdwzfwUAAAAALCr3M_nRgn8-TN7_KYXWatiF7ML', { action: 'homepage' }).then(function (token) {
+      // console.log(token);
+      document.getElementById("token").value = token;
+    });
+  });
+  
+  //
+  
+  /* close success message div */
+  function closeSuccessDiv() {
+    document.getElementById("alert-success").classList.add("hide");
+  }
+  
+  // close the div in 7 secs
+  window.setTimeout(closeSuccessDiv, 7000);
+  
 
 }, false);
-
-grecaptcha.ready(function () {
-  grecaptcha.execute('6LdwzfwUAAAAALCr3M_nRgn8-TN7_KYXWatiF7ML', { action: 'homepage' }).then(function (token) {
-    // console.log(token);
-    document.getElementById("token").value = token;
-  });
-});
-
-//
-
-/* close success message div */
-function closeSuccessDiv() {
-  document.getElementById("alert-success").classList.add("hide");
-}
-
-// close the div in 7 secs
-window.setTimeout(closeSuccessDiv, 7000);
-
-removeG();
