@@ -17,7 +17,7 @@ body {
   cursor: url("../images/arrow.png"), auto;
   /* cursor: url('../images/point.png'), pointer; */ }
 
-a, button {
+a, button, i, input[type=submit] {
   cursor: url("../images/point.png"), pointer; }
 
 html {
@@ -235,7 +235,8 @@ a {
       .hero-text p {
         width: 90%;
         margin: auto;
-        text-align: center; } }
+        text-align: center;
+        text-shadow: 1px 1px 2px #172430; } }
 
 .hero-head {
   color: white;

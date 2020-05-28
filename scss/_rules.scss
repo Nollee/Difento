@@ -26,7 +26,7 @@ body{
     /* cursor: url('../images/point.png'), pointer; */
 }
 
-a, button {cursor: url('../images/point.png'), pointer;}
+a, button, i, input[type=submit] {cursor: url('../images/point.png'), pointer;}
 
 html{
     overflow-y: auto;
@@ -226,6 +226,7 @@ a{
       display: none !important;
   }
 
+
   .grecaptcha-badge{
-      z-index: 150 !important;
-  }
+    z-index: 150 !important;
+}
