@@ -33,12 +33,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // SWIPER SLIDER
 
-  let mySwiper = new Swiper('.swiper-container', {
+  var mySwiper = new Swiper('.swiper-container', {
     // Optional parameters
     direction: 'horizontal',
     slidesPerView: 2,
     spaceBetween: 200,
     centeredSlides: true,
+    observer: true,
+    observeParents: true,
     // If we need pagination
     pagination: {
       el: '.swiper-pagination',
@@ -46,33 +48,108 @@ document.addEventListener('DOMContentLoaded', function () {
     /*
     // Navigation arrows
     navigation: {
-      nextEl: '.swiper-button-next',
+    nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
 
     // And if we need scrollbar
     scrollbar: {
-      el: '.swiper-scrollbar',
+    el: '.swiper-scrollbar',
     },
     */
   });
 
+  let projects = [];
 
-/* weather api */
-const apiCall = 'https://api.openweathermap.org/data/2.5/weather?q=aarhus,dk&units=metric&appid=b892cb50e6b072e2bd37a1bc8049ee3a';
 
-/* fetch(apiCall)
-.then(response => response.json())
-.then(data => console.log(data)); */
+  function getProjects() {
+    fetch('https://difento.dk/wordpress/wp-json/wp/v2/posts?_embed')
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (json) {
+        appendCases(json);
+        projects = json;
+        setTimeout(function () {
+        }, 200);
+      });
 
-fetch(apiCall)
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(data) {
-    console.log(data);
-    appendWeather(data);
-  });
+  }
+
+
+  getProjects();
+
+
+
+
+  // append projects to the DOM
+  function appendCases(projects) {
+    let htmlTemplate = " ";
+    for (let project of projects) {
+      htmlTemplate += `
+      <div  class="swiper-slide" id="${project.id}">
+        <img  src="${project.acf.image}"></h2>
+      </div>
+    `;
+    }
+
+    let i = 0;
+    let caseInfo = projects[i];
+    let overlayInfo = "";
+
+
+    document.querySelector('#slides').innerHTML = htmlTemplate;
+
+
+    mySwiper.on('slideChangeTransitionEnd', async function findSlide() {
+      let pros = document.querySelectorAll('.swiper-slide');
+      overlayInfo = " ";
+      for (let pro of pros) {
+        if (pro.classList.contains('swiper-slide-active') === true) {
+          let data = await fetch(`https://difento.dk/wordpress/wp-json/wp/v2/posts/${pro.id}`).then(res => res.json());
+          overlayInfo += `
+          <h4 class="slider-count">${data.acf.count}</h4>
+          <h4 class="slider-job">${data.acf.description}</h4>
+          <div class="slider-year">
+          <div class="line"></div>
+          <h4>${data.acf.year}</h4>
+          </div>
+          <h4 class="slider-company">${data.acf.title}</h4>
+          `;
+          document.querySelector('#caseinfo').innerHTML = overlayInfo;
+        }
+      }
+    });
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* weather api */
+  const apiCall = 'https://api.openweathermap.org/data/2.5/weather?q=aarhus,dk&units=metric&appid=b892cb50e6b072e2bd37a1bc8049ee3a';
+
+  /* fetch(apiCall)
+  .then(response => response.json())
+  .then(data => console.log(data)); */
+
+  fetch(apiCall)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      appendWeather(data);
+    });
 
   fetch(apiCall)
     .then(response => response.json())
@@ -212,14 +289,7 @@ fetch(apiCall)
 
     <div class="swiper-container">
     <!-- Additional required wrapper -->
-    <div class="overlay">
-    <h4 class="slider-count">01</h4>
-    <h4 class="slider-job">website</h4>
-    <div class="slider-year">
-      <div class="line"></div>
-      <h4>2019</h4>
-    </div>
-    <h4 class="slider-company">BUTIK TINC</h4>
+    <div id="caseinfo" class="overlay">
     </div>
     <div id="slides" class="swiper-wrapper">
         <!-- Slides -->
@@ -438,7 +508,7 @@ fetch(apiCall)
 
   // ==================== ÆNDRER FARVEN PÅ CIRKLEN I FOOTER
 
-  function time(){
+  function time() {
     let t = new Date();
     let h = t.getHours()
 
@@ -458,37 +528,23 @@ fetch(apiCall)
 
 // 
 
-let projects = [];
 
 
-function getProjects() {
-  fetch('https://difento.dk/wordpress/wp-json/wp/v2/posts?_embed')
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (json) {
-      console.log(json);
-      appendCases(json);
-      projects = json;
-      setTimeout(function () {
-      }, 200);
-    });
-}
 
-console.log(projects);
-getProjects();
 
-// append projects to the DOM
-function appendCases(projects) {
-  let htmlTemplate = "";
 
-  for (let project of projects) {
-    htmlTemplate += `
-      <div class="swiper-slide">
-        <img src="${project.acf.image}"></h2>
-      </div>
-    `;
-  }
 
-  document.querySelector('#slides').innerHTML = htmlTemplate;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
