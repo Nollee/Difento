@@ -598,10 +598,6 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
     }
-    
-    if(current == 4){
-      document.querySelector(".grecaptcha-badge").classList.remove("delete")
-    }
 
     else {
       document.querySelector("body").style.backgroundColor = "#172430"
@@ -612,6 +608,15 @@ document.addEventListener('DOMContentLoaded', function () {
       for (let slide of procSlides) {
         slide.style.backgroundColor = "#172430"
       }
+      document.querySelector(".grecaptcha-badge").classList.remove("delete")
+
+    }
+
+    // fjerner og viser recaptcha
+    if (current == 4){
+      document.querySelector(".grecaptcha-badge").classList.remove("delete")
+    }
+    else{
       document.querySelector(".grecaptcha-badge").classList.add("delete")
 
     }
@@ -620,6 +625,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   });
+
+  function removeG(){
+    document.querySelector(".grecaptcha-badge").classList.remove("delete")
+  }
+
+  removeG();
 
 
 
@@ -656,11 +667,6 @@ grecaptcha.ready(function () {
     document.getElementById("token").value = token;
   });
 });
-
-//
-
-document.querySelector('#slides').innerHTML = htmlTemplate;
-}
 
 
 
