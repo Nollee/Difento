@@ -147,6 +147,9 @@ a {
 
 .grecaptcha-badge {
   z-index: 150 !important; }
+  @media only screen and (max-width: 1050px) {
+    .grecaptcha-badge {
+      margin-bottom: 15vh !important; } }
 
 #birds {
   width: 50%;
@@ -658,15 +661,21 @@ a {
           color: white;
           font-size: 1.5rem;
           margin: 5px 0; }
+          .about-container .person-container .person .person-card a:hover {
+            color: #FF593E; }
         .about-container .person-container .person .person-card h5 {
-          font-size: 3vw;
+          font-size: 40px;
           color: #FF593E; }
           @media only screen and (max-width: 1260px) {
             .about-container .person-container .person .person-card h5 {
-              font-size: 45px; } }
+              font-size: 3vw; } }
           @media only screen and (max-width: 550px) {
             .about-container .person-container .person .person-card h5 {
               font-size: 8vw;
+              text-align: end; } }
+          @media only screen and (max-width: 1050px) {
+            .about-container .person-container .person .person-card h5 {
+              font-size: 6vw;
               text-align: end; } }
     .about-container .person-container :nth-child(odd) {
       justify-content: flex-start; }
@@ -773,7 +782,9 @@ a {
   /*  position: absolute;
    right: 100px; */
   font-size: 2.5rem;
-  font-weight: bold; }
+  font-weight: bold;
+  display: flex;
+  align-items: center; }
   .call-us a {
     color: #172430;
     transition: ease .4s; }
@@ -787,6 +798,19 @@ a {
     .call-us {
       font-size: 1.5rem;
       margin-top: 10%; } }
+  .call-us .available {
+    width: 1vw;
+    height: 1vw;
+    border-radius: 90px;
+    margin-left: 15px; }
+    @media only screen and (max-width: 1050px) {
+      .call-us .available {
+        width: 2vw;
+        height: 2vw; } }
+    @media only screen and (max-width: 550px) {
+      .call-us .available {
+        width: 3vw;
+        height: 3vw; } }
 
 .contact-btn-number {
   display: flex;
@@ -827,9 +851,10 @@ a {
 footer {
   width: 100%;
   height: 100vh !important; }
-  @media only screen and (max-width: 550px) {
+  @media only screen and (max-width: 1050px) {
     footer {
-      height: auto !important; } }
+      height: auto !important;
+      min-height: auto !important; } }
 
 .footer-wrapper {
   width: 50%;
@@ -850,7 +875,10 @@ footer {
     margin-top: 10vh; }
     @media only screen and (max-width: 1050px) {
       .footer-wrapper .footer-top {
-        margin-top: 8vh; } }
+        margin-top: 0; } }
+    @media only screen and (max-width: 550px) {
+      .footer-wrapper .footer-top {
+        margin-top: 20vh; } }
   .footer-wrapper .footer-topdesc {
     display: flex;
     justify-content: space-between;
@@ -984,6 +1012,9 @@ footer {
   .footer-bot .footer-phone {
     display: flex;
     align-items: center; }
+    @media only screen and (max-width: 550px) {
+      .footer-bot .footer-phone {
+        justify-content: center; } }
     .footer-bot .footer-phone .phone-active {
       border-radius: 90px;
       width: 0.5vw;
@@ -993,6 +1024,11 @@ footer {
         .footer-bot .footer-phone .phone-active {
           width: 1.2vw;
           height: 1.2vw; } }
+      @media only screen and (max-width: 550px) {
+        .footer-bot .footer-phone .phone-active {
+          width: 5vw;
+          height: 5vw;
+          margin-left: 2vw; } }
   @media only screen and (max-width: 550px) {
     .footer-bot .adresse, .footer-bot .contact, .footer-bot .cvr {
       margin-bottom: 10vh; } }
@@ -1001,16 +1037,16 @@ footer {
   -webkit-transition: 0.3s ease;
   -o-transition: 0.3s ease;
   transition: 0.3s ease !important;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
+  display: flex !important;
+  justify-content: space-around !important;
+  align-items: center !important;
   z-index: 1 !important;
   margin: auto !important; }
   .proc img {
-    width: 28%; }
+    width: 28% !important; }
     @media only screen and (max-width: 550px) {
       .proc img {
-        width: 25%; } }
+        width: 25% !important; } }
   .proc .proces-text {
     width: 50%;
     display: flex;
@@ -1034,9 +1070,9 @@ footer {
           font-size: 4vw; } }
 
 .swiper2 {
-  height: 65vh;
-  width: 70%;
-  margin: auto; }
+  height: 65vh !important;
+  width: 70% !important;
+  margin: auto !important; }
   .swiper2 .swiper-pagination2 {
     text-align: center; }
     @media only screen and (max-width: 550px) {

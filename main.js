@@ -1,5 +1,21 @@
+import NavBar from './components/nav.js'
+import Hero from './pages/hero.js'
+import Cases from './pages/cases.js'
+import Proces from './pages/proces.js'
+import About from './pages/about.js'
+import Contact from './pages/contact.js'
+import Footer from './components/footer.js'
+
+let navbar = new NavBar();
+let hero = new Hero();
+let cases = new Cases();
+let proces = new Proces();
+let about = new About();
+let contact = new Contact();
+let footer = new Footer();
+
+
 document.addEventListener('DOMContentLoaded', function () {
-  content();
 
   const sections = document.querySelectorAll('.sub')
   console.log(sections);
@@ -109,17 +125,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
     let i = 0;
     let caseInfo = projects[i];
-    let overlayInfo = `
-      <h4 class="slider-count .animation-fadein">${caseInfo.acf.count}</h4>
-      <h4 class="slider-job">${caseInfo.acf.description}</h4>
-      <div class="slider-year">
-        <div class="line"></div>
-        <h4>${caseInfo.acf.year}</h4>
-      </div>
-      <h4 class="slider-company">${caseInfo.acf.title}</h4>
-      `;
+    let overlayInfo = "";
 
-    document.querySelector('#caseinfo').innerHTML = overlayInfo;
+
     document.querySelector('#slides').innerHTML = htmlTemplate;
 
 
@@ -130,34 +138,19 @@ document.addEventListener('DOMContentLoaded', function () {
         if (pro.classList.contains('swiper-slide-active') === true) {
           let data = await fetch(`https://difento.dk/wordpress/wp-json/wp/v2/posts/${pro.id}`).then(res => res.json());
           overlayInfo += `
-          <h4 class="slider-count animation-fadein">${data.acf.count}</h4>
-          <h4 class="slider-job animation-fadein-delay">${data.acf.description}</h4>
-          <div class="slider-year animation-opacity">
+          <h4 class="slider-count">${data.acf.count}</h4>
+          <h4 class="slider-job">${data.acf.description}</h4>
+          <div class="slider-year">
           <div class="line"></div>
           <h4>${data.acf.year}</h4>
           </div>
-          <h4 class="slider-company animation-opacity-delay">${data.acf.title}</h4>
+          <h4 class="slider-company">${data.acf.title}</h4>
           `;
           document.querySelector('#caseinfo').innerHTML = overlayInfo;
         }
       }
     });
   }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   /* weather api */
   const apiCall = 'https://api.openweathermap.org/data/2.5/weather?q=aarhus,dk&units=metric&appid=b892cb50e6b072e2bd37a1bc8049ee3a';
@@ -206,360 +199,6 @@ document.addEventListener('DOMContentLoaded', function () {
       document.querySelector(".tabbar").classList.remove("pop")
     }
   });
-
-
-  function content() {
-    document.querySelector('#content').innerHTML += /*html*/ `
-    <nav class="tabbar">
-      <div class="nav-container">
-      <img id="nav-logo" src="./images/logo-sign.svg" alt="logo">
-      <a id="caselink" href="#cases"><i class="fas fa-layer-group"></i>
-      <div id="casedesc" class="link-desc">
-      <p>CASES</p>
-      </div>
-      </a>
-      <a id="servicelink" href="#proces-anchor"><i class="fas fa-hourglass-half"></i>
-      <div id="procesdesc" class="link-desc">
-      <p>PROCES</p>
-      </div>
-      </a>
-      <a id="aboutlink" href="#about-anchor"><i class="fas fa-user-friends"></i>
-      <div id="aboutdesc" class="link-desc">
-      <p>OM OS</p>
-      </div>
-      </a>
-      <a id="recommendlink" href="#recommend-anchor"><i class="fas fa-laugh"></i>
-      <div id="contactdesc" class="link-desc">
-      <p>ANBEFALINGER</p>
-      </div>
-      <a id="contactlink" href="#contact-anchor"><i class="fas fa-paper-plane"></i>
-      <div id="contactdesc" class="link-desc">
-      <p>KONTAKT</p>
-      </div>
-      </a>
-      <a href="#" id="vanish">
-      </a>
-      </div>
-      <div class="tabbar-some">
-          <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
-          <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-instagram-square"></i></a>
-        </div>
-      </nav>
-
-    <article id="hero" class="hero-forside">
-
-    <nav class="top-nav">
-
-    <div class="logo">
-    <img id="butterfly" src="./images/logo-sign.svg" alt="logo">
-    <img id="logo-text"src="./images/logo-word.svg" alt="logo">
-    </div>
-
-    <div class="top-links">
-    <a href="#cases-anchor">
-    <i class="fas fa-layer-group"></i>
-    <p>CASES</p>
-    </a>
-    <a href="#proces-anchor">
-    <i class="fas fa-hourglass-half"></i>
-    <p>PROCES</p>
-    </a>
-    <a href="#about-anchor">
-    <i class="fas fa-user-friends"></i>
-    <p>OM OS</p>
-    </a>
-    <a href="#recommend-anchor">
-    <i class="fas fa-laugh"></i>
-    <p>ANBEFALINGER</p>
-    </a>
-    <a href="#contact-anchor">
-    <i class="fas fa-paper-plane"></i>
-    <p>KONTAKT</p>
-    </a>
-    </div>
-    </nav>
-
-    <div class="hero-text">
-      <div class="hero-head">
-        <h1>VI SKABER MINDER<span>.</span></h1>
-    </div>
-      <p>Lorem Ipsum er ganske enkelt fyldtekst fra print- og typografiindustrien. Lorem Ipsum har været standard fyldtekst siden 1500-tallet, hvor en ukendt trykker sammensatte en tilfældig spalte for at trykke en bog til sammenligning af forskellige skrifttyper. Lorem Ipsum har ikke alene.</p>
-      <!-- buttons -->
-      <div class="hero-btns">
-            <!-- grey button -->
-        <a class="btn-grey" href="#cases"><div>cases <i class="fas fa-layer-group"></i></div></a>
-              <!-- orange button -->
-        <a class="btn-orange" href="#contact-anchor"><div>kontakt <i class="fas fa-paper-plane" ></i></div></a>
-      </div>
-    </div>
-    <div id="birds">
-    <div class="gradient-left"></div>
-    <div class="gradient-bot"></div>
-    </div>
-<div id="hero-bottom-content">
-<div id="weather"></div><!---- container for the wather api --->
-      <div id="hero-bottom-arrow"><a href="#cases"><i class="fas fa-angle-down"></i></a></div>
-        <div id="hero-bottom-some">
-          <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
-          <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram-square"></i></a>
-        </div>
-    </div>
-</div>
-</article>
-
-    <article id="cases" class="sub">
-
-    <div class="swiper-container swiper1">
-    <!-- Additional required wrapper -->
-    <div id="caseinfo" class="overlay">
-    </div>
-    <div id="slides" class="swiper-wrapper">
-        <!-- Slides -->
-
-    </div>
-    <!--
-
-    <div class="swiper-pagination1"></div>
-
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
-
-    <div class="swiper-scrollbar"></div>
-    -->
-</div>
-    </article>
-
-
-     <article id="proces" class="sub">
-    <div id="proces-anchor" class="anchor"></div>
-    <div class="sub-wrapper dark">
-    <h2 class="darkh2">Proces</h2>
-
-    <div class="swiper-container swiper2">
-
-    <div class="swiper-wrapper">
-
-    <div class="swiper-slide proc">
-    <img src="./images/research.svg" alt="research" data-aos="zoom-in" data-aos-delay="300">
-    <div class="proces-text">
-    <h3>Research</h3>
-    <p>  Lorem Ipsum er ganske enkelt fyldtekst fra print- og typografiindustrien. Lorem Ipsum har været standard fyldtekst siden 1500-tallet, hvor en ukendt trykker sammensatte en tilfældig spalte for at trykke en bog til sammenligning af forskellige skrifttyper. Lorem Ipsum har ikke alene.</p>
-    </div>
-    </div>
-    <div class="swiper-slide proc">
-    <img src="./images/brush.svg" alt="design" data-aos="zoom-in" data-aos-delay="300">
-    <div class="proces-text">
-    <h3>Design</h3>
-    <p>  Lorem Ipsum er ganske enkelt fyldtekst fra print- og typografiindustrien. Lorem Ipsum har været standard fyldtekst siden 1500-tallet, hvor en ukendt trykker sammensatte en tilfældig spalte for at trykke en bog til sammenligning af forskellige skrifttyper. Lorem Ipsum har ikke alene.</p>
-    </div>
-    </div>
-    <div class="swiper-slide proc">
-    <img src="./images/meet.svg" alt="møde" data-aos="zoom-in" data-aos-delay="300">
-    <div class="proces-text">
-    <h3>Møde</h3>
-    <p>  Lorem Ipsum er ganske enkelt fyldtekst fra print- og typografiindustrien. Lorem Ipsum har været standard fyldtekst siden 1500-tallet, hvor en ukendt trykker sammensatte en tilfældig spalte for at trykke en bog til sammenligning af forskellige skrifttyper. Lorem Ipsum har ikke alene.</p>
-    </div>
-    </div>
-    <div class="swiper-slide proc">
-    <img src="./images/dev.svg" alt="udvikling" data-aos="zoom-in" data-aos-delay="300">
-    <div class="proces-text">
-    <h3>Udvikling</h3>
-    <p>  Lorem Ipsum er ganske enkelt fyldtekst fra print- og typografiindustrien. Lorem Ipsum har været standard fyldtekst siden 1500-tallet, hvor en ukendt trykker sammensatte en tilfældig spalte for at trykke en bog til sammenligning af forskellige skrifttyper. Lorem Ipsum har ikke alene.</p>
-    </div>
-    </div>
-    <div class="swiper-slide proc">
-    <img src="./images/user.svg" alt="brugertest" data-aos="zoom-in" data-aos-delay="300">
-    <div class="proces-text">
-    <h3>Brugertest</h3>
-    <p>  Lorem Ipsum er ganske enkelt fyldtekst fra print- og typografiindustrien. Lorem Ipsum har været standard fyldtekst siden 1500-tallet, hvor en ukendt trykker sammensatte en tilfældig spalte for at trykke en bog til sammenligning af forskellige skrifttyper. Lorem Ipsum har ikke alene.</p>
-    </div>
-    </div>
-
-    </div>
-
-    <div class="swiper-pagination2"></div>
-
-    </div>
-
-    </div>
-    </article>
-
-    <article id="about" class="sub">
-    <div id="about-anchor" class="anchor"></div>
-    <div class="sub-wrapper">
-    <h2 class="lighth2">OM OS</h2>
-    <div class="about-container">
-    <div class="about-left">
-    <div class="text-box">
-    <h3>Difento</h3>
-    <p>
-    Lorem Ipsum er ganske enkelt fyldtekst fra print- og typografiindustrien. Lorem Ipsum har været standard fyldtekst siden 1500-tallet, hvor en ukendt trykker sammensatte en tilfældig spalte for at trykke en bog til sammenligning af forskellige skrifttyper. Lorem Ipsum har ikke alene.
-    </p>
-    </div>
-    <div class="skills">
-    <h4>VORES KOMPETENCER</h4>
-    <div class="skills-container">
-    <p>Responsiv Design</p>
-    <p>Hjemmesider</p>
-    <p>Brugeroplevelse</p>
-    <p>Grafisk Design</p>
-    <p>WordPress</p>
-    <p>Skræddersyet løsninger</p>
-    </div>
-    </div>
-    </div>
-    <div class="about-right">
-    <div class="person-container">
-    <div class="person">
-    <div class="person-card"data-aos="zoom-in" data-aos-delay="300">
-    <img src="./images/martin.jpg" alt="martin">
-    <h5>Martin Eneberg</h5>
-    <a href="tel:+4527884665">+45 27 88 46 64</a>
-    <a href="mailto:me@difento.dk">me@difento.dk</a>
-    </div>
-    </div>
-    <div class="person">
-    <div class="person-card" data-aos="zoom-in" data-aos-delay="400">
-    <img src="./images/mikkel.jpg" alt="mikkel">
-    <h5>Mikkel Faartoft</h5>
-    <a href="tel:+4523677669">+45 23 67 76 69</a>
-    <a href="mailto:mj@difento.dk">mj@difento.dk</a>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    </article>
-
-
-    <article id="recommend" class="sub">
-    <div id="recommend-anchor" class="anchor">anchor</div>
-    </article>
-
-    <article id="contact" class="sub">
-    <div id="contact-anchor" class="anchor"></div>
-      <div class="sub-wrapper">
-      <h2>Kontakt</h2>
-      <h3 class="h3-contact" data-aos="fade-in" data-aos-delay="100">skal vi finde din løsning?</h3>
-      <h3 class="h3-big-contact" data-aos="fade-up"
-      data-aos-anchor-placement="bottom-bottom" data-aos-delay="400">Ta' kontakt</h3>
-
-      <!-- contact form --->
-      <!------------------------------------CONTACT FORM--------------------->
-      <form id="contact-form" role="form" method="post" action="#" class="form-horizontal">
-
-             <div id="contact-form-top-input">
-             <div>
-             <h4>Navn</h4>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Hvad er dit navn?" required>
-                </div>
-                <div>
-              <h4>Email</h4>
-                <input type="email" class="form-control" id="email" name="email" placeholder="Hvilken mail skal vi svare på?" required>
-                </div>
-            </div>
-            <div>
-            <h4>Besked</h4>
-	                <textarea class="form-control" id="msg" name="msg" placeholder="Fortæl os hvad vi kan hjælpe med" rows="5" required></textarea></div>
-
-
-
-          <div class="contact-btn-number">
-                  <div class="btn-orange">
-                    <div><input type="submit" value="SEND" name="post"><i class="fas fa-paper-plane"></i></div></div>
-
-                <input type="hidden" id="token" name="token">
-
-            </form>
-
-            <div class="call-us" data-aos="fade-in" data-aos-delay="600">
-              <a href="tel:+4523677669">Ring til os på +45 23 67 76 69</a>
-            </div>
-          </div>
-
-      <!------ end ------->
-
-
-      </div>
-    </article>
-    <footer class="sub">
-    <div class="footer-wrapper">
-    <div class="footer-top">
-    <div class="logo footer-logo">
-    <img id="butterfly" src="./images/logo-sign.svg" alt="logo" data-aos="zoom-in" data-aos-delay="300">
-    <img id="logo-text"src="./images/logo-word.svg" alt="logo" data-aos="zoom-in" data-aos-delay="400">
-    </div>
-    <div class="footer-topdesc">
-    <p>Lorem Ipsum er ganske enkelt fyldtekst fra print- og typografiindustrien. Lorem Ipsum har været standard fyldtekst siden 1500-tallet, hvor en ukendt trykker sammensatte en tilfældig spalte for at trykke en bog til sammenligning af forskellige skrifttyper. Lorem Ipsum har ikke alene.</p>
-    <div class="footer-icons">
-    <a href="https://wordpress.com/"> <i class="fab fa-wordpress-simple"></i></a>
-    <a href="https://www.shopify.com/"<i class="fab fa-shopify"></i></a>
-    </div>
-    </div>
-    </div>
-    <div class="footer-line"></div>
-    <div class="footer-bot">
-    <div class="footer-botleft">
-    <div class="adresse">
-    <h4>Adresse</h4>
-    <!-- LAV DETTE TIL ET LINK TIL GOOGLE MAPS, NÅR I HAR FÅET KONTOR OG GOOGLE MY BUSINESS -->
-    <p>Dr Holsts Vej 50 <br>8230 Åbyhøj</p>
-    </div>
-    <div class="contact">
-    <h4>Kontakt</h4>
-    <a href="mailto:kontakt@difento.dk">kontakt@difento.dk</a>
-    <div class="footer-phone">
-    <a href="tel:+4523677669">+45 23 67 76 69</a>
-    <span class="phone-active"></span>
-    </div>
-    </div>
-    </div>
-    <div class="footer-botmid">
-    <div class="boring">
-    <h4>Det Kedelige</h4>
-    <a href="#">Cookies</a>
-    <a href="#">Persondatapolitik</a>
-    <a href="#">Handelsbetingelser</a>
-    <a href="#">Serviceaftale</a>
-    </div>
-    <div class="cvr">
-    <h4>CVR</h4>
-    <a href="https://cvrapi.dk/virksomhed/dk/fento-is/41056924">41056924</a>
-    </div>
-    </div>
-    <div class="footer-botright">
-    <h4>Åbningstider</h4>
-    <div class="opening">
-    <div class="days">
-    <p>Mandag</p>
-    <p>Tirsdag</p>
-    <p>Onsdag</p>
-    <p>Torsdag</p>
-    <p>Fredag</p>
-    <p>Lørdag</p>
-    <p>Søndag</p>
-    </div>
-    <div class="times">
-    <p>9-21</p>
-    <p>9-21</p>
-    <p>9-21</p>
-    <p>9-21</p>
-    <p>9-21</p>
-    <p>9-21</p>
-    <p>9-21</p>
-    </div>
-    </div>
-    </div>
-
-    </div>
-    </div>
-    <div class="footer-img" data-aos="fade-left" data-aos-delay="600"></div>
-    </footer>
-  `;
-
-  }
 
 
 
@@ -618,8 +257,6 @@ document.addEventListener('DOMContentLoaded', function () {
       for (let slide of procSlides) {
         slide.style.backgroundColor = "#172430"
       }
-      document.querySelector(".grecaptcha-badge").classList.remove("delete")
-
     }
 
     // fjerner og viser recaptcha
@@ -650,16 +287,18 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 
-  // ==================== ÆNDRER FARVEN PÅ CIRKLEN I FOOTER
+  // ==================== ÆNDRER FARVEN PÅ CIRKLEN VED TELEFONNUMRENE
 
   function time() {
     let t = new Date();
     let h = t.getHours()
 
     if (h >= 9 && h <= 21) {
-      document.querySelector(".phone-active").style.backgroundColor = "lightgreen"
+      document.querySelector(".phone-active").style.backgroundColor = "green"
+      document.querySelector(".available").style.backgroundColor = "green"
     } else {
       document.querySelector(".phone-active").style.backgroundColor = "red"
+      document.querySelector(".available").style.backgroundColor = "red"
     }
 
   }
