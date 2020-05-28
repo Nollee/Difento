@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', function () {
     el: "#birds",
     mouseControls: true,
     touchControls: true,
-    minHeight: 200.00,
-    minWidth: 200.00,
+    minHeight: 800.00,
+    minWidth: 800.00,
     scale: 1.00,
     scaleMobile: 1.00,
     backgroundColor: 0x172430,
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
     separation: 50.00,
     alignment: 59.00,
     cohesion: 16.00,
-    quantity: 3.00
+    quantity: 2.00
   });
 
 
@@ -208,7 +208,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <p>CASES</p>
       </div>
       </a>
-      <a id="servicelink" href="#services-anchor"><i class="fas fa-hourglass-half"></i>
+      <a id="servicelink" href="#proces-anchor"><i class="fas fa-hourglass-half"></i>
       <div id="procesdesc" class="link-desc">
       <p>PROCES</p>
       </div>
@@ -251,7 +251,7 @@ document.addEventListener('DOMContentLoaded', function () {
     <i class="fas fa-layer-group"></i>
     <p>CASES</p>
     </a>
-    <a href="#services-anchor">
+    <a href="#proces-anchor">
     <i class="fas fa-hourglass-half"></i>
     <p>PROCES</p>
     </a>
@@ -322,8 +322,8 @@ document.addEventListener('DOMContentLoaded', function () {
     </article>
 
 
-     <article id="services" class="sub">
-    <div id="services-anchor" class="anchor"></div>
+     <article id="proces" class="sub">
+    <div id="proces-anchor" class="anchor"></div>
     <div class="sub-wrapper dark">
     <h2 class="darkh2">Proces</h2>
 
@@ -597,7 +597,13 @@ document.addEventListener('DOMContentLoaded', function () {
         slide.style.backgroundColor = "#F2F2F2"
       }
 
-    } else {
+    }
+    
+    if(current == 4){
+      document.querySelector(".grecaptcha-badge").classList.remove("delete")
+    }
+
+    else {
       document.querySelector("body").style.backgroundColor = "#172430"
       for (let desc of descriptions) {
         desc.style.backgroundColor = "#F2F2F2"
@@ -606,6 +612,7 @@ document.addEventListener('DOMContentLoaded', function () {
       for (let slide of procSlides) {
         slide.style.backgroundColor = "#172430"
       }
+      document.querySelector(".grecaptcha-badge").classList.add("delete")
 
     }
 
