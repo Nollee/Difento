@@ -306,7 +306,6 @@ a {
     #hero-bottom-content #weather-container span {
       color: #FB7C67; }
   #hero-bottom-content #hero-bottom-some {
-    width: 100%;
     display: flex;
     justify-content: center; }
     #hero-bottom-content #hero-bottom-some i {
@@ -341,6 +340,9 @@ a {
 .sub {
   width: 100%;
   height: 120vh; }
+  @media only screen and (max-width: 1200px) {
+    .sub {
+      min-height: 120vh; } }
 
 #services, #contact {
   display: flex; }
@@ -675,11 +677,24 @@ a {
   @media only screen and (max-width: 1199px) {
     #contact .sub-wrapper .h3-contact {
       margin-top: 30%; } }
+  @media only screen and (max-width: 1050px) {
+    #contact .sub-wrapper .h3-contact {
+      margin-top: 40%; } }
+  @media only screen and (max-width: 550px) {
+    #contact .sub-wrapper .h3-contact {
+      margin-top: 50%;
+      font-size: 1.5rem; } }
 
 .h3-big-contact {
   font-size: 5rem !important;
   color: #172430 !important;
   margin: 50px 0px; }
+  @media only screen and (max-width: 1050px) {
+    .h3-big-contact {
+      font-size: 3rem !important; } }
+  @media only screen and (max-width: 550px) {
+    .h3-big-contact {
+      margin: 10px 0px; } }
 
 #contact-form {
   display: flex;
@@ -688,6 +703,9 @@ a {
   #contact-form h4 {
     color: #172430;
     font-size: 2rem; }
+    @media only screen and (max-width: 550px) {
+      #contact-form h4 {
+        font-size: 1.5rem; } }
   #contact-form-top-input {
     width: 60%;
     display: flex;
@@ -695,15 +713,24 @@ a {
     #contact-form-top-input input[type=text], #contact-form-top-input input[type=email] {
       width: 80%;
       margin-bottom: 10%; }
+      @media only screen and (max-width: 550px) {
+        #contact-form-top-input input[type=text], #contact-form-top-input input[type=email] {
+          width: 100%; } }
     #contact-form-top-input div {
       width: 100%; }
     @media only screen and (max-width: 1050px) {
       #contact-form-top-input {
         width: 100%; } }
+    @media only screen and (max-width: 550px) {
+      #contact-form-top-input {
+        flex-direction: column; } }
   #contact-form input, #contact-form textarea {
     border: none;
     background-color: transparent;
     font-size: 1.5rem; }
+    @media only screen and (max-width: 550px) {
+      #contact-form input, #contact-form textarea {
+        font-size: 1.2rem; } }
   #contact-form input[type=submit] {
     color: white; }
   #contact-form textarea {
@@ -715,6 +742,9 @@ a {
 
 #contact-form, #contact h3 {
   margin-left: 10%; }
+  @media only screen and (max-width: 550px) {
+    #contact-form, #contact h3 {
+      margin-left: 2%; } }
 
 .call-us {
   /*  position: absolute;
@@ -726,6 +756,14 @@ a {
     transition: ease .4s; }
     .call-us a:hover {
       color: #FF593E; }
+  @media only screen and (max-width: 1050px) {
+    .call-us {
+      margin-top: 5%;
+      font-size: 2rem; } }
+  @media only screen and (max-width: 550px) {
+    .call-us {
+      font-size: 1.5rem;
+      margin-top: 10%; } }
 
 .contact-btn-number {
   display: flex;
@@ -735,6 +773,9 @@ a {
   @media only screen and (max-width: 1050px) {
     .contact-btn-number {
       flex-direction: column; } }
+  @media only screen and (max-width: 550px) {
+    .contact-btn-number {
+      margin-top: -50px; } }
 
 #alert-success {
   position: fixed;
