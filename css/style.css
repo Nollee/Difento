@@ -17,7 +17,7 @@ body {
   cursor: url("../images/arrow.png"), auto;
   /* cursor: url('../images/point.png'), pointer; */ }
 
-a, button, i, input[type=submit], nav p, nav img {
+a, button, i, input[type=submit], nav p, nav img, ::-webkit-scrollbar, ::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb, .btn-grey, .btn-orange, .btn-orange div, .btn-grey div, ::-webkit-scrollbar-thumb:hover {
   cursor: url("../images/point.png"), pointer !important; }
 
 html {
@@ -238,7 +238,7 @@ a {
     .hero-btns {
       justify-content: space-around;
       margin: auto;
-      margin-top: 10vh; } }
+      margin-top: 5vh; } }
 
 #hero-bottom-content {
   position: absolute;
@@ -258,9 +258,9 @@ a {
     #hero-bottom-content i:hover {
       color: #FB7C67;
       transform: scale(1.05); }
-  @media only screen and (max-width: 550px) {
-    #hero-bottom-content {
-      display: none; } }
+    @media only screen and (max-width: 550px) {
+      #hero-bottom-content i {
+        font-size: 25px; } }
   #hero-bottom-content #weather-container {
     display: flex;
     flex-direction: row;
@@ -268,10 +268,19 @@ a {
     color: white; }
     #hero-bottom-content #weather-container span {
       color: #FB7C67; }
+    @media only screen and (max-width: 550px) {
+      #hero-bottom-content #weather-container img {
+        display: none; } }
   #hero-bottom-content #hero-bottom-some i {
     margin: 0px 5px; }
   #hero-bottom-content #hero-bottom-arrow i {
     font-size: 50px; }
+    @media only screen and (max-width: 550px) {
+      #hero-bottom-content #hero-bottom-arrow i {
+        display: none; } }
+  @media only screen and (max-width: 550px) {
+    #hero-bottom-content {
+      left: 8%; } }
 
 .vanta-canvas {
   width: 100% !important;
