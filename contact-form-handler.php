@@ -23,7 +23,7 @@
 		if($res['success'] == true) {
             $name= $_POST['name'];
             $visitor_email = $_POST['email'];
-            $message = $_POST['message'];
+            $message = $_POST['msg'];
             /* $phone = $_POST['phone']; */
 
 
@@ -44,9 +44,9 @@
 
             mail($to,$email_subject,$email_body,$headers);
 			// Perform you logic here for ex:- save you data to database
-  			echo '<div class="alert alert-success">
-			  		<strong>Success!</strong> Your inquiry successfully submitted.
-		 		  </div>';
+  			echo '<div id="alert-success">
+              <h3><strong>Fedt! </strong> Din besked er blevet sendt, vi vender tilbage hurtigst muligt<h3> <i class="fas fa-laugh"></i>
+           </div>';
 		} else {
 			echo '<div class="alert alert-warning">
 					  <strong>Error!</strong> You are not a human.
