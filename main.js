@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', function () {
     el: "#birds",
     mouseControls: true,
     touchControls: true,
-    minHeight: 200.00,
-    minWidth: 200.00,
+    minHeight: 800.00,
+    minWidth: 800.00,
     scale: 1.00,
     scaleMobile: 1.00,
     backgroundColor: 0x172430,
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
     separation: 50.00,
     alignment: 59.00,
     cohesion: 16.00,
-    quantity: 3.00
+    quantity: 2.00
   });
 
 

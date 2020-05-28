@@ -194,7 +194,8 @@ a {
   position: relative; }
   @media only screen and (max-width: 1050px) {
     #birds {
-      display: none; } }
+      /* display: none; */
+      width: 100%; } }
 
 #hero {
   position: relative; }
@@ -204,8 +205,11 @@ a {
   height: 100%; }
   @media only screen and (max-width: 1050px) {
     .hero-text {
-      width: 90%;
-      margin: auto; } }
+      width: 100%;
+      margin: auto;
+      background-color: transparent;
+      position: absolute;
+      z-index: 99999999; } }
   .hero-text p {
     width: 70%;
     margin: auto;
@@ -229,7 +233,8 @@ a {
   margin-top: 30%; }
   @media only screen and (max-width: 550px) {
     .hero-head {
-      margin: auto; } }
+      margin: auto;
+      margin-top: 32%; } }
   .hero-head h1 {
     font-size: 4rem;
     display: flex;
@@ -326,6 +331,9 @@ a {
   left: 0;
   top: 0;
   z-index: 20; }
+  @media only screen and (max-width: 1050px) {
+    .gradient-left {
+      display: none; } }
 
 .gradient-bot {
   background: #172430;
