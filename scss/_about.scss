@@ -131,15 +131,22 @@
                     color: white;
                     font-size: 1.5rem;
                     margin: 5px 0;
+                    &:hover{
+                        color: $main-orange;
+                    }
                 }
                 h5{
-                    font-size: 3vw;
+                    font-size: 40px;
                     color: $main-orange;
                     @include desktop-lg {
-                        font-size: 45px;
+                        font-size: 3vw;
                     }
                     @include phone{
                         font-size: 8vw;
+                        text-align: end;
+                    }
+                    @include tablet{
+                        font-size: 6vw;
                         text-align: end;
                     }
                 }

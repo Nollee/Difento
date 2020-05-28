@@ -2,15 +2,15 @@
     -webkit-transition: 0.3s ease;
     -o-transition: 0.3s ease;
     transition: 0.3s ease !important;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
+    display: flex !important;
+    justify-content: space-around !important;
+    align-items: center !important;
     z-index: 1 !important;
     margin: auto !important;
     img{
-        width: 28%;
+        width: 28% !important;
         @include phone{
-            width: 25%;
+            width: 25% !important;
         }
     }
     .proces-text{
@@ -38,16 +38,12 @@
         }
     }
 
-    @include tablet{
-    
-    }
-
 }
 
 .swiper2{
-    height: 65vh;
-    width: 70%;
-    margin: auto;
+    height: 65vh !important;
+    width: 70% !important;
+    margin: auto !important;
     .swiper-pagination2{
         text-align: center;
 

@@ -30,6 +30,7 @@
             width: 90%;
             margin: auto;
             text-align: center;
+            text-shadow: 1px 1px 2px $dark-blue;
         }
     }
 }
@@ -90,7 +91,7 @@
     @include phone{
         justify-content: space-around;
         margin: auto;
-        margin-top: 10vh;
+        margin-top: 5vh;
     }
 }
 
@@ -101,22 +102,26 @@
     display: flex; flex-direction: row; justify-content: space-between; align-items: center;
     z-index: 999999999999;
     i {color: white; font-size: 35px; transition: .4s ease;
-    &:hover {color: $light-orange; transform: scale(1.05);}}
-    @include phone{
-        display: none;
-    }
+    &:hover {color: $light-orange; transform: scale(1.05);}
+        @include phone {font-size: 25px;}
+}
+
+
     #weather-container {
         display: flex;
         flex-direction: row;
         align-items: center;
         color: white;
         span {color: $light-orange}
+        img {@include phone {display: none;}}
     }
     #hero-bottom-some {
         i {margin: 0px 5px;}
     }
     #hero-bottom-arrow i {font-size: 50px;
+        @include phone {display: none;}
     }
+    @include phone {left: 8%;}
 }
 
 
