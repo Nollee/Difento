@@ -1,0 +1,41 @@
+
+
+ <!------------------------------------CONTACT FORM--------------------->
+ <div class="contact-form">
+          <form id="contact-form" method="post" action="contact-form-handler.php">
+            <p>Navn*</p>
+            <input name="name" type="text" class="form-control" placeholder="Hvad er dit navn?" required><br>
+            <p>Email*</p>
+            <input name="email" type="text" class="form-control" placeholder="Hvad er din email?" required><br>
+            <p>Telefon</p>
+            <input name="phone" type="number" class="form-control" placeholder="Hvad er dit telefonnummer?"><br>
+            <p>Besked*</p>
+            <textarea name="message" class="form-control" placeholder="Skriv din besked her" rows="4"
+              required></textarea><br>
+            <!------------ Google recaptcha goes here---------->
+         <!--    <div class="g-recaptcha" data-sitekey="6Lds2fwUAAAAAJP8_ygzd1H0tIjccd3YD68ju5qt"></div> -->
+            <!------------ Google recaptcha goes here end---------->
+
+            <input type="submit" class="form-control cta-dark" value="Send Besked" >
+          </form>
+        </div>
+		<!------------------------------------CONTACT FORM END--------------------->
+
+  <!------------Google reCaptcha api js file--------------->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+<!------------Google reCaptcha api js file end--------------->
+
+
+<script>
+
+  /////////////////////makes reCaptcha required/////////////////////////////
+  window.onload = function() {
+    var $recaptcha = document.querySelector('#g-recaptcha-response');
+
+    if($recaptcha) {
+        $recaptcha.setAttribute("required", "");
+    }
+  };
+  /////////////////////////////////////////////////////////////////////////
+
+</script>

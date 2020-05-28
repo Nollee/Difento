@@ -1,0 +1,91 @@
+@import "_mediaqueries";
+   #contact {
+       .sub-wrapper {
+           h2 {color: transparent;
+            -webkit-text-stroke-width: $dark-blue;
+            -webkit-text-stroke-color: $dark-blue;
+            position: absolute;
+            right: -50px;
+        }
+        .h3-contact {color: $main-orange; font-size: 2rem; margin-top: 10%;
+        @include desktop-lg {margin-top: 20%;}
+        @include desktop-sm {margin-top: 30%;}
+        @include tablet {margin-top: 40%;}
+        @include phone {margin-top: 50%; font-size: 1.5rem;}
+    }
+       }
+   }
+
+   .h3-big-contact {
+       font-size: 5rem !important; color: $dark-blue !important;
+       margin: 50px 0px;
+       @include tablet {font-size: 3rem !important;}
+       @include phone {margin: 10px 0px;}
+   }
+
+   #contact-form {
+       display: flex; flex-direction: column;
+       width: 85%;
+       h4 {color: $dark-blue; font-size: 2rem;
+            @include phone {font-size: 1.5rem;}
+    }
+       &-top-input {
+           width: 60%;
+           display: flex; flex-direction: row;
+           input[type=text], input[type=email] {width: 80%; margin-bottom: 10%;
+            @include phone {width: 100%;}
+        }
+           div {width: 100%;}
+           @include tablet {width: 100%;}
+           @include phone {flex-direction: column;}
+       }
+       input, textarea {border: none; background-color: transparent; font-size: 1.5rem;
+        @include phone {font-size: 1.2rem;}
+    }
+       input[type=submit] {color: white}
+       textarea {resize: none; width: 60%;
+        @include tablet {width: 100%;}
+    }
+   }
+
+   #contact-form, #contact h3 {
+    margin-left: 10%;
+    @include phone {margin-left: 2%;}
+   }
+
+   .call-us {
+      /*  position: absolute;
+       right: 100px; */
+       font-size: 2.5rem;
+       font-weight: bold;
+       a {color: $dark-blue; transition: ease .4s;
+        &:hover {color: $main-orange;}
+        }
+        @include tablet {margin-top: 5%; font-size: 2rem;}
+        @include phone {font-size: 1.5rem; margin-top: 10%;}
+   }
+
+   .contact-btn-number {
+       display: flex; flex-direction: row; justify-content: space-between;
+       width: 100%;
+       @include tablet {flex-direction: column;}
+       @include phone {margin-top: -50px;}
+   }
+
+   #alert-success {
+    position: fixed;
+    width: 100%;
+    background-color: $light-orange;
+    top: 0px;
+    height: 10vh;
+    display: flex; flex-direction: row; align-items: center;  justify-content: center;
+    color: white;
+    z-index: 9999;
+    transition: .4s ease;
+    opacity: 1;
+    i {margin-left: 5%;}
+    &.hide {
+        visibility: hidden;
+        opacity: 0;
+    }
+}

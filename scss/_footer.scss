@@ -11,8 +11,15 @@ footer{
     display: flex;
     flex-direction: column;
     z-index: 12;
+    @include tablet{
+        width: 90%;
+        margin: auto;
+    }
     .footer-top{
         margin-top: 10vh;
+        @include tablet{
+            margin-top: 8vh;
+        }
     }
     .footer-topdesc{
         display: flex;
@@ -23,6 +30,9 @@ footer{
             width: 60%;
             font-size: 1.5rem;
             color: $grey;
+            @include tablet{
+               font-size: 3vw;
+            }
         }
         .footer-icons{
             width: 30%;
@@ -33,6 +43,9 @@ footer{
             a{
                 font-size: 2.5vw;
                 color: $grey;
+                @include tablet{
+                    font-size: 6vw;
+                }
                 &:hover{
                     color: $main-orange;
                 }
@@ -61,6 +74,9 @@ footer{
     z-index: -1;
     overflow-y: hidden;
     overflow-x: hidden;
+    @include tablet{
+        display: none;
+    }
 }
 .footer-logo{
     width: 40%;
@@ -77,11 +93,18 @@ footer{
         color: $grey;
         font-size: 1.6vw;
         margin-bottom: 0.3vh;
+        @include tablet{
+            font-size: 3.5vw;
+            margin-bottom: 0.6vh;
+        }
     }
     a, p{
         color: $grey;
         font-size: 1.2vw;
         margin: 0.7vh 0;
+        @include tablet{
+            font-size: 3vw;
+        }
     }
     a:hover{
         color: $main-orange;
@@ -117,6 +140,10 @@ footer{
             width: 0.5vw;
             height: 0.5vw;
             margin-left: 0.5vw;
+            @include tablet{
+                width: 1.2vw;
+                height: 1.2vw;
+            }
         }
     }
 }

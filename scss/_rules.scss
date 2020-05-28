@@ -1,4 +1,6 @@
 
+@import "_mediaqueries";
+
 $dark-blue: #172430;
 $main-orange: #FF593E;
 $darkest-blue: #101A23;
@@ -24,6 +26,7 @@ body{
 
 html{
     overflow-y: auto;
+    overflow-x: hidden;
 	scroll-behavior: smooth;
 }
 
@@ -34,6 +37,28 @@ html{
     width:    -moz-calc(100vw - $nav-width);
     width:         calc(100vw - $nav-width);
     position: relative;
+    @include tablet{
+    margin-left: 0;
+    width: 100%;
+    }
+}
+
+.sub-wrapper{
+    height: 100vh;
+    width: 90%;
+    margin: 10vh auto;
+    color: $grey;
+}
+
+.dark{
+    color: $dark-blue;
+}
+
+.anchor {
+    margin-top: 100px;
+    @include phone{
+        margin-top: 50px;
+    }
 }
 
 h1, h2, h3, h4{
@@ -45,7 +70,19 @@ h1, h2, h3, h4{
 
 h2{
     font-size: 12rem;
+    color: transparent;
+    -webkit-text-stroke-width: 2px;
+    @include phone{
+        font-size: 30vw;
+    }
+}
 
+.darkh2{
+    -webkit-text-stroke-color: $dark-blue;
+}
+
+.lighth2{
+    -webkit-text-stroke-color: $grey;
 }
 
 a{
@@ -58,6 +95,7 @@ a{
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .swiper-slide{
@@ -133,6 +171,17 @@ a{
         i {margin-left: 10%;}
         transition: .4s ease;
     &:hover {transform: scale(1.1);}
+    @include tablet{
+        width: 14vw;
+        height: 8vw;
+        font-size: 2.5vw;
+    }
+    @include phone{
+        width: 30vw;
+        height: 15vw;
+        font-size: 6vw;
+        margin-top: 4vh;
+    }
     }
 }
 

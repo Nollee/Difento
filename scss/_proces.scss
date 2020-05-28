@@ -1,0 +1,73 @@
+.proc{
+    -webkit-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+    transition: 0.3s ease !important;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1 !important;
+    img{
+        width: 28%;
+        @include phone{
+            width: 25%;
+        }
+    }
+    .proces-text{
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        @include phone{
+            width: 60%;
+        }
+        h3{
+           font-size: 5vw; 
+           margin-bottom: 3vh;
+           @include phone{
+            font-size: 10vw;
+        }
+        }
+        p{
+            font-size: 1.5vw;
+            @include tablet{
+                font-size: 3vw;
+            }
+            @include phone{
+                font-size: 4vw;
+            }
+        }
+    }
+
+    @include tablet{
+    
+    }
+
+}
+
+.swiper2{
+    height: 65vh;
+    width: 70%;
+    margin: auto;
+    .swiper-pagination2{
+        text-align: center;
+        display: flex !important;
+        justify-content: space-between !important;
+        .swiper-pagination-bullet{
+            margin: 0 25px !important;
+            width: 70px;
+            height: 40px;
+            background-color: transparent;
+            i{
+                font-size: 40px;
+                color: $dark-blue;
+            }
+            @include phone{
+                margin: 0 8px !important;
+                width: 50px;
+            }
+        }
+    }
+
+    @include tablet{
+    width: 100%;
+    }
+}

@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // SWIPER SLIDER
 
-  var mySwiper = new Swiper('.swiper-container', {
+  let mySwiper = new Swiper('.swiper1', {
     // Optional parameters
     direction: 'horizontal',
     slidesPerView: 2,
@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function () {
     observeParents: true,
     // If we need pagination
     pagination: {
-      el: '.swiper-pagination',
+      el: '.swiper-pagination1',
     },
     /*
     // Navigation arrows
@@ -60,6 +60,20 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   let projects = [];
+  let procesIcons = ['fas fa-search', 'fas fa-paint-brush', 'far fa-comment-dots', 'fas fa-desktop', 'far fa-user-circle']
+  let swiper2 = new Swiper('.swiper2', {
+    spaceBetween: 200,
+    effect: 'fade',
+    pagination: {
+      el: '.swiper-pagination2',
+      clickable: true,
+      renderBullet: function (index, className) {
+        return '<span class="' + className + '"> <i class="' + (procesIcons[index]) + '"/>' + '</i></span>';
+      }
+
+    },
+  });
+
 
 
   function getProjects() {
@@ -162,7 +176,7 @@ document.addEventListener('DOMContentLoaded', function () {
     htmlTemplate += `
         <div id="weather-container">
         <img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png">
-          <h2>${data.name}, <span>${temp}</span> ºC</h2>
+          <h3>${data.name}, <span>${temp}</span> ºC</h3>
         </div>
       `;
     document.querySelector("#weather").innerHTML = htmlTemplate;
@@ -287,7 +301,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     <article id="cases" class="sub">
 
-    <div class="swiper-container">
+    <div class="swiper-container swiper1">
     <!-- Additional required wrapper -->
     <div id="caseinfo" class="overlay">
     </div>
@@ -297,7 +311,7 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
     <!--
 
-    <div class="swiper-pagination"></div>
+    <div class="swiper-pagination1"></div>
 
     <div class="swiper-button-prev"></div>
     <div class="swiper-button-next"></div>
@@ -306,14 +320,66 @@ document.addEventListener('DOMContentLoaded', function () {
     -->
 </div>
     </article>
+
+
      <article id="services" class="sub">
-    <div id="services-anchor">anchor</div>
+    <div id="services-anchor" class="anchor"></div>
+    <div class="sub-wrapper dark">
+    <h2 class="darkh2">Proces</h2>
+
+    <div class="swiper-container swiper2">
+
+    <div class="swiper-wrapper">
+
+    <div class="swiper-slide proc">
+    <img src="./images/research.svg" alt="research" data-aos="zoom-in" data-aos-delay="300">
+    <div class="proces-text">
+    <h3>Research</h3>
+    <p>  Lorem Ipsum er ganske enkelt fyldtekst fra print- og typografiindustrien. Lorem Ipsum har været standard fyldtekst siden 1500-tallet, hvor en ukendt trykker sammensatte en tilfældig spalte for at trykke en bog til sammenligning af forskellige skrifttyper. Lorem Ipsum har ikke alene.</p>
+    </div>
+    </div>
+    <div class="swiper-slide proc">
+    <img src="./images/brush.svg" alt="design" data-aos="zoom-in" data-aos-delay="300">
+    <div class="proces-text">
+    <h3>Design</h3>
+    <p>  Lorem Ipsum er ganske enkelt fyldtekst fra print- og typografiindustrien. Lorem Ipsum har været standard fyldtekst siden 1500-tallet, hvor en ukendt trykker sammensatte en tilfældig spalte for at trykke en bog til sammenligning af forskellige skrifttyper. Lorem Ipsum har ikke alene.</p>
+    </div>
+    </div>
+    <div class="swiper-slide proc">
+    <img src="./images/meet.svg" alt="møde" data-aos="zoom-in" data-aos-delay="300">
+    <div class="proces-text">
+    <h3>Møde</h3>
+    <p>  Lorem Ipsum er ganske enkelt fyldtekst fra print- og typografiindustrien. Lorem Ipsum har været standard fyldtekst siden 1500-tallet, hvor en ukendt trykker sammensatte en tilfældig spalte for at trykke en bog til sammenligning af forskellige skrifttyper. Lorem Ipsum har ikke alene.</p>
+    </div>
+    </div>
+    <div class="swiper-slide proc">
+    <img src="./images/dev.svg" alt="udvikling" data-aos="zoom-in" data-aos-delay="300">
+    <div class="proces-text">
+    <h3>Udvikling</h3>
+    <p>  Lorem Ipsum er ganske enkelt fyldtekst fra print- og typografiindustrien. Lorem Ipsum har været standard fyldtekst siden 1500-tallet, hvor en ukendt trykker sammensatte en tilfældig spalte for at trykke en bog til sammenligning af forskellige skrifttyper. Lorem Ipsum har ikke alene.</p>
+    </div>
+    </div>
+    <div class="swiper-slide proc">
+    <img src="./images/user.svg" alt="brugertest" data-aos="zoom-in" data-aos-delay="300">
+    <div class="proces-text">
+    <h3>Brugertest</h3>
+    <p>  Lorem Ipsum er ganske enkelt fyldtekst fra print- og typografiindustrien. Lorem Ipsum har været standard fyldtekst siden 1500-tallet, hvor en ukendt trykker sammensatte en tilfældig spalte for at trykke en bog til sammenligning af forskellige skrifttyper. Lorem Ipsum har ikke alene.</p>
+    </div>
+    </div>
+
+    </div>
+
+    <div class="swiper-pagination2"></div>
+
+    </div>
+
+    </div>
     </article>
 
     <article id="about" class="sub">
-    <div id="about-anchor"></div>
+    <div id="about-anchor" class="anchor"></div>
     <div class="sub-wrapper">
-    <h2>OM OS</h2>
+    <h2 class="lighth2">OM OS</h2>
     <div class="about-container">
     <div class="about-left">
     <div class="text-box">
@@ -346,8 +412,8 @@ document.addEventListener('DOMContentLoaded', function () {
     </div>
     <div class="person">
     <div class="person-card" data-aos="zoom-in" data-aos-delay="400">
-    <img src="./images/mikkel.jpg" alt="martin">
-    <h5>Mikkel Jensen</h5>
+    <img src="./images/mikkel.jpg" alt="mikkel">
+    <h5>Mikkel Faartoft</h5>
     <a href="tel:+4523677669">+45 23 67 76 69</a>
     <a href="mailto:mj@difento.dk">mj@difento.dk</a>
     </div>
@@ -359,12 +425,54 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
     <article id="recommend" class="sub">
-    <div id="recommend-anchor">anchor</div>
+    <div id="recommend-anchor" class="anchor">anchor</div>
     </article>
 
     <article id="contact" class="sub">
-    <div id="contact-anchor">anchor</div>
+    <div id="contact-anchor" class="anchor"></div>
+      <div class="sub-wrapper">
+      <h2>Kontakt</h2>
+      <h3 class="h3-contact" data-aos="fade-in" data-aos-delay="100">skal vi finde din løsning?</h3>
+      <h3 class="h3-big-contact" data-aos="fade-up"
+      data-aos-anchor-placement="bottom-bottom" data-aos-delay="800">Ta' kontakt</h3>
 
+      <!-- contact form --->
+      <!------------------------------------CONTACT FORM--------------------->
+      <form id="contact-form" role="form" method="post" action="#" class="form-horizontal">
+
+             <div id="contact-form-top-input">
+             <div>
+             <h4>Navn</h4>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Hvad er dit navn?" required>
+                </div>
+                <div>
+              <h4>Email</h4>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Hvilken mail skal vi svare på?" required>
+                </div>
+            </div>
+            <div>
+            <h4>Besked</h4>
+	                <textarea class="form-control" id="msg" name="msg" placeholder="Fortæl os hvad vi kan hjælpe med" rows="5" required></textarea></div>
+
+
+
+          <div class="contact-btn-number">
+                  <div class="btn-orange">
+                    <div><input type="submit" value="SEND" name="post"><i class="fas fa-paper-plane"></i></div></div>
+
+                <input type="hidden" id="token" name="token">
+
+            </form>
+
+            <div class="call-us" data-aos="fade-in" data-aos-delay="1000">
+              <a href="tel:+4523677669">Ring til os på +45 23 67 76 69</a>
+            </div>
+          </div>
+
+      <!------ end ------->
+
+
+      </div>
     </article>
     <footer class="sub">
     <div class="footer-wrapper">
@@ -477,16 +585,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // ==================== ÆNDRER BAGGRUNDEN ==============================
     let descriptions = document.querySelectorAll(".link-desc");
+    let procSlides = document.querySelectorAll(".proc");
 
     if (current == 1 || current == 4) {
       document.querySelector("body").style.backgroundColor = "#F2F2F2"
       for (let desc of descriptions) {
         desc.style.backgroundColor = "#172430"
       }
+
+      for (let slide of procSlides) {
+        slide.style.backgroundColor = "#F2F2F2"
+      }
+
     } else {
       document.querySelector("body").style.backgroundColor = "#172430"
       for (let desc of descriptions) {
         desc.style.backgroundColor = "#F2F2F2"
+      }
+
+      for (let slide of procSlides) {
+        slide.style.backgroundColor = "#172430"
       }
 
     }
@@ -525,26 +643,25 @@ document.addEventListener('DOMContentLoaded', function () {
 
 }, false);
 
+grecaptcha.ready(function () {
+  grecaptcha.execute('6LdwzfwUAAAAALCr3M_nRgn8-TN7_KYXWatiF7ML', { action: 'homepage' }).then(function (token) {
+    // console.log(token);
+    document.getElementById("token").value = token;
+  });
+});
 
-// 
+//
 
-
-
-
-
-
-
-
-
-
-
+document.querySelector('#slides').innerHTML = htmlTemplate;
+}
 
 
 
 
+/* close success message div */
+function closeSuccessDiv() {
+  document.getElementById("alert-success").classList.add("hide");
+}
 
-
-
-
-
-
+// close the div in 7 secs
+window.setTimeout(closeSuccessDiv, 7000);
