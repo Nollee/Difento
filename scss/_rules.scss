@@ -26,7 +26,7 @@ body{
     /* cursor: url('../images/point.png'), pointer; */
 }
 
-a, button, i, input[type=submit] {cursor: url('../images/point.png'), pointer;}
+a, button, i, input[type=submit], nav p, nav img {cursor: url('../images/point.png'), pointer !important;}
 
 html{
     overflow-y: auto;
