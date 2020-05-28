@@ -152,19 +152,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
   /* weather api */
   const apiCall = 'https://api.openweathermap.org/data/2.5/weather?q=aarhus,dk&units=metric&appid=b892cb50e6b072e2bd37a1bc8049ee3a';
 
