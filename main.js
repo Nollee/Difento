@@ -39,6 +39,8 @@ document.addEventListener('DOMContentLoaded', function () {
     slidesPerView: 2,
     spaceBetween: 200,
     centeredSlides: true,
+    observer: true,
+    observeParents: true,
     // If we need pagination
     pagination: {
       el: '.swiper-pagination1',
@@ -46,17 +48,18 @@ document.addEventListener('DOMContentLoaded', function () {
     /*
     // Navigation arrows
     navigation: {
-      nextEl: '.swiper-button-next',
+    nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
 
     // And if we need scrollbar
     scrollbar: {
-      el: '.swiper-scrollbar',
+    el: '.swiper-scrollbar',
     },
     */
   });
 
+  let projects = [];
   let procesIcons = ['fas fa-search', 'fas fa-paint-brush', 'far fa-comment-dots', 'fas fa-desktop', 'far fa-user-circle']
   let swiper2 = new Swiper('.swiper2', {
     spaceBetween: 200,
@@ -65,27 +68,102 @@ document.addEventListener('DOMContentLoaded', function () {
       el: '.swiper-pagination2',
       clickable: true,
       renderBullet: function (index, className) {
-        return '<span class="' + className + '"> <i class="' + (procesIcons[index]) + '"/>' + '</i></span>'; }
+        return '<span class="' + className + '"> <i class="' + (procesIcons[index]) + '"/>' + '</i></span>';
+      }
 
     },
   });
 
 
-/* weather api */
-const apiCall = 'https://api.openweathermap.org/data/2.5/weather?q=aarhus,dk&units=metric&appid=b892cb50e6b072e2bd37a1bc8049ee3a';
 
-/* fetch(apiCall)
-.then(response => response.json())
-.then(data => console.log(data)); */
+  function getProjects() {
+    fetch('https://difento.dk/wordpress/wp-json/wp/v2/posts?_embed')
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (json) {
+        appendCases(json);
+        projects = json;
+        setTimeout(function () {
+        }, 200);
+      });
 
-fetch(apiCall)
-  .then(function(response) {
-    return response.json();
-  })
-  .then(function(data) {
-    console.log(data);
-    appendWeather(data);
-  });
+  }
+
+
+  getProjects();
+
+
+
+
+  // append projects to the DOM
+  function appendCases(projects) {
+    let htmlTemplate = " ";
+    for (let project of projects) {
+      htmlTemplate += `
+      <div  class="swiper-slide" id="${project.id}">
+        <img  src="${project.acf.image}"></h2>
+      </div>
+    `;
+    }
+
+    let i = 0;
+    let caseInfo = projects[i];
+    let overlayInfo = "";
+
+
+    document.querySelector('#slides').innerHTML = htmlTemplate;
+
+
+    mySwiper.on('slideChangeTransitionEnd', async function findSlide() {
+      let pros = document.querySelectorAll('.swiper-slide');
+      overlayInfo = " ";
+      for (let pro of pros) {
+        if (pro.classList.contains('swiper-slide-active') === true) {
+          let data = await fetch(`https://difento.dk/wordpress/wp-json/wp/v2/posts/${pro.id}`).then(res => res.json());
+          overlayInfo += `
+          <h4 class="slider-count">${data.acf.count}</h4>
+          <h4 class="slider-job">${data.acf.description}</h4>
+          <div class="slider-year">
+          <div class="line"></div>
+          <h4>${data.acf.year}</h4>
+          </div>
+          <h4 class="slider-company">${data.acf.title}</h4>
+          `;
+          document.querySelector('#caseinfo').innerHTML = overlayInfo;
+        }
+      }
+    });
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* weather api */
+  const apiCall = 'https://api.openweathermap.org/data/2.5/weather?q=aarhus,dk&units=metric&appid=b892cb50e6b072e2bd37a1bc8049ee3a';
+
+  /* fetch(apiCall)
+  .then(response => response.json())
+  .then(data => console.log(data)); */
+
+  fetch(apiCall)
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (data) {
+      console.log(data);
+      appendWeather(data);
+    });
 
   fetch(apiCall)
     .then(response => response.json())
@@ -130,7 +208,7 @@ fetch(apiCall)
       <p>CASES</p>
       </div>
       </a>
-      <a id="servicelink" href="#services-anchor"><i class="fas fa-hourglass-half"></i>
+      <a id="servicelink" href="#proces-anchor"><i class="fas fa-hourglass-half"></i>
       <div id="procesdesc" class="link-desc">
       <p>PROCES</p>
       </div>
@@ -173,7 +251,7 @@ fetch(apiCall)
     <i class="fas fa-layer-group"></i>
     <p>CASES</p>
     </a>
-    <a href="#services-anchor">
+    <a href="#proces-anchor">
     <i class="fas fa-hourglass-half"></i>
     <p>PROCES</p>
     </a>
@@ -225,14 +303,7 @@ fetch(apiCall)
 
     <div class="swiper-container swiper1">
     <!-- Additional required wrapper -->
-    <div class="overlay">
-    <h4 class="slider-count">01</h4>
-    <h4 class="slider-job">website</h4>
-    <div class="slider-year">
-      <div class="line"></div>
-      <h4>2019</h4>
-    </div>
-    <h4 class="slider-company">BUTIK TINC</h4>
+    <div id="caseinfo" class="overlay">
     </div>
     <div id="slides" class="swiper-wrapper">
         <!-- Slides -->
@@ -251,8 +322,8 @@ fetch(apiCall)
     </article>
 
 
-     <article id="services" class="sub">
-    <div id="services-anchor" class="anchor"></div>
+     <article id="proces" class="sub">
+    <div id="proces-anchor" class="anchor"></div>
     <div class="sub-wrapper dark">
     <h2 class="darkh2">Proces</h2>
 
@@ -513,28 +584,35 @@ fetch(apiCall)
 
 
     // ==================== ÆNDRER BAGGRUNDEN ==============================
-    let descriptions =  document.querySelectorAll(".link-desc");
+    let descriptions = document.querySelectorAll(".link-desc");
     let procSlides = document.querySelectorAll(".proc");
 
-    if (current == 1 || current == 4 ) {
+    if (current == 1 || current == 4) {
       document.querySelector("body").style.backgroundColor = "#F2F2F2"
       for (let desc of descriptions) {
         desc.style.backgroundColor = "#172430"
       }
 
-      for (let slide  of procSlides) {
+      for (let slide of procSlides) {
         slide.style.backgroundColor = "#F2F2F2"
       }
 
-    } else {
+    }
+    
+    if(current == 4){
+      document.querySelector(".grecaptcha-badge").classList.remove("delete")
+    }
+
+    else {
       document.querySelector("body").style.backgroundColor = "#172430"
       for (let desc of descriptions) {
         desc.style.backgroundColor = "#F2F2F2"
       }
 
-      for (let slide  of procSlides) {
+      for (let slide of procSlides) {
         slide.style.backgroundColor = "#172430"
       }
+      document.querySelector(".grecaptcha-badge").classList.add("delete")
 
     }
 
@@ -555,7 +633,7 @@ fetch(apiCall)
 
   // ==================== ÆNDRER FARVEN PÅ CIRKLEN I FOOTER
 
-  function time(){
+  function time() {
     let t = new Date();
     let h = t.getHours()
 
@@ -572,57 +650,25 @@ fetch(apiCall)
 
 }, false);
 
-grecaptcha.ready(function() {
-  grecaptcha.execute('6LdwzfwUAAAAALCr3M_nRgn8-TN7_KYXWatiF7ML', {action: 'homepage'}).then(function(token) {
-     // console.log(token);
-     document.getElementById("token").value = token;
+grecaptcha.ready(function () {
+  grecaptcha.execute('6LdwzfwUAAAAALCr3M_nRgn8-TN7_KYXWatiF7ML', { action: 'homepage' }).then(function (token) {
+    // console.log(token);
+    document.getElementById("token").value = token;
   });
 });
 
 //
 
-let projects = [];
-
-
-function getProjects() {
-  fetch('https://difento.dk/wordpress/wp-json/wp/v2/posts?_embed')
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (json) {
-      console.log(json);
-      appendCases(json);
-      projects = json;
-      setTimeout(function () {
-      }, 200);
-    });
-}
-
-console.log(projects);
-getProjects();
-
-// append projects to the DOM
-function appendCases(projects) {
-  let htmlTemplate = "";
-
-  for (let project of projects) {
-    htmlTemplate += `
-      <div class="swiper-slide">
-        <img src="${project.acf.image}"></h2>
-      </div>
-    `;
-  }
-
-  document.querySelector('#slides').innerHTML = htmlTemplate;
+document.querySelector('#slides').innerHTML = htmlTemplate;
 }
 
 
 
 
 /* close success message div */
-function closeSuccessDiv(){
+function closeSuccessDiv() {
   document.getElementById("alert-success").classList.add("hide");
-  }
+}
 
-  // close the div in 7 secs
-  window.setTimeout( closeSuccessDiv, 7000 );
+// close the div in 7 secs
+window.setTimeout(closeSuccessDiv, 7000);

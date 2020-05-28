@@ -48,6 +48,9 @@ html{
     width: 90%;
     margin: 10vh auto;
     color: $grey;
+    @include phone{
+       height: auto;
+    }
 }
 
 .dark{
@@ -213,4 +216,8 @@ a{
   }
   ::-moz-selection {
     background: #ffb7b7; /* Gecko Browsers */
+  }
+
+  .delete{
+      display: none !important;
   }
