@@ -342,14 +342,16 @@ a {
   background-color: #101A23;
   display: flex;
   flex-direction: column;
-  justify-content: space-between; }
+  justify-content: space-between;
+  z-index: 99; }
   .tabbar .nav-container {
     height: 55%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    z-index: 99; }
+    z-index: 99;
+    position: relative; }
     .tabbar .nav-container img {
       width: 40px; }
     .tabbar .nav-container img:hover {
@@ -1037,17 +1039,24 @@ footer {
       margin-bottom: 10vh; } }
 
 .proc {
-  -webkit-transition: 0.3s ease;
-  -o-transition: 0.3s ease;
-  transition: 0.3s ease !important;
+  -webkit-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease !important;
   display: flex !important;
   justify-content: space-around !important;
   align-items: center !important;
-  z-index: 1 !important;
   margin: auto !important; }
+  @media only screen and (max-width: 1050px) {
+    .proc {
+      width: 100% !important; } }
   .proc img {
     width: 28% !important;
     height: auto !important; }
+    .proc img:hover {
+      cursor: url("../images/arrow.png"), default !important; }
+    @media only screen and (max-width: 1050px) {
+      .proc img {
+        width: 35% !important; } }
     @media only screen and (max-width: 550px) {
       .proc img {
         width: 25% !important; } }
@@ -1072,6 +1081,9 @@ footer {
       @media only screen and (max-width: 550px) {
         .proc .proces-text p {
           font-size: 4vw; } }
+
+.swiper-slide {
+  z-index: 1 !important; }
 
 .swiper2 {
   height: 65vh !important;
@@ -1098,7 +1110,7 @@ footer {
           width: 50px; } }
   @media only screen and (max-width: 1050px) {
     .swiper2 {
-      width: 100%; } }
+      width: 100% !important; } }
 
 /* mediaqueries */
 /* @include desktop-sm {width: 125px; top: 20px;}
@@ -1206,12 +1218,10 @@ footer {
   width: 15vw !important;
   justify-content: space-between;
   position: absolute;
-  margin-left: auto;
-  margin-right: auto;
   left: 0;
   right: 0;
   text-align: center;
-  margin: auto auto 10% auto;
+  margin: auto auto 0% auto;
   color: white;
   --swiper-theme-color: white; }
 
@@ -1232,6 +1242,15 @@ footer {
 .button-next1 {
   margin-right: 20%;
   --swiper-theme-color: white; }
+
+.casehtag {
+  margin-left: 10vh; }
+
+.sub-wrapper.case {
+  width: 100%; }
+
+.case {
+  height: 80vh; }
 
 /* mediaqueries */
 /* @include desktop-sm {width: 125px; top: 20px;}

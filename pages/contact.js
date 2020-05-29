@@ -41,8 +41,6 @@ export default class Contact {
             </form>
 
             <div class="call-us" data-aos="fade-in" data-aos-delay="1000">
-              <a href="tel:+4523677669">Ring til os på +45 23 67 76 69</a>
-              <div class="available"></div>
             </div>
           </div>
 

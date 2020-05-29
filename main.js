@@ -397,7 +397,7 @@ console.log(client);
   });
 
 
-  // ======= ÆNDRER FARVEN PÅ CIRKLEN VED TELEFONNUMRENE ============
+  // ======= ÆNDRER FARVEN PÅ CIRKLEN OG INDHOLD I CALL-US ============
 
   function time() {
     let t = new Date();
@@ -405,12 +405,15 @@ console.log(client);
 
     if (h >= 9 && h <= 21) {
       document.querySelector(".phone-active").style.backgroundColor = "green"
-      document.querySelector(".available").style.backgroundColor = "green"
+      document.querySelector(".call-us").innerHTML = /* html */ `
+      <a href="tel:+4523677669">Ring til os på +45 23 67 76 69</a>
+      `;
     } else {
       document.querySelector(".phone-active").style.backgroundColor = "red"
-      document.querySelector(".available").style.backgroundColor = "red"
+      document.querySelector(".call-us").innerHTML = /* html */ `
+      <a href="mailto:kontakt@difento.dk">Send os en mail på kontakt@difento.dk</a>
+      `;
     }
-
   }
 
   time();
