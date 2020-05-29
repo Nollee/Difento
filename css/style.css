@@ -17,7 +17,7 @@ body {
   cursor: url("../images/arrow.png"), auto;
   /* cursor: url('../images/point.png'), pointer; */ }
 
-a, button, i, input[type=submit], nav p, nav img, ::-webkit-scrollbar, ::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb, .btn-grey, .btn-orange, .btn-orange div, .btn-grey div, ::-webkit-scrollbar-thumb:hover, #proces span, .swiper-wrapper img {
+a, button, i, input[type=submit], nav p, nav img, ::-webkit-scrollbar, ::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb, .btn-grey, .btn-orange, .btn-orange div, .btn-grey div, ::-webkit-scrollbar-thumb:hover, #proces span, .swiper-wrapper img, .swiper-button-next, .swiper-button-prev {
   cursor: url("../images/point.png"), pointer !important; }
 
 input[type=text], input[type=text], input[type=email], textarea {
@@ -1241,21 +1241,60 @@ footer {
   -webkit-text-stroke-width: #F2F2F2;
   -webkit-text-stroke-color: #F2F2F2; }
 
-#recommend-container {
+/* .slides3 {height: 65vh !important;} */
+.swiper3 {
+  height: 65vh !important; }
+
+.recommend-slide {
+  color: white;
   width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center; }
-  #recommend-container ul {
-    width: 40%;
-    list-style-image: url("../images/list_dot.png"); }
-    #recommend-container ul li {
-      display: inline;
-      list-style-image: url("../images/list_dot.png");
-      margin-left: 5%;
-      font-size: 2rem;
-      /* &::before {content: "\2022";
-          color: $main-orange; width: 5em !important;
-          font-weight: bold;} */ }
+  flex-direction: row;
+  align-items: center;
+  justify-self: center; }
+  .recommend-slide ul {
+    width: 100%;
+    list-style-image: url("../images/list_dot.png");
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: -3vw; }
+    .recommend-slide ul li {
+      float: left;
+      text-transform: capitalize;
+      margin-left: 10%;
+      font-size: 2rem; }
+  .recommend-slide a {
+    color: white; }
+
+.recommend-item {
+  width: 70%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%; }
+  .recommend-item img {
+    width: 30%;
+    object-fit: cover; }
+  .recommend-item h4 {
+    font-size: 1.5rem;
+    margin-bottom: 2%; }
+
+.quote {
+  font-size: 1.7rem;
+  width: 70%;
+  font-style: italic; }
+
+.client-logo {
+  width: 30vw;
+  margin-bottom: 2%; }
+
+.client-name {
+  text-transform: capitalize;
+  color: #FF593E;
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 2% 0%; }
 
 /*# sourceMappingURL=style.css.map */

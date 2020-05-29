@@ -117,23 +117,60 @@ getClients();
 
 
 
+let swiper3 = new Swiper('.swiper3', {
+  spaceBetween: 100,
+  centeredSlides: true,
+  observer: true,
+observeParents: true,
+  autoplay: {
+    delay: 10000,
+    disableOnInteraction: false,
+  },
+  pagination: {
+    el: '.swiper-pagination',
+    clickable: true,
+  },
+  navigation: {
+    nextEl: '.swiper-button-next',
+    prevEl: '.swiper-button-prev',
+  },
+});
+
 
 function appendClients(clients) {
 for (let client of clients) {
 console.log(client);
-  document.querySelector("#recommend-container").innerHTML += /*html*/`
+  document.querySelector(".slides3").innerHTML += /*html*/`
+  <div  class="swiper-slide recommend-slide" id="${client.id}">
 
+
+
+<article class="recommend-item">
+<div>
   <img class="client-logo" src="${client.logo.guid}" alt="${client.logo.post_title}">
+  <p class="quote">"${client.quote}"</p>
+  <p class="client-name">- ${client.client_name}</p>
+
+  <div>
+  <h4>Løsning:</h4>
+    ${client.services}
+    </div>
+  </div>
+
   <img class="client-img" src="${client.image.guid}" alt="${client.image.post_title}">
     <!---<h3>${client.title.rendered}</h3>--->
-    <p>"${client.quote}"</p>
     <!---<h4>Specification</h4>-->
-    <h4>Løsning</h4>
-    ${client.services}
 
+    <!--<a href="#">Se case</a>-->
+
+    </div>
+    </article>
   `;
 }
 }
+
+
+
 
 
 
@@ -151,12 +188,12 @@ console.log(client);
       })
       .then(function (json) {
         appendCases(json);
-        projects = json;        
+        projects = json;
         setTimeout(function () {
         }, 200);
         console.log(json);
       });
-    
+
 
 
   }
@@ -170,7 +207,7 @@ console.log(client);
   // APPENDS CASES TIL SLIDEREN
   function appendCases(projects) {
     console.log(projects);
-    
+
     let htmlTemplate = " ";
     for (let project of projects) {
       /* console.log(project) */
@@ -378,7 +415,7 @@ console.log(client);
 
   time();
 
-  
+
 
  // =========== RECAPTCHA GOOGLE ===================
  grecaptcha.ready(function () {
