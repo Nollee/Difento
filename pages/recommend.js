@@ -13,8 +13,8 @@ export default class Recommend {
 
     </div>
     <!-- Add Arrows -->
-    <div class="swiper-button-next button-next3"></div>
-    <div class="swiper-button-prev button-prev3"></div>
+    <div class="swiper-button-next button-next3" data-aos="fade-in" data-aos-delay="500"></div>
+    <div class="swiper-button-prev button-prev3" data-aos="fade-in" data-aos-delay="500"></div>
   </div>
       `;
     }
