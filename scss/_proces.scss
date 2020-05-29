@@ -1,6 +1,6 @@
 .proc{
-    -webkit-transition: background-color 0.3s ease;
-    -o-transition: background-color 0.3s ease;
+    -webkit-transition: background-color 0.3s ease !important;
+    -o-transition: background-color 0.3s ease !important;
     transition: background-color 0.3s ease !important;
     display: flex !important;
     justify-content: space-around !important;
