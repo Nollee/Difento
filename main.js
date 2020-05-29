@@ -122,14 +122,15 @@ function appendClients(clients) {
 for (let client of clients) {
 console.log(client);
   document.querySelector("#recommend-container").innerHTML += /*html*/`
-  <article>
-    <h3>${client.title.rendered}</h3>
-    <img  src="${client.image.guid}">
-    <h4>Description</h4>
-    <p>${client.quote}</p>
-    <h4>Specification</h4>
-    <p>${client.services}</p>
-  </article>
+
+  <img class="client-logo" src="${client.logo.guid}" alt="${client.logo.post_title}">
+  <img class="client-img" src="${client.image.guid}" alt="${client.image.post_title}">
+    <!---<h3>${client.title.rendered}</h3>--->
+    <p>"${client.quote}"</p>
+    <!---<h4>Specification</h4>-->
+    <h4>Løsning</h4>
+    ${client.services}
+
   `;
 }
 }

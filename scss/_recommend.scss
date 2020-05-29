@@ -1,0 +1,19 @@
+@import "_mediaqueries";
+
+#recommend h2{
+    -webkit-text-stroke-width: $grey;
+    -webkit-text-stroke-color: $grey;
+}
+
+#recommend-container {
+    width: 100%;
+    display: flex; flex-direction: column; align-items: center;
+    ul { width: 40%; list-style-image: url("../images/list_dot.png");
+    li {display: inline; list-style-image: url("../images/list_dot.png");
+    margin-left: 5%; font-size: 2rem;
+    /* &::before {content: "\2022";
+        color: $main-orange; width: 5em !important;
+        font-weight: bold;} */
+    }
+}
+}

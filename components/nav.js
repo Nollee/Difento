@@ -37,7 +37,7 @@ export default class NavBar {
       <div class="tabbar-some">
           <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
           <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
-          <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-instagram-square"></i></a>
+          <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
       `;
     }
