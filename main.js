@@ -4,6 +4,7 @@ import Cases from './pages/cases.js'
 import Proces from './pages/proces.js'
 import About from './pages/about.js'
 import Contact from './pages/contact.js'
+import Recommend from './pages/recommend.js'
 import Footer from './components/footer.js'
 
 let navbar = new NavBar();
@@ -12,6 +13,7 @@ let cases = new Cases();
 let proces = new Proces();
 let about = new About();
 let contact = new Contact();
+let recommend = new Recommend();
 let footer = new Footer();
 
 
@@ -93,7 +95,54 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 
- // =================== WORDPRESS REST API FETCH ====================
+/*
+******* Wordpress content appended to DOM with REST API ************
+ */
+function getClients() {
+  fetch('https://difento.dk/wordpress/wp-json/wp/v2/client?_embed')
+    .then(function (response) {
+      return response.json();
+    })
+    .then(function (json) {
+      appendClients(json);
+      projects = json;
+      setTimeout(function () {
+      }, 200);
+    });
+
+}
+
+console.log(getClients);
+getClients();
+
+
+
+
+function appendClients(clients) {
+for (let client of clients) {
+console.log(client);
+  document.querySelector("#recommend-container").innerHTML += /*html*/`
+  <article>
+    <h3>${client.title.rendered}</h3>
+    <img  src="${client.image.guid}">
+    <h4>Description</h4>
+    <p>${client.quote}</p>
+    <h4>Specification</h4>
+    <p>${client.services}</p>
+  </article>
+  `;
+}
+}
+
+
+
+
+
+
+
+
+
+
   function getProjects() {
     fetch('https://difento.dk/wordpress/wp-json/wp/v2/posts?_embed')
       .then(function (response) {
@@ -118,6 +167,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function appendCases(projects) {
     let htmlTemplate = " ";
     for (let project of projects) {
+      /* console.log(project) */
       htmlTemplate += `
       <div  class="swiper-slide" id="${project.id}">
         <img src="${project.acf.image}"></h2>
@@ -165,10 +215,8 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ============ weather api ======================== */
   const apiCall = 'https://api.openweathermap.org/data/2.5/weather?q=aarhus,dk&units=metric&appid=b892cb50e6b072e2bd37a1bc8049ee3a';
 
-  /* fetch(apiCall)
-  .then(response => response.json())
-  .then(data => console.log(data)); */
 
+/* fecta api */
   fetch(apiCall)
     .then(function (response) {
       return response.json();
@@ -182,10 +230,11 @@ document.addEventListener('DOMContentLoaded', function () {
     .then(response => response.json())
     .then(data => console.log(data));
 
+    /* append weather data to DOM */
   function appendWeather(data) {
     let htmlTemplate = "";
     Math.round(data.main.temp);
-    let temp = Math.round(`${data.main.temp}`);
+    let temp = Math.round(`${data.main.temp}`); //temp to rounded number
     htmlTemplate += `
         <div id="weather-container">
         <img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png">
@@ -330,16 +379,16 @@ document.addEventListener('DOMContentLoaded', function () {
       document.getElementById("token").value = token;
     });
   });
-  
+
   //
-  
+
   /* close success message div */
   function closeSuccessDiv() {
     document.getElementById("alert-success").classList.add("hide");
   }
-  
+
   // close the div in 7 secs
   window.setTimeout(closeSuccessDiv, 7000);
-  
+
 
 }, false);
