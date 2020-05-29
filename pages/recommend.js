@@ -13,8 +13,8 @@ export default class Recommend {
 
     </div>
     <!-- Add Arrows -->
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next button-next3"></div>
+    <div class="swiper-button-prev button-prev3"></div>
   </div>
       `;
     }

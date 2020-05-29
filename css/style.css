@@ -1316,4 +1316,13 @@ footer {
   font-weight: 700;
   margin: 2% 0%; }
 
+.button-next3, .button-prev3 {
+  --swiper-theme-color: white; }
+
+.button-next3 {
+  margin-right: 5%; }
+
+.button-prev3 {
+  margin-left: 5%; }
+
 /*# sourceMappingURL=style.css.map */

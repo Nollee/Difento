@@ -141,7 +141,7 @@ function appendClients(clients) {
 for (let client of clients) {
 console.log(client);
   document.querySelector(".slides3").innerHTML += /*html*/`
-  <div  class="swiper-slide recommend-slide" id="${client.id}">
+  <div  class="swiper-slide recommend-slide" id="${client.id}" data-aos="fade-in" data-aos-delay="300">
 
 
 
