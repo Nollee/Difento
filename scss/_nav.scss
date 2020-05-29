@@ -14,6 +14,7 @@
     transition: 0.4s ease;
     background-color: $darkest-blue;
     display: flex; flex-direction: column; justify-content: space-between;
+    z-index: 99;
     .nav-container{
     height: 55%;
        display: flex;
@@ -21,6 +22,7 @@
     justify-content: space-around;
     align-items: center;
     z-index: 99;
+    position: relative;
     img{
         width: 40px;
     }
