@@ -5,15 +5,40 @@
     -webkit-text-stroke-color: $grey;
 }
 
-#recommend-container {
+/* .slides3 {height: 65vh !important;} */
+
+.swiper3 {height: 65vh !important;}
+
+.recommend-slide {
+    color: white;
     width: 100%;
-    display: flex; flex-direction: column; align-items: center;
-    ul { width: 40%; list-style-image: url("../images/list_dot.png");
-    li {display: inline; list-style-image: url("../images/list_dot.png");
-    margin-left: 5%; font-size: 2rem;
-    /* &::before {content: "\2022";
-        color: $main-orange; width: 5em !important;
-        font-weight: bold;} */
+    display: flex; flex-direction: row; align-items: center; justify-self: center;
+    ul {
+        width: 100%; list-style-image: url("../images/list_dot.png"); display: flex; flex-direction: row; align-items: center;
+        margin-left: -3vw;
+    li {
+        float: left; text-transform: capitalize;
+    margin-left: 10%; font-size: 2rem;
     }
 }
+    a {color: white;}
 }
+
+.recommend-item {width: 70%; display: flex; flex-direction: row; justify-content: center; align-items: center; height: 100%;
+img {width: 30%; object-fit: cover;}
+h4 {font-size: 1.5rem; margin-bottom: 2%;}
+}
+
+.quote {font-size: 1.7rem; width: 70%; font-style: italic;}
+
+.client-logo {width: 30vw; margin-bottom: 2%;}
+
+.client-name {
+    text-transform: capitalize; color: $main-orange;
+    font-size: 3rem; font-weight: 700;
+    margin: 2% 0%;
+}
+
+.button-next3, .button-prev3 {--swiper-theme-color: white;}
+.button-next3 {margin-right: 5%;}
+.button-prev3 {margin-left: 5%;}
