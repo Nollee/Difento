@@ -9,6 +9,7 @@
     margin: auto !important;
     img{
         width: 28% !important;
+        height: auto !important;
         @include phone{
             width: 25% !important;
         }

@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 
-  // SWIPER SLIDER
+  // ======= SWIPER SLIDER TIL CASES =====================
 
   let mySwiper = new Swiper('.swiper1', {
     // Optional parameters
@@ -63,19 +63,21 @@ document.addEventListener('DOMContentLoaded', function () {
     pagination: {
       el: '.swiper-pagination1',
     },
-    /*
+
     // Navigation arrows
     navigation: {
-    nextEl: '.swiper-button-next',
+      nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
 
     // And if we need scrollbar
     scrollbar: {
-    el: '.swiper-scrollbar',
+      el: '.swiper-scrollbar',
     },
-    */
+
   });
+
+  // ======= SWIPER SLIDER TIL PROCES =====================
 
   let projects = [];
   let procesIcons = ['fas fa-search', 'fas fa-paint-brush', 'far fa-comment-dots', 'fas fa-desktop', 'far fa-user-circle']
@@ -161,26 +163,34 @@ console.log(client);
 
 
 
-  // append projects to the DOM
+  // APPENDS CASES TIL SLIDEREN
   function appendCases(projects) {
     let htmlTemplate = " ";
     for (let project of projects) {
       /* console.log(project) */
       htmlTemplate += `
       <div  class="swiper-slide" id="${project.id}">
-        <img  src="${project.acf.image}"></h2>
+        <img src="${project.acf.image}"></h2>
       </div>
     `;
     }
 
     let i = 0;
     let caseInfo = projects[i];
-    let overlayInfo = "";
+    let overlayInfo = `
+    <h4 class="slider-count animation-fadein">${data.acf.count}</h4>
+    <h4 class="slider-job animation-fadein-delay">${data.acf.description}</h4>
+    <div class="slider-year animation-opacity">
+        <div class="line"></div>
+        <h4>${caseInfo.acf.year}</h4>
+      </div>
+      <h4 class="slider-company">${caseInfo.acf.title}</h4>
+      `;
 
-
+    document.querySelector('#caseinfo').innerHTML = overlayInfo;
     document.querySelector('#slides').innerHTML = htmlTemplate;
 
-
+    // ÆNDRER TAL OG TEKST OMKRING BILLEDERNE I CASES SLIDER
     mySwiper.on('slideChangeTransitionEnd', async function findSlide() {
       let pros = document.querySelectorAll('.swiper-slide');
       overlayInfo = " ";
@@ -188,13 +198,13 @@ console.log(client);
         if (pro.classList.contains('swiper-slide-active') === true) {
           let data = await fetch(`https://difento.dk/wordpress/wp-json/wp/v2/posts/${pro.id}`).then(res => res.json());
           overlayInfo += `
-          <h4 class="slider-count">${data.acf.count}</h4>
-          <h4 class="slider-job">${data.acf.description}</h4>
-          <div class="slider-year">
+          <h4 class="slider-count animation-fadein">${data.acf.count}</h4>
+          <h4 class="slider-job animation-fadein-delay">${data.acf.description}</h4>
+          <div class="slider-year animation-opacity">
           <div class="line"></div>
           <h4>${data.acf.year}</h4>
           </div>
-          <h4 class="slider-company">${data.acf.title}</h4>
+          <h4 class="slider-company animation-opacity-delay">${data.acf.title}</h4>
           `;
           document.querySelector('#caseinfo').innerHTML = overlayInfo;
         }
@@ -202,7 +212,7 @@ console.log(client);
     });
   }
 
-  /* weather api */
+  /* ============ weather api ======================== */
   const apiCall = 'https://api.openweathermap.org/data/2.5/weather?q=aarhus,dk&units=metric&appid=b892cb50e6b072e2bd37a1bc8049ee3a';
 
 
@@ -238,7 +248,7 @@ console.log(client);
 
 
 
-
+// ======================= FÅR TABBAREN TIL VENSTRE TIL AT FORSVINDE OG KOMME FREM
   window.addEventListener("scroll", () => {
 
     if (document.body.scrollTop > 90 || document.documentElement.scrollTop > 90) {
@@ -248,6 +258,18 @@ console.log(client);
       document.querySelector(".tabbar").classList.remove("pop")
     }
   });
+
+  // Lader tabbaren blive, hvis brugeren reloader
+  function reload(){
+    if (document.body.scrollTop > 90 || document.documentElement.scrollTop > 90) {
+      document.querySelector(".tabbar").classList.add("pop")
+
+    } else {
+      document.querySelector(".tabbar").classList.remove("pop")
+    }
+  };
+
+  reload();
 
 
 
@@ -309,10 +331,10 @@ console.log(client);
     }
 
     // fjerner og viser recaptcha
-    if (current == 4){
+    if (current == 4) {
       document.querySelector(".grecaptcha-badge").classList.remove("delete")
     }
-    else{
+    else {
       document.querySelector(".grecaptcha-badge").classList.add("delete")
 
     }
@@ -321,10 +343,6 @@ console.log(client);
 
 
   });
-
-  function removeG(){
-    document.querySelector(".grecaptcha-badge").classList.style.display = "none";
-  }
 
 
 
@@ -336,7 +354,7 @@ console.log(client);
   });
 
 
-  // ==================== ÆNDRER FARVEN PÅ CIRKLEN VED TELEFONNUMRENE
+  // ======= ÆNDRER FARVEN PÅ CIRKLEN VED TELEFONNUMRENE ============
 
   function time() {
     let t = new Date();
@@ -354,26 +372,23 @@ console.log(client);
 
   time();
 
+ // =========== RECAPTCHA GOOGLE ===================
+  grecaptcha.ready(function () {
+    grecaptcha.execute('6LdwzfwUAAAAALCr3M_nRgn8-TN7_KYXWatiF7ML', { action: 'homepage' }).then(function (token) {
+      // console.log(token);
+      document.getElementById("token").value = token;
+    });
+  });
+
+  //
+
+  /* close success message div */
+  function closeSuccessDiv() {
+    document.getElementById("alert-success").classList.add("hide");
+  }
+
+  // close the div in 7 secs
+  window.setTimeout(closeSuccessDiv, 7000);
+
 
 }, false);
-
-/* recaptcha v3 config */
-
-grecaptcha.ready(function () {
-  grecaptcha.execute('6LdwzfwUAAAAALCr3M_nRgn8-TN7_KYXWatiF7ML', { action: 'homepage' }).then(function (token) {
-    // console.log(token);
-    document.getElementById("token").value = token;
-  });
-});
-
-//
-
-/* close success message div */
-function closeSuccessDiv() {
-  document.getElementById("alert-success").classList.add("hide");
-}
-
-// close the div in 7 secs
-window.setTimeout(closeSuccessDiv, 7000);
-
-removeG();

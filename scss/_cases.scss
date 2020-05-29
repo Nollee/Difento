@@ -119,3 +119,31 @@
         opacity: 1;
     }
 }
+
+.slider-progress{
+    display: flex;
+    width: 15vw !important;
+    justify-content: space-between;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    margin: auto auto 15em auto;
+    color: white;
+    --swiper-theme-color: white;
+}
+
+.swiper-slide img{
+    transition: ease 0.5s;
+}
+
+.swiper-slide img:hover{
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.overlay{
+    pointer-events: none;
+}
