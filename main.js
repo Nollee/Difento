@@ -178,8 +178,8 @@ console.log(client);
     let i = 0;
     let caseInfo = projects[i];
     let overlayInfo = `
-    <h4 class="slider-count animation-fadein">${data.acf.count}</h4>
-    <h4 class="slider-job animation-fadein-delay">${data.acf.description}</h4>
+    <h4 class="slider-count animation-fadein">${caseInfo.acf.count}</h4>
+    <h4 class="slider-job animation-fadein-delay">${caseInfo.acf.description}</h4>
     <div class="slider-year animation-opacity">
         <div class="line"></div>
         <h4>${caseInfo.acf.year}</h4>
