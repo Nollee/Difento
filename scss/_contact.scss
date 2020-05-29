@@ -6,6 +6,7 @@
             -webkit-text-stroke-color: $dark-blue;
             position: absolute;
             right: -50px;
+            @include phone {right: 20px;}
         }
         .h3-contact {color: $main-orange; font-size: 2rem; margin-top: 10%;
         @include desktop-lg {margin-top: 20%;}
