@@ -17,7 +17,7 @@ body {
   cursor: url("../images/arrow.png"), auto;
   /* cursor: url('../images/point.png'), pointer; */ }
 
-a, button, i, input[type=submit], nav p, nav img, ::-webkit-scrollbar, ::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb, .btn-grey, .btn-orange, .btn-orange div, .btn-grey div, ::-webkit-scrollbar-thumb:hover, #proces span {
+a, button, i, input[type=submit], nav p, nav img, ::-webkit-scrollbar, ::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb, .btn-grey, .btn-orange, .btn-orange div, .btn-grey div, ::-webkit-scrollbar-thumb:hover, #proces span, .swiper-wrapper img {
   cursor: url("../images/point.png"), pointer !important; }
 
 input[type=text], input[type=text], input[type=email], textarea {
@@ -1224,5 +1224,30 @@ footer {
 
 .overlay {
   pointer-events: none; }
+
+/* mediaqueries */
+/* @include desktop-sm {width: 125px; top: 20px;}
+    @include tablet {width: 100px;}
+    @include phone {display: block; width: 125px;}   */
+#recommend h2 {
+  -webkit-text-stroke-width: #F2F2F2;
+  -webkit-text-stroke-color: #F2F2F2; }
+
+#recommend-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  #recommend-container ul {
+    width: 40%;
+    list-style-image: url("../images/list_dot.png"); }
+    #recommend-container ul li {
+      display: inline;
+      list-style-image: url("../images/list_dot.png");
+      margin-left: 5%;
+      font-size: 2rem;
+      /* &::before {content: "\2022";
+          color: $main-orange; width: 5em !important;
+          font-weight: bold;} */ }
 
 /*# sourceMappingURL=style.css.map */
