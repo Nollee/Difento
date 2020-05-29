@@ -125,12 +125,10 @@
     width: 15vw !important;
     justify-content: space-between;
     position: absolute;
-    margin-left: auto;
-    margin-right: auto;
     left: 0;
     right: 0;
     text-align: center;
-    margin: auto auto 10% auto;
+    margin: auto auto 0% auto;
     color: white;
     --swiper-theme-color: white;
 }
@@ -156,4 +154,16 @@
 .button-next1{
     margin-right: 20%;
     --swiper-theme-color: white;
+}
+
+.casehtag {
+    margin-left: 10vh;
+}
+
+.sub-wrapper.case{
+    width: 100%;
+}
+
+.case{
+    height: 80vh;
 }
