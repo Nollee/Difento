@@ -101,10 +101,13 @@ document.addEventListener('DOMContentLoaded', function () {
       })
       .then(function (json) {
         appendCases(json);
-        projects = json;
+        projects = json;        
         setTimeout(function () {
         }, 200);
+        console.log(json);
       });
+    
+
 
   }
 
@@ -116,6 +119,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // APPENDS CASES TIL SLIDEREN
   function appendCases(projects) {
+    console.log(projects);
+    
     let htmlTemplate = " ";
     for (let project of projects) {
       htmlTemplate += `
@@ -128,8 +133,8 @@ document.addEventListener('DOMContentLoaded', function () {
     let i = 0;
     let caseInfo = projects[i];
     let overlayInfo = `
-    <h4 class="slider-count animation-fadein">${data.acf.count}</h4>
-    <h4 class="slider-job animation-fadein-delay">${data.acf.description}</h4>
+    <h4 class="slider-count animation-fadein">${caseInfo.acf.count}</h4>
+    <h4 class="slider-job animation-fadein-delay">${caseInfo.acf.description}</h4>
     <div class="slider-year animation-opacity">
         <div class="line"></div>
         <h4>${caseInfo.acf.year}</h4>
@@ -224,7 +229,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 
-  // ====================== LAVER RINGENE RUNDT OM NAVIGATION ====================================
+  // ====================== SCROLLSPY ====================================
 
 
   /* https://medium.com/p1xts-blog/scrollspy-with-just-javascript-3131c114abdc */
@@ -323,23 +328,24 @@ document.addEventListener('DOMContentLoaded', function () {
 
   time();
 
+  
+
  // =========== RECAPTCHA GOOGLE ===================
-  grecaptcha.ready(function () {
-    grecaptcha.execute('6LdwzfwUAAAAALCr3M_nRgn8-TN7_KYXWatiF7ML', { action: 'homepage' }).then(function (token) {
-      // console.log(token);
-      document.getElementById("token").value = token;
-    });
+ grecaptcha.ready(function () {
+  grecaptcha.execute('6LdwzfwUAAAAALCr3M_nRgn8-TN7_KYXWatiF7ML', { action: 'homepage' }).then(function (token) {
+    // console.log(token);
+    document.getElementById("token").value = token;
   });
-  
-  //
-  
-  /* close success message div */
-  function closeSuccessDiv() {
-    document.getElementById("alert-success").classList.add("hide");
-  }
-  
-  // close the div in 7 secs
-  window.setTimeout(closeSuccessDiv, 7000);
-  
+});
+
+//
+
+/* close success message div */
+function closeSuccessDiv() {
+  document.getElementById("alert-success").classList.add("hide");
+}
+
+// close the div in 7 secs
+window.setTimeout(closeSuccessDiv, 7000);
 
 }, false);
