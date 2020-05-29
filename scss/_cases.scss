@@ -130,7 +130,7 @@
     left: 0;
     right: 0;
     text-align: center;
-    margin: auto auto 15em auto;
+    margin: auto auto 10% auto;
     color: white;
     --swiper-theme-color: white;
 }
@@ -146,4 +146,14 @@
 
 .overlay{
     pointer-events: none;
+}
+
+.button-prev1{
+    margin-left: 20%;
+    --swiper-theme-color: white;
+}
+
+.button-next1{
+    margin-right: 20%;
+    --swiper-theme-color: white;
 }

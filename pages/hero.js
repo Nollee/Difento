@@ -59,7 +59,7 @@ export default class Hero {
           <div id="hero-bottom-some">
             <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
-            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram-square"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
           </div>
       </div>
   </div>

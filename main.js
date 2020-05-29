@@ -151,10 +151,13 @@ console.log(client);
       })
       .then(function (json) {
         appendCases(json);
-        projects = json;
+        projects = json;        
         setTimeout(function () {
         }, 200);
+        console.log(json);
       });
+    
+
 
   }
 
@@ -166,6 +169,8 @@ console.log(client);
 
   // APPENDS CASES TIL SLIDEREN
   function appendCases(projects) {
+    console.log(projects);
+    
     let htmlTemplate = " ";
     for (let project of projects) {
       /* console.log(project) */
@@ -274,7 +279,7 @@ console.log(client);
 
 
 
-  // ====================== LAVER RINGENE RUNDT OM NAVIGATION ====================================
+  // ====================== SCROLLSPY ====================================
 
 
   /* https://medium.com/p1xts-blog/scrollspy-with-just-javascript-3131c114abdc */
@@ -373,23 +378,24 @@ console.log(client);
 
   time();
 
+  
+
  // =========== RECAPTCHA GOOGLE ===================
-  grecaptcha.ready(function () {
-    grecaptcha.execute('6LdwzfwUAAAAALCr3M_nRgn8-TN7_KYXWatiF7ML', { action: 'homepage' }).then(function (token) {
-      // console.log(token);
-      document.getElementById("token").value = token;
-    });
+ grecaptcha.ready(function () {
+  grecaptcha.execute('6LdwzfwUAAAAALCr3M_nRgn8-TN7_KYXWatiF7ML', { action: 'homepage' }).then(function (token) {
+    // console.log(token);
+    document.getElementById("token").value = token;
   });
+});
 
-  //
+//
 
-  /* close success message div */
-  function closeSuccessDiv() {
-    document.getElementById("alert-success").classList.add("hide");
-  }
+/* close success message div */
+function closeSuccessDiv() {
+  document.getElementById("alert-success").classList.add("hide");
+}
 
-  // close the div in 7 secs
-  window.setTimeout(closeSuccessDiv, 7000);
-
+// close the div in 7 secs
+window.setTimeout(closeSuccessDiv, 7000);
 
 }, false);
