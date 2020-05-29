@@ -18,10 +18,9 @@ export default class Cases {
 
     <div class="swiper-pagination1 slider-progress"></div>
 
-    <div class="swiper-button-prev"></div>
-    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev button-prev1"></div>
+    <div class="swiper-button-next button-next1"></div>
 
-    <div class="swiper-scrollbar"></div>
    
 </div>
       `;
