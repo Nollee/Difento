@@ -21,6 +21,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const sections = document.querySelectorAll('.sub')
   console.log(sections);
+  let projects = [];
+  let selectedProject;
 
 
   // INITIALIZE AOS
@@ -79,7 +81,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // ======= SWIPER SLIDER TIL PROCES =====================
 
-  let projects = [];
   let procesIcons = ['fas fa-search', 'fas fa-paint-brush', 'far fa-comment-dots', 'fas fa-desktop', 'far fa-user-circle']
   let swiper2 = new Swiper('.swiper2', {
     spaceBetween: 200,
@@ -170,18 +171,6 @@ console.log(client);
 }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
   function getProjects() {
     fetch('https://difento.dk/wordpress/wp-json/wp/v2/posts?_embed')
       .then(function (response) {
@@ -214,7 +203,7 @@ console.log(client);
       /* console.log(project) */
       htmlTemplate += `
       <div  class="swiper-slide" id="${project.id}">
-        <img src="${project.acf.image}"></h2>
+        <img onclick="showDetailView(${project.id})" src="${project.acf.image}"></h2>
       </div>
     `;
     }
@@ -254,7 +243,21 @@ console.log(client);
         }
       }
     });
+
   }
+
+  function showDetailView(id){
+    console.log(id);
+    for (let project of projects) {
+    if (project.id === id) {
+      selectedProject = project;
+    }
+    console.log(selectedProject.title.rendered);
+    
+  }
+  }
+
+  window.showDetailView = (id) => showDetailView(id); 
 
   /* ============ weather api ======================== */
   const apiCall = 'https://api.openweathermap.org/data/2.5/weather?q=aarhus,dk&units=metric&appid=b892cb50e6b072e2bd37a1bc8049ee3a';
@@ -403,8 +406,10 @@ console.log(client);
   function time() {
     let t = new Date();
     let h = t.getHours()
+    console.log(h);
+    
 
-    if (h >= 9 && h <= 21) {
+    if (h > 8 && h < 20) {
       document.querySelector(".phone-active").style.backgroundColor = "green"
       document.querySelector(".call-us").innerHTML = /* html */ `
       <a href="tel:+4523677669">Ring til os på +45 23 67 76 69</a>
