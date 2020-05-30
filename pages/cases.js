@@ -5,6 +5,7 @@ export default class Cases {
   
     template() {
       document.querySelector("#cases").innerHTML += /*html*/ `
+          <div id="caselink-anchor" class="anchor"></div>
     <div class="sub-wrapper case">  
     <h2 class="lighth2 casehtag">CASES</h2> 
     <div class="swiper-container swiper1">
@@ -25,7 +26,7 @@ export default class Cases {
 
    
 </div>
-</div
+</div>
       `;
     }
   }

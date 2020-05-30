@@ -5,8 +5,16 @@ import Proces from './pages/proces.js'
 import About from './pages/about.js'
 import Contact from './pages/contact.js'
 import Recommend from './pages/recommend.js'
-import Footer from './components/footer.js'
+import Footer from './components/footer.js';
+import Detail from './pages/detailview.js'
+import spaService from "./services/spa.js";
 
+spaService.init();
+
+
+
+
+let detail = new Detail();
 let navbar = new NavBar();
 let hero = new Hero();
 let cases = new Cases();
@@ -138,6 +146,7 @@ observeParents: true,
 });
 
 
+
 function appendClients(clients) {
 for (let client of clients) {
 console.log(client);
@@ -177,6 +186,7 @@ console.log(client);
       })
       .then(function (json) {
         appendCases(json);
+
         projects = json;
         setTimeout(function () {
         }, 200);
@@ -198,11 +208,12 @@ console.log(client);
     console.log(projects);
 
     let htmlTemplate = " ";
-    for (let project of projects) {
+    for (let i = 0; i < projects.length; i++) { // looping trough all persons
+      let project = projects[i];
       /* console.log(project) */
       htmlTemplate += `
       <div  class="swiper-slide" id="${project.id}">
-        <img onclick="showDetailView(${project.id})" src="${project.image.guid}"></h2>
+        <img onclick="showDetailView(${i})" src="${project.image.guid}"></h2>
       </div>
     `;
     }
@@ -229,6 +240,8 @@ console.log(client);
       for (let pro of pros) {
         if (pro.classList.contains('swiper-slide-active') === true) {
           let data = await fetch(`https://difento.dk/wordpress/wp-json/wp/v2/cases/${pro.id}`).then(res => res.json());
+          console.log(data);
+          
           overlayInfo += `
           <h4 class="slider-count animation-fadein">${data.count}</h4>
           <h4 class="slider-job animation-fadein-delay">${data.work}</h4>
@@ -245,27 +258,89 @@ console.log(client);
 
   }
 
-  function showDetailView(id){
-    let detail = document.querySelector(".detail");
-    console.log(projects);
-    
+  function showDetailView(index){
+    let swiper4 = new Swiper('.swiper4', {
+      spaceBetween: 100,
+      centeredSlides: true,
+      observer: true,
+    observeParents: true,
+    initialSlide: index,
+      pagination: {
+        el: '.swiper-pagination4',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.next4',
+        prevEl: '.prev4',
+      },
+    });
+
+    console.log(index);
+    spaService.navigateTo("detail");
+    appendDetailView(index, swiper4);
+  };
+
+  function appendDetailView(i, swiper){
+    let detailslides = ""
     for (let project of projects) {
-    if (project.id === id) {
-      selectedProject = project;      
-    }
-  }  
-detail.innerHTML= /* html */ `
-<h2 class="lighth2">${selectedProject.title.rendered}</h2>
-<div class="test"></div>
+      detailslides += /* html */ `
+      <div class="swiper-slide detail-slide" id="${project.id}">
+      <img src="${project.detailslideimage.guid}">
+      </div>
+      `;
+      document.querySelector("#detail-slides").innerHTML = detailslides;      
+    };
+    let info = projects[i]
+    console.log(info);
+     let detailOverlay = `
+     <h2 class="lighth2">${info.title.rendered}</h2>
+     <h3>${info.count}</h3>
+     <h4>${info.work}</h4>
+     <div class="visit">
+     <div class="visit-line"></div>
+     <a href="${info.caselink}" target="_blank">Se case her</a>
+     </div>
+     `;
+
+    let detailContent = `
+      <div class="case-intro">
+      <p>${info.description}</p>
+      ${info.solutions}
+      </div>
+    ` ;   
+     document.querySelector(".swiper-overlay").innerHTML = detailOverlay
+     document.querySelector(".detail-content").innerHTML = detailContent 
 
 
-`;
+     swiper.on('slideChangeTransitionEnd', async function findDetailSlide() {
+      let detailViews = document.querySelectorAll('.detail-slide');
+      detailOverlay = "";
+      detailContent = "";
+      for (let detailView of detailViews) {
+        if (detailView.classList.contains('swiper-slide-active') === true) {
+          let detail = await fetch(`https://difento.dk/wordpress/wp-json/wp/v2/cases/${detailView.id}`).then(res => res.json());          
+          detailOverlay += `
+     <h2 class="lighth2">${detail.title.rendered}</h2>
+     <h3>${detail.count}</h3>
+     <h4>${detail.work}</h4>
+     <div class="visit">
+     <div class="visit-line"></div>
+     <a href="${detail.caselink}" target="_blank">Se case her</a>
+     </div>
+     `;
 
-detail.classList.add("show");
-
-  }
-
-  window.showDetailView = (id) => showDetailView(id); 
+    detailContent += `
+      <div class="case-intro">
+      <p>${detail.description}</p>
+      ${detail.solutions}
+      </div>
+    ` ;   
+     document.querySelector(".swiper-overlay").innerHTML = detailOverlay
+     document.querySelector(".detail-content").innerHTML = detailContent 
+        }
+      }
+    });
+};
 
   /* ============ weather api ======================== */
   const apiCall = 'https://api.openweathermap.org/data/2.5/weather?q=aarhus,dk&units=metric&appid=b892cb50e6b072e2bd37a1bc8049ee3a';
@@ -323,6 +398,8 @@ detail.classList.add("show");
       document.querySelector(".tabbar").classList.remove("pop")
     }
   };
+  
+  window.location.hash = "#front"
 
   reload();
 
@@ -332,7 +409,7 @@ detail.classList.add("show");
 
 
   /* https://medium.com/p1xts-blog/scrollspy-with-just-javascript-3131c114abdc */
-  const menu_links = document.querySelectorAll(".nav-container a");
+  const menu_links = document.querySelectorAll(".nav-container span");
 
   const makeActive = (link) => menu_links[link].classList.add("active");
   const removeActive = (link) => menu_links[link].classList.remove("active");
@@ -409,6 +486,18 @@ detail.classList.add("show");
   });
 
 
+
+  // ==================================== skifter ned på siden
+ for (let link of menu_links) {
+  link.addEventListener("click", function () {
+    console.log(this.id +"-anchor");
+    document.getElementById(this.id +"-anchor").scrollIntoView(true);
+
+    
+  }); 
+ }
+
+
   // ======= ÆNDRER FARVEN PÅ CIRKLEN OG INDHOLD I CALL-US ============
 
   function time() {
@@ -451,5 +540,12 @@ function closeSuccessDiv() {
 
 // close the div in 7 secs
 window.setTimeout(closeSuccessDiv, 7000);
+
+
+
+// handlers
+
+window.showDetailView = (index) => showDetailView(index);
+window.pageChange = () => spaService.pageChange();
 
 }, false);

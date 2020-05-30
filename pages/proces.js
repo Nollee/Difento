@@ -5,7 +5,7 @@ export default class Proces {
   
     template() {
       document.querySelector("#proces").innerHTML += /*html*/ `
-      <div id="proces-anchor" class="anchor"></div>
+      <div id="proceslink-anchor" class="anchor"></div>
       <div class="sub-wrapper dark">
       <h2 class="darkh2">Proces</h2>
   
