@@ -17,7 +17,6 @@ $nav-width: 70px;
 
 body{
     background-color: $dark-blue;
-    position: relative;
     -webkit-transition: 0.3s ease;
     -o-transition: 0.3s ease;
     transition: 0.3s ease;
@@ -34,6 +33,11 @@ html{
     overflow-y: auto;
     overflow-x: hidden;
 	scroll-behavior: smooth;
+}
+
+
+#app{
+    position: relative;
 }
 
 

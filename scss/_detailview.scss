@@ -1,0 +1,26 @@
+.detail{
+    background-color: $dark-blue;
+    position: fixed;
+    top: 0;
+    width: 90%;
+    height: 200vh;
+    overflow-x:hidden;    
+    transition: 0.5s ease;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 150;
+    overflow-y: scroll;
+}
+
+.show{
+    opacity: 100%;
+    visibility: visible;
+    transition: 0.5s ease;
+}
+
+.test{
+    width: 90%;
+    margin: auto;
+    height: 800px;
+    background-color: white;
+}
