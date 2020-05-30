@@ -213,7 +213,7 @@ console.log(client);
       /* console.log(project) */
       htmlTemplate += `
       <div  class="swiper-slide" id="${project.id}">
-        <img src="${project.acf.image}"></h2>
+        <img onclick="showDetailView(${project.id})" src="${project.acf.image}"></h2>
       </div>
     `;
     }
@@ -253,7 +253,15 @@ console.log(client);
         }
       }
     });
+
   }
+
+  function showDetailView(id){
+    console.log(id);
+    
+  }
+
+  window.showDetailView = (id) => showDetailView(id); 
 
   /* ============ weather api ======================== */
   const apiCall = 'https://api.openweathermap.org/data/2.5/weather?q=aarhus,dk&units=metric&appid=b892cb50e6b072e2bd37a1bc8049ee3a';
@@ -402,8 +410,10 @@ console.log(client);
   function time() {
     let t = new Date();
     let h = t.getHours()
+    console.log(h);
+    
 
-    if (h >= 9 && h <= 21) {
+    if (h > 10 && h < 20) {
       document.querySelector(".phone-active").style.backgroundColor = "green"
       document.querySelector(".call-us").innerHTML = /* html */ `
       <a href="tel:+4523677669">Ring til os på +45 23 67 76 69</a>
