@@ -122,10 +122,11 @@ let swiper3 = new Swiper('.swiper3', {
   centeredSlides: true,
   observer: true,
 observeParents: true,
-  autoplay: {
+grabCursor: true,
+ /*  autoplay: {
     delay: 10000,
     disableOnInteraction: false,
-  },
+  }, */
   pagination: {
     el: '.swiper-pagination',
     clickable: true,

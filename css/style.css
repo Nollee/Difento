@@ -1258,9 +1258,15 @@ footer {
     @include phone {display: block; width: 125px;}   */
 #recommend h2 {
   -webkit-text-stroke-width: #F2F2F2;
-  -webkit-text-stroke-color: #F2F2F2; }
+  -webkit-text-stroke-color: #F2F2F2;
+  margin-left: 3%; }
+  @media only screen and (max-width: 1260px) {
+    #recommend h2 {
+      font-size: 8rem; } }
+  @media only screen and (max-width: 550px) {
+    #recommend h2 {
+      font-size: 4rem; } }
 
-/* .slides3 {height: 65vh !important;} */
 .swiper3 {
   height: 65vh !important; }
 
@@ -1277,12 +1283,30 @@ footer {
     display: flex;
     flex-direction: row;
     align-items: center;
-    margin-left: -3vw; }
+    justify-content: flex-start;
+    margin-left: -2vw; }
+    @media only screen and (max-width: 1199px) {
+      .recommend-slide ul {
+        margin-left: 0; } }
+    @media only screen and (max-width: 1050px) {
+      .recommend-slide ul {
+        flex-direction: column;
+        align-items: flex-start; } }
     .recommend-slide ul li {
-      float: left;
+      /* float: left; */
       text-transform: capitalize;
       margin-left: 10%;
-      font-size: 2rem; }
+      font-size: 2rem;
+      width: auto; }
+      @media only screen and (max-width: 1199px) {
+        .recommend-slide ul li {
+          margin-left: 20%; } }
+      @media only screen and (max-width: 550px) {
+        .recommend-slide ul li {
+          float: none; } }
+    @media only screen and (max-width: 1199px) {
+      .recommend-slide ul {
+        list-style-image: url("../images/list_dot_small.png"); } }
   .recommend-slide a {
     color: white; }
 
@@ -1290,24 +1314,53 @@ footer {
   width: 70%;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   height: 100%; }
+  @media only screen and (max-width: 1199px) {
+    .recommend-item div {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; } }
   .recommend-item img {
     width: 30%;
-    object-fit: cover; }
+    object-fit: cover;
+    height: 70%; }
+    @media only screen and (max-width: 1199px) {
+      .recommend-item img {
+        display: none; } }
   .recommend-item h4 {
     font-size: 1.5rem;
-    margin-bottom: 2%; }
+    margin: 4% 0%;
+    /* @include phone {margin: 4% 0%;} */ }
 
 .quote {
   font-size: 1.7rem;
   width: 70%;
   font-style: italic; }
+  @media only screen and (max-width: 1260px) {
+    .quote {
+      width: 90%; } }
+  @media only screen and (max-width: 1199px) {
+    .quote {
+      text-align: center; } }
+  @media only screen and (max-width: 550px) {
+    .quote {
+      width: 100%;
+      font-size: 1.5rem; } }
 
 .client-logo {
-  width: 30vw;
-  margin-bottom: 2%; }
+  width: 20vw !important;
+  margin-bottom: 4%;
+  display: block !important; }
+  @media only screen and (max-width: 1050px) {
+    .client-logo {
+      width: 40vw !important; } }
+  @media only screen and (max-width: 550px) {
+    .client-logo {
+      width: 70vw !important;
+      margin-bottom: 5%; } }
 
 .client-name {
   text-transform: capitalize;
@@ -1315,9 +1368,18 @@ footer {
   font-size: 3rem;
   font-weight: 700;
   margin: 2% 0%; }
+  @media only screen and (max-width: 1050px) {
+    .client-name {
+      margin: 4% 0%; } }
+  @media only screen and (max-width: 550px) {
+    .client-name {
+      font-size: 1.5rem; } }
 
 .button-next3, .button-prev3 {
   --swiper-theme-color: white; }
+  @media only screen and (max-width: 550px) {
+    .button-next3, .button-prev3 {
+      display: none !important; } }
 
 .button-next3 {
   margin-right: 5%; }
