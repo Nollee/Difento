@@ -4,7 +4,11 @@ export default class Footer {
     }
   
     template() {
-      document.querySelector("footer").innerHTML += /*html*/ `
+      let footers = document.querySelectorAll("footer");
+
+      for (let footer of footers) {
+      
+      footer.innerHTML += /*html*/ `
       <div class="footer-wrapper">
       <div class="footer-top">
       <div class="logo footer-logo">
@@ -77,5 +81,6 @@ export default class Footer {
       </div>
       <div class="footer-img" data-aos="fade-left" data-aos-delay="600"></div>
       `;
+      }
     }
   }

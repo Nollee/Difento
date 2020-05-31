@@ -36,6 +36,7 @@ class SpaService {
       page = window.location.hash.slice(1);
     }
     this.showPage(page);
+    location.reload;
   }
 
  

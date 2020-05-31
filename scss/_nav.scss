@@ -199,7 +199,7 @@
         @include tablet{
             display: none;
         }
-        a{
+        span{
             display: flex;
             align-items: center;
             color: white;
@@ -215,8 +215,7 @@
                 margin-right: 12px;
             }
         }
-        a:hover{
-            cursor: pointer;
+        span:hover{
             -webkit-transform: scale(1.05);
                 -ms-transform: scale(1.05);
                     transform: scale(1.05);
