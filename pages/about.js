@@ -5,7 +5,7 @@ export default class About {
   
     template() {
       document.querySelector("#about").innerHTML += /*html*/ `
-      <div id="about-anchor" class="anchor"></div>
+      <div id="aboutlink-anchor" class="anchor"></div>
       <div class="sub-wrapper">
       <h2 class="lighth2">OM OS</h2>
       <div class="about-container">
