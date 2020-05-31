@@ -3,9 +3,10 @@
 #recommend h2{
     -webkit-text-stroke-width: $grey;
     -webkit-text-stroke-color: $grey;
+    margin-left: 3%;
+    @include desktop-lg {font-size: 8rem;}
+    @include phone {font-size: 4rem;}
 }
-
-/* .slides3 {height: 65vh !important;} */
 
 .swiper3 {height: 65vh !important;}
 
@@ -14,31 +15,64 @@
     width: 100%;
     display: flex; flex-direction: row; align-items: center; justify-self: center;
     ul {
-        width: 100%; list-style-image: url("../images/list_dot.png"); display: flex; flex-direction: row; align-items: center;
-        margin-left: -3vw;
+        width: 100%;
+        list-style-image: url("../images/list_dot.png");
+        display: flex; flex-direction: row; align-items: center; justify-content: flex-start;
+        margin-left: -2vw;
+        @include desktop-sm {margin-left: 0;}
+        @include tablet {flex-direction: column; align-items: flex-start;}
     li {
-        float: left; text-transform: capitalize;
-    margin-left: 10%; font-size: 2rem;
+        /* float: left; */
+        text-transform: capitalize;
+        margin-left: 10%;
+        font-size: 2rem;
+        width: auto;
+        @include desktop-sm {margin-left: 20%;}
+        @include phone {float: none;}
     }
+    @include desktop-sm {list-style-image: url("../images/list_dot_small.png");}
 }
     a {color: white;}
 }
 
-.recommend-item {width: 70%; display: flex; flex-direction: row; justify-content: center; align-items: center; height: 100%;
-img {width: 30%; object-fit: cover;}
-h4 {font-size: 1.5rem; margin-bottom: 2%;}
+.recommend-item {width: 70%;
+    display: flex; flex-direction: row; justify-content: space-between; align-items: center;
+    height: 100%;
+div {@include desktop-sm{display: flex; flex-direction: column; justify-content: center; align-items: center;}}
+img {width: 30%; object-fit: cover; height: 70%;
+@include desktop-sm {display: none;}
+}
+h4 {font-size: 1.5rem;
+    margin: 4% 0%;
+    /* @include phone {margin: 4% 0%;} */
+ }
 }
 
-.quote {font-size: 1.7rem; width: 70%; font-style: italic;}
 
-.client-logo {width: 30vw; margin-bottom: 2%;}
+.quote {font-size: 1.7rem;
+    width: 70%;
+    font-style: italic;
+    @include desktop-lg {width: 90%;}
+    @include desktop-sm {text-align: center;}
+    @include phone {width: 100%; font-size: 1.5rem;}
+}
+
+.client-logo {width: 20vw !important; margin-bottom: 4%; display: block !important;
+    @include tablet {width: 40vw !important;}
+    @include phone {width: 70vw !important; margin-bottom: 5%;}
+}
 
 .client-name {
     text-transform: capitalize; color: $main-orange;
     font-size: 3rem; font-weight: 700;
     margin: 2% 0%;
+     @include tablet {margin: 4% 0%;}
+     @include phone {font-size: 1.5rem;}
 }
 
-.button-next3, .button-prev3 {--swiper-theme-color: white;}
+
+.button-next3, .button-prev3 {--swiper-theme-color: white;
+@include phone {display: none !important;}
+}
 .button-next3 {margin-right: 5%;}
 .button-prev3 {margin-left: 5%;}
