@@ -79,6 +79,9 @@
         -webkit-transition: 0.3s ease;
         -o-transition: 0.3s ease;
         transition: 0.3s ease;
+        i{
+            color: $main-orange;
+        }
     }
 
     span:hover{

@@ -292,51 +292,148 @@ console.log(client);
     };
     let info = projects[i]
     console.log(info);
-     let detailOverlay = `
-     <h2 class="lighth2">${info.title.rendered}</h2>
-     <h3>${info.count}</h3>
-     <h4>${info.work}</h4>
-     <div class="visit">
-     <div class="visit-line"></div>
-     <a href="${info.caselink}" target="_blank">Se case her</a>
-     </div>
+     let detailTop = `
+     <h2 class="lighth2 animation-fadein-delay">${info.title.rendered}</h2>
+     <h3 class="animation-fadein">${info.count}</h3>
      `;
 
-    let detailContent = `
+     let detailBot = `
+     <h4 class="animation-opacity">${info.longwork}</h4>
+     <div class="visit animation-opacity-delay">
+     <div class="visit-line"></div>
+     <a href="${info.caselink}" target="_blank">Besøg side</a>
+     </div>
+     `
+
+    let detailContent = /* html */ `
       <div class="case-intro">
       <p>${info.description}</p>
       ${info.solutions}
+      
+      </div>
+     
+      <div class="first-sec">
+      <h3>${info.header1}</h3>
+      <p>${info.description1}</p>
+      <img src="${info.image1.guid}">
+      
+      </div>
+      
+      <div class="second-sec">
+      
+      <div class="second-left">
+      <h3>${info.header2}</h3>
+      <p>${info.description2}</p>
+      
+      </div>
+      <img src="${info.image2.guid}">
+      
+      </div>
+     
+      <div class="third-sec">
+      
+      <div class="third-left">
+      <h3>${info.header3}</h3>
+      <p>${info.description}</p>
+      </div>
+      <img src="${info.image3.guid}">
+     
+      </div>
+
+      <div class="detail-reco">
+      <h3>Anbefaling</h3>
+      
+      <div class="reco-wrapper">
+      
+      <div class="reco-left">
+      <img src="${info.client_logo.guid}">
+      <p><i>${info.client_statement}</i></p>
+      <h5>- ${info.client_name}</h5>
+      </div>
+      <img src="${info.client_img.guid}">
+      </div>
+      
       </div>
     ` ;   
-     document.querySelector(".swiper-overlay").innerHTML = detailOverlay
+     document.querySelector(".swiper-top").innerHTML = detailTop
      document.querySelector(".detail-content").innerHTML = detailContent 
+     document.querySelector(".swiper-bot").innerHTML = detailBot
 
 
      swiper.on('slideChangeTransitionEnd', async function findDetailSlide() {
       let detailViews = document.querySelectorAll('.detail-slide');
-      detailOverlay = "";
+      detailTop = "";
+      detailBot = "";
       detailContent = "";
       for (let detailView of detailViews) {
         if (detailView.classList.contains('swiper-slide-active') === true) {
           let detail = await fetch(`https://difento.dk/wordpress/wp-json/wp/v2/cases/${detailView.id}`).then(res => res.json());          
-          detailOverlay += `
-     <h2 class="lighth2">${detail.title.rendered}</h2>
-     <h3>${detail.count}</h3>
-     <h4>${detail.work}</h4>
-     <div class="visit">
-     <div class="visit-line"></div>
-     <a href="${detail.caselink}" target="_blank">Se case her</a>
-     </div>
-     `;
-
-    detailContent += `
-      <div class="case-intro">
-      <p>${detail.description}</p>
-      ${detail.solutions}
-      </div>
-    ` ;   
-     document.querySelector(".swiper-overlay").innerHTML = detailOverlay
-     document.querySelector(".detail-content").innerHTML = detailContent 
+           detailTop = `
+          <h2 class="lighth2 animation-fadein-delay">${detail.title.rendered}</h2>
+          <h3 class="animation-fadein">${detail.count}</h3>
+          `;
+     
+           detailBot = `
+          <h4 class="animation-opacity">${detail.longwork}</h4>
+          <div class="visit animation-opacity-delay">
+          <div class="visit-line"></div>
+          <a href="${detail.caselink}" target="_blank">Besøg side</a>
+          </div>
+          `
+     
+          detailContent = /* html */ `
+          <div class="case-intro">
+          <p>${detail.description}</p>
+          ${detail.solutions}
+          
+          </div>
+         
+          <div class="first-sec">
+          <h3>${detail.header1}</h3>
+          <p>${detail.description1}</p>
+          <img src="${detail.image1.guid}">
+          
+          </div>
+          
+          <div class="second-sec">
+          
+          <div class="second-left">
+          <h3>${detail.header2}</h3>
+          <p>${detail.description2}</p>
+          
+          </div>
+          <img src="${detail.image2.guid}">
+          
+          </div>
+         
+          <div class="third-sec">
+          
+          <div class="third-left">
+          <h3>${detail.header3}</h3>
+          <p>${detail.description}</p>
+          </div>
+          <img src="${detail.image3.guid}">
+         
+          </div>
+    
+          <div class="detail-reco">
+          <h3>Anbefaling</h3>
+          
+          <div class="reco-wrapper">
+          
+          <div class="reco-left">
+          <img src="${detail.client_logo.guid}">
+          <p><i>${detail.client_statement}</i></p>
+          <h5>- ${detail.client_name}</h5>
+          </div>
+          <img src="${detail.client_img.guid}">
+          </div>
+          
+          </div>
+         ` ;   
+          document.querySelector(".swiper-top").innerHTML = detailTop
+          document.querySelector(".detail-content").innerHTML = detailContent 
+          document.querySelector(".swiper-bot").innerHTML = detailBot
         }
       }
     });
@@ -397,9 +494,11 @@ console.log(client);
     } else {
       document.querySelector(".tabbar").classList.remove("pop")
     }
+    window.location.hash = "#front"    
+    document.getElementById("hero").scrollIntoView(true);
+
+
   };
-  
-  window.location.hash = "#front"
 
   reload();
 
