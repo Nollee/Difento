@@ -9,7 +9,6 @@
 
 body {
   background-color: #172430;
-  position: relative;
   -webkit-transition: 0.3s ease;
   -o-transition: 0.3s ease;
   transition: 0.3s ease;
@@ -27,6 +26,9 @@ html {
   overflow-y: auto;
   overflow-x: hidden;
   scroll-behavior: smooth; }
+
+#app {
+  position: relative; }
 
 #content {
   margin-left: 70px;
@@ -172,7 +174,7 @@ a {
       margin: auto;
       background-color: transparent;
       position: absolute;
-      z-index: 99999999; } }
+      z-index: 50; } }
   .hero-text p {
     width: 70%;
     margin: auto;
@@ -256,7 +258,7 @@ a {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  z-index: 999999999999; }
+  z-index: 50; }
   #hero-bottom-content i {
     color: white;
     font-size: 35px;
@@ -1386,5 +1388,29 @@ footer {
 
 .button-prev3 {
   margin-left: 5%; }
+
+.detail {
+  background-color: #172430;
+  position: fixed;
+  top: 0;
+  width: 90%;
+  height: 200vh;
+  overflow-x: hidden;
+  transition: 0.5s ease;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 150;
+  overflow-y: scroll; }
+
+.show {
+  opacity: 100%;
+  visibility: visible;
+  transition: 0.5s ease; }
+
+.test {
+  width: 90%;
+  margin: auto;
+  height: 800px;
+  background-color: white; }
 
 /*# sourceMappingURL=style.css.map */

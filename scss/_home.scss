@@ -17,7 +17,7 @@
         width: 100%;
         margin: auto;
         background-color: transparent;
-        position: absolute; z-index: 99999999;
+        position: absolute; z-index: 50;
     }
     p{
         width: 70%;
@@ -100,7 +100,7 @@
     bottom: 10%; left: 5%; right: 5%;
     width: 85%;
     display: flex; flex-direction: row; justify-content: space-between; align-items: center;
-    z-index: 999999999999;
+    z-index: 50;
     i {color: white; font-size: 35px; transition: .4s ease;
     &:hover {color: $light-orange; transform: scale(1.05);}
         @include phone {font-size: 25px;}

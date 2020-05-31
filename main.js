@@ -106,7 +106,7 @@ function getClients() {
     })
     .then(function (json) {
       appendClients(json);
-      projects = json;
+      clients = json;
       setTimeout(function () {
       }, 200);
     });
@@ -172,7 +172,7 @@ console.log(client);
 }
 
   function getProjects() {
-    fetch('https://difento.dk/wordpress/wp-json/wp/v2/posts?_embed')
+    fetch('https://difento.dk/wordpress/wp-json/wp/v2/cases?_embed')
       .then(function (response) {
         return response.json();
       })
@@ -181,7 +181,7 @@ console.log(client);
         projects = json;
         setTimeout(function () {
         }, 200);
-        console.log(json);
+        console.log(projects);
       });
 
 
@@ -203,7 +203,7 @@ console.log(client);
       /* console.log(project) */
       htmlTemplate += `
       <div  class="swiper-slide" id="${project.id}">
-        <img onclick="showDetailView(${project.id})" src="${project.acf.image}"></h2>
+        <img onclick="showDetailView(${project.id})" src="${project.image.guid}"></h2>
       </div>
     `;
     }
@@ -211,13 +211,13 @@ console.log(client);
     let i = 0;
     let caseInfo = projects[i];
     let overlayInfo = `
-    <h4 class="slider-count animation-fadein">${caseInfo.acf.count}</h4>
-    <h4 class="slider-job animation-fadein-delay">${caseInfo.acf.description}</h4>
+    <h4 class="slider-count animation-fadein">${caseInfo.count}</h4>
+    <h4 class="slider-job animation-fadein-delay">${caseInfo.work}</h4>
     <div class="slider-year animation-opacity">
         <div class="line"></div>
-        <h4>${caseInfo.acf.year}</h4>
+        <h4>${caseInfo.year}</h4>
       </div>
-      <h4 class="slider-company">${caseInfo.acf.title}</h4>
+      <h4 class="slider-company">${caseInfo.title.rendered}</h4>
       `;
 
     document.querySelector('#caseinfo').innerHTML = overlayInfo;
@@ -229,15 +229,15 @@ console.log(client);
       overlayInfo = " ";
       for (let pro of pros) {
         if (pro.classList.contains('swiper-slide-active') === true) {
-          let data = await fetch(`https://difento.dk/wordpress/wp-json/wp/v2/posts/${pro.id}`).then(res => res.json());
+          let data = await fetch(`https://difento.dk/wordpress/wp-json/wp/v2/cases/${pro.id}`).then(res => res.json());
           overlayInfo += `
-          <h4 class="slider-count animation-fadein">${data.acf.count}</h4>
-          <h4 class="slider-job animation-fadein-delay">${data.acf.description}</h4>
+          <h4 class="slider-count animation-fadein">${data.count}</h4>
+          <h4 class="slider-job animation-fadein-delay">${data.work}</h4>
           <div class="slider-year animation-opacity">
           <div class="line"></div>
-          <h4>${data.acf.year}</h4>
+          <h4>${data.year}</h4>
           </div>
-          <h4 class="slider-company animation-opacity-delay">${data.acf.title}</h4>
+          <h4 class="slider-company animation-opacity-delay">${data.title.rendered}</h4>
           `;
           document.querySelector('#caseinfo').innerHTML = overlayInfo;
         }
@@ -247,14 +247,23 @@ console.log(client);
   }
 
   function showDetailView(id){
-    console.log(id);
+    let detail = document.querySelector(".detail");
+    console.log(projects);
+    
     for (let project of projects) {
     if (project.id === id) {
-      selectedProject = project;
+      selectedProject = project;      
     }
-    console.log(selectedProject.title.rendered);
-    
-  }
+  }  
+detail.innerHTML= /* html */ `
+<h2 class="lighth2">${selectedProject.title.rendered}</h2>
+<div class="test"></div>
+
+
+`;
+
+detail.classList.add("show");
+
   }
 
   window.showDetailView = (id) => showDetailView(id); 
@@ -410,7 +419,7 @@ console.log(client);
     
 
     if (h > 8 && h < 20) {
-      document.querySelector(".phone-active").style.backgroundColor = "green"
+      document.querySelector(".phone-active").style.backgroundColor = "lightgreen"
       document.querySelector(".call-us").innerHTML = /* html */ `
       <a href="tel:+4523677669">Ring til os på +45 23 67 76 69</a>
       `;
