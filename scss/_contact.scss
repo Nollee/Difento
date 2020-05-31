@@ -19,7 +19,7 @@
 
    .h3-big-contact {
        font-size: 5rem !important; color: $dark-blue !important;
-       margin: 50px 0px;
+       margin: 10px 0px 50px 0px;
        @include tablet {font-size: 3rem !important;}
        @include phone {margin: 10px 0px;}
    }
