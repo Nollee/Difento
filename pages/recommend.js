@@ -5,7 +5,10 @@ export default class Recommend {
 
     template() {
       document.querySelector("#recommend").innerHTML += /*html*/ `
-<h2>ANBEFALINGER</h2>
+      <div id="recommendlink-anchor" class="anchor recommend"></div>
+
+      <h2>ANBEFALINGER</h2>
+
 <div id="recommend-container"></div>
 
 <div class="swiper-container swiper3">

@@ -5,7 +5,7 @@ export default class Contact {
 
     template() {
       document.querySelector("#contact").innerHTML += /*html*/ `
-      <div id="contact-anchor" class="anchor"></div>
+      <div id="contactlink-anchor" class="anchor"></div>
       <div class="sub-wrapper">
       <h2>Kontakt</h2>
       <h3 class="h3-contact" data-aos="fade-in" data-aos-delay="100">skal vi finde din løsning?</h3>

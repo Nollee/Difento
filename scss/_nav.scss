@@ -29,7 +29,7 @@
     img:hover{
         cursor: pointer;
     }
-    a{
+    span{
         display: flex;
         align-items: center;
         justify-content: center;
@@ -70,7 +70,7 @@
 
     }
 
-    a.active{
+    span.active{
         border-radius: 90px;
         border: 3px solid $main-orange;
         box-sizing: border-box;
@@ -79,9 +79,12 @@
         -webkit-transition: 0.3s ease;
         -o-transition: 0.3s ease;
         transition: 0.3s ease;
+        i{
+            color: $main-orange;
+        }
     }
 
-    a:hover{
+    span:hover{
         z-index: 99;
 
         .link-desc{
