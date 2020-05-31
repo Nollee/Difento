@@ -114,7 +114,7 @@ function getClients() {
     })
     .then(function (json) {
       appendClients(json);
-      clients = json;
+      let clients = json;
       setTimeout(function () {
       }, 200);
     });
@@ -266,7 +266,7 @@ console.log(client);
       observer: true,
     observeParents: true,
     initialSlide: index,
-    touchRatio: 0;
+    touchRatio: 0,
       navigation: {
         nextEl: '.next4',
         prevEl: '.prev4',
@@ -334,7 +334,7 @@ console.log(client);
 
       <div class="third-left">
       <h3>${info.header3}</h3>
-      <p>${info.description}</p>
+      <p>${info.description3}</p>
       </div>
       <img src="${info.image3.guid}">
 
@@ -485,6 +485,13 @@ console.log(client);
     } else {
       document.querySelector(".tabbar").classList.remove("pop")
     }
+
+    if(window.location.hash == "#detail"){
+      document.querySelector(".tabbar").classList.add("pop")
+      document.querySelector("#caselink").classList.add("active")
+
+
+    }
   });
 
   // Lader tabbaren blive, hvis brugeren reloader
@@ -500,7 +507,6 @@ console.log(client);
     spaService.navigateTo("front")
     // reloader siden igen, da der var problemer med fuglene på forsiden
     setTimeout(function() {
-      // reload after 3s
       window.location.reload();
     }, 1); 
   }
@@ -610,6 +616,8 @@ console.log(client);
 else{
   spaService.navigateTo("front")
   scrollTo(document.documentElement, elmnt.offsetTop, 350);
+  document.querySelector(".tabbar").classList.remove("pop")
+
 
 }  
   });
@@ -641,7 +649,8 @@ else{
 let toplinks = document.querySelectorAll(".top-nav span")
  for (let link of toplinks) {
   link.addEventListener("click", function () {
-    document.getElementById(this.className +"-anchor").scrollIntoView(true);
+    let elmnt = document.getElementById(link.className +"-anchor")
+    scrollTo(document.documentElement, elmnt.offsetTop, 750);
 
 
 
