@@ -70,9 +70,9 @@ document.addEventListener('DOMContentLoaded', function () {
     observer: true,
     observeParents: true,
     // If we need pagination
-    pagination: {
+   /*  pagination: {
       el: '.swiper-pagination1',
-    },
+    }, */
 
     // Navigation arrows
     navigation: {
@@ -266,10 +266,10 @@ console.log(client);
       observer: true,
     observeParents: true,
     initialSlide: index,
-      pagination: {
+     /*  pagination: {
         el: '.swiper-pagination4',
         clickable: true,
-      },
+      }, */
       navigation: {
         nextEl: '.next4',
         prevEl: '.prev4',
@@ -408,12 +408,12 @@ console.log(client);
           </div>
 
           <div class="third-sec">
+          <img src="${detail.image3.guid}">
 
           <div class="third-left">
           <h3>${detail.header3}</h3>
           <p>${detail.description}</p>
           </div>
-          <img src="${detail.image3.guid}">
 
           </div>
 
@@ -424,7 +424,7 @@ console.log(client);
 
           <div class="reco-left">
           <img src="${detail.client_logo.guid}">
-          <p><i>${detail.client_statement}</i></p>
+          <p>"${detail.client_statement}"</p>
           <h5>- ${detail.client_name}</h5>
           </div>
           <img src="${detail.client_img.guid}">
@@ -639,7 +639,7 @@ function closeSuccessDiv() {
 }
 
 // close the div in 7 secs
-window.setTimeout(closeSuccessDiv, 7000);
+/* window.setTimeout(closeSuccessDiv, 7000); */
 
 
 
