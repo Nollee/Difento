@@ -2,6 +2,9 @@
     width: 90%;
     margin: auto;
     max-width: 1400px;
+    @include desktop-lg {width: 70%}
+    @include tablet {width: 80%;}
+    @include phone {width: 90%;}
 }
 
 .swiper4{
@@ -16,6 +19,8 @@
         img{
             width: 80%;
             height: auto;
+            @include tablet {height: 40vh; object-fit: cover;
+            }
         }
     }
 }
@@ -29,6 +34,8 @@
     z-index: 15;
     h2{
         font-size: 7vw;
+        @include desktop-sm {font-size: 10vw;}
+        @include phone {font-size: 15vw;}
     }
     h3{
         font-size: 14vw;
@@ -44,24 +51,30 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 1vh;
+    @include tablet {margin-top: 3vh;}
     h4{
         font-size: 3vw;
         color: white;
+        @include tablet {font-size: 4vw;}
     }
     .visit{
         display: flex;
         align-items: center;
         justify-content: flex-end;
         width: 25%;
+        @include desktop-sm {width: 35%;}
         .visit-line{
             height: 2px;
             width: 40%;
-            margin-right: 3vw;
+            margin-right: 2vw;
             background-color: $main-orange;
         }
         a{
             color: $main-orange;
             font-size: 2vw;
+            transition: .4s ease;
+            &:hover {margin-right: -1vw;}
+            @include tablet {font-size: 3vw;}
         }
     }
 
@@ -86,7 +99,8 @@
     }
     p{
         font-size: 1.5vw;
-
+        @include tablet {font-size: 2.5vw;}
+        @include phone {font-size: 3.5vw}
     }
 }
 
@@ -94,8 +108,10 @@
     display: flex;
     justify-content: space-between;
     margin-top: 2vh;
+    @include tablet {flex-direction: column;}
     p{
         width: 50%;
+    @include tablet {width: 100%;}
     }
     ul{
         width: 40%;
@@ -104,8 +120,12 @@
         flex-wrap: wrap;
         justify-content: space-between;
         font-size: 2vw;
+        @include desktop-lg {font-size: 1.5vw;}
+        @include tablet {font-size: 3vw; width: 100%; margin-top: 4%;}
+        @include phone {font-size: 6vw;}
         li{
             width: 45%;
+        @include tablet {width: auto;}
         }
     }
 }
@@ -113,11 +133,15 @@
 .next4, .prev4{
     top: 50vh !important;
     --swiper-theme-color: white;
-
+    @include desktop-sm {top: 30vh !important;}
 }
+
+.next4 {@include desktop-sm {margin-left: 10%;}}
+.prev4 {@include desktop-sm {margin-right: 10%;}}
 
 .first-sec, .second-sec, .third-sec, .detail-reco{
     margin-top: 20vh;
+    @include tablet {margin-top: 10vh;}
 }
 
 .first-sec{
@@ -133,22 +157,30 @@
 .second-sec{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
     .second-left{
         width: 45%;
+        @include tablet {width: 100%;}
     }
     img{
         width: 45%;
+        @include tablet {width: 100%; margin-top: 5vh; object-fit: cover; height: 30vh;}
     }
 }
 
 .third-sec{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
     .third-left{
         width: 65%;
+        @include tablet {width: 100%; justify-content: center;}
     }
     img{
         width: 30%;
+        @include tablet {margin-top: 5vh; object-fit: cover; display: none;}
     }
 
 }
@@ -165,9 +197,11 @@
             width: 60%;
             display: flex;
             flex-direction: column;
+            @include phone {width: 100%;}
             img{
                 width: 100%;
                 margin-bottom: 3vh;
+                @include phone {display: block; width: 70%; margin-bottom: 0;}
             }
             p{
                 margin: 2vh auto;
@@ -175,11 +209,14 @@
             h5{
                 color: $main-orange;
                 font-size: 2vw;
+                @include tablet {font-size: 3vw;}
             }
         }
         img{
             width: 30%;
+            @include phone {display: none;}
         }
     }
     margin-bottom: 20vh;
+    @include tablet {margin-bottom: 10vh;}
 }

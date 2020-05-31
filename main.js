@@ -70,9 +70,9 @@ document.addEventListener('DOMContentLoaded', function () {
     observer: true,
     observeParents: true,
     // If we need pagination
-    pagination: {
+   /*  pagination: {
       el: '.swiper-pagination1',
-    },
+    }, */
 
     // Navigation arrows
     navigation: {
@@ -266,10 +266,7 @@ console.log(client);
       observer: true,
     observeParents: true,
     initialSlide: index,
-      pagination: {
-        el: '.swiper-pagination4',
-        clickable: true,
-      },
+    touchRatio: 0;
       navigation: {
         nextEl: '.next4',
         prevEl: '.prev4',
@@ -278,6 +275,8 @@ console.log(client);
 
     console.log(index);
     spaService.navigateTo("detail");
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
     appendDetailView(index, swiper4);
   };
 
@@ -408,12 +407,12 @@ console.log(client);
           </div>
 
           <div class="third-sec">
+          <img src="${detail.image3.guid}">
 
           <div class="third-left">
           <h3>${detail.header3}</h3>
           <p>${detail.description}</p>
           </div>
-          <img src="${detail.image3.guid}">
 
           </div>
 
@@ -424,7 +423,7 @@ console.log(client);
 
           <div class="reco-left">
           <img src="${detail.client_logo.guid}">
-          <p><i>${detail.client_statement}</i></p>
+          <p>"${detail.client_statement}"</p>
           <h5>- ${detail.client_name}</h5>
           </div>
           <img src="${detail.client_img.guid}">
@@ -439,6 +438,7 @@ console.log(client);
       }
     });
 };
+
 
   /* ============ weather api ======================== */
   const apiCall = 'https://api.openweathermap.org/data/2.5/weather?q=aarhus,dk&units=metric&appid=b892cb50e6b072e2bd37a1bc8049ee3a';
@@ -495,13 +495,21 @@ console.log(client);
     } else {
       document.querySelector(".tabbar").classList.remove("pop")
     }
-    window.location.hash = "#front"
-    document.getElementById("hero").scrollIntoView(true);
-
-
   };
+  if (window.location.hash == "#detail"){
+    spaService.navigateTo("front")
+    // reloader siden igen, da der var problemer med fuglene på forsiden
+    setTimeout(function() {
+      // reload after 3s
+      window.location.reload();
+    }, 1); 
+  }
 
   reload();
+
+
+  // ========================== fjerne og giver scroll-behaviour =====================
+
 
 
 
@@ -577,25 +585,71 @@ console.log(client);
   });
 
 
+  // Smooth scroll animation - https://stackoverflow.com/questions/8917921/cross-browser-javascript-not-jquery-scroll-to-top-animation/8918062#8918062 
 
+  function scrollTo(element, to, duration) {
+    if (duration <= 0) return;
+    var difference = to - element.scrollTop;
+    var perTick = difference / duration * 10;
 
-  // ====================== GÅR OP I TOPPEN =============================================
+    setTimeout(function() {
+        element.scrollTop = element.scrollTop + perTick;
+        if (element.scrollTop === to) return;
+        scrollTo(element, to, duration - 10);
+    }, 10);
+}
+
+  // ====================== GÅR tilbage til front ===========================
   document.getElementById("nav-logo").addEventListener("click", function () {
-    document.body.scrollTop = 0;
-    document.documentElement.scrollTop = 0;
+    let elmnt = document.querySelector("body");
+    if(window.location.hash == "#front")
+{ 
+  scrollTo(document.documentElement, elmnt.offsetTop, 350);
+
+}  
+else{
+  spaService.navigateTo("front")
+  scrollTo(document.documentElement, elmnt.offsetTop, 350);
+
+}  
   });
 
-
-
-  // ==================================== skifter ned på siden
+  // ==================================== skifter ned på siden - sidebar
  for (let link of menu_links) {
+
   link.addEventListener("click", function () {
-    console.log(this.id +"-anchor");
-    document.getElementById(this.id +"-anchor").scrollIntoView(true);
+      let elmnt = document.getElementById(this.id +"-anchor");
+      console.log(link.id +"-anchor");
+
+      if(window.location.hash == "#front"){
+      scrollTo(document.documentElement, elmnt.offsetTop, 400);
+      }
+      else{
+        spaService.navigateTo("front")
+        setTimeout(function() {
+        scrollTo(document.documentElement, elmnt.offsetTop, 750);
+
+        }, 50);
+
+      }
+    
+  }); 
+ }
+
+   // ==================================== skifter ned på siden - toplinks
+
+let toplinks = document.querySelectorAll(".top-nav span")
+ for (let link of toplinks) {
+  link.addEventListener("click", function () {
+    document.getElementById(this.className +"-anchor").scrollIntoView(true);
+
 
 
   });
  }
+
+ console.log(window.location.hash);
+ 
 
 
   // ======= ÆNDRER FARVEN PÅ CIRKLEN OG INDHOLD I CALL-US ============
@@ -639,7 +693,7 @@ function closeSuccessDiv() {
 }
 
 // close the div in 7 secs
-window.setTimeout(closeSuccessDiv, 7000);
+/* window.setTimeout(closeSuccessDiv, 7000); */
 
 
 
