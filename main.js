@@ -249,12 +249,12 @@ console.log(client);
   function showDetailView(id){
     let detail = document.querySelector(".detail");
     console.log(projects);
-    
+
     for (let project of projects) {
     if (project.id === id) {
-      selectedProject = project;      
+      selectedProject = project;
     }
-  }  
+  }
 detail.innerHTML= /* html */ `
 <h2 class="lighth2">${selectedProject.title.rendered}</h2>
 <div class="test"></div>
@@ -266,7 +266,7 @@ detail.classList.add("show");
 
   }
 
-  window.showDetailView = (id) => showDetailView(id); 
+  window.showDetailView = (id) => showDetailView(id);
 
   /* ============ weather api ======================== */
   const apiCall = 'https://api.openweathermap.org/data/2.5/weather?q=aarhus,dk&units=metric&appid=b892cb50e6b072e2bd37a1bc8049ee3a';
@@ -282,16 +282,16 @@ detail.classList.add("show");
       appendWeather(data);
     });
 
-  fetch(apiCall)
+/*   fetch(apiCall)
     .then(response => response.json())
-    .then(data => console.log(data));
+    .then(data => console.log(data)); */
 
     /* append weather data to DOM */
   function appendWeather(data) {
     let htmlTemplate = "";
     Math.round(data.main.temp);
     let temp = Math.round(`${data.main.temp}`); //temp to rounded number
-    htmlTemplate += `
+    htmlTemplate += /*html*/`
         <div id="weather-container">
         <img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png">
           <h3>${data.name}, <span>${temp}</span> ºC</h3>
@@ -416,7 +416,7 @@ detail.classList.add("show");
     let t = new Date();
     let h = t.getHours()
     console.log(h);
-    
+
 
     if (h > 8 && h < 20) {
       document.querySelector(".phone-active").style.backgroundColor = "lightgreen"
