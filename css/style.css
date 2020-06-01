@@ -5,8 +5,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: bebas-neue-pro, sans-serif;
-  scroll-behavior: smooth; }
+  font-family: bebas-neue-pro, sans-serif; }
 
 body {
   background-color: #172430;
@@ -301,6 +300,10 @@ a {
   width: 100% !important;
   height: 100vh !important; }
 
+.case-anchor {
+  margin-top: 110vh !important;
+  position: absolute; }
+
 .gradient-left {
   background: #172430;
   background: linear-gradient(90deg, #172430 0%, #172430 41%, rgba(0, 212, 255, 0) 100%);
@@ -507,7 +510,7 @@ a {
     @media only screen and (max-width: 1050px) {
       .top-nav .top-links {
         display: none; } }
-    .top-nav .top-links a {
+    .top-nav .top-links span {
       display: flex;
       align-items: center;
       color: white;
@@ -519,10 +522,9 @@ a {
       font-family: bebas-neue-pro-expanded, sans-serif;
       font-weight: 700;
       font-style: normal; }
-      .top-nav .top-links a i {
+      .top-nav .top-links span i {
         margin-right: 12px; }
-    .top-nav .top-links a:hover {
-      cursor: pointer;
+    .top-nav .top-links span:hover {
       -webkit-transform: scale(1.05);
       -ms-transform: scale(1.05);
       transform: scale(1.05);
@@ -1146,6 +1148,9 @@ footer {
 
 .swiper-slide img {
   width: 30vw; }
+  @media only screen and (max-width: 550px) {
+    .swiper-slide img {
+      width: 50vw; } }
 
 .overlay {
   display: flex;
@@ -1154,17 +1159,27 @@ footer {
   height: 30vw;
   position: absolute;
   z-index: 10; }
+  @media only screen and (max-width: 550px) {
+    .overlay {
+      width: 50vw;
+      height: 50vw; } }
   .overlay .slider-count {
     align-self: flex-end;
     color: #FF593E;
     font-size: 15vw;
     margin-top: -0.5em;
     margin-right: -0.3em; }
+    @media only screen and (max-width: 550px) {
+      .overlay .slider-count {
+        font-size: 20vw; } }
   .overlay .slider-job {
     color: #F2F2F2;
     font-size: 4vw;
     margin-left: -1em;
     margin-top: -1em; }
+    @media only screen and (max-width: 550px) {
+      .overlay .slider-job {
+        font-size: 8vw; } }
   .overlay .slider-year {
     display: inline-flex;
     align-self: start;
@@ -1174,6 +1189,10 @@ footer {
     color: #F2F2F2;
     margin-left: -4.6em;
     margin-top: 5em; }
+    @media only screen and (max-width: 550px) {
+      .overlay .slider-year {
+        font-size: 4vw;
+        margin-left: -3em; } }
   .overlay .line {
     width: 10vw;
     height: 2px;
@@ -1187,6 +1206,14 @@ footer {
     margin-top: -3.54em;
     margin-left: 5.8em;
     width: 100%; }
+    @media only screen and (max-width: 550px) {
+      .overlay .slider-company {
+        font-size: 5vw;
+        margin-top: -3.8em; } }
+    @media only screen and (max-width: 1050px) {
+      .overlay .slider-company {
+        font-size: 5vw;
+        margin-top: -3.8em; } }
 
 .animation-fadein {
   animation-name: fadein;
@@ -1251,12 +1278,19 @@ footer {
   pointer-events: none; }
 
 .button-prev1 {
+  display: none;
   margin-left: 20%;
   --swiper-theme-color: white; }
+  @media only screen and (max-width: 550px) {
+    .button-prev1 {
+      display: none !important; } }
 
 .button-next1 {
   margin-right: 20%;
   --swiper-theme-color: white; }
+  @media only screen and (max-width: 550px) {
+    .button-next1 {
+      display: none !important; } }
 
 .casehtag {
   margin-left: 10vh; }

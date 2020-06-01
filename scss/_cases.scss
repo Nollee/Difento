@@ -17,6 +17,9 @@
 
 .swiper-slide img{
     width: 30vw;
+    @include phone{
+        width: 50vw;
+    }
 }
 
 .overlay{
@@ -26,18 +29,29 @@
     height: 30vw;
     position: absolute;
     z-index: 10;
+    @include phone{
+        width: 50vw;
+        height: 50vw;
+    }
     .slider-count{
         align-self: flex-end;
         color: $main-orange;
         font-size: 15vw;
         margin-top: -0.5em;
         margin-right: -0.3em;
+        @include phone{
+            font-size: 20vw;
+        }
     }
     .slider-job{
         color: $grey;
         font-size: 4vw;
         margin-left: -1em;
         margin-top: -1em;
+        @include phone{
+            font-size: 8vw;
+
+        }
     }
     .slider-year{
         display: inline-flex;
@@ -48,6 +62,10 @@
         color: $grey;
         margin-left: -4.6em;
         margin-top: 5em;
+        @include phone{
+            font-size: 4vw;
+            margin-left: -3em;
+        }
     }
     .line{
         width: 10vw;
@@ -63,6 +81,14 @@
         margin-top: -3.54em;
         margin-left: 5.8em;
         width: 100%;
+        @include phone{
+            font-size: 5vw;
+            margin-top: -3.8em;
+        }
+        @include tablet{
+            font-size: 5vw;
+            margin-top: -3.8em;
+        }
     }
 
 }
@@ -147,13 +173,20 @@
 }
 
 .button-prev1{
+    display: none;
     margin-left: 20%;
     --swiper-theme-color: white;
+    @include phone{
+        display: none !important;
+    }
 }
 
 .button-next1{
     margin-right: 20%;
     --swiper-theme-color: white;
+    @include phone{
+        display: none !important;
+    }
 }
 
 .casehtag {

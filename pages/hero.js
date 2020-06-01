@@ -13,26 +13,26 @@ export default class Hero {
       </div>
   
       <div class="top-links">
-      <a href="#cases">
+      <span class="caselink">
       <i class="fas fa-layer-group"></i>
       <p>CASES</p>
-      </a>
-      <a href="#proces-anchor">
+      </span>
+      <span class="proceslink">
       <i class="fas fa-hourglass-half"></i>
       <p>PROCES</p>
-      </a>
-      <a href="#about-anchor">
+      </span>
+      <span class="aboutlink">
       <i class="fas fa-user-friends"></i>
       <p>OM OS</p>
-      </a>
-      <a href="#recommend-anchor">
+      </span>
+      <span class="recommendlink">
       <i class="fas fa-laugh"></i>
       <p>ANBEFALINGER</p>
-      </a>
-      <a href="#contact-anchor">
+      </span>
+      <span class="contactlink">
       <i class="fas fa-paper-plane"></i>
       <p>KONTAKT</p>
-      </a>
+      </span>
       </div>
       </nav>
   
