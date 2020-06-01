@@ -44,9 +44,9 @@ export default class Hero {
         <!-- buttons -->
         <div class="hero-btns">
               <!-- grey button -->
-          <a class="btn-grey" href="#cases"><div>cases <i class="fas fa-layer-group"></i></div></a>
+          <span class="btn-grey case-ref"><div>cases <i class="fas fa-layer-group"></i></div></span>
                 <!-- orange button -->
-          <a class="btn-orange" href="#contact-anchor"><div>kontakt <i class="fas fa-paper-plane" ></i></div></a>
+          <span class="btn-orange contact-ref" href="#contact-anchor"><div>kontakt <i class="fas fa-paper-plane" ></i></div></span>
         </div>
       </div>
       <div id="birds">
@@ -55,7 +55,7 @@ export default class Hero {
       </div>
   <div id="hero-bottom-content">
   <div id="weather"></div><!---- container for the wather api --->
-        <div id="hero-bottom-arrow"><span><i class="fas fa-angle-down"></i></span></div>
+        <div id="hero-bottom-arrow"><span class="case-ref"><i class="fas fa-angle-down"></i></span></div>
           <div id="hero-bottom-some">
             <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>

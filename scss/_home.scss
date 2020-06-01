@@ -86,7 +86,7 @@
     margin-top: 7%;
     width: auto;
     height: auto;
-    a {margin-right: 2%;}
+    span {margin-right: 2%;}
     display: flex; flex-direction: row;
     @include phone{
         justify-content: space-around;
