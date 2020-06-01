@@ -7,7 +7,7 @@ export default class About {
       document.querySelector("#about").innerHTML += /*html*/ `
       <div id="aboutlink-anchor" class="anchor"></div>
       <div class="sub-wrapper">
-      <h2 class="lighth2 rellax">OM OS</h2>
+      <h2 class="lighth2">OM OS</h2>
       <div class="about-container">
       <div class="about-left">
       <div class="text-box">
@@ -32,7 +32,7 @@ export default class About {
       <div class="person-container">
       <div class="person">
       <div class="person-card" data-aos="zoom-in" data-aos-delay="300">
-      <img class="rellax" data-rellax-speed="-1" src="./images/martin.jpg" alt="martin">
+      <img src="./images/martin.jpg" alt="martin">
       <h5>Martin Eneberg</h5>
       <a href="tel:+4527884665">+45 27 88 46 64</a>
       <a href="mailto:me@difento.dk">me@difento.dk</a>
@@ -40,7 +40,7 @@ export default class About {
       </div>
       <div class="person">
       <div class="person-card" data-aos="zoom-in" data-aos-delay="400">
-      <img class="rellax" data-rellax-speed="1" src="./images/mikkel.jpg" alt="mikkel">
+      <img src="./images/mikkel.jpg" alt="mikkel">
       <h5>Mikkel Faartoft</h5>
       <a href="tel:+4523677669">+45 23 67 76 69</a>
       <a href="mailto:mj@difento.dk">mj@difento.dk</a>
@@ -48,6 +48,12 @@ export default class About {
       </div>
       </div>
       </div>
+
+      <img src="../images/bg-blue.png" class="bg-element about-bg1 rellax" alt="difento icon blue">
+      <img src="../images/bg-blue.png" class="bg-element about-bg2 rellax" data-rellax-speed="-3" alt="difento icon blue">
+      <img src="../images/bg-blue.png" class="bg-element about-bg3 rellax" data-rellax-speed="-4" alt="difento icon blue">
+      <img src="../images/bg-blue.png" class="bg-element about-bg4 rellax" data-rellax-speed="-2" alt="difento icon blue">
+      <img src="../images/bg-blue.png" class="bg-element about-bg5 rellax" data-rellax-speed="-4" alt="difento icon blue">
       </div>
       `;
     }
