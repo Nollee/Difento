@@ -302,7 +302,7 @@ a {
   height: auto;
   display: flex;
   flex-direction: row; }
-  .hero-btns a {
+  .hero-btns span {
     margin-right: 2%; }
   @media only screen and (max-width: 550px) {
     .hero-btns {
@@ -1205,6 +1205,9 @@ footer {
 
 .swiper-slide img {
   width: 30vw; }
+  @media only screen and (max-width: 1050px) {
+    .swiper-slide img {
+      width: 40vw; } }
   @media only screen and (max-width: 550px) {
     .swiper-slide img {
       width: 50vw; } }
@@ -1216,6 +1219,10 @@ footer {
   height: 30vw;
   position: absolute;
   z-index: 10; }
+  @media only screen and (max-width: 1050px) {
+    .overlay {
+      width: 40vw;
+      height: 40vw; } }
   @media only screen and (max-width: 550px) {
     .overlay {
       width: 50vw;
@@ -1263,11 +1270,11 @@ footer {
     margin-top: -3.54em;
     margin-left: 5.8em;
     width: 100%; }
-    @media only screen and (max-width: 550px) {
-      .overlay .slider-company {
-        font-size: 5vw;
-        margin-top: -3.8em; } }
     @media only screen and (max-width: 1050px) {
+      .overlay .slider-company {
+        font-size: 4vw;
+        margin-top: -1.55em; } }
+    @media only screen and (max-width: 550px) {
       .overlay .slider-company {
         font-size: 5vw;
         margin-top: -3.8em; } }

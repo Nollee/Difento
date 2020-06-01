@@ -622,13 +622,30 @@ else{
 }  
   });
 
-
-  document.getElementById("hero-bottom-arrow").addEventListener("click", function () {
+// Lader knapper med klassen "case-ref" gå ned på cases
+let caseRefs = document.querySelectorAll(".case-ref");
+for (let caseRef of caseRefs) {
+  caseRef.addEventListener("click", function () {
     let elmnt = document.querySelector("#caselink-anchor")
     scrollTo(document.documentElement, elmnt.offsetTop, 350);
 
 
-  })
+  })  
+
+}
+
+// lader knapper med klassen "contact-ref" gå ned på contact
+let contactRefs = document.querySelectorAll(".contact-ref");
+for (let contactRef of contactRefs) {
+  contactRef.addEventListener("click", function () {
+    let elmnt = document.querySelector("#contactlink-anchor")
+    scrollTo(document.documentElement, elmnt.offsetTop, 350);
+
+
+  })  
+
+}
+
 
 
   // ==================================== skifter ned på siden - sidebar

@@ -4,6 +4,8 @@ $tablet: 1050px;
 $desktop-sm: 1199px;
 $desktop-lg: 1260px;
 
+
+
 @mixin phone {
     @media only screen and (max-width: $phone) {
         @content;
@@ -15,6 +17,7 @@ $desktop-lg: 1260px;
         @content;
     }
 }
+
 
 @mixin desktop-sm {
     @media only screen and (max-width: $desktop-sm) {
