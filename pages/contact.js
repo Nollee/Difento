@@ -7,7 +7,7 @@ export default class Contact {
       document.querySelector("#contact").innerHTML += /*html*/ `
       <div id="contactlink-anchor" class="anchor"></div>
       <div class="sub-wrapper">
-      <h2>Kontakt</h2>
+      <h2 class="rellax">Kontakt</h2>
       <h3 class="h3-contact" data-aos="fade-in" data-aos-delay="100">skal vi finde din løsning?</h3>
       <h3 class="h3-big-contact" data-aos="fade-up"
       data-aos-anchor-placement="bottom-bottom" data-aos-delay="300">Ta' kontakt</h3>

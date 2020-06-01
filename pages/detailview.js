@@ -2,7 +2,7 @@ export default class Detail {
     constructor() {
       this.template();
     }
-  
+
     template() {
       document.querySelector("#detail").innerHTML += /*html*/ `
       <article class="detail-wrapper">

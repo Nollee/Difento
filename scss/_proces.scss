@@ -1,3 +1,7 @@
+#proces h2 {
+    position: relative;
+    z-index: 90;
+}
 .proc{
     -webkit-transition: background-color 0.3s ease !important;
     -o-transition: background-color 0.3s ease !important;
@@ -30,7 +34,7 @@
             width: 60%;
         }
         h3{
-           font-size: 5vw; 
+           font-size: 5vw;
            margin-bottom: 3vh;
            @include phone{
             font-size: 10vw;
