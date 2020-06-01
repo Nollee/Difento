@@ -605,7 +605,7 @@ console.log(client);
     }, 10);
 }
 
-  // ====================== GÅR tilbage til front ===========================
+  // ====================== GÅR tilbage til hero af forside ===========================
   document.getElementById("nav-logo").addEventListener("click", function () {
     let elmnt = document.querySelector("body");
     if(window.location.hash == "#front")
@@ -621,6 +621,15 @@ else{
 
 }  
   });
+
+
+  document.getElementById("hero-bottom-arrow").addEventListener("click", function () {
+    let elmnt = document.querySelector("#caselink-anchor")
+    scrollTo(document.documentElement, elmnt.offsetTop, 350);
+
+
+  })
+
 
   // ==================================== skifter ned på siden - sidebar
  for (let link of menu_links) {
