@@ -66,6 +66,7 @@ html{
     width: 90%;
     margin: 10vh auto;
     color: $grey;
+    position: relative;
     @include phone{
        height: auto;
     }
@@ -180,3 +181,64 @@ a{
           margin-bottom: 15vh !important;
       }
   }
+
+ .bg-element {
+    position: absolute;
+    height: auto;
+    z-index: -1 !important;
+    }
+
+    .about-bg1 {
+        bottom: 20%;
+        right: 10%;
+        width: 5vw;
+    }
+    .about-bg2 {
+        bottom: 10%;
+        right: 20%;
+        width: 7vw;
+    }
+    .about-bg3 {
+        bottom: 20%;
+        left: 10%;
+        width: 3vw;
+    }
+    .about-bg4 {
+        bottom: 50%;
+        left: 2%;
+        width: 8vw;
+    }
+    .about-bg5 {
+        bottom: 0%;
+        left: 50%;
+        width: 5vw;;
+    }
+
+
+
+
+    .detailview-bg1 {
+        bottom: 20%;
+        right: 10%;
+        width: 5vw;
+    }
+    .detailview-bg2 {
+        bottom: 50%;
+        right: 20%;
+        width: 7vw;
+    }
+    .detailview-bg3 {
+        bottom: 60%;
+        left: 10%;
+        width: 3vw;
+    }
+    .detailview-bg4 {
+        bottom: 70%;
+        left: 2%;
+        width: 8vw;
+    }
+    .detailview-bg5 {
+        bottom: 10%;
+        left: 50%;
+        width: 5vw;;
+    }

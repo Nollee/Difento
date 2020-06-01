@@ -14,6 +14,11 @@ export default class Detail {
       <div class="swiper-button-next button-next next4"></div>
       <div class="detail-content">
       </div>
+      <img src="../images/bg-blue.png" class="bg-element detailview-bg1 rellax" alt="difento icon blue">
+      <img src="../images/bg-blue.png" class="bg-element detailview-bg2 rellax" data-rellax-speed="-3" alt="difento icon blue">
+      <img src="../images/bg-blue.png" class="bg-element detailview-bg3 rellax" data-rellax-speed="-4" alt="difento icon blue">
+      <img src="../images/bg-blue.png" class="bg-element detailview-bg4 rellax" data-rellax-speed="-2" alt="difento icon blue">
+      <img src="../images/bg-blue.png" class="bg-element detailview-bg5 rellax" data-rellax-speed="-4" alt="difento icon blue">
       </article>
       <footer></footer>
       `;

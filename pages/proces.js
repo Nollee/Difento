@@ -7,9 +7,9 @@ export default class Proces {
       document.querySelector("#proces").innerHTML += /*html*/ `
       <div id="proceslink-anchor" class="anchor"></div>
       <div class="sub-wrapper dark">
-      <h2 class="darkh2 rellax">Proces</h2>
+      <h2 class="darkh2">Proces</h2>
 
-      <div class="swiper-container swiper2">
+      <div class="swiper-container swiper2 rellax">
 
       <div class="swiper-wrapper">
 
