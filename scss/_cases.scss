@@ -17,6 +17,10 @@
 
 .swiper-slide img{
     width: 30vw;
+    @include tablet{
+        width: 40vw;
+
+    }
     @include phone{
         width: 50vw;
     }
@@ -29,6 +33,10 @@
     height: 30vw;
     position: absolute;
     z-index: 10;
+    @include tablet{
+        width: 40vw;
+        height: 40vw;
+    }
     @include phone{
         width: 50vw;
         height: 50vw;
@@ -81,11 +89,11 @@
         margin-top: -3.54em;
         margin-left: 5.8em;
         width: 100%;
-        @include phone{
-            font-size: 5vw;
-            margin-top: -3.8em;
-        }
         @include tablet{
+            font-size: 4vw;
+            margin-top: -1.55em;
+        }
+        @include phone{
             font-size: 5vw;
             margin-top: -3.8em;
         }
