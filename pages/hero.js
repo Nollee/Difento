@@ -55,7 +55,7 @@ export default class Hero {
       </div>
   <div id="hero-bottom-content">
   <div id="weather"></div><!---- container for the wather api --->
-        <div id="hero-bottom-arrow"><a href="#cases"><i class="fas fa-angle-down"></i></a></div>
+        <div id="hero-bottom-arrow"><span><i class="fas fa-angle-down"></i></span></div>
           <div id="hero-bottom-some">
             <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
             <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
