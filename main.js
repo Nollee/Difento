@@ -147,7 +147,7 @@ grabCursor: true,
 });
 
 
-
+ // ============ APPENDER CLIENTERNE TIL RECOMMEND ============
 function appendClients(clients) {
 for (let client of clients) {
 console.log(client);
@@ -180,6 +180,7 @@ console.log(client);
 }
 }
 
+// ================== HENTER CASES FRA WORDPRESS REST API =================
   function getProjects() {
     fetch('https://difento.dk/wordpress/wp-json/wp/v2/cases?_embed')
       .then(function (response) {
@@ -259,6 +260,7 @@ console.log(client);
 
   }
 
+  //  GÅR IND PÅ DETAILVIEW OG STARTER MED DEN CASE MAN HAR TRYKKET PÅ
   function showDetailView(index){
     let swiper4 = new Swiper('.swiper4', {
       spaceBetween: 100,
@@ -280,6 +282,7 @@ console.log(client);
     appendDetailView(index, swiper4);
   };
 
+  // APPENDER DETAILVIEW FRA getProjects()
   function appendDetailView(i, swiper){
     let detailslides = ""
     for (let project of projects) {
@@ -331,12 +334,12 @@ console.log(client);
       </div>
 
       <div class="third-sec">
+      <img src="${info.image3.guid}">
 
       <div class="third-left">
       <h3>${info.header3}</h3>
       <p>${info.description3}</p>
       </div>
-      <img src="${info.image3.guid}">
 
       </div>
 
@@ -360,6 +363,7 @@ console.log(client);
      document.querySelector(".swiper-bot").innerHTML = detailBot
 
 
+     // ÆNDRER INDHOLD NÅR MAN SKIFTER I SLIDEREN
      swiper.on('slideChangeTransitionEnd', async function findDetailSlide() {
       let detailViews = document.querySelectorAll('.detail-slide');
       detailTop = "";
@@ -487,6 +491,7 @@ console.log(client);
     }
 
     if(window.location.hash == "#detail"){
+      // lader tabberen blive, når man er inde i detailview
       document.querySelector(".tabbar").classList.add("pop")
       document.querySelector("#caselink").classList.add("active")
 
@@ -494,8 +499,10 @@ console.log(client);
     }
   });
 
-  // Lader tabbaren blive, hvis brugeren reloader
+  // funktion til alt der skal ske, når brugeren reloader siden
   function reload(){
+
+      // Lader tabbaren blive, hvis brugeren reloader
     if (document.body.scrollTop > 90 || document.documentElement.scrollTop > 90) {
       document.querySelector(".tabbar").classList.add("pop")
 
@@ -512,10 +519,6 @@ console.log(client);
   }
 
   reload();
-
-
-  // ========================== fjerne og giver scroll-behaviour =====================
-
 
 
 
@@ -549,10 +552,11 @@ console.log(client);
     };
 
 
-    // ==================== ÆNDRER BAGGRUNDEN ==============================
+    // ====== ÆNDRING PÅ ELEMENTER NÅR MAN NÅR TIL EN SPECIFIK SEKTION =========
     let descriptions = document.querySelectorAll(".link-desc");
     let procSlides = document.querySelectorAll(".proc");
 
+    // baggrund på body og beskrivelser af nav
     if (current == 1 || current == 4) {
       document.querySelector("body").style.backgroundColor = "#F2F2F2"
       for (let desc of descriptions) {
@@ -622,7 +626,7 @@ else{
 }  
   });
 
-// Lader knapper med klassen "case-ref" gå ned på cases
+// knapper med klassen "case-ref" går ned på cases
 let caseRefs = document.querySelectorAll(".case-ref");
 for (let caseRef of caseRefs) {
   caseRef.addEventListener("click", function () {
@@ -634,7 +638,7 @@ for (let caseRef of caseRefs) {
 
 }
 
-// lader knapper med klassen "contact-ref" gå ned på contact
+// knapper med klassen "contact-ref" går ned på contact
 let contactRefs = document.querySelectorAll(".contact-ref");
 for (let contactRef of contactRefs) {
   contactRef.addEventListener("click", function () {
@@ -648,7 +652,7 @@ for (let contactRef of contactRefs) {
 
 
 
-  // ==================================== skifter ned på siden - sidebar
+  //  går ned ad siden - sidebar
  for (let link of menu_links) {
 
   link.addEventListener("click", function () {
@@ -670,7 +674,7 @@ for (let contactRef of contactRefs) {
   }); 
  }
 
-   // ==================================== skifter ned på siden - toplinks
+   // går ned ad siden - toplinks
 
 let toplinks = document.querySelectorAll(".top-nav span")
  for (let link of toplinks) {
@@ -681,27 +685,32 @@ let toplinks = document.querySelectorAll(".top-nav span")
 
 
   });
- }
-
- console.log(window.location.hash);
- 
+ } 
 
 
-  // ======= ÆNDRER FARVEN PÅ CIRKLEN OG INDHOLD I CALL-US ============
+  // ======= ÆNDRER INDHOLD IFT. TIDSPUNKTET ============
 
   function time() {
     let t = new Date();
     let h = t.getHours()
     console.log(h);
 
+    let actives = document.querySelectorAll(".phone-active");
+
 
     if (h > 8 && h < 20) {
-      document.querySelector(".phone-active").style.backgroundColor = "lightgreen"
+      for (let active of actives) {
+        active.style.backgroundColor = "lightgreen"
+ 
+      }      
       document.querySelector(".call-us").innerHTML = /* html */ `
       <a href="tel:+4523677669">Ring til os på +45 23 67 76 69</a>
       `;
     } else {
-      document.querySelector(".phone-active").style.backgroundColor = "red"
+      for (let active of actives) {
+        active.style.backgroundColor = "red"
+ 
+      }        
       document.querySelector(".call-us").innerHTML = /* html */ `
       <a href="mailto:kontakt@difento.dk">Send os en mail på kontakt@difento.dk</a>
       `;
