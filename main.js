@@ -125,17 +125,17 @@ console.log(getClients);
 getClients();
 
 
-
+/* recommend section swiper */
 let swiper3 = new Swiper('.swiper3', {
   spaceBetween: 100,
   centeredSlides: true,
   observer: true,
 observeParents: true,
 grabCursor: true,
- /*  autoplay: {
+  autoplay: {
     delay: 10000,
     disableOnInteraction: false,
-  }, */
+  },
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
@@ -168,7 +168,7 @@ console.log(client);
     </div>
   </div>
 
-  <img class="client-img" src="${client.image.guid}" alt="${client.image.post_title}">
+  <img class="client-img thumbnail" src="${client.image.guid}" alt="${client.image.post_title}">
     <!---<h3>${client.title.rendered}</h3>--->
     <!---<h4>Specification</h4>-->
 
@@ -649,3 +649,19 @@ window.showDetailView = (index) => showDetailView(index);
 window.pageChange = () => spaService.pageChange();
 
 }, false);
+
+
+
+/* var image = document.getElementsByClassName('thumbnail');
+new simpleParallax(image, {
+	overflow: true
+}); */
+
+var rellax = new Rellax('.rellax', {
+  speed: -4,
+  center: true,
+  wrapper: null,
+  round: true,
+  vertical: true,
+  horizontal: false
+});

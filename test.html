@@ -32,19 +32,19 @@
           <div class="section" id="cases">
                     Eenie...
                 </div>
-    
+
                 <div class="section" id="meenie">
                     Meenie...
                 </div>
-    
+
                 <div class="section" id="miney">
                     Miney...
                 </div>
-    
+
                 <div class="section" id="mo">
                     Mo...
                 </div>
-          
+
                 <p><a data-scroll href="#top">Back to the top</a></p>
             </main>
         </div>
@@ -76,9 +76,66 @@
   <script src="./services/three.r95.min.js"></script>
   <script src="./services/vanta.birds.min.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/cferdinandi/gumshoe@4/dist/gumshoe.polyfills.min.js"></script>
-  <script>  
+  <script>
     var spy = new Gumshoe('#my-awesome-nav a');  </script>
   <script src="main.js"></script>
+
+
+
+
+
+
+
+
+
+
+<!-- RECAPTCHA RAPPORT EKSEMPLER -->
+
+<!-- recapthca api -->
+  <script src="https://www.google.com/recaptcha/api.js
+  ?render=your_site_key_here"></script>
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+
+ // =========== RECAPTCHA GOOGLE ===================
+ grecaptcha.ready(function () {
+  grecaptcha.execute('6LdwzfwUAAAAALCr3M_nRgn8-TN7_KYXWatiF7ML', { action: 'homepage' }).then(function (token) {
+    // console.log(token);
+    document.getElementById("token").value = token;
+  });
+});
+
+
+
+
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 

@@ -1049,6 +1049,10 @@ footer {
     .footer-bot .adresse, .footer-bot .contact, .footer-bot .cvr {
       margin-bottom: 10vh; } }
 
+#proces h2 {
+  position: relative;
+  z-index: 90; }
+
 .proc {
   -webkit-transition: background-color 0.3s ease !important;
   -o-transition: background-color 0.3s ease !important;
