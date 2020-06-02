@@ -516,7 +516,7 @@ console.log(client);
     // reloader siden igen, da der var problemer med fuglene på forsiden
     setTimeout(function() {
       window.location.reload();
-    }, 1); 
+    }, 1);
   }
 
   reload();
@@ -602,18 +602,18 @@ console.log(client);
   document.getElementById("nav-logo").addEventListener("click", function () {
     let elmnt = document.querySelector("body");
     if(window.location.hash == "#front")
-{ 
-  elmnt.scrollIntoView({behavior: 'smooth'})  
-  
+{
+  elmnt.scrollIntoView({behavior: 'smooth'})
 
-}  
+
+}
 else{
   spaService.navigateTo("front")
-  elmnt.scrollIntoView({behavior: 'smooth'})  
+  elmnt.scrollIntoView({behavior: 'smooth'})
   document.querySelector(".tabbar").classList.remove("pop")
 
 
-}  
+}
   });
 
 // knapper med klassen "case-ref" går ned på cases
@@ -621,10 +621,10 @@ let caseRefs = document.querySelectorAll(".case-ref");
 for (let caseRef of caseRefs) {
   caseRef.addEventListener("click", function () {
     let elmnt = document.querySelector("#caselink-anchor")
-    elmnt.scrollIntoView({behavior: 'smooth'})  
+    elmnt.scrollIntoView({behavior: 'smooth'})
 
 
-  })  
+  })
 
 }
 
@@ -633,10 +633,10 @@ let contactRefs = document.querySelectorAll(".contact-ref");
 for (let contactRef of contactRefs) {
   contactRef.addEventListener("click", function () {
     let elmnt = document.querySelector("#contactlink-anchor")
-    elmnt.scrollIntoView({behavior: 'smooth'})  
+    elmnt.scrollIntoView({behavior: 'smooth'})
 
 
-  })  
+  })
 
 }
 
@@ -650,18 +650,18 @@ for (let contactRef of contactRefs) {
       console.log(link.id +"-anchor");
 
       if(window.location.hash == "#front"){
-        elmnt.scrollIntoView({behavior: 'smooth'})  
+        elmnt.scrollIntoView({behavior: 'smooth'})
       }
       else{
         spaService.navigateTo("front")
         setTimeout(function() {
-          elmnt.scrollIntoView({behavior: 'smooth'})  
+          elmnt.scrollIntoView({behavior: 'smooth'})
 
         }, 50);
 
       }
-    
-  }); 
+
+  });
  }
 
    // går ned ad siden - toplinks
@@ -675,7 +675,7 @@ let toplinks = document.querySelectorAll(".top-nav span")
 
 
   });
- } 
+ }
 
 
   // ======= ÆNDRER INDHOLD IFT. TIDSPUNKTET ============
@@ -691,16 +691,16 @@ let toplinks = document.querySelectorAll(".top-nav span")
     if (h > 8 && h < 20) {
       for (let active of actives) {
         active.style.backgroundColor = "lightgreen"
- 
-      }      
+
+      }
       document.querySelector(".call-us").innerHTML = /* html */ `
       <a href="tel:+4523677669">Ring til os på +45 23 67 76 69</a>
       `;
     } else {
       for (let active of actives) {
         active.style.backgroundColor = "red"
- 
-      }        
+
+      }
       document.querySelector(".call-us").innerHTML = /* html */ `
       <a href="mailto:kontakt@difento.dk">Send os en mail på kontakt@difento.dk</a>
       `;
@@ -727,7 +727,7 @@ function closeSuccessDiv() {
 }
 
 // close the div in 7 secs
-/* window.setTimeout(closeSuccessDiv, 7000); */
+ window.setTimeout(closeSuccessDiv, 7000);
 
 
 
@@ -745,11 +745,11 @@ new simpleParallax(image, {
 	overflow: true
 }); */
 
- 
+
 let parallex = document.querySelectorAll(".para");
 for (let para of parallex) {
   if(screen.width < 400){
-  para.classList.remove("rellax") 
+  para.classList.remove("rellax")
 }
 else{
   para.classList.add("rellax")    }
