@@ -7,7 +7,8 @@ export default class Cases {
       document.querySelector("#cases").innerHTML += /*html*/ `
           <div id="caselink-anchor" class="anchor case-anchor"></div>
     <div class="sub-wrapper case">
-    <h2 class="lighth2 casehtag rellax">CASES</h2>
+    <h2 class="lighth2 casehtag para" data-rellax-zindex="60"
+    >CASES</h2>
     <div class="swiper-container swiper1">
     <!-- Additional required wrapper -->
 

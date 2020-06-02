@@ -9,7 +9,7 @@ export default class Proces {
       <div class="sub-wrapper dark">
       <h2 class="darkh2">Proces</h2>
 
-      <div class="swiper-container swiper2 rellax">
+      <div class="swiper-container swiper2 para">
 
       <div class="swiper-wrapper">
 

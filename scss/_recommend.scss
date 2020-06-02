@@ -5,7 +5,9 @@
     -webkit-text-stroke-color: $grey;
     margin-left: 3%;
     @include desktop-lg {font-size: 8rem;}
-    @include phone {font-size: 4rem;}
+    @include phone {font-size: 3.5rem;
+        -webkit-text-stroke-width: 1px;
+    }
 }
 
 .swiper3 {height: 65vh !important;}
