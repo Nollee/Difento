@@ -330,8 +330,7 @@ a {
   position: absolute;
   bottom: 10%;
   left: 5%;
-  right: 5%;
-  width: 85%;
+  width: 87%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -1151,8 +1150,8 @@ footer {
 
 .proc {
   -webkit-transition: background-color 0.3s ease !important;
-  -o-transition: background-color 0.3s ease !important;
-  transition: background-color 0.3s ease !important;
+  -o-transition: 0.3s ease !important;
+  transition: 0.5s ease !important;
   display: flex !important;
   justify-content: space-around !important;
   align-items: center !important;
@@ -1182,6 +1181,7 @@ footer {
       .proc .proces-text {
         width: 90%; } }
     .proc .proces-text h3 {
+      transition: 0.3s !important;
       font-size: 5vw;
       margin-bottom: 3vh; }
       @media only screen and (max-width: 550px) {
@@ -1189,7 +1189,8 @@ footer {
           font-size: 10vw;
           text-align: center; } }
     .proc .proces-text p {
-      font-size: 1.5vw; }
+      font-size: 1.5vw;
+      transition: 0.5s !important; }
       @media only screen and (max-width: 1050px) {
         .proc .proces-text p {
           font-size: 3vw; } }
@@ -1403,6 +1404,11 @@ footer {
 
 .casehtag {
   margin-left: 10vh; }
+  @media only screen and (max-width: 550px) {
+    .casehtag {
+      margin: 0;
+      width: 100%;
+      text-align: center; } }
 
 .sub-wrapper.case {
   width: 100%; }
@@ -1624,6 +1630,9 @@ footer {
     @media only screen and (max-width: 1050px) {
       .swiper-bot h4 {
         font-size: 4vw; } }
+    @media only screen and (max-width: 550px) {
+      .swiper-bot h4 {
+        font-size: 4.5vw; } }
   .swiper-bot .visit {
     display: flex;
     align-items: center;
@@ -1637,6 +1646,9 @@ footer {
       width: 40%;
       margin-right: 2vw;
       background-color: #FF593E; }
+      @media only screen and (max-width: 550px) {
+        .swiper-bot .visit .visit-line {
+          width: 20%; } }
     .swiper-bot .visit a {
       color: #FF593E;
       font-size: 2vw;
@@ -1646,6 +1658,9 @@ footer {
       @media only screen and (max-width: 1050px) {
         .swiper-bot .visit a {
           font-size: 3vw; } }
+      @media only screen and (max-width: 550px) {
+        .swiper-bot .visit a {
+          font-size: 5vw; } }
 
 .detail-pagination {
   width: 40% !important;
@@ -1669,7 +1684,7 @@ footer {
         font-size: 2.5vw; } }
     @media only screen and (max-width: 550px) {
       .detail-content p {
-        font-size: 3.5vw; } }
+        font-size: 5vw; } }
 
 .case-intro {
   display: flex;
@@ -1789,21 +1804,31 @@ footer {
         .detail-reco .reco-wrapper .reco-left {
           width: 100%; } }
       .detail-reco .reco-wrapper .reco-left img {
-        width: 100%;
-        margin-bottom: 3vh; }
+        width: 100%; }
         @media only screen and (max-width: 550px) {
           .detail-reco .reco-wrapper .reco-left img {
             display: block;
             width: 70%;
             margin-bottom: 0; } }
       .detail-reco .reco-wrapper .reco-left p {
-        margin: 2vh auto; }
+        margin: 3vh auto;
+        font-size: 2vw;
+        font-style: italic; }
+        @media only screen and (max-width: 1050px) {
+          .detail-reco .reco-wrapper .reco-left p {
+            font-size: 3vw; } }
+        @media only screen and (max-width: 550px) {
+          .detail-reco .reco-wrapper .reco-left p {
+            font-size: 5vw; } }
       .detail-reco .reco-wrapper .reco-left h5 {
         color: #FF593E;
-        font-size: 2vw; }
+        font-size: 2.5vw; }
         @media only screen and (max-width: 1050px) {
           .detail-reco .reco-wrapper .reco-left h5 {
             font-size: 3vw; } }
+        @media only screen and (max-width: 550px) {
+          .detail-reco .reco-wrapper .reco-left h5 {
+            font-size: 6vw; } }
     .detail-reco .reco-wrapper img {
       width: 30%; }
       @media only screen and (max-width: 550px) {

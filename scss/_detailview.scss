@@ -56,6 +56,9 @@
         font-size: 3vw;
         color: white;
         @include tablet {font-size: 4vw;}
+        @include phone{
+            font-size: 4.5vw;
+        }
     }
     .visit{
         display: flex;
@@ -68,6 +71,9 @@
             width: 40%;
             margin-right: 2vw;
             background-color: $main-orange;
+            @include phone{
+                width: 20%;
+            }
         }
         a{
             color: $main-orange;
@@ -75,6 +81,9 @@
             transition: .4s ease;
             &:hover {margin-right: -1vw;}
             @include tablet {font-size: 3vw;}
+            @include phone{
+                font-size: 5vw;
+            }
         }
     }
 
@@ -100,7 +109,7 @@
     p{
         font-size: 1.5vw;
         @include tablet {font-size: 2.5vw;}
-        @include phone {font-size: 3.5vw}
+        @include phone {font-size: 5vw}
     }
 }
 
@@ -200,16 +209,24 @@
             @include phone {width: 100%;}
             img{
                 width: 100%;
-                margin-bottom: 3vh;
                 @include phone {display: block; width: 70%; margin-bottom: 0;}
             }
             p{
-                margin: 2vh auto;
+                margin: 3vh auto;
+                font-size: 2vw;
+                font-style: italic;
+                @include tablet{ font-size: 3vw;}
+                @include phone{
+                    font-size: 5vw;
+                }
             }
             h5{
                 color: $main-orange;
-                font-size: 2vw;
+                font-size: 2.5vw;
                 @include tablet {font-size: 3vw;}
+                @include phone{
+                    font-size: 6vw;
+                }
             }
         }
         img{
