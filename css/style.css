@@ -18,7 +18,9 @@ body {
   /* cursor: url('../images/point.png'), pointer; */ }
 
 a, button, i, input[type=submit], nav p, nav img, ::-webkit-scrollbar, ::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb, .btn-grey, .btn-orange, .btn-orange div, .btn-grey div, ::-webkit-scrollbar-thumb:hover, #proces span, #cases .swiper-slide img, .swiper-button-next, .swiper-button-prev, .nav-container span {
-  cursor: url("../images/point.png"), pointer !important; }
+  cursor: url("../images/point.png"), pointer !important;
+  cursor: url("../images/point.png"), webkit-pointer !important;
+  cursor: url("../images/point.png"), -moz-pointer !important; }
 
 input[type=text], input[type=text], input[type=email], textarea {
   cursor: url("../images/text.png"), text !important; }
@@ -253,6 +255,8 @@ a {
     margin-top: 5vh;
     color: white;
     font-size: 1.3rem; }
+    .hero-text p b {
+      color: #FB7C67; }
     @media only screen and (max-width: 550px) {
       .hero-text p {
         width: 90%;
@@ -274,8 +278,8 @@ a {
       margin-top: 32%; } }
   .hero-head h1 {
     font-size: 4rem;
-    display: flex;
-    align-items: flex-end;
+    /* display: flex;
+    align-items: flex-end; */
     padding: 0;
     margin: 0;
     font-weight: 1000; }
@@ -283,11 +287,11 @@ a {
       .hero-head h1 {
         margin: 8vh auto; } }
     .hero-head h1 span {
-      color: #FF593E;
-      font-size: 5rem; }
-      @media only screen and (max-width: 550px) {
-        .hero-head h1 span {
-          display: none; } }
+      color: #FB7C67;
+      font-weight: 1000;
+      /*   @include phone{
+            display: none;
+        } */ }
     @media only screen and (max-width: 1050px) {
       .hero-head h1 {
         font-size: 10vw; } }
@@ -1409,16 +1413,16 @@ footer {
     .case {
       height: 60vh; } }
 
-/* #cases h2{
-    margin-top: 8%;
-    @include tablet {
-        margin-top: 20%;
-    }
-    @include phone{
-        margin: 8% auto 0 auto;
-        text-align: center;
-    }
-} */
+#cases h2 {
+  margin-top: 8%; }
+  @media only screen and (max-width: 1050px) {
+    #cases h2 {
+      margin-top: 20%; } }
+  @media only screen and (max-width: 550px) {
+    #cases h2 {
+      margin: 8% auto 0 auto;
+      text-align: center; } }
+
 /* mediaqueries */
 /* @include desktop-sm {width: 125px; top: 20px;}
     @include tablet {width: 100px;}

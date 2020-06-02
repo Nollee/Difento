@@ -2,7 +2,7 @@ export default class Hero {
     constructor() {
       this.template();
     }
-  
+
     template() {
       document.querySelector("#hero").innerHTML += /*html*/ `
       <nav class="top-nav">
@@ -11,7 +11,7 @@ export default class Hero {
       <img id="butterfly" src="./images/logo-sign.svg" alt="logo">
       <img id="logo-text"src="./images/logo-word.svg" alt="logo">
       </div>
-  
+
       <div class="top-links">
       <span class="caselink">
       <i class="fas fa-layer-group"></i>
@@ -35,21 +35,22 @@ export default class Hero {
       </span>
       </div>
       </nav>
-  
+
       <div class="hero-text">
         <div class="hero-head">
-          <h1>VI SKABER MINDER<span>.</span></h1>
+          <h1 data-aos="zoom-out-right" data-aos-delay="100">Kreativt webbureau med unikke webløsninger
+          <span>.</span></h1>
       </div>
-        <p>Lorem Ipsum er ganske enkelt fyldtekst fra print- og typografiindustrien. Lorem Ipsum har været standard fyldtekst siden 1500-tallet, hvor en ukendt trykker sammensatte en tilfældig spalte for at trykke en bog til sammenligning af forskellige skrifttyper. Lorem Ipsum har ikke alene.</p>
+        <p data-aos="fade-in" data-aos-delay="300">Vi er et Aarhus-baseret webbureau, der tilbyder unikke webløsninger til din virksomhed. Vi specialiserer os i <b>hjemmesider</b>, <b>brugeradfærd</b> og <b>design</b>. Vi skaber mindeværdige løsninger så din virksomhed kan skille sig ud fra mængden.</p>
         <!-- buttons -->
         <div class="hero-btns">
               <!-- grey button -->
-          <span class="btn-grey case-ref"><div>cases <i class="fas fa-layer-group"></i></div></span>
+          <span class="btn-grey case-ref" data-aos="fade-right" data-aos-delay="400"><div>cases <i class="fas fa-layer-group"></i></div></span>
                 <!-- orange button -->
-          <span class="btn-orange contact-ref" href="#contact-anchor"><div>kontakt <i class="fas fa-paper-plane" ></i></div></span>
+          <span class="btn-orange contact-ref" data-aos="fade-right" data-aos-delay="500"href="#contact-anchor"><div>kontakt <i class="fas fa-paper-plane" ></i></div></span>
         </div>
       </div>
-      <div id="birds">
+      <div id="birds" data-aos="fade-in">
       <div class="gradient-left"></div>
       <div class="gradient-bot"></div>
       </div>

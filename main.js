@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // ======= SWIPER SLIDER TIL PROCES =====================
 
-  let procesIcons = ['fas fa-search', 'fas fa-paint-brush', 'far fa-comment-dots', 'fas fa-desktop', 'far fa-user-circle']
+  let procesIcons = ['far fa-comment-dots', 'fas fa-search', 'fas fa-paint-brush', 'far fa-user-circle', 'fas fa-desktop', 'fas fa-server']
   let swiper2 = new Swiper('.swiper2', {
     spaceBetween: 200,
     effect: 'fade',
@@ -351,7 +351,7 @@ console.log(client);
 
       <div class="reco-left">
       <img src="${info.client_logo.guid}">
-      <p><i>${info.client_statement}</i></p>
+      <p>"${info.client_statement}"</p>
       <h5>- ${info.client_name}</h5>
       </div>
       <img src="${info.client_img.guid}">
@@ -670,7 +670,7 @@ let toplinks = document.querySelectorAll(".top-nav span")
  for (let link of toplinks) {
   link.addEventListener("click", function () {
     let elmnt = document.getElementById(link.className +"-anchor")
-    elmnt.scrollIntoView({behavior: 'smooth'})  
+    elmnt.scrollIntoView({behavior: 'smooth'})
 
 
 
