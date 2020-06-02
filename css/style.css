@@ -1409,16 +1409,16 @@ footer {
     .case {
       height: 60vh; } }
 
-#cases h2 {
-  margin-top: 8%; }
-  @media only screen and (max-width: 1050px) {
-    #cases h2 {
-      margin-top: 20%; } }
-  @media only screen and (max-width: 550px) {
-    #cases h2 {
-      margin: 8% auto 0 auto;
-      text-align: center; } }
-
+/* #cases h2{
+    margin-top: 8%;
+    @include tablet {
+        margin-top: 20%;
+    }
+    @include phone{
+        margin: 8% auto 0 auto;
+        text-align: center;
+    }
+} */
 /* mediaqueries */
 /* @include desktop-sm {width: 125px; top: 20px;}
     @include tablet {width: 100px;}
