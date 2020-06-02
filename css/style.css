@@ -368,13 +368,6 @@ a {
   width: 100% !important;
   height: 100vh !important; }
 
-.case-anchor {
-  margin-top: 115vh !important;
-  position: absolute; }
-  @media only screen and (max-width: 550px) {
-    .case-anchor {
-      margin-top: 100vh !important; } }
-
 .gradient-left {
   background: #172430;
   background: linear-gradient(90deg, #172430 0%, #172430 41%, rgba(0, 212, 255, 0) 100%);
