@@ -670,7 +670,7 @@ let toplinks = document.querySelectorAll(".top-nav span")
  for (let link of toplinks) {
   link.addEventListener("click", function () {
     let elmnt = document.getElementById(link.className +"-anchor")
-    scrollTo(document.documentElement, elmnt.offsetTop, 750);
+    elmnt.scrollIntoView({behavior: 'smooth'})  
 
 
 
