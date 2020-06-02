@@ -41,7 +41,7 @@ export default class Hero {
           <h1 data-aos="zoom-out-right" data-aos-delay="100">Kreativt webbureau med unikke webløsninger
           <span>.</span></h1>
       </div>
-        <p data-aos="fade-in" data-aos-delay="300">Vi er et Aarhus-baseret webbureau, der tilbyder unikke webløsninger til din virksomhed. Vi specialiserer os i <b>hjemmesider</b>, <b>brugeradfærd</b> og <b>design</b>. Vi skaber mindeværdige løsninger så din virksomhed kan skille sig ud fra mængden.</p>
+        <p data-aos="fade-in" data-aos-delay="300">Vi er et Aarhus-baseret webbureau, der tilbyder unikke webløsninger til din virksomhed. Vi specialiserer os i <b>hjemmesider</b>, <b>brugeradfærd</b> og <b>design</b>. Vi skaber mindeværdige løsninger, så din virksomhed kan skille sig ud fra mængden.</p>
         <!-- buttons -->
         <div class="hero-btns">
               <!-- grey button -->

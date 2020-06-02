@@ -31,7 +31,7 @@ export default class Proces {
       <img src="./images/brush.svg" alt="møde" data-aos="zoom-in" data-aos-delay="300">
       <div class="proces-text">
       <h3>Design</h3>
-      <p>På baggrund af vores research begynder vi designfasen. Her udforsker vi en bred vifte af designløsninger, i form af skitser, billeder og mockups. Vi bliver i denne fase indtil vi er sikre på at have fundet noget unikt, der passer til din virksomhed. Designet bliver allerede i den tidlige stadie testet af målgruppen. Det gør vi for at sikre designets relevans og mindske spildtid fremadrettet.
+      <p>På baggrund af vores research begynder vi designfasen. Her udforsker vi en bred vifte af designløsninger, i form af skitser, billeder og mockups. Vi forbliver i denne fase indtil vi er sikre på at have fundet noget unikt, der passer til din virksomhed. Designet bliver allerede i det tidlige stadie testet af målgruppen. Det gør vi for at sikre designets relevans og mindske spildtid fremadrettet.
       </p>
       </div>
       </div>

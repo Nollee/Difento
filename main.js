@@ -743,7 +743,7 @@ new simpleParallax(image, {
 
 let parallex = document.querySelectorAll(".para");
 for (let para of parallex) {
-  if(screen.width < 400){
+  if(screen.width < 600){
   para.classList.remove("rellax")
 }
 else{
