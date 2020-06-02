@@ -25,6 +25,9 @@
     position: relative;
     img{
         width: 40px;
+        @include phone{
+            width: 35px;
+        }
     }
     img:hover{
         cursor: pointer;
@@ -53,15 +56,15 @@
             transition: 0.3s ease;
 
             @include tablet{
-                font-size: 35px;
+                font-size: 25px;
             }
             @include phone{
                 font-size: 25px;
             }
         }
         @include tablet{
-            width: 65px;
-            height: 65px;
+            width: 55px;
+            height: 55px;
         }
         @include phone{
             width: 45px;
@@ -81,6 +84,9 @@
         transition: 0.3s ease;
         i{
             color: $main-orange;
+            @include tablet{
+                color: white;
+            }
         }
     }
 
@@ -102,6 +108,9 @@
             -webkit-transition: 0.3s ease;
             -o-transition: 0.3s ease;
             transition: 0.3s ease;
+            @include tablet{
+                color: white;
+                }
         }
     }
 }
@@ -118,6 +127,9 @@
                 width: 90%;
                 margin: auto;
             }
+    }
+    @include phone{
+        height: 65px;
     }
 
 }
@@ -189,6 +201,8 @@
     @include phone{
         justify-content: center;
         position: relative;
+        margin: 0;
+        width: 100%;
     }
     .top-links{
         display: flex;

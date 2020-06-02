@@ -180,6 +180,10 @@ a{
       @include tablet{
           margin-bottom: 15vh !important;
       }
+      @include phone{
+        margin-bottom: 30vh !important;
+      }
+
   }
 
  .bg-element {

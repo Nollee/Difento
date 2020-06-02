@@ -7,6 +7,8 @@ export default class NavBar {
       document.querySelector(".tabbar").innerHTML += /*html*/ `
       <div class="nav-container">
       <img id="nav-logo" src="./images/logo-sign.svg" alt="logo">
+      <span id="vanish">
+      </span>
       <span id="caselink" ><i class="fas fa-layer-group"></i>
       <div id="casedesc" class="link-desc">
       <p>CASES</p>

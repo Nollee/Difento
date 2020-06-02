@@ -13,6 +13,10 @@
     @include tablet{
         width: 100% !important;
     }
+    @include phone{
+        flex-direction: column !important;
+
+    }
     img{
         width: 28% !important;
         height: auto !important;
@@ -23,7 +27,7 @@
             width: 35% !important;
         }
         @include phone{
-            width: 25% !important;
+            width: 50% !important;
         }
     }
     .proces-text{
@@ -31,13 +35,14 @@
         display: flex;
         flex-direction: column;
         @include phone{
-            width: 60%;
+            width: 90%;
         }
         h3{
            font-size: 5vw;
            margin-bottom: 3vh;
            @include phone{
             font-size: 10vw;
+            text-align: center;
         }
         }
         p{
@@ -47,6 +52,7 @@
             }
             @include phone{
                 font-size: 4vw;
+                text-align: center;
             }
         }
     }

@@ -93,6 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
   let swiper2 = new Swiper('.swiper2', {
     spaceBetween: 200,
     effect: 'fade',
+    touchRatio: 0,
     pagination: {
       el: '.swiper-pagination2',
       clickable: true,
@@ -539,11 +540,9 @@ console.log(client);
 
   console.log(menu_links);
 
-
   window.addEventListener("scroll", () => {
     const current = sections.length - [...sections].reverse().findIndex((section) => window.scrollY >= section.offsetTop - sectionMargin) - 1
-    console.log(current);
-
+  console.log(current);
 
     if (current !== currentActive) {
       removeAllActive();
@@ -557,8 +556,10 @@ console.log(client);
     let procSlides = document.querySelectorAll(".proc");
 
     // baggrund på body og beskrivelser af nav
-    if (current == 1 || current == 4) {
+    if (current == 2 || current == 5) {
       document.querySelector("body").style.backgroundColor = "#F2F2F2"
+      document.querySelector(".swiper1").style.display = "none"
+
       for (let desc of descriptions) {
         desc.style.backgroundColor = "#172430"
       }
@@ -571,6 +572,8 @@ console.log(client);
 
     else {
       document.querySelector("body").style.backgroundColor = "#172430"
+      document.querySelector(".swiper1").style.display = "flex"
+
       for (let desc of descriptions) {
         desc.style.backgroundColor = "#F2F2F2"
       }
@@ -581,7 +584,7 @@ console.log(client);
     }
 
     // fjerner og viser recaptcha
-    if (current == 4) {
+    if (current == 5) {
       document.querySelector(".grecaptcha-badge").classList.remove("delete")
     }
     else {
@@ -755,12 +758,24 @@ new simpleParallax(image, {
 	overflow: true
 }); */
 
+
+let parallex = document.querySelectorAll(".para");
+for (let para of parallex) {
+  if(screen.width < 400){
+  para.classList.remove("rellax")
+}
+else{
+  para.classList.add("rellax")    }
+}
+
 var rellax = new Rellax('.rellax', {
   speed: -4,
   center: true,
   wrapper: null,
   round: true,
   vertical: true,
-  horizontal: false/* ,
-  breakpoints: [576, 768, 1201] */
+  horizontal: false
 });
+/*   else{
+    rellax.refresh();
+  } */
