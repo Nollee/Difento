@@ -13,7 +13,7 @@ export default class About {
       <div class="text-box">
       <h3>Difento</h3>
       <p>
-      Lorem Ipsum er ganske enkelt fyldtekst fra print- og typografiindustrien. Lorem Ipsum har været standard fyldtekst siden 1500-tallet, hvor en ukendt trykker sammensatte en tilfældig spalte for at trykke en bog til sammenligning af forskellige skrifttyper. Lorem Ipsum har ikke alene.
+      Difento er et ungt webbureau med et ungt team, baseret i Aarhus. Vi stræber efter at løfte vores kunders webløsninger til et niveau der giver værdi, for deres virksomhed. Med vores lille team, er vi en fleksibel samarbejdspartner, som altid har et tæt samarbejde med vores kunder.
       </p>
       </div>
       <div class="skills">

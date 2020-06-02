@@ -2,12 +2,12 @@ export default class Footer {
     constructor() {
       this.template();
     }
-  
+
     template() {
       let footers = document.querySelectorAll("footer");
 
       for (let footer of footers) {
-      
+
       footer.innerHTML += /*html*/ `
       <div class="footer-wrapper">
       <div class="footer-top">
@@ -16,7 +16,7 @@ export default class Footer {
       <img id="logo-text"src="./images/logo-word.svg" alt="logo" data-aos="zoom-in" data-aos-delay="400">
       </div>
       <div class="footer-topdesc">
-      <p>Lorem Ipsum er ganske enkelt fyldtekst fra print- og typografiindustrien. Lorem Ipsum har været standard fyldtekst siden 1500-tallet, hvor en ukendt trykker sammensatte en tilfældig spalte for at trykke en bog til sammenligning af forskellige skrifttyper. Lorem Ipsum har ikke alene.</p>
+      <p>Lokalt webbureau i Aarhus, med erfaring indenfor webløsninger – både hjemmesider, webapps mm. Vi har fokus på at levere høj kvalitet og unikke løsninger.</p>
       <div class="footer-icons">
       <a href="https://wordpress.com/"> <i class="fab fa-wordpress-simple"></i></a>
       <a href="https://www.shopify.com/"<i class="fab fa-shopify"></i></a>
@@ -54,10 +54,10 @@ export default class Footer {
       </div>
       </div>
       <div class="footer-botright">
-      <h4>Åbningstider</h4>
+     <!--  <h4>Åbningstider</h4>
       <div class="opening">
       <div class="days">
-      <p>Mandag</p>
+     <p>Mandag</p>
       <p>Tirsdag</p>
       <p>Onsdag</p>
       <p>Torsdag</p>
@@ -75,8 +75,8 @@ export default class Footer {
       <p>9-21</p>
       </div>
       </div>
-      </div>
-  
+      </div>-->
+
       </div>
       </div>
       <div class="footer-img" data-aos="fade-left" data-aos-delay="600"></div>
