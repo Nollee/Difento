@@ -769,10 +769,8 @@ a {
   -webkit-text-stroke-width: #172430;
   -webkit-text-stroke-color: #172430;
   position: absolute;
-  right: -50px; }
-  @media only screen and (max-width: 550px) {
-    #contact .sub-wrapper h2 {
-      right: 20px; } }
+  right: -50px;
+  /* @include phone {right: 20px;} */ }
 #contact .sub-wrapper .h3-contact {
   color: #FF593E;
   font-size: 2rem;

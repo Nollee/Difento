@@ -508,7 +508,7 @@ console.log(client);
     // reloader siden igen, da der var problemer med fuglene på forsiden
     setTimeout(function() {
       window.location.reload();
-    }, 1); 
+    }, 1);
   }
 
   reload();
@@ -591,7 +591,7 @@ console.log(client);
   });
 
 
-  // Smooth scroll animation - https://stackoverflow.com/questions/8917921/cross-browser-javascript-not-jquery-scroll-to-top-animation/8918062#8918062 
+  // Smooth scroll animation - https://stackoverflow.com/questions/8917921/cross-browser-javascript-not-jquery-scroll-to-top-animation/8918062#8918062
 
   function scrollTo(element, to, duration) {
     if (duration <= 0) return;
@@ -609,17 +609,17 @@ console.log(client);
   document.getElementById("nav-logo").addEventListener("click", function () {
     let elmnt = document.querySelector("body");
     if(window.location.hash == "#front")
-{ 
+{
   scrollTo(document.documentElement, elmnt.offsetTop, 350);
 
-}  
+}
 else{
   spaService.navigateTo("front")
   scrollTo(document.documentElement, elmnt.offsetTop, 350);
   document.querySelector(".tabbar").classList.remove("pop")
 
 
-}  
+}
   });
 
 // Lader knapper med klassen "case-ref" gå ned på cases
@@ -630,7 +630,7 @@ for (let caseRef of caseRefs) {
     scrollTo(document.documentElement, elmnt.offsetTop, 350);
 
 
-  })  
+  })
 
 }
 
@@ -642,7 +642,7 @@ for (let contactRef of contactRefs) {
     scrollTo(document.documentElement, elmnt.offsetTop, 350);
 
 
-  })  
+  })
 
 }
 
@@ -666,8 +666,8 @@ for (let contactRef of contactRefs) {
         }, 50);
 
       }
-    
-  }); 
+
+  });
  }
 
    // ==================================== skifter ned på siden - toplinks
@@ -684,7 +684,7 @@ let toplinks = document.querySelectorAll(".top-nav span")
  }
 
  console.log(window.location.hash);
- 
+
 
 
   // ======= ÆNDRER FARVEN PÅ CIRKLEN OG INDHOLD I CALL-US ============
@@ -728,7 +728,7 @@ function closeSuccessDiv() {
 }
 
 // close the div in 7 secs
-/* window.setTimeout(closeSuccessDiv, 7000); */
+ window.setTimeout(closeSuccessDiv, 7000);
 
 
 
@@ -752,5 +752,6 @@ var rellax = new Rellax('.rellax', {
   wrapper: null,
   round: true,
   vertical: true,
-  horizontal: false
+  horizontal: false/* ,
+  breakpoints: [576, 768, 1201] */
 });
