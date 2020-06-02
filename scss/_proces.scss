@@ -4,8 +4,8 @@
 }
 .proc{
     -webkit-transition: background-color 0.3s ease !important;
-    -o-transition: background-color 0.3s ease !important;
-    transition: background-color 0.3s ease !important;
+    -o-transition:  0.3s ease !important;
+    transition:  0.5s ease !important;
     display: flex !important;
     justify-content: space-around !important;
     align-items: center !important;
@@ -38,6 +38,7 @@
             width: 90%;
         }
         h3{
+            transition: 0.3s !important;
            font-size: 5vw;
            margin-bottom: 3vh;
            @include phone{
@@ -47,6 +48,7 @@
         }
         p{
             font-size: 1.5vw;
+            transition: 0.5s !important;
             @include tablet{
                 font-size: 3vw;
             }

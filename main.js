@@ -94,6 +94,9 @@ document.addEventListener('DOMContentLoaded', function () {
     spaceBetween: 200,
     effect: 'fade',
     touchRatio: 0,
+    fadeEffect: {
+      crossFade: true
+    },    
     pagination: {
       el: '.swiper-pagination2',
       clickable: true,
@@ -351,7 +354,7 @@ console.log(client);
 
       <div class="reco-left">
       <img src="${info.client_logo.guid}">
-      <p><i>${info.client_statement}</i></p>
+      <p>"${info.client_statement}"</p>
       <h5>- ${info.client_name}</h5>
       </div>
       <img src="${info.client_img.guid}">
@@ -553,7 +556,6 @@ console.log(client);
 
     // ====== ÆNDRING PÅ ELEMENTER NÅR MAN NÅR TIL EN SPECIFIK SEKTION =========
     let descriptions = document.querySelectorAll(".link-desc");
-    let procSlides = document.querySelectorAll(".proc");
 
     // baggrund på body og beskrivelser af nav
     if (current == 2 || current == 5) {
@@ -562,10 +564,6 @@ console.log(client);
 
       for (let desc of descriptions) {
         desc.style.backgroundColor = "#172430"
-      }
-
-      for (let slide of procSlides) {
-        slide.style.backgroundColor = "#F2F2F2"
       }
 
     }
@@ -578,9 +576,6 @@ console.log(client);
         desc.style.backgroundColor = "#F2F2F2"
       }
 
-      for (let slide of procSlides) {
-        slide.style.backgroundColor = "#172430"
-      }
     }
 
     // fjerner og viser recaptcha
