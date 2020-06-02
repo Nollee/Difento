@@ -598,31 +598,18 @@ console.log(client);
   });
 
 
-  // Smooth scroll animation - https://stackoverflow.com/questions/8917921/cross-browser-javascript-not-jquery-scroll-to-top-animation/8918062#8918062 
-
-  function scrollTo(element, to, duration) {
-    if (duration <= 0) return;
-    var difference = to - element.scrollTop;
-    var perTick = difference / duration * 10;
-
-    setTimeout(function() {
-        element.scrollTop = element.scrollTop + perTick;
-        if (element.scrollTop === to) return;
-        scrollTo(element, to, duration - 10);
-    }, 10);
-}
-
   // ====================== GÅR tilbage til hero af forside ===========================
   document.getElementById("nav-logo").addEventListener("click", function () {
     let elmnt = document.querySelector("body");
     if(window.location.hash == "#front")
 { 
-  scrollTo(document.documentElement, elmnt.offsetTop, 350);
+  elmnt.scrollIntoView({behavior: 'smooth'})  
+  
 
 }  
 else{
   spaService.navigateTo("front")
-  scrollTo(document.documentElement, elmnt.offsetTop, 350);
+  elmnt.scrollIntoView({behavior: 'smooth'})  
   document.querySelector(".tabbar").classList.remove("pop")
 
 
@@ -634,7 +621,7 @@ let caseRefs = document.querySelectorAll(".case-ref");
 for (let caseRef of caseRefs) {
   caseRef.addEventListener("click", function () {
     let elmnt = document.querySelector("#caselink-anchor")
-    scrollTo(document.documentElement, elmnt.offsetTop, 350);
+    elmnt.scrollIntoView({behavior: 'smooth'})  
 
 
   })  
@@ -646,7 +633,7 @@ let contactRefs = document.querySelectorAll(".contact-ref");
 for (let contactRef of contactRefs) {
   contactRef.addEventListener("click", function () {
     let elmnt = document.querySelector("#contactlink-anchor")
-    scrollTo(document.documentElement, elmnt.offsetTop, 350);
+    elmnt.scrollIntoView({behavior: 'smooth'})  
 
 
   })  
@@ -663,12 +650,12 @@ for (let contactRef of contactRefs) {
       console.log(link.id +"-anchor");
 
       if(window.location.hash == "#front"){
-      scrollTo(document.documentElement, elmnt.offsetTop, 400);
+        elmnt.scrollIntoView({behavior: 'smooth'})  
       }
       else{
         spaService.navigateTo("front")
         setTimeout(function() {
-        scrollTo(document.documentElement, elmnt.offsetTop, 750);
+          elmnt.scrollIntoView({behavior: 'smooth'})  
 
         }, 50);
 

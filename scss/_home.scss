@@ -140,14 +140,6 @@
     height: 100vh !important;
 }
 
-.case-anchor{
-    margin-top: 115vh !important;
-    position: absolute;
-    @include phone{
-        margin-top: 100vh !important;
-    }
-}
-
 
 .gradient-left{
     background: rgb(23,36,48);
