@@ -30,6 +30,10 @@ body{
     cursor: pointer;
 }
 
+.nav-container span:hover, .top-links span:hover{
+    cursor: pointer;
+}
+
 a, button, i, input[type=submit], nav p, nav img, ::-webkit-scrollbar, ::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb, .btn-grey, .btn-orange, .btn-orange div, .btn-grey div, ::-webkit-scrollbar-thumb:hover, #proces span, #cases .swiper-slide img, .swiper-button-next, .swiper-button-prev, .nav-container span  {
     cursor: url('../images/point.png'), pointer !important;
     cursor: url('../images/point.png'), webkit-pointer !important;
@@ -59,6 +63,9 @@ html{
     width:    -moz-calc(100vw - $nav-width);
     width:         calc(100vw - $nav-width);
     position: relative;
+    -webkit-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+    transition: 0.3s ease;
     @include tablet{
     margin-left: 0;
     width: 100%;
@@ -71,6 +78,15 @@ html{
 
 #cases{
     position: relative;
+}
+
+.sub{
+    width: 100%;
+    height: 120vh;
+    @include desktop-lg{
+        min-height: 120vh;
+    }
+    @include phone {height: auto;}
 }
 
 .sub-wrapper{

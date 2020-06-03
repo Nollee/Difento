@@ -99,9 +99,7 @@ footer{
     background-size: cover;
     background-repeat: no-repeat;
     background-position: bottom;
-    z-index: -1;
-    overflow-y: hidden;
-    overflow-x: hidden;
+    z-index: 2;
     @include tablet{
         display: none;
     }

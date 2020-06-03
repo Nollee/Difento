@@ -515,7 +515,7 @@ console.log(client);
     }
   };
   if (window.location.hash == "#detail"){
-    spaService.navigateTo("front")
+    spaService.navigateTo("content")
     // reloader siden igen, da der var problemer med fuglene på forsiden
     setTimeout(function() {
       window.location.reload();
@@ -596,14 +596,14 @@ console.log(client);
   // ====================== GÅR tilbage til hero af forside ===========================
   document.getElementById("nav-logo").addEventListener("click", function () {
     let elmnt = document.querySelector("body");
-    if(window.location.hash == "#front")
+    if(window.location.hash == "#content")
 {
   elmnt.scrollIntoView({behavior: 'smooth'})
 
 
 }
 else{
-  spaService.navigateTo("front")
+  spaService.navigateTo("content")
   elmnt.scrollIntoView({behavior: 'smooth'})
   document.querySelector(".tabbar").classList.remove("pop")
 
@@ -644,11 +644,11 @@ for (let contactRef of contactRefs) {
       let elmnt = document.getElementById(this.id +"-anchor");
       console.log(link.id +"-anchor");
 
-      if(window.location.hash == "#front"){
+      if(window.location.hash == "#content"){
         elmnt.scrollIntoView({behavior: 'smooth'})
       }
       else{
-        spaService.navigateTo("front")
+        spaService.navigateTo("content")
         setTimeout(function() {
           elmnt.scrollIntoView({behavior: 'smooth'})
 

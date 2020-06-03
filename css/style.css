@@ -13,15 +13,22 @@ body {
   -o-transition: 0.3s ease;
   transition: 0.3s ease;
   overflow-x: hidden;
-  cursor: url("../images/arrow.png"), auto;
-  position: relative;
-  /* cursor: url('../images/point.png'), pointer; */ }
+  cursor: url("../images/arrow.png"), auto !important;
+  cursor: url("../images/arrow.png"), webkit-auto !important;
+  cursor: url("../images/arrow.png"), -moz-auto !important;
+  position: relative; }
 
+/*
+***************** CHANGE OF CURSOR ******************
+*/
 /* for edge */
 .nav-container span:hover, .top-links span:hover {
   cursor: pointer; }
 
-a, button, i, input[type=submit], nav p, nav img, ::-webkit-scrollbar, ::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb, .btn-grey, .btn-orange, .btn-orange div, .btn-grey div, ::-webkit-scrollbar-thumb:hover, #proces span, #cases .swiper-slide img, .swiper-button-next, .swiper-button-prev, .nav-container span {
+.nav-container span:hover, .top-links span:hover {
+  cursor: pointer; }
+
+a, button, i, input[type=submit], nav p, nav img, .btn-grey, .btn-orange, .btn-orange div, .btn-grey div, #proces span, #cases .swiper-slide img, .swiper-button-next, .swiper-button-prev, .nav-container span {
   cursor: url("../images/point.png"), pointer !important;
   cursor: url("../images/point.png"), webkit-pointer !important;
   cursor: url("../images/point.png"), -moz-pointer !important; }
@@ -30,8 +37,18 @@ input[type=text], input[type=text], input[type=email], textarea {
   cursor: url("../images/text.png"), text !important; }
 
 .recommend-slide {
-  cursor: url("..images/drag.png"), pointer !important; }
+  cursor: url("../images/drag.png"), pointer !important;
+  cursor: url("../images/drag.png"), webkit-pointer !important;
+  cursor: url("../images/drag.png"), -moz-pointer !important; }
 
+.recommend-slide:active, #cases .swiper-slide img:active {
+  cursor: url("../images/draging.png"), pointer !important;
+  cursor: url("../images/draging.png"), webkit-pointer !important;
+  cursor: url("../images/draging.png"), -moz-pointer !important; }
+
+/*
+***********************************************************
+*/
 html {
   overflow-y: auto;
   overflow-x: hidden; }
@@ -44,7 +61,10 @@ html {
   width: -webkit-calc(100vw - $nav-width);
   width: -moz-calc(100vw - $nav-width);
   width: calc(100vw - $nav-width);
-  position: relative; }
+  position: relative;
+  -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease; }
   @media only screen and (max-width: 1050px) {
     #content {
       margin-left: 0;
@@ -55,6 +75,16 @@ html {
 
 #cases {
   position: relative; }
+
+.sub {
+  width: 100%;
+  height: 120vh; }
+  @media only screen and (max-width: 1260px) {
+    .sub {
+      min-height: 120vh; } }
+  @media only screen and (max-width: 550px) {
+    .sub {
+      height: auto; } }
 
 .sub-wrapper {
   height: 100vh;
@@ -175,7 +205,7 @@ a {
 .bg-element {
   position: absolute;
   height: auto;
-  z-index: -1 !important; }
+  z-index: 0 !important; }
 
 .about-bg1 {
   bottom: 20%;
@@ -402,16 +432,6 @@ a {
   left: 0;
   bottom: 0;
   z-index: 20; }
-
-.sub {
-  width: 100%;
-  height: 120vh; }
-  @media only screen and (max-width: 1260px) {
-    .sub {
-      min-height: 120vh; } }
-  @media only screen and (max-width: 550px) {
-    .sub {
-      height: auto; } }
 
 #services, #contact {
   display: flex; }
@@ -743,7 +763,9 @@ a {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height: 100%; }
+    height: 100%;
+    z-index: 5;
+    position: relative; }
     @media only screen and (max-width: 550px) {
       .about-container .person-container {
         flex-direction: column; } }
@@ -1057,9 +1079,7 @@ footer {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: bottom;
-  z-index: -1;
-  overflow-y: hidden;
-  overflow-x: hidden; }
+  z-index: 2; }
   @media only screen and (max-width: 1050px) {
     .footer-img {
       display: none; } }
@@ -1226,13 +1246,16 @@ footer {
         justify-content: space-between !important; } }
     .swiper2 .swiper-pagination2 .swiper-pagination-bullet {
       margin: 0 25px !important;
-      width: 70px;
-      height: 40px;
+      width: 60px;
+      height: 60px;
       background-color: transparent;
       outline: none; }
       .swiper2 .swiper-pagination2 .swiper-pagination-bullet i {
         font-size: 40px;
         color: #172430; }
+        @media only screen and (max-width: 550px) {
+          .swiper2 .swiper-pagination2 .swiper-pagination-bullet i {
+            font-size: 30px; } }
       @media only screen and (max-width: 550px) {
         .swiper2 .swiper-pagination2 .swiper-pagination-bullet {
           margin: 0 8px !important;

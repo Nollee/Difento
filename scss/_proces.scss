@@ -78,13 +78,16 @@
         }
         .swiper-pagination-bullet{
             margin: 0 25px !important;
-            width: 70px;
-            height: 40px;
+            width: 60px;
+            height: 60px;
             background-color: transparent;
             outline: none;
             i{
                 font-size: 40px;
                 color: $dark-blue;
+                @include phone{
+                    font-size: 30px;
+                }
             }
             @include phone{
                 margin: 0 8px !important;
