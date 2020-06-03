@@ -88,8 +88,8 @@
 <body onhashchange="pageChange()">
   <main id="app">
     <nav class="tabbar"></nav>
-    <section id="front" class="page">
-    <section id="content">
+    <!-- <section id="front" class="page"> -->
+    <section id="content" class="page">
     <article id="hero" class="hero-forside sub"></article>
     <article id="cases" class="sub cases">
     </article>
@@ -99,7 +99,7 @@
     </article>
     <article id="contact" class="sub"></article>
     <footer class="sub"></footer>
-</section>
+<!-- </section> -->
 </section>
 <section id="detail" class="page">
 </section>

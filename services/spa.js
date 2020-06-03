@@ -1,6 +1,6 @@
 class SpaService {
   constructor() {
-    this.defaultPage = "front"; 
+    this.defaultPage = "content";
   }
 
   init() {
@@ -39,7 +39,7 @@ class SpaService {
     location.reload;
   }
 
- 
+
 
 }
 const spaService = new SpaService();

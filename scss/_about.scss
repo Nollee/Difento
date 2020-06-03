@@ -104,6 +104,8 @@
         justify-content: space-around;
         align-items: center;
         height: 100%;
+        z-index: 5;
+        position: relative;
         @include phone{
             flex-direction: column;
         }
