@@ -14,6 +14,7 @@ spaService.init();
 
 
 
+
 let detail = new Detail();
 let navbar = new NavBar();
 let hero = new Hero();
