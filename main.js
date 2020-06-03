@@ -514,7 +514,7 @@ console.log(client);
     }
   };
   if (window.location.hash == "#detail"){
-    spaService.navigateTo("front")
+    spaService.navigateTo("")
     // reloader siden igen, da der var problemer med fuglene på forsiden
     setTimeout(function() {
       window.location.reload();
@@ -558,7 +558,7 @@ console.log(client);
 
     // baggrund på body og beskrivelser af nav
     if (current == 2 || current == 5) {
-      document.querySelector("#content").style.backgroundColor = "#F2F2F2"
+      document.querySelector("#front").style.backgroundColor = "#F2F2F2"
       document.querySelector(".swiper1").style.display = "none"
 
       for (let desc of descriptions) {
@@ -568,7 +568,7 @@ console.log(client);
     }
 
     else {
-      document.querySelector("#content").style.backgroundColor = "#172430"
+      document.querySelector("#front").style.backgroundColor = "#172430"
       document.querySelector(".swiper1").style.display = "flex"
 
       for (let desc of descriptions) {
@@ -681,7 +681,7 @@ let toplinks = document.querySelectorAll(".top-nav span")
     let actives = document.querySelectorAll(".phone-active");
 
 
-    if (h > 8 && h < 20) {
+    if (h > 8 && h < 21) {
       for (let active of actives) {
         active.style.backgroundColor = "lightgreen"
 
