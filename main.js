@@ -30,7 +30,6 @@ document.addEventListener('DOMContentLoaded', function () {
   const sections = document.querySelectorAll('.sub')
   console.log(sections);
   let projects = [];
-  let selectedProject;
 
 
   // INITIALIZE AOS
@@ -535,22 +534,18 @@ console.log(client);
   const makeActive = (link) => menu_links[link].classList.add("active");
   const removeActive = (link) => menu_links[link].classList.remove("active");
   const removeAllActive = () => [...Array(sections.length).keys()].forEach((link) => removeActive(link));
-
-  console.log([...Array(sections.length).keys()]);
-
   const sectionMargin = 350;
   let currentActive = 0;
 
-  console.log(menu_links);
-
   window.addEventListener("scroll", () => {
     const current = sections.length - [...sections].reverse().findIndex((section) => window.scrollY >= section.offsetTop - sectionMargin) - 1
-  console.log(current);
 
     if (current !== currentActive) {
       removeAllActive();
       currentActive = current;
       makeActive(current);
+      console.log(current);
+      
     };
 
 
@@ -642,7 +637,6 @@ for (let contactRef of contactRefs) {
 
   link.addEventListener("click", function () {
       let elmnt = document.getElementById(this.id +"-anchor");
-      console.log(link.id +"-anchor");
 
       if(window.location.hash == "#front"){
         elmnt.scrollIntoView({behavior: 'smooth'})
@@ -735,12 +729,9 @@ window.pageChange = () => spaService.pageChange();
 
 
 
-/* var image = document.getElementsByClassName('thumbnail');
-new simpleParallax(image, {
-	overflow: true
-}); */
 
 
+// Parallax 
 let parallex = document.querySelectorAll(".para");
 for (let para of parallex) {
   if(screen.width < 600){
@@ -750,6 +741,7 @@ else{
   para.classList.add("rellax")    }
 }
 
+// laver parallax vha. rellax
 var rellax = new Rellax('.rellax', {
   speed: -4,
   center: true,
@@ -758,6 +750,4 @@ var rellax = new Rellax('.rellax', {
   vertical: true,
   horizontal: false
 });
-/*   else{
-    rellax.refresh();
-  } */
+
