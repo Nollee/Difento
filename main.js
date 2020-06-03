@@ -28,7 +28,7 @@ let footer = new Footer();
 document.addEventListener('DOMContentLoaded', function () {
 
   const sections = document.querySelectorAll('.sub')
-  console.log(sections);
+
   let projects = [];
 
 
@@ -529,15 +529,19 @@ console.log(client);
 
 
   /* https://medium.com/p1xts-blog/scrollspy-with-just-javascript-3131c114abdc */
+  
   const menu_links = document.querySelectorAll(".nav-container span");
 
   const makeActive = (link) => menu_links[link].classList.add("active");
   const removeActive = (link) => menu_links[link].classList.remove("active");
   const removeAllActive = () => [...Array(sections.length).keys()].forEach((link) => removeActive(link));
+  
   const sectionMargin = 350;
+  
   let currentActive = 0;
 
   window.addEventListener("scroll", () => {
+    
     const current = sections.length - [...sections].reverse().findIndex((section) => window.scrollY >= section.offsetTop - sectionMargin) - 1
 
     if (current !== currentActive) {
