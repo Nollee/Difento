@@ -496,7 +496,7 @@ console.log(client);
     }
 
     if(window.location.hash == "#detail"){
-      // lader tabberen blive, når man er inde i detailview
+      // lader tabbaren blive, når man er inde i detailview
       document.querySelector(".tabbar").classList.add("pop")
       document.querySelector("#caselink").classList.add("active")
 
@@ -597,16 +597,17 @@ console.log(client);
   // ====================== GÅR tilbage til hero af forside ===========================
   document.getElementById("nav-logo").addEventListener("click", function () {
     let elmnt = document.querySelector("body");
-    if(window.location.hash == "#content")
+    if(window.location.hash == "#detail")
 {
+  spaService.navigateTo("content")
   elmnt.scrollIntoView({behavior: 'smooth'})
+  document.querySelector(".tabbar").classList.remove("pop")
 
 
 }
 else{
-  spaService.navigateTo("content")
   elmnt.scrollIntoView({behavior: 'smooth'})
-  document.querySelector(".tabbar").classList.remove("pop")
+
 
 
 }
@@ -645,15 +646,15 @@ for (let contactRef of contactRefs) {
       let elmnt = document.getElementById(this.id +"-anchor");
       console.log(link.id +"-anchor");
 
-      if(window.location.hash == "#content"){
-        elmnt.scrollIntoView({behavior: 'smooth'})
-      }
-      else{
+      if(window.location.hash == "#detail"){
         spaService.navigateTo("content")
         setTimeout(function() {
           elmnt.scrollIntoView({behavior: 'smooth'})
 
         }, 50);
+      }
+      else{
+        elmnt.scrollIntoView({behavior: 'smooth'})
 
       }
 

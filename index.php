@@ -49,7 +49,6 @@
            </div>';
 		} else {
 			echo '<div class="alert alert-warning">
-					  <strong>Error!</strong> You are not a human.
 				  </div>';
 		}
 	}
