@@ -72,6 +72,12 @@ html{
     position: relative;
 }
 
+#front{
+    -webkit-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+    transition: 0.3s ease;
+}
+
 
 #content{
     margin-left: $nav-width;
@@ -79,9 +85,6 @@ html{
     width:    -moz-calc(100vw - $nav-width);
     width:         calc(100vw - $nav-width);
     position: relative;
-    -webkit-transition: 0.3s ease;
-    -o-transition: 0.3s ease;
-    transition: 0.3s ease;
     @include tablet{
     margin-left: 0;
     width: 100%;

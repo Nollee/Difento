@@ -56,15 +56,17 @@ html {
 #app {
   position: relative; }
 
+#front {
+  -webkit-transition: 0.3s ease;
+  -o-transition: 0.3s ease;
+  transition: 0.3s ease; }
+
 #content {
   margin-left: 70px;
   width: -webkit-calc(100vw - $nav-width);
   width: -moz-calc(100vw - $nav-width);
   width: calc(100vw - $nav-width);
-  position: relative;
-  -webkit-transition: 0.3s ease;
-  -o-transition: 0.3s ease;
-  transition: 0.3s ease; }
+  position: relative; }
   @media only screen and (max-width: 1050px) {
     #content {
       margin-left: 0;
