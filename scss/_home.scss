@@ -33,11 +33,11 @@
         margin-top: 5vh;
         color: white;
         font-size: 1.3rem;
-        b {color: $light-orange}
+        b {color: $light-orange;}
         @include phone{
             width: 90%;
             margin: auto;
-            text-align: center;
+            text-align: left;
             text-shadow: 1px 1px 2px $dark-blue;
         }
     }
@@ -56,7 +56,7 @@
         margin-top: 32%;
     }
     h1{
-        font-size: 4rem;
+        font-size: 4vw;
         /* display: flex;
         align-items: flex-end; */
         padding: 0;
@@ -75,6 +75,7 @@
         }
         @include phone{
             font-size: 10vw;
+            margin: 4vh auto;
         }
     }
 }
@@ -94,7 +95,7 @@
 
  .hero-btns {
     margin-left: 10%;
-    margin-top: 7%;
+    margin-top: 5%;
     width: auto;
     height: auto;
     span {margin-right: 2%;}
@@ -102,7 +103,7 @@
     @include phone{
         justify-content: space-around;
         margin: auto;
-        margin-top: 5vh;
+        margin-top: 3vh;
     }
 }
 
@@ -132,7 +133,7 @@
     #hero-bottom-arrow i {font-size: 50px;
         @include phone {display: none;}
     }
-    @include phone {left: 8%;}
+    @include phone {left: 8%; bottom: 12%;}
 }
 
 

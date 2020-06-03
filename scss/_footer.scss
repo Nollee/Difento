@@ -23,7 +23,7 @@ footer{
         margin: auto;
     }
     @include phone{
-    height: auto;    
+    height: auto;
 }
     .footer-top{
         margin-top: 10vh;
@@ -33,13 +33,14 @@ footer{
         @include phone{
             margin-top: 20vh;
         }
+    .logo {margin-left: 0%;}
     }
     .footer-topdesc{
         display: flex;
         justify-content: space-between;
         margin: 8vh auto;
         @include phone{
-    flex-direction: column;        
+    flex-direction: column;
 }
 
         p{
@@ -121,7 +122,7 @@ footer{
     display: flex;
     justify-content: space-between;
     @include phone{
-    flex-direction: column;    
+    flex-direction: column;
 }
     h4{
         color: $grey;

@@ -27,7 +27,7 @@
             /* $phone = $_POST['phone']; */
 
 
-            $email_from = 'mj@htmlpractice.dk';
+            $email_from = 'form@difento.dk';
 
             $email_subject = "Kontaktformular Difento.dk";
 
@@ -36,7 +36,7 @@
                               /* "User Phone: $phone.\n". */
                                 "User Message: $message.\n";
 
-            $to = "mikkelfaartoftjensen@gmail.com";
+            $to = "kontakt@difento.dk";
 
             $headers = "From: $email_from \r\n";
 

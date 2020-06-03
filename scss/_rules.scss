@@ -25,6 +25,10 @@ body{
     position: relative;
     /* cursor: url('../images/point.png'), pointer; */
 }
+/* for edge */
+.nav-container span:hover, .top-links span:hover{
+    cursor: pointer;
+}
 
 a, button, i, input[type=submit], nav p, nav img, ::-webkit-scrollbar, ::-webkit-scrollbar-track, ::-webkit-scrollbar-thumb, .btn-grey, .btn-orange, .btn-orange div, .btn-grey div, ::-webkit-scrollbar-thumb:hover, #proces span, #cases .swiper-slide img, .swiper-button-next, .swiper-button-prev, .nav-container span  {
     cursor: url('../images/point.png'), pointer !important;
@@ -33,6 +37,10 @@ a, button, i, input[type=submit], nav p, nav img, ::-webkit-scrollbar, ::-webkit
 }
 
 input[type=text], input[type=text], input[type=email], textarea {cursor: url('../images/text.png'), text !important;}
+
+.recommend-slide {
+    cursor: url('..images/drag.png'),pointer !important;
+}
 
 html{
     overflow-y: auto;
@@ -185,7 +193,7 @@ a{
           margin-bottom: 15vh !important;
       }
       @include phone{
-        margin-bottom: 30vh !important;
+        margin-bottom: 85vh !important;
       }
 
   }

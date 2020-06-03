@@ -199,7 +199,7 @@
     z-index: 41;
     top: 5vh;
     @include phone{
-        justify-content: center;
+        /* justify-content: center; */
         position: relative;
         margin: 0;
         width: 100%;
@@ -251,6 +251,7 @@
         justify-content: center;
         width: 60%;
         height: 10vh;
+        margin-left: 5%;
     }
     img{
         height: 90%;

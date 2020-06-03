@@ -43,7 +43,7 @@ export default class About {
       <img src="./images/mikkel.jpg" alt="mikkel">
       <h5>Mikkel Faartoft</h5>
       <a href="tel:+4523677669">+45 23 67 76 69</a>
-      <a href="mailto:mj@difento.dk">mj@difento.dk</a>
+      <a href="mailto:mf@difento.dk">mf@difento.dk</a>
       </div>
       </div>
       </div>

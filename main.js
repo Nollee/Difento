@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', function () {
     touchRatio: 0,
     fadeEffect: {
       crossFade: true
-    },    
+    },
     pagination: {
       el: '.swiper-pagination2',
       clickable: true,
@@ -135,7 +135,7 @@ let swiper3 = new Swiper('.swiper3', {
   centeredSlides: true,
   observer: true,
 observeParents: true,
-grabCursor: true,
+/* grabCursor: true, */
   autoplay: {
     delay: 10000,
     disableOnInteraction: false,
@@ -473,7 +473,7 @@ console.log(client);
     let temp = Math.round(`${data.main.temp}`); //temp to rounded number
     htmlTemplate += /*html*/`
         <div id="weather-container">
-        <img src="http://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png">
+        <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png">
           <h3>${data.name}, <span>${temp}</span> ºC</h3>
         </div>
       `;
@@ -734,11 +734,6 @@ window.pageChange = () => spaService.pageChange();
 }, false);
 
 
-
-/* var image = document.getElementsByClassName('thumbnail');
-new simpleParallax(image, {
-	overflow: true
-}); */
 
 
 let parallex = document.querySelectorAll(".para");
