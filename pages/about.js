@@ -31,7 +31,7 @@ export default class About {
       <div class="about-right">
       <div class="person-container">
       <div class="person">
-      <div class="person-card" data-aos="zoom-in" data-aos-delay="300">
+      <div class="person-card" data-aos="fade-in" data-aos-delay="300">
       <img src="./images/martin.jpg" alt="martin">
       <h5>Martin Eneberg</h5>
       <a href="tel:+4527884665">+45 27 88 46 64</a>
@@ -39,7 +39,7 @@ export default class About {
       </div>
       </div>
       <div class="person">
-      <div class="person-card" data-aos="zoom-in" data-aos-delay="400">
+      <div class="person-card" data-aos="fade-in" data-aos-delay="400">
       <img src="./images/mikkel.jpg" alt="mikkel">
       <h5>Mikkel Faartoft</h5>
       <a href="tel:+4523677669">+45 23 67 76 69</a>

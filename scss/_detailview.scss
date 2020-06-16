@@ -19,8 +19,8 @@
         img{
             width: 80%;
             height: auto;
-            @include tablet {height: 40vh; object-fit: cover;
-            }
+            @include tablet {height: 40vh; object-fit: cover;}
+            @include phone {width: 40vh;}
         }
     }
 }
@@ -35,7 +35,7 @@
     h2{
         font-size: 7vw;
         @include desktop-sm {font-size: 10vw;}
-        @include phone {font-size: 15vw;}
+        @include phone {font-size: 3.5rem; -webkit-text-stroke-width: 1px;}
     }
     h3{
         font-size: 14vw;

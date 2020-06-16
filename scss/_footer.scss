@@ -31,7 +31,7 @@ footer{
             margin-top: 0;
         }
         @include phone{
-            margin-top: 20vh;
+            margin-top: 20vh; display: flex; flex-direction: column; align-items: center;
         }
     .logo {margin-left: 0%;}
     }
@@ -70,15 +70,16 @@ footer{
             a{
                 font-size: 2.5vw;
                 color: $grey;
+                transition: ease .3s;
+                &:hover{
+                    color: $main-orange;
+                }
                 @include tablet{
                     font-size: 6vw;
                 }
                 @include phone{
                     font-size: 10vw;
                     margin-top: 4vh;
-                }
-                &:hover{
-                    color: $main-orange;
                 }
             }
         }
@@ -111,7 +112,7 @@ footer{
     width: 40%;
     height: 6vh;
     @include phone{
-        width: 100%;
+        width: 70%;
         height: auto;
     }
     img{
@@ -134,7 +135,7 @@ footer{
             margin-bottom: 0.6vh;
         }
         @include phone{
-            font-size: 3rem;
+            font-size: 2rem;
             text-align: center;
         }
     }
@@ -142,6 +143,7 @@ footer{
         color: $grey;
         font-size: $p-size;
         margin: 0.7vh 0;
+        transition: ease .3s;
       /*   @include tablet{
             font-size: 3vw;
         }
@@ -187,7 +189,7 @@ footer{
         }
     }
     .contact {
-        margin-bottom: 25vh;
+        @include tablet {margin-bottom: 25vh;}
     }
     .footer-phone{
         display: flex;

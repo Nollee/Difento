@@ -44,8 +44,8 @@
                 @include phone{
                     margin-top: 4vh;
                     text-align: center;
-                    font-size: 3rem;
-                    margin-bottom: 4vh;
+                    font-size: 2rem;
+                    margin-bottom: 3vh;
                 }
             }
         }
@@ -66,11 +66,11 @@
 
             }
             h4{
-                font-size: 2.2rem;
+                font-size: 2.5rem;
                 @include phone{
                     margin-top: 4vh;
                     text-align: center;
-                    font-size: 2.8rem;
+                    font-size: 2rem;
                 }
             }
             p{
@@ -130,7 +130,8 @@
                 @include phone {align-items: center;}
                 height: 90%;
                 img{
-                    width: 70%;
+                    width: 100%;
+                    @include tablet {width: 70%;}
                 }
                 a{
                     color: white;

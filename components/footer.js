@@ -12,8 +12,8 @@ export default class Footer {
       <div class="footer-wrapper">
       <div class="footer-top">
       <div class="logo footer-logo">
-      <img id="butterfly" src="./images/logo-sign.svg" alt="logo" data-aos="zoom-in" data-aos-delay="300">
-      <img id="logo-text"src="./images/logo-word.svg" alt="logo" data-aos="zoom-in" data-aos-delay="400">
+      <img id="butterfly" src="./images/logo-sign.svg" alt="logo" data-aos="fade-in" data-aos-delay="300">
+      <img id="logo-text"src="./images/logo-word.svg" alt="logo" data-aos="fade-in" data-aos-delay="400">
       </div>
       <div class="footer-topdesc">
       <p>Lokalt webbureau i Aarhus, med erfaring indenfor webløsninger – både hjemmesider, webapps mm. Vi har fokus på at levere høj kvalitet og unikke løsninger.</p>

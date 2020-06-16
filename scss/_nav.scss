@@ -94,7 +94,8 @@
         z-index: 99;
 
         .link-desc{
-            display: block;
+            visibility: visible;
+            opacity: 1;
             -webkit-transition: 0.3s ease;
             -o-transition: 0.3s ease;
             transition: 0.3s ease;
@@ -165,7 +166,8 @@
     padding: 5px 12px;
     padding-left: 30px;
      background-color: $grey;
-     display: none;
+     visibility: hidden;
+     opacity: 0;
     clip-path: polygon(20% 0, 100% 0, 100% 100%, 20% 100%, 0 50%);
     margin-right: -100px;
     position: absolute;
@@ -175,7 +177,7 @@
     -webkit-transition: 0.3s ease;
     -o-transition: 0.3s ease;
     transition: 0.3s ease;
-    z-index: 99 !important;
+    z-index: -99 !important;
     }
 
 
