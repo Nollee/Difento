@@ -58,9 +58,9 @@ export default class Hero {
   <div id="weather"></div><!---- container for the wather api --->
         <div id="hero-bottom-arrow"><span class="case-ref"><i class="fas fa-angle-down"></i></span></div>
           <div id="hero-bottom-some">
-            <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
-            <a href="https://www.facebook.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
-            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/company/53528435" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://www.facebook.com/Difento-104301181322258/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+            <a href="https://www.instagram.com/difento.dk/" target="_blank"><i class="fab fa-instagram"></i></a>
           </div>
       </div>
   </div>

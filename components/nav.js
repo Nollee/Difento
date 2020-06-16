@@ -2,7 +2,7 @@ export default class NavBar {
     constructor() {
       this.template();
     }
-  
+
     template() {
       document.querySelector(".tabbar").innerHTML += /*html*/ `
       <div class="nav-container">
@@ -39,9 +39,9 @@ export default class NavBar {
       </span>
       </div>
       <div class="tabbar-some">
-          <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-facebook-square"></i></a>
-          <a href="https://www.linkedin.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.linkedin.com/company/53528435" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://www.facebook.com/Difento-104301181322258/" target="_blank"><i class="fab fa-facebook-square"></i></a>
+          <a href="https://www.instagram.com/difento.dk/" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
       `;
     }

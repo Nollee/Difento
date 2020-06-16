@@ -32,7 +32,7 @@
         margin-left: 10%;
         margin-top: 5vh;
         color: white;
-        font-size: 1.3rem;
+        font-size: $p-size;
         b {color: $light-orange;}
         @include phone{
             width: 90%;
@@ -62,9 +62,6 @@
         padding: 0;
         margin: 0;
         font-weight: 1000;
-        @include phone{
-           margin: 8vh auto;
-        }
         span {color: $light-orange; font-weight: 1000;
           /*   @include phone{
                 display: none;
@@ -75,7 +72,7 @@
         }
         @include phone{
             font-size: 10vw;
-            margin: 4vh auto;
+            margin: 2vh auto;
         }
     }
 }
@@ -103,7 +100,7 @@
     @include phone{
         justify-content: space-around;
         margin: auto;
-        margin-top: 3vh;
+        /* margin-top: 3vh; */
     }
 }
 
@@ -133,7 +130,7 @@
     #hero-bottom-arrow i {font-size: 50px;
         @include phone {display: none;}
     }
-    @include phone {left: 8%; bottom: 12%;}
+    @include phone {left: 8%; bottom: 18%;}
 }
 
 

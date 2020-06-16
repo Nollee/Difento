@@ -26,9 +26,9 @@
         @include tablet{
             width: 35% !important;
         }
-        @include phone{
+        /* @include phone{
             width: 50% !important;
-        }
+        } */
     }
     .proces-text{
         width: 50%;
@@ -47,13 +47,13 @@
         }
         }
         p{
-            font-size: 1.5vw;
+            font-size: $p-size;
             transition: 0.5s !important;
             @include tablet{
                 font-size: 3vw;
             }
             @include phone{
-                font-size: 4vw;
+                font-size: 1.1rem;
                 text-align: center;
             }
         }

@@ -7,6 +7,7 @@
     @include desktop-lg {font-size: 8rem;}
     @include phone {font-size: 3.5rem;
         -webkit-text-stroke-width: 1px;
+        margin-left: 0;
     }
 }
 

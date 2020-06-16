@@ -119,7 +119,8 @@ h2 {
   -webkit-text-stroke-width: 2px; }
   @media only screen and (max-width: 550px) {
     h2 {
-      font-size: 30vw; } }
+      font-size: 30vw;
+      text-align: center; } }
 
 .darkh2 {
   -webkit-text-stroke-color: #172430; }
@@ -322,9 +323,6 @@ a {
     padding: 0;
     margin: 0;
     font-weight: 1000; }
-    @media only screen and (max-width: 550px) {
-      .hero-head h1 {
-        margin: 8vh auto; } }
     .hero-head h1 span {
       color: #FB7C67;
       font-weight: 1000;
@@ -337,7 +335,7 @@ a {
     @media only screen and (max-width: 550px) {
       .hero-head h1 {
         font-size: 10vw;
-        margin: 4vh auto; } }
+        margin: 2vh auto; } }
 
 .hero-forside {
   display: flex;
@@ -364,7 +362,7 @@ a {
     .hero-btns {
       justify-content: space-around;
       margin: auto;
-      margin-top: 3vh; } }
+      /* margin-top: 3vh; */ } }
 
 #hero-bottom-content {
   position: absolute;
@@ -406,7 +404,7 @@ a {
   @media only screen and (max-width: 550px) {
     #hero-bottom-content {
       left: 8%;
-      bottom: 12%; } }
+      bottom: 18%; } }
 
 .vanta-canvas {
   width: 100% !important;
@@ -747,7 +745,7 @@ a {
             margin-top: 1vh; } }
         @media only screen and (max-width: 550px) {
           .about-container .about-left .skills p {
-            font-size: 8vw;
+            font-size: 1.3rem;
             margin-top: 5vh;
             text-align: center;
             width: 100%; } }
@@ -785,21 +783,26 @@ a {
         .about-container .person-container .person {
           height: 100%; } }
       .about-container .person-container .person .person-card {
-        height: 90%;
         display: flex;
         flex-direction: column;
-        align-items: flex-end; }
+        align-items: flex-end;
+        height: 90%; }
+        @media only screen and (max-width: 550px) {
+          .about-container .person-container .person .person-card {
+            align-items: center; } }
         .about-container .person-container .person .person-card img {
           width: 100%; }
         .about-container .person-container .person .person-card a {
           color: white;
           font-size: 1.5rem;
-          margin: 5px 0; }
+          margin: 3px 0;
+          transition: ease .3s; }
           .about-container .person-container .person .person-card a:hover {
             color: #FF593E; }
         .about-container .person-container .person .person-card h5 {
           font-size: 40px;
-          color: #FF593E; }
+          color: #FF593E;
+          margin-top: 2%; }
           @media only screen and (max-width: 1260px) {
             .about-container .person-container .person .person-card h5 {
               font-size: 3vw; } }
@@ -820,7 +823,7 @@ a {
           justify-content: flex-start; } }
   @media only screen and (max-width: 1050px) {
     .about-container {
-      flex-direction: column-reverse;
+      flex-direction: column;
       height: 80%; } }
 
 /* mediaqueries */
@@ -872,6 +875,9 @@ a {
   display: flex;
   flex-direction: column;
   width: 85%; }
+  @media only screen and (max-width: 550px) {
+    #contact-form {
+      width: 95%; } }
   #contact-form h4 {
     color: #172430;
     font-size: 2rem; }
@@ -957,10 +963,8 @@ a {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  width: 100%; }
-  @media only screen and (max-width: 1050px) {
-    .contact-btn-number {
-      flex-direction: column; } }
+  width: 100%;
+  /*  @include tablet {flex-direction: column;} */ }
   @media only screen and (max-width: 550px) {
     .contact-btn-number {
       margin-top: -50px; } }
@@ -1031,27 +1035,30 @@ footer {
     margin: 8vh auto; }
     @media only screen and (max-width: 550px) {
       .footer-wrapper .footer-topdesc {
-        flex-direction: column; } }
+        flex-direction: column;
+        align-items: center;
+        margin: 4vh auto; } }
     .footer-wrapper .footer-topdesc p {
       width: 60%;
-      font-size: 1.5rem;
-      color: #F2F2F2; }
-      @media only screen and (max-width: 1050px) {
-        .footer-wrapper .footer-topdesc p {
-          font-size: 3vw; } }
+      font-size: 1.3rem;
+      color: #F2F2F2;
+      /* @include tablet{
+         font-size: 3vw;
+      } */ }
       @media only screen and (max-width: 550px) {
         .footer-wrapper .footer-topdesc p {
           width: 100%;
-          font-size: 2rem; } }
+          /*   font-size: 2rem; */ } }
     .footer-wrapper .footer-topdesc .footer-icons {
       width: 30%;
       display: flex;
       justify-content: space-around;
       align-items: flex-end;
-      flex-wrap: wrap; }
+      flex-wrap: wrap;
+      align-items: center; }
       @media only screen and (max-width: 550px) {
         .footer-wrapper .footer-topdesc .footer-icons {
-          width: 100%; } }
+          width: 40%; } }
       .footer-wrapper .footer-topdesc .footer-icons a {
         font-size: 2.5vw;
         color: #F2F2F2; }
@@ -1060,7 +1067,7 @@ footer {
             font-size: 6vw; } }
         @media only screen and (max-width: 550px) {
           .footer-wrapper .footer-topdesc .footer-icons a {
-            font-size: 25vw;
+            font-size: 10vw;
             margin-top: 4vh; } }
         .footer-wrapper .footer-topdesc .footer-icons a:hover {
           color: #FF593E; }
@@ -1116,14 +1123,14 @@ footer {
         text-align: center; } }
   .footer-bot a, .footer-bot p {
     color: #F2F2F2;
-    font-size: 1.2vw;
-    margin: 0.7vh 0; }
-    @media only screen and (max-width: 1050px) {
-      .footer-bot a, .footer-bot p {
-        font-size: 3vw; } }
-    @media only screen and (max-width: 550px) {
-      .footer-bot a, .footer-bot p {
-        font-size: 2rem; } }
+    font-size: 1.3rem;
+    margin: 0.7vh 0;
+    /*   @include tablet{
+          font-size: 3vw;
+      }
+      @include phone{
+          font-size: 2rem;
+      } */ }
   .footer-bot a:hover {
     color: #FF593E; }
   .footer-bot .footer-botleft, .footer-bot .footer-botmid, .footer-bot .footer-botright {
@@ -1144,16 +1151,16 @@ footer {
     @media only screen and (max-width: 550px) {
       .footer-bot .footer-botright .opening {
         width: 90%;
-        margin: auto;
-        margin-bottom: 10vh; } }
+        margin: auto; } }
   .footer-bot .boring {
     display: flex;
     flex-direction: column;
     align-items: flex-start; }
     @media only screen and (max-width: 550px) {
       .footer-bot .boring {
-        margin-bottom: 10vh;
         align-items: center; } }
+  .footer-bot .contact {
+    margin-bottom: 25vh; }
   .footer-bot .footer-phone {
     display: flex;
     align-items: center; }
@@ -1171,12 +1178,12 @@ footer {
           height: 1.2vw; } }
       @media only screen and (max-width: 550px) {
         .footer-bot .footer-phone .phone-active {
-          width: 5vw;
-          height: 5vw;
+          width: 2vw;
+          height: 2vw;
           margin-left: 2vw; } }
   @media only screen and (max-width: 550px) {
-    .footer-bot .adresse, .footer-bot .contact, .footer-bot .cvr {
-      margin-bottom: 10vh; } }
+    .footer-bot .adresse, .footer-bot .cvr, .footer-bot .boring {
+      margin-bottom: 4vh; } }
 
 #proces h2 {
   position: relative;
@@ -1198,15 +1205,15 @@ footer {
       flex-direction: column !important; } }
   .proc img {
     width: 28% !important;
-    height: auto !important; }
+    height: auto !important;
+    /* @include phone{
+        width: 50% !important;
+    } */ }
     .proc img:hover {
       cursor: url("../images/arrow.png"), default !important; }
     @media only screen and (max-width: 1050px) {
       .proc img {
         width: 35% !important; } }
-    @media only screen and (max-width: 550px) {
-      .proc img {
-        width: 50% !important; } }
   .proc .proces-text {
     width: 50%;
     display: flex;
@@ -1223,14 +1230,14 @@ footer {
           font-size: 10vw;
           text-align: center; } }
     .proc .proces-text p {
-      font-size: 1.5vw;
+      font-size: 1.3rem;
       transition: 0.5s !important; }
       @media only screen and (max-width: 1050px) {
         .proc .proces-text p {
           font-size: 3vw; } }
       @media only screen and (max-width: 550px) {
         .proc .proces-text p {
-          font-size: 4vw;
+          font-size: 1.1rem;
           text-align: center; } }
 
 .swiper-slide {
@@ -1480,7 +1487,8 @@ footer {
   @media only screen and (max-width: 550px) {
     #recommend h2 {
       font-size: 3.5rem;
-      -webkit-text-stroke-width: 1px; } }
+      -webkit-text-stroke-width: 1px;
+      margin-left: 0; } }
 
 .swiper3 {
   height: 65vh !important; }
