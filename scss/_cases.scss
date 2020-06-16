@@ -25,7 +25,7 @@
 
     }
     @include phone{
-        width: 50vw;
+        width: 65vw;
     }
 }
 
@@ -41,8 +41,8 @@
         height: 40vw;
     }
     @include phone{
-        width: 50vw;
-        height: 50vw;
+        width: 65vw;
+        height: 65vw;
     }
     .slider-count{
         align-self: flex-end;
@@ -60,7 +60,7 @@
         margin-left: -1em;
         margin-top: -1em;
         @include phone{
-            font-size: 8vw;
+            font-size: 10vw;
 
         }
     }
