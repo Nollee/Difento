@@ -31,13 +31,9 @@ export default class Footer {
       <!-- LAV DETTE TIL ET LINK TIL GOOGLE MAPS, NÅR I HAR FÅET KONTOR OG GOOGLE MY BUSINESS -->
       <p>Dr Holsts Vej 50 <br>8230 Åbyhøj</p>
       </div>
-      <div class="contact">
-      <h4>Kontakt</h4>
-      <a href="mailto:kontakt@difento.dk">kontakt@difento.dk</a>
-      <div class="footer-phone">
-      <a href="tel:+4523677669">+45 23 67 76 69</a>
-      <span class="phone-active"></span>
-      </div>
+      <div class="cvr">
+      <h4>CVR</h4>
+      <a href="https://cvrapi.dk/virksomhed/dk/fento-is/41056924">41056924</a>
       </div>
       </div>
       <div class="footer-botmid">
@@ -48,12 +44,19 @@ export default class Footer {
       <a href="#">Handelsbetingelser</a>
       <a href="#">Serviceaftale</a>
       </div>
-      <div class="cvr">
-      <h4>CVR</h4>
-      <a href="https://cvrapi.dk/virksomhed/dk/fento-is/41056924">41056924</a>
+
+
       </div>
-      </div>
+
       <div class="footer-botright">
+      <div class="contact">
+        <h4>Kontakt</h4>
+        <a href="mailto:kontakt@difento.dk">kontakt@difento.dk</a>
+        <div class="footer-phone">
+          <a href="tel:+4523677669">+45 23 67 76 69</a>
+          <span class="phone-active"></span>
+        </div>
+      </div>
      <!--  <h4>Åbningstider</h4>
       <div class="opening">
       <div class="days">

@@ -32,6 +32,7 @@
    #contact-form {
        display: flex; flex-direction: column;
        width: 85%;
+       @include phone { width: 95%}
        h4 {color: $dark-blue; font-size: 2rem;
             @include phone {font-size: 1.5rem;}
     }
@@ -85,7 +86,7 @@
    .contact-btn-number {
        display: flex; flex-direction: row; justify-content: space-between;
        width: 100%;
-       @include tablet {flex-direction: column;}
+      /*  @include tablet {flex-direction: column;} */
        @include phone {margin-top: -50px;}
    }
 

@@ -29,7 +29,7 @@
                 height: auto;
             }
         p{
-            font-size: 1.3rem;
+            font-size: $p-size;
         }
         .text-box{
             width: 80%;
@@ -80,7 +80,7 @@
                     margin-top: 1vh;
                 }
                 @include phone{
-                    font-size: 8vw;
+                    font-size: $p-size;
                     margin-top: 5vh;
                     text-align: center;
                     width: 100%;
@@ -124,17 +124,19 @@
                 height: 100%;
             }
             .person-card{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                @include phone {align-items: center;}
                 height: 90%;
                 img{
                     width: 100%;
                 }
-                display: flex;
-                flex-direction: column;
-                align-items: flex-end;
                 a{
                     color: white;
                     font-size: 1.5rem;
-                    margin: 5px 0;
+                    margin: 3px 0;
+                    transition: ease .3s;
                     &:hover{
                         color: $main-orange;
                     }
@@ -142,6 +144,7 @@
                 h5{
                     font-size: 40px;
                     color: $main-orange;
+                    margin-top: 2%;
                     @include desktop-lg {
                         font-size: 3vw;
                     }
@@ -168,7 +171,7 @@
     }
 
     @include tablet{
-        flex-direction: column-reverse;
+        flex-direction: column;
         height: 80%;
         }
 }

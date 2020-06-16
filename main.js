@@ -691,7 +691,7 @@ let toplinks = document.querySelectorAll(".top-nav span")
 
       }
       document.querySelector(".call-us").innerHTML = /* html */ `
-      <a href="tel:+4523677669">Ring til os på +45 23 67 76 69</a>
+      <a href="tel:+4523677669"><i class="fas fa-phone-alt"></i>+45 23 67 76 69</a>
       `;
     } else {
       for (let active of actives) {
@@ -699,7 +699,7 @@ let toplinks = document.querySelectorAll(".top-nav span")
 
       }
       document.querySelector(".call-us").innerHTML = /* html */ `
-      <a href="mailto:kontakt@difento.dk">Send os en mail på kontakt@difento.dk</a>
+      <a href="mailto:kontakt@difento.dk">kontakt@difento.dk</a>
       `;
     }
   }

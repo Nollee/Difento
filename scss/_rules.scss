@@ -8,6 +8,7 @@ $light-blue: #424E58;
 $grey: #F2F2F2;
 $light-orange: #FB7C67;
 $nav-width: 70px;
+$p-size: 1.3rem;
 
 *{
     margin: 0;
@@ -143,6 +144,7 @@ h2{
     -webkit-text-stroke-width: 2px;
     @include phone{
         font-size: 30vw;
+        text-align: center;
     }
 }
 

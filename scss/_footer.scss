@@ -41,18 +41,20 @@ footer{
         margin: 8vh auto;
         @include phone{
     flex-direction: column;
+    align-items: center;
+    margin: 4vh auto;
 }
 
         p{
             width: 60%;
-            font-size: 1.5rem;
+            font-size: $p-size;
             color: $grey;
-            @include tablet{
+            /* @include tablet{
                font-size: 3vw;
-            }
+            } */
             @include phone{
                 width: 100%;
-                font-size: 2rem;
+              /*   font-size: 2rem; */
             }
         }
         .footer-icons{
@@ -61,8 +63,9 @@ footer{
             justify-content: space-around;
             align-items: flex-end;
             flex-wrap: wrap;
+            align-items: center;
             @include phone{
-                width: 100%;
+                width: 40%;
             }
             a{
                 font-size: 2.5vw;
@@ -71,7 +74,7 @@ footer{
                     font-size: 6vw;
                 }
                 @include phone{
-                    font-size: 25vw;
+                    font-size: 10vw;
                     margin-top: 4vh;
                 }
                 &:hover{
@@ -137,14 +140,14 @@ footer{
     }
     a, p{
         color: $grey;
-        font-size: 1.2vw;
+        font-size: $p-size;
         margin: 0.7vh 0;
-        @include tablet{
+      /*   @include tablet{
             font-size: 3vw;
         }
         @include phone{
             font-size: 2rem;
-        }
+        } */
     }
     a:hover{
         color: $main-orange;
@@ -172,7 +175,6 @@ footer{
             @include phone{
                 width: 90%;
                 margin: auto;
-                margin-bottom: 10vh;
             }
         }
     }
@@ -181,9 +183,11 @@ footer{
         flex-direction: column;
         align-items: flex-start;
         @include phone{
-            margin-bottom: 10vh;
             align-items: center;
         }
+    }
+    .contact {
+        margin-bottom: 25vh;
     }
     .footer-phone{
         display: flex;
@@ -201,17 +205,17 @@ footer{
                 height: 1.2vw;
             }
             @include phone{
-                width: 5vw;
-                height: 5vw;
+                width: 2vw;
+                height: 2vw;
                 margin-left: 2vw;
             }
 
         }
     }
 
-    .adresse, .contact, .cvr{
+    .adresse, .cvr, .boring{
         @include phone{
-            margin-bottom: 10vh;
+            margin-bottom: 4vh;
         }
     }
 }
