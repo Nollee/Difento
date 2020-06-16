@@ -792,7 +792,7 @@ a {
           .about-container .person-container .person .person-card {
             align-items: center; } }
         .about-container .person-container .person .person-card img {
-          width: 100%; }
+          width: 70%; }
         .about-container .person-container .person .person-card a {
           color: white;
           font-size: 1.5rem;
@@ -1724,13 +1724,10 @@ footer {
     font-size: 5vw;
     text-transform: uppercase; }
   .detail-content p {
-    font-size: 1.5vw; }
-    @media only screen and (max-width: 1050px) {
-      .detail-content p {
-        font-size: 2.5vw; } }
-    @media only screen and (max-width: 550px) {
-      .detail-content p {
-        font-size: 5vw; } }
+    font-size: 1.3rem;
+                    /* 1.5vw;
+@include tablet {font-size: 2.5vw;}
+@include phone {font-size: 5vw} */ }
 
 .case-intro {
   display: flex;
