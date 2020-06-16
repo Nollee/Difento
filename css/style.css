@@ -266,12 +266,13 @@ a {
   position: relative; }
   @media only screen and (max-width: 1050px) {
     #birds {
-      /* display: none; */
+      display: none;
       width: 100%; }
       #birds canvas {
         height: 99vh !important; } }
   @media only screen and (max-width: 550px) {
     #birds {
+      display: none;
       position: absolute;
       top: 0; } }
 
@@ -1301,7 +1302,7 @@ footer {
       width: 40vw; } }
   @media only screen and (max-width: 550px) {
     .swiper-slide img {
-      width: 50vw; } }
+      width: 65vw; } }
 
 .overlay {
   display: flex;
@@ -1316,8 +1317,8 @@ footer {
       height: 40vw; } }
   @media only screen and (max-width: 550px) {
     .overlay {
-      width: 50vw;
-      height: 50vw; } }
+      width: 65vw;
+      height: 65vw; } }
   .overlay .slider-count {
     align-self: flex-end;
     color: #FF593E;
@@ -1334,7 +1335,7 @@ footer {
     margin-top: -1em; }
     @media only screen and (max-width: 550px) {
       .overlay .slider-job {
-        font-size: 8vw; } }
+        font-size: 10vw; } }
   .overlay .slider-year {
     display: inline-flex;
     align-self: start;
