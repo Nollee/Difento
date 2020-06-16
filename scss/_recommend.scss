@@ -30,8 +30,9 @@
         margin-left: 10%;
         font-size: 2rem;
         width: auto;
-        @include desktop-sm {margin-left: 20%;}
+      /*   @include desktop-sm {margin-left: 20%;} */
         @include phone {float: none;}
+        &:first-child {@include desktop-sm {margin-left: 5%;} @include tablet {margin-left: 10%;}}
     }
     @include desktop-sm {list-style-image: url("../images/list_dot_small.png");}
 }
@@ -41,7 +42,7 @@
 .recommend-item {width: 70%;
     display: flex; flex-direction: row; justify-content: space-between; align-items: center;
     height: 100%;
-div {@include desktop-sm{display: flex; flex-direction: column; justify-content: center; align-items: center;}}
+div {@include desktop-sm{display: flex; flex-direction: column; justify-content: center; /* align-items: center; */}}
 img {width: 30%; object-fit: cover; height: 70%;
 @include desktop-sm {display: none;}
 }
@@ -57,13 +58,13 @@ h4 {font-size: 1.5rem;
     width: 70%;
     font-style: italic;
     @include desktop-lg {width: 90%;}
-    @include desktop-sm {text-align: center;}
-    @include phone {width: 100%; font-size: 1.5rem;}
+    /* @include desktop-sm {text-align: center;} */
+    @include phone {width: 100%; font-size: $p-size;}
 }
 
 .client-logo {width: 20vw !important; margin-bottom: 4%; display: block !important;
     @include tablet {width: 40vw !important;}
-    @include phone {width: 70vw !important; margin-bottom: 5%;}
+    @include phone {width: 50vw !important; margin-bottom: 5%;}
 }
 
 .client-name {
