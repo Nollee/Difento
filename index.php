@@ -67,6 +67,12 @@
   <meta name="author" content="Difento">
   <link rel="stylesheet" href="css/style.css">
   <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
+  <!-- Chrome, Firefox OS and Opera -->
+<meta name="theme-color" content="#101A23">
+<!-- Windows Phone -->
+<meta name="msapplication-navbutton-color" content="#101A23">
+<!-- iOS Safari -->
+<meta name="apple-mobile-web-app-status-bar-style" content="#101A23">
   <!--Fontawesome stylesheet-->
   <script src="https://kit.fontawesome.com/d6495a71d9.js" crossorigin="anonymous"></script>
 

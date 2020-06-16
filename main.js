@@ -564,6 +564,7 @@ console.log(client);
       document.querySelector("#content").style.backgroundColor = "#F2F2F2"
       document.querySelector(".swiper1").style.display = "none"
       document.querySelector(".swiper3").style.visibility = "hidden"
+      document.querySelector("form").style.visibility = "visible"
 
       for (let desc of descriptions) {
         desc.style.backgroundColor = "#172430"
@@ -571,10 +572,12 @@ console.log(client);
 
     }
 
+
     else {
       document.querySelector("#content").style.backgroundColor = "#172430"
       document.querySelector(".swiper1").style.display = "flex"
       document.querySelector(".swiper3").style.visibility = "visible"
+      document.querySelector("form").style.visibility = "hidden"
 
       for (let desc of descriptions) {
         desc.style.backgroundColor = "#F2F2F2"
