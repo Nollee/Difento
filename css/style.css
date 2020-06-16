@@ -1297,9 +1297,6 @@ footer {
   justify-content: center;
   align-items: center;
   flex-direction: column; }
-  @media only screen and (max-width: 550px) {
-    .swiper-container {
-      height: 60%; } }
 
 .swiper-slide {
   display: flex;
@@ -1356,10 +1353,14 @@ footer {
     color: #F2F2F2;
     margin-left: -4.6em;
     margin-top: 5em; }
+    @media only screen and (max-width: 1050px) {
+      .overlay .slider-year {
+        margin-top: 10em; } }
     @media only screen and (max-width: 550px) {
       .overlay .slider-year {
         font-size: 4vw;
-        margin-left: -3em; } }
+        margin-left: -3em;
+        margin-top: 9em; } }
   .overlay .line {
     width: 10vw;
     height: 2px;
@@ -1376,11 +1377,12 @@ footer {
     @media only screen and (max-width: 1050px) {
       .overlay .slider-company {
         font-size: 4vw;
-        margin-top: -1.55em; } }
+        margin-top: -4.1em; } }
     @media only screen and (max-width: 550px) {
       .overlay .slider-company {
         font-size: 5vw;
-        margin-top: -3.8em; } }
+        margin-top: -5.6em;
+        margin-left: 7em; } }
 
 .animation-fadein {
   animation-name: fadein;

@@ -7,9 +7,6 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    @include phone{
-        height: 60%;
-    }
 }
 
 .swiper-slide{
@@ -39,7 +36,7 @@
     @include tablet{
         width: 40vw;
         height: 40vw;
-    }
+    } 
     @include phone{
         width: 65vw;
         height: 65vw;
@@ -73,9 +70,13 @@
         color: $grey;
         margin-left: -4.6em;
         margin-top: 5em;
+        @include tablet{
+            margin-top: 10em;
+        }
         @include phone{
             font-size: 4vw;
             margin-left: -3em;
+            margin-top: 9em;
         }
     }
     .line{
@@ -94,11 +95,12 @@
         width: 100%;
         @include tablet{
             font-size: 4vw;
-            margin-top: -1.55em;
+            margin-top: -4.1em;
         }
         @include phone{
             font-size: 5vw;
-            margin-top: -3.8em;
+            margin-top: -5.6em;
+            margin-left: 7em;
         }
     }
 
