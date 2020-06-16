@@ -157,7 +157,8 @@ function appendClients(clients) {
 for (let client of clients) {
 console.log(client);
   document.querySelector(".slides3").innerHTML += /*html*/`
-  <div  class="swiper-slide recommend-slide" id="${client.id}" data-aos="fade-in" data-aos-delay="300">
+  <div  class="swiper-slide recommend-slide" id="${client.id}"
+  data-aos="fade-in" data-aos-delay="300">
 
 
 
@@ -562,6 +563,7 @@ console.log(client);
     if (current == 2 || current == 5) {
       document.querySelector("#content").style.backgroundColor = "#F2F2F2"
       document.querySelector(".swiper1").style.display = "none"
+      document.querySelector(".swiper3").style.visibility = "hidden"
 
       for (let desc of descriptions) {
         desc.style.backgroundColor = "#172430"
@@ -572,6 +574,7 @@ console.log(client);
     else {
       document.querySelector("#content").style.backgroundColor = "#172430"
       document.querySelector(".swiper1").style.display = "flex"
+      document.querySelector(".swiper3").style.visibility = "visible"
 
       for (let desc of descriptions) {
         desc.style.backgroundColor = "#F2F2F2"
