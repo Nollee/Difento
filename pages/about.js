@@ -48,13 +48,12 @@ export default class About {
       </div>
       </div>
       </div>
-
+      </div>
       <img src="../images/bg-blue.png" class="bg-element about-bg1 rellax" alt="difento icon blue">
       <img src="../images/bg-blue.png" class="bg-element about-bg2 rellax" data-rellax-speed="-3" alt="difento icon blue">
       <img src="../images/bg-blue.png" class="bg-element about-bg3 rellax" data-rellax-speed="-4" alt="difento icon blue">
       <img src="../images/bg-blue.png" class="bg-element about-bg4 rellax" data-rellax-speed="-2" alt="difento icon blue">
       <img src="../images/bg-blue.png" class="bg-element about-bg5 rellax" data-rellax-speed="-4" alt="difento icon blue">
-      </div>
       `;
     }
   }
