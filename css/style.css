@@ -1535,13 +1535,17 @@ footer {
       text-transform: capitalize;
       margin-left: 10%;
       font-size: 2rem;
-      width: auto; }
-      @media only screen and (max-width: 1199px) {
-        .recommend-slide ul li {
-          margin-left: 20%; } }
+      width: auto;
+      /*   @include desktop-sm {margin-left: 20%;} */ }
       @media only screen and (max-width: 550px) {
         .recommend-slide ul li {
           float: none; } }
+      @media only screen and (max-width: 1199px) {
+        .recommend-slide ul li:first-child {
+          margin-left: 5%; } }
+      @media only screen and (max-width: 1050px) {
+        .recommend-slide ul li:first-child {
+          margin-left: 10%; } }
     @media only screen and (max-width: 1199px) {
       .recommend-slide ul {
         list-style-image: url("../images/list_dot_small.png"); } }
@@ -1560,7 +1564,7 @@ footer {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center; } }
+      /* align-items: center; */ } }
   .recommend-item img {
     width: 30%;
     object-fit: cover;
@@ -1576,17 +1580,15 @@ footer {
 .quote {
   font-size: 1.7rem;
   width: 70%;
-  font-style: italic; }
+  font-style: italic;
+  /* @include desktop-sm {text-align: center;} */ }
   @media only screen and (max-width: 1260px) {
     .quote {
       width: 90%; } }
-  @media only screen and (max-width: 1199px) {
-    .quote {
-      text-align: center; } }
   @media only screen and (max-width: 550px) {
     .quote {
       width: 100%;
-      font-size: 1.5rem; } }
+      font-size: 1.3rem; } }
 
 .client-logo {
   width: 20vw !important;
@@ -1597,7 +1599,7 @@ footer {
       width: 40vw !important; } }
   @media only screen and (max-width: 550px) {
     .client-logo {
-      width: 70vw !important;
+      width: 50vw !important;
       margin-bottom: 5%; } }
 
 .client-name {
