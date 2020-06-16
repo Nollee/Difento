@@ -236,6 +236,7 @@ a{
     position: absolute;
     height: auto;
     z-index: -1;
+    @include tablet {display: none;}
     }
 
     .about-bg1 {

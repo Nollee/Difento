@@ -206,6 +206,9 @@ a {
   position: absolute;
   height: auto;
   z-index: -1; }
+  @media only screen and (max-width: 1050px) {
+    .bg-element {
+      display: none; } }
 
 .about-bg1 {
   bottom: 20%;
@@ -1534,12 +1537,13 @@ footer {
       /* float: left; */
       text-transform: capitalize;
       margin-left: 10%;
-      font-size: 2rem;
+      font-size: 1.3rem;
       width: auto;
       /*   @include desktop-sm {margin-left: 20%;} */ }
       @media only screen and (max-width: 550px) {
         .recommend-slide ul li {
-          float: none; } }
+          float: none;
+          margin-top: 2%; } }
       @media only screen and (max-width: 1199px) {
         .recommend-slide ul li:first-child {
           margin-left: 5%; } }

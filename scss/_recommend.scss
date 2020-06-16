@@ -28,10 +28,10 @@
         /* float: left; */
         text-transform: capitalize;
         margin-left: 10%;
-        font-size: 2rem;
+        font-size: $p-size;
         width: auto;
       /*   @include desktop-sm {margin-left: 20%;} */
-        @include phone {float: none;}
+        @include phone {float: none; margin-top: 2%;}
         &:first-child {@include desktop-sm {margin-left: 5%;} @include tablet {margin-left: 10%;}}
     }
     @include desktop-sm {list-style-image: url("../images/list_dot_small.png");}
