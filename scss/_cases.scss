@@ -234,5 +234,7 @@
 }
 
 #cases {
-    height: 70vh;
+    @include phone{
+        height: 70vh;
+    }  
 }
