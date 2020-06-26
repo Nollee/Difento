@@ -28,7 +28,7 @@ body {
 .nav-container span:hover, .top-links span:hover {
   cursor: pointer; }
 
-a, button, i, input[type=submit], nav p, nav img, .btn-grey, .btn-orange, .btn-orange div, .btn-grey div, #proces span, #cases .swiper-slide img, .swiper-button-next, .swiper-button-prev, .nav-container span {
+a, button, i, input[type=submit], nav p, nav img, .btn-grey, .btn-orange, .btn-orange div, .btn-grey div, #proces span, #cases .swiper-slide img, .swiper-button-next, .swiper-button-prev, .nav-container span, .cookie-btn {
   cursor: url("../images/point.png"), pointer !important;
   cursor: url("../images/point.png"), webkit-pointer !important;
   cursor: url("../images/point.png"), -moz-pointer !important; }
@@ -414,6 +414,9 @@ a {
 .gradient-left {
   background: #172430;
   background: linear-gradient(90deg, #172430 0%, #172430 41%, rgba(0, 212, 255, 0) 100%);
+  background: -webkit-gradient(linear, left top, right top, from(#172430), color-stop(41%, #172430), to(rgba(0, 212, 255, 0)));
+  background: -o-linear-gradient(left, #172430 0%, #172430 41%, rgba(0, 212, 255, 0) 100%);
+  background: linear-gradient(90deg, #172430 0%, #172430 41%, rgba(0, 212, 255, 0) 100%);
   height: 100%;
   width: 25%;
   position: absolute !important;
@@ -426,6 +429,9 @@ a {
 
 .gradient-bot {
   background: #172430;
+  background: linear-gradient(0deg, #172430 0%, #172430 41%, rgba(0, 212, 255, 0) 100%);
+  background: -webkit-gradient(linear, left bottom, left top, from(#172430), color-stop(41%, #172430), to(rgba(0, 212, 255, 0)));
+  background: -o-linear-gradient(bottom, #172430 0%, #172430 41%, rgba(0, 212, 255, 0) 100%);
   background: linear-gradient(0deg, #172430 0%, #172430 41%, rgba(0, 212, 255, 0) 100%);
   width: 100%;
   height: 10%;
@@ -1905,5 +1911,55 @@ footer {
   @media only screen and (max-width: 1050px) {
     .detail-reco {
       margin-bottom: 10vh; } }
+
+.cookieconsent {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 0;
+  bottom: 0;
+  background-color: #F2F2F2;
+  color: #101A23;
+  text-align: center;
+  width: 25%;
+  z-index: 99999;
+  -webkit-box-shadow: 0px -1px 19px 0px rgba(0, 0, 0, 0.29);
+  -moz-box-shadow: 0px -1px 19px 0px rgba(0, 0, 0, 0.29);
+  box-shadow: 0px -1px 19px 0px rgba(0, 0, 0, 0.29);
+  font-size: 1.3rem;
+  transition: ease .4s; }
+  @media only screen and (max-width: 1260px) {
+    .cookieconsent {
+      width: 35%; } }
+  @media only screen and (max-width: 1050px) {
+    .cookieconsent {
+      width: 50%; } }
+  @media only screen and (max-width: 550px) {
+    .cookieconsent {
+      width: 100%; } }
+  .cookieconsent__content {
+    width: 80%;
+    margin: 1.3rem 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column; }
+  .cookieconsent a {
+    color: #FF593E; }
+  .cookieconsent .fa-cookie-bite {
+    margin-right: 5px; }
+
+.cookie-btn {
+  background-color: #FF593E;
+  color: #F2F2F2;
+  padding: 5px 15px;
+  text-transform: uppercase;
+  margin-top: 4%;
+  width: auto; }
+
+.cookieconsent.vanish-cookieconsent {
+  bottom: -250px;
+  transition: .4s ease; }
 
 /*# sourceMappingURL=style.css.map */
