@@ -3,6 +3,7 @@ $phone: 550px;
 $tablet: 1050px;
 $desktop-sm: 1199px;
 $desktop-lg: 1260px;
+$laptop: 1600px;
 
 
 
@@ -27,6 +28,12 @@ $desktop-lg: 1260px;
 
 @mixin desktop-lg {
     @media only screen and (max-width: $desktop-lg) {
+        @content;
+    }
+}
+
+@mixin laptop {
+    @media only screen and (max-width: $laptop) {
         @content;
     }
 }
