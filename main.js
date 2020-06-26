@@ -9,7 +9,7 @@ import Footer from './components/footer.js'
 import Detail from './pages/detailview.js'
 import Information from './pages/informationpages.js'
 import spaService from "./services/spa.js"
-
+/* import Consent from './components/consent.js'; */
 
 spaService.init();
 
@@ -22,6 +22,7 @@ let proces = new Proces();
 let about = new About();
 let contact = new Contact();
 let recommend = new Recommend();
+/* let consent = new Consent(); */
 let footer = new Footer();
 let information = new Information();
 
@@ -766,3 +767,39 @@ var rellax = new Rellax('.rellax', {
 /*   else{
     rellax.refresh();
   } */
+
+
+/* Cookie control */
+// close cookie consent
+
+
+
+/* document.querySelector('.cookie-btn').onclick = closeCookieConsent
+
+function closeCookieConsent () {
+  document.querySelector('.cookieconsent').classList.add('vanish-cookieconsent');
+}
+ */
+
+
+(function () {
+  if (!localStorage.getItem('cookieconsent')) {
+    document.querySelector(".cookieconsent").innerHTML += /*html*/ `
+      <div class="cookieconsent__content">
+      <div>
+      <i class="fas fa-cookie-bite"></i><b>Dette website anvender cookies</b>
+      </div>
+      til at forbedre din oplevelse af websitet. Ved brug af hjemmesiden, accepterer du dette.
+      <div>
+        Du kan læse mere om vores brug af cookies <a href="#">her</a>
+        </div>
+        <div class="cookie-btn">accepter <i class="fas fa-times-circle"></i></div>
+        </div>
+      `;
+    document.querySelector('.cookie-btn').onclick = function (e) {
+      e.preventDefault();
+      document.querySelector('.cookieconsent').classList.add('vanish-cookieconsent');
+      localStorage.setItem('cookieconsent', true);
+    };
+  }
+})();
