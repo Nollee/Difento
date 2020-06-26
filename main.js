@@ -476,8 +476,8 @@ document.addEventListener('DOMContentLoaded', function () {
     let temp = Math.round(`${data.main.temp}`); //temp to rounded number
     htmlTemplate += /*html*/`
         <div id="weather-container">
+        <h3>${data.name}, <span>${temp}</span> ºC</h3>
         <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png">
-          <h3>${data.name}, <span>${temp}</span> ºC</h3>
         </div>
       `;
     document.querySelector("#weather").innerHTML = htmlTemplate;

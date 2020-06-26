@@ -39,7 +39,6 @@
             width: 90%;
             margin: auto;
             text-align: left;
-            text-shadow: 1px 1px 2px $dark-blue;
         }
     }
 }
@@ -68,6 +67,7 @@
                 display: none;
             } */
         }
+        @include laptop {margin-top: -30px;}
         @include tablet{
             font-size: 10vw;
         }
@@ -99,8 +99,10 @@
     span {margin-right: 2%;}
     display: flex; flex-direction: row;
     @include phone{
-        justify-content: space-around;
+        justify-content: flex-start;
+        width: 90%;
         margin: auto;
+        .btn-grey div {margin-right: 2vh;}
         /* margin-top: 3vh; */
     }
 }
@@ -123,7 +125,10 @@
         align-items: center;
         color: white;
         span {color: $light-orange}
-        img {@include phone {display: none;}}
+        img {
+            width: 50px; height: 50px;
+            @include phone {display: none;}
+        }
     }
     #hero-bottom-some {
         i {margin: 0px 5px;}
@@ -131,7 +136,8 @@
     #hero-bottom-arrow i {font-size: 50px;
         @include phone {display: none;}
     }
-    @include phone {left: 8%; bottom: 18%;}
+    @include laptop {bottom: 15%;}
+    @include phone {left: 0; right: 0; bottom: 18%; width: 90%; margin: auto;}
 }
 
 
