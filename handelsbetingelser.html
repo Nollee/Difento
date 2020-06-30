@@ -28,7 +28,16 @@
 
 <body onhashchange="pageChange()">
   <main id="app">
-    <nav class="tabbar"></nav>
+    <nav class="frontpagelink">
+      <a href="index.html" class="logo">
+        <img id="butterfly" src="./images/logo-sign.svg" alt="logo">
+        <img id="logo-text" src="./images/logo-word.svg" alt="logo">
+      </a>
+      <a href="index.html" class="back-button">
+        <p>Tilbage</p>
+        <i class="fas fa-angle-right"></i>
+      </a>
+    </nav>
     <section id="info-terms" class="infopage"></section>
     <footer class="sub"></footer>
     <!-- </section> -->
@@ -53,7 +62,7 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
   <!--Main js-->
-  <script src="pages/informationpages.js"></script>
+  <script src="/pages/informationpages.js" type="module"></script>
 
 </body>
 

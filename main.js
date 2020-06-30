@@ -7,8 +7,8 @@ import Contact from './pages/contact.js'
 import Recommend from './pages/recommend.js'
 import Footer from './components/footer.js'
 import Detail from './pages/detailview.js'
-import Information from './pages/informationpages.js'
 import spaService from "./services/spa.js"
+import NavBarTop from './components/navtop.js'
 /* import Consent from './components/consent.js'; */
 
 spaService.init();
@@ -24,7 +24,7 @@ let contact = new Contact();
 let recommend = new Recommend();
 /* let consent = new Consent(); */
 let footer = new Footer();
-let information = new Information();
+let navbartop = new NavBarTop();
 
 
 document.addEventListener('DOMContentLoaded', function () {

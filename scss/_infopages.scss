@@ -2,10 +2,33 @@
 
 .infopage{
     margin: auto;
-    width: 50%;
+    width: 40%;
     h2{
         color:$grey;
         font-size: 3em;
+    }
+    h3{
+        color:$main-orange;  
+        font-size: 1.5em;  
+    }
+    p{
+        font-size: $p-size;
+        color:$grey;
+    }
+}
+
+.frontpagelink{
+    margin: 2% 22% 2% 15%;
+    display: flex;
+    justify-content: space-between;
+    .back-button{
+        display: flex;
+        color: white;
+        align-items: center;
+        font-size: 2em;
+        i{
+            margin-left: 0.4em;
+        }
     }
 }
 

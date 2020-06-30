@@ -1,3 +1,6 @@
+import Footer from '../components/footer.js'
+let footer = new Footer();
+
 function getTerms() {
   fetch('https://difento.dk/wordpress/wp-json/wp/v2/informationpage?_embed')
     .then(function (response) {
