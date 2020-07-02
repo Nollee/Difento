@@ -325,9 +325,8 @@ document.addEventListener('DOMContentLoaded', function () {
       <div class="first-sec">
       <h3>${info.header1}</h3>
       <p>${info.description1}</p>
-      <img src="${info.image1.guid}">
-
-      </div>
+      <img src="${info.image1.guid}" onerror="this.style.display='none'">
+      <iframe class="video01" ${info.video01}></iframe> </div>
 
       <div class="second-sec">
 
@@ -402,8 +401,8 @@ document.addEventListener('DOMContentLoaded', function () {
           <div class="first-sec">
           <h3>${detail.header1}</h3>
           <p>${detail.description1}</p>
-          <img src="${detail.image1.guid}">
-
+          <img src="${detail.image1.guid}" onerror="this.style.display='none'">
+          <iframe class="video01" ${detail.video01}></iframe> 
           </div>
 
           <div class="second-sec">

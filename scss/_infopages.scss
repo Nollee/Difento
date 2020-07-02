@@ -3,6 +3,9 @@
 .infopage{
     margin: auto;
     width: 40%;
+    @include tablet{
+        width: 80%;
+    }
     h2{
         color:$grey;
         font-size: 3em;
@@ -18,8 +21,9 @@
 }
 
 .frontpagelink{
-    margin: 2% 22% 2% 15%;
+    width: 80%;
     display: flex;
+    margin: 2% auto 1%;
     justify-content: space-between;
     .back-button{
         display: flex;
