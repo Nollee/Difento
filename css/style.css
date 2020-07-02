@@ -1676,10 +1676,15 @@ footer {
   #detail-slides .detail-slide img {
     width: 80%;
     height: auto; }
+    @media only screen and (max-width: 1600px) {
+      #detail-slides .detail-slide img {
+        width: 70%;
+        height: 50vh;
+        object-fit: cover; } }
     @media only screen and (max-width: 1050px) {
       #detail-slides .detail-slide img {
         height: 40vh;
-        object-fit: cover; } }
+        width: 80%; } }
     @media only screen and (max-width: 550px) {
       #detail-slides .detail-slide img {
         width: 40vh; } }
@@ -1704,6 +1709,12 @@ footer {
     font-size: 14vw;
     color: #FF593E;
     margin-bottom: -10vh; }
+  @media only screen and (max-width: 1600px) {
+    .swiper-top {
+      width: 80%; } }
+  @media only screen and (max-width: 1050px) {
+    .swiper-top {
+      width: 90%; } }
 
 .swiper-bot {
   width: 90%;
@@ -1712,9 +1723,13 @@ footer {
   justify-content: space-between;
   align-items: center;
   margin-top: 1vh; }
+  @media only screen and (max-width: 1600px) {
+    .swiper-bot {
+      width: 80%; } }
   @media only screen and (max-width: 1050px) {
     .swiper-bot {
-      margin-top: 3vh; } }
+      margin-top: 3vh;
+      width: 90%; } }
   .swiper-bot h4 {
     font-size: 3vw;
     color: white; }
@@ -1773,6 +1788,12 @@ footer {
                     /* 1.5vw;
 @include tablet {font-size: 2.5vw;}
 @include phone {font-size: 5vw} */ }
+  @media only screen and (max-width: 1600px) {
+    .detail-content {
+      width: 80%; } }
+  @media only screen and (max-width: 1050px) {
+    .detail-content {
+      width: 90%; } }
 
 .case-intro {
   display: flex;

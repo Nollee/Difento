@@ -19,7 +19,8 @@
         img{
             width: 80%;
             height: auto;
-            @include tablet {height: 40vh; object-fit: cover;}
+            @include laptop {width: 70%; height: 50vh; object-fit: cover;}
+            @include tablet {height: 40vh; width: 80%;}
             @include phone {width: 40vh;}
         }
     }
@@ -42,6 +43,8 @@
         color: $main-orange;
         margin-bottom: -10vh;
     }
+    @include laptop {width: 80%;}
+    @include tablet {width: 90%;}
 }
 
 .swiper-bot{
@@ -51,7 +54,8 @@
     justify-content: space-between;
     align-items: center;
     margin-top: 1vh;
-    @include tablet {margin-top: 3vh;}
+    @include laptop {width: 80%;}
+    @include tablet {margin-top: 3vh; width: 90%;}
     h4{
         font-size: 3vw;
         color: white;
@@ -111,6 +115,8 @@
         @include tablet {font-size: 2.5vw;}
         @include phone {font-size: 5vw} */
     }
+    @include laptop {width: 80%;}
+    @include tablet {width: 90%;}
 }
 
 .case-intro{
