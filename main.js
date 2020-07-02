@@ -5,15 +5,13 @@ import Proces from './pages/proces.js'
 import About from './pages/about.js'
 import Contact from './pages/contact.js'
 import Recommend from './pages/recommend.js'
-import Footer from './components/footer.js';
+import Footer from './components/footer.js'
 import Detail from './pages/detailview.js'
+import spaService from "./services/spa.js"
+import NavBarTop from './components/navtop.js'
 /* import Consent from './components/consent.js'; */
-import spaService from "./services/spa.js";
 
 spaService.init();
-
-
-
 
 
 let detail = new Detail();
@@ -26,6 +24,7 @@ let contact = new Contact();
 let recommend = new Recommend();
 /* let consent = new Consent(); */
 let footer = new Footer();
+let navbartop = new NavBarTop();
 
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -73,9 +72,9 @@ document.addEventListener('DOMContentLoaded', function () {
     observer: true,
     observeParents: true,
     // If we need pagination
-   /*  pagination: {
-      el: '.swiper-pagination1',
-    }, */
+    /*  pagination: {
+       el: '.swiper-pagination1',
+     }, */
 
     // Navigation arrows
     navigation: {
@@ -111,54 +110,54 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
 
-/*
-******* Wordpress content appended to DOM with REST API ************
- */
-function getClients() {
-  fetch('https://difento.dk/wordpress/wp-json/wp/v2/client?_embed')
-    .then(function (response) {
-      return response.json();
-    })
-    .then(function (json) {
-      appendClients(json);
-      let clients = json;
-      setTimeout(function () {
-      }, 200);
-    });
+  /*
+  ******* Wordpress content appended to DOM with REST API ************
+   */
+  function getClients() {
+    fetch('https://difento.dk/wordpress/wp-json/wp/v2/client?_embed')
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (json) {
+        appendClients(json);
+        let clients = json;
+        setTimeout(function () {
+        }, 200);
+      });
 
-}
+  }
 
-console.log(getClients);
-getClients();
-
-
-/* recommend section swiper */
-let swiper3 = new Swiper('.swiper3', {
-  spaceBetween: 100,
-  centeredSlides: true,
-  observer: true,
-observeParents: true,
-/* grabCursor: true, */
-  autoplay: {
-    delay: 10000,
-    disableOnInteraction: false,
-  },
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true,
-  },
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-});
+  console.log(getClients);
+  getClients();
 
 
- // ============ APPENDER CLIENTERNE TIL RECOMMEND ============
-function appendClients(clients) {
-for (let client of clients) {
-console.log(client);
-  document.querySelector(".slides3").innerHTML += /*html*/`
+  /* recommend section swiper */
+  let swiper3 = new Swiper('.swiper3', {
+    spaceBetween: 100,
+    centeredSlides: true,
+    observer: true,
+    observeParents: true,
+    /* grabCursor: true, */
+    autoplay: {
+      delay: 10000,
+      disableOnInteraction: false,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+  });
+
+
+  // ============ APPENDER CLIENTERNE TIL RECOMMEND ============
+  function appendClients(clients) {
+    for (let client of clients) {
+      console.log(client);
+      document.querySelector(".slides3").innerHTML += /*html*/`
   <div  class="swiper-slide recommend-slide" id="${client.id}"
   data-aos="fade-in" data-aos-delay="300">
 
@@ -185,10 +184,10 @@ console.log(client);
     </div>
     </article>
   `;
-}
-}
+    }
+  }
 
-// ================== HENTER CASES FRA WORDPRESS REST API =================
+  // ================== HENTER CASES FRA WORDPRESS REST API =================
   function getProjects() {
     fetch('https://difento.dk/wordpress/wp-json/wp/v2/cases?_embed')
       .then(function (response) {
@@ -269,14 +268,14 @@ console.log(client);
   }
 
   //  GÅR IND PÅ DETAILVIEW OG STARTER MED DEN CASE MAN HAR TRYKKET PÅ
-  function showDetailView(index){
+  function showDetailView(index) {
     let swiper4 = new Swiper('.swiper4', {
       spaceBetween: 100,
       centeredSlides: true,
       observer: true,
-    observeParents: true,
-    initialSlide: index,
-    touchRatio: 0,
+      observeParents: true,
+      initialSlide: index,
+      touchRatio: 0,
       navigation: {
         nextEl: '.next4',
         prevEl: '.prev4',
@@ -291,7 +290,7 @@ console.log(client);
   };
 
   // APPENDER DETAILVIEW FRA getProjects()
-  function appendDetailView(i, swiper){
+  function appendDetailView(i, swiper) {
     let detailslides = ""
     for (let project of projects) {
       detailslides += /* html */ `
@@ -303,12 +302,12 @@ console.log(client);
     };
     let info = projects[i]
     console.log(info);
-     let detailTop = `
+    let detailTop = `
      <h2 class="lighth2 animation-fadein-delay">${info.title.rendered}</h2>
      <h3 class="animation-fadein">${info.count}</h3>
      `;
 
-     let detailBot = `
+    let detailBot = `
      <h4 class="animation-opacity">${info.longwork}</h4>
      <div class="visit animation-opacity-delay">
      <div class="visit-line"></div>
@@ -366,13 +365,13 @@ console.log(client);
 
       </div>
     ` ;
-     document.querySelector(".swiper-top").innerHTML = detailTop
-     document.querySelector(".detail-content").innerHTML = detailContent
-     document.querySelector(".swiper-bot").innerHTML = detailBot
+    document.querySelector(".swiper-top").innerHTML = detailTop
+    document.querySelector(".detail-content").innerHTML = detailContent
+    document.querySelector(".swiper-bot").innerHTML = detailBot
 
 
-     // ÆNDRER INDHOLD NÅR MAN SKIFTER I SLIDEREN
-     swiper.on('slideChangeTransitionEnd', async function findDetailSlide() {
+    // ÆNDRER INDHOLD NÅR MAN SKIFTER I SLIDEREN
+    swiper.on('slideChangeTransitionEnd', async function findDetailSlide() {
       let detailViews = document.querySelectorAll('.detail-slide');
       detailTop = "";
       detailBot = "";
@@ -380,12 +379,12 @@ console.log(client);
       for (let detailView of detailViews) {
         if (detailView.classList.contains('swiper-slide-active') === true) {
           let detail = await fetch(`https://difento.dk/wordpress/wp-json/wp/v2/cases/${detailView.id}`).then(res => res.json());
-           detailTop = `
+          detailTop = `
           <h2 class="lighth2 animation-fadein-delay">${detail.title.rendered}</h2>
           <h3 class="animation-fadein">${detail.count}</h3>
           `;
 
-           detailBot = `
+          detailBot = `
           <h4 class="animation-opacity">${detail.longwork}</h4>
           <div class="visit animation-opacity-delay">
           <div class="visit-line"></div>
@@ -449,14 +448,14 @@ console.log(client);
         }
       }
     });
-};
+  };
 
 
   /* ============ weather api ======================== */
   const apiCall = 'https://api.openweathermap.org/data/2.5/weather?q=aarhus,dk&units=metric&appid=b892cb50e6b072e2bd37a1bc8049ee3a';
 
 
-/* fecta api */
+  /* fecta api */
   fetch(apiCall)
     .then(function (response) {
       return response.json();
@@ -466,11 +465,11 @@ console.log(client);
       appendWeather(data);
     });
 
-/*   fetch(apiCall)
-    .then(response => response.json())
-    .then(data => console.log(data)); */
+  /*   fetch(apiCall)
+      .then(response => response.json())
+      .then(data => console.log(data)); */
 
-    /* append weather data to DOM */
+  /* append weather data to DOM */
   function appendWeather(data) {
     let htmlTemplate = "";
     Math.round(data.main.temp);
@@ -488,7 +487,7 @@ console.log(client);
 
 
 
-// ======================= FÅR TABBAREN TIL VENSTRE TIL AT FORSVINDE OG KOMME FREM
+  // ======================= FÅR TABBAREN TIL VENSTRE TIL AT FORSVINDE OG KOMME FREM
   window.addEventListener("scroll", () => {
 
     if (document.body.scrollTop > 90 || document.documentElement.scrollTop > 90) {
@@ -498,7 +497,7 @@ console.log(client);
       document.querySelector(".tabbar").classList.remove("pop")
     }
 
-    if(window.location.hash == "#detail"){
+    if (window.location.hash == "#detail") {
       // lader tabbaren blive, når man er inde i detailview
       document.querySelector(".tabbar").classList.add("pop")
       document.querySelector("#caselink").classList.add("active")
@@ -508,9 +507,9 @@ console.log(client);
   });
 
   // funktion til alt der skal ske, når brugeren reloader siden
-  function reload(){
+  function reload() {
 
-      // Lader tabbaren blive, hvis brugeren reloader
+    // Lader tabbaren blive, hvis brugeren reloader
     if (document.body.scrollTop > 90 || document.documentElement.scrollTop > 90) {
       document.querySelector(".tabbar").classList.add("pop")
 
@@ -518,10 +517,10 @@ console.log(client);
       document.querySelector(".tabbar").classList.remove("pop")
     }
   };
-  if (window.location.hash == "#detail"){
+  if (window.location.hash == "#detail") {
     spaService.navigateTo("content")
     // reloader siden igen, da der var problemer med fuglene på forsiden
-    setTimeout(function() {
+    setTimeout(function () {
       window.location.reload();
     }, 1);
   }
@@ -549,7 +548,7 @@ console.log(client);
 
   window.addEventListener("scroll", () => {
     const current = sections.length - [...sections].reverse().findIndex((section) => window.scrollY >= section.offsetTop - sectionMargin) - 1
-  console.log(current);
+    console.log(current);
 
     if (current !== currentActive) {
       removeAllActive();
@@ -607,82 +606,81 @@ console.log(client);
   // ====================== GÅR tilbage til hero af forside ===========================
   document.getElementById("nav-logo").addEventListener("click", function () {
     let elmnt = document.querySelector("body");
-    if(window.location.hash == "#detail")
-{
-  spaService.navigateTo("content")
-  elmnt.scrollIntoView({behavior: 'smooth'})
-  document.querySelector(".tabbar").classList.remove("pop")
+    if (window.location.hash == "#detail") {
+      spaService.navigateTo("content")
+      elmnt.scrollIntoView({ behavior: 'smooth' })
+      document.querySelector(".tabbar").classList.remove("pop")
 
 
-}
-else{
-  elmnt.scrollIntoView({behavior: 'smooth'})
+    }
+    else {
+      elmnt.scrollIntoView({ behavior: 'smooth' })
 
 
 
-}
+    }
   });
 
-// knapper med klassen "case-ref" går ned på cases
-let caseRefs = document.querySelectorAll(".case-ref");
-for (let caseRef of caseRefs) {
-  caseRef.addEventListener("click", function () {
-    let elmnt = document.querySelector("#caselink-anchor")
-    elmnt.scrollIntoView({behavior: 'smooth'})
+  // knapper med klassen "case-ref" går ned på cases
+  let caseRefs = document.querySelectorAll(".case-ref");
+  for (let caseRef of caseRefs) {
+    caseRef.addEventListener("click", function () {
+      let elmnt = document.querySelector("#caselink-anchor")
+      elmnt.scrollIntoView({ behavior: 'smooth' })
 
 
-  })
+    })
 
-}
+  }
 
-// knapper med klassen "contact-ref" går ned på contact
-let contactRefs = document.querySelectorAll(".contact-ref");
-for (let contactRef of contactRefs) {
-  contactRef.addEventListener("click", function () {
-    let elmnt = document.querySelector("#contactlink-anchor")
-    elmnt.scrollIntoView({behavior: 'smooth'})
+  // knapper med klassen "contact-ref" går ned på contact
+  let contactRefs = document.querySelectorAll(".contact-ref");
+  for (let contactRef of contactRefs) {
+    contactRef.addEventListener("click", function () {
+      let elmnt = document.querySelector("#contactlink-anchor")
+      elmnt.scrollIntoView({ behavior: 'smooth' })
 
 
-  })
+    })
 
-}
+  }
 
 
 
   //  går ned ad siden - sidebar
- for (let link of menu_links) {
+  for (let link of menu_links) {
 
-  link.addEventListener("click", function () {
-      let elmnt = document.getElementById(this.id +"-anchor");
-      console.log(link.id +"-anchor");
+    link.addEventListener("click", function () {
+      let elmnt = document.getElementById(this.id + "-anchor");
+      console.log(link.id + "-anchor");
 
-      if(window.location.hash == "#detail"){
+      if (window.location.hash == "#detail") {
         spaService.navigateTo("content")
-        setTimeout(function() {
-          elmnt.scrollIntoView({behavior: 'smooth'})
+        setTimeout(function () {
+          elmnt.scrollIntoView({ behavior: 'smooth' })
 
         }, 50);
       }
-      else{
-        elmnt.scrollIntoView({behavior: 'smooth'})
+      else {
+        elmnt.scrollIntoView({ behavior: 'smooth' })
 
       }
 
-  });
- }
+    });
+  }
 
-   // går ned ad siden - toplinks
+  // går ned ad siden - toplinks
 
-let toplinks = document.querySelectorAll(".top-nav span")
- for (let link of toplinks) {
-  link.addEventListener("click", function () {
-    let elmnt = document.getElementById(link.className +"-anchor")
-    elmnt.scrollIntoView({behavior: 'smooth'})
+  let toplinks = document.querySelectorAll(".top-nav span")
+  for (let link of toplinks) {
+    link.addEventListener("click", function () {
+      let elmnt = document.getElementById(link.className + "-anchor")
+      elmnt.scrollIntoView({ behavior: 'smooth' })
 
 
 
-  });
- }
+    });
+  }
 
 
   // ======= ÆNDRER INDHOLD IFT. TIDSPUNKTET ============
@@ -718,30 +716,30 @@ let toplinks = document.querySelectorAll(".top-nav span")
 
 
 
- // =========== RECAPTCHA GOOGLE ===================
- grecaptcha.ready(function () {
-  grecaptcha.execute('6LdwzfwUAAAAALCr3M_nRgn8-TN7_KYXWatiF7ML', { action: 'homepage' }).then(function (token) {
-    // console.log(token);
-    document.getElementById("token").value = token;
+  // =========== RECAPTCHA GOOGLE ===================
+  grecaptcha.ready(function () {
+    grecaptcha.execute('6LdwzfwUAAAAALCr3M_nRgn8-TN7_KYXWatiF7ML', { action: 'homepage' }).then(function (token) {
+      // console.log(token);
+      document.getElementById("token").value = token;
+    });
   });
-});
 
-//
+  //
 
-/* close success message div */
-function closeSuccessDiv() {
-  document.getElementById("alert-success").classList.add("hide");
-}
+  /* close success message div */
+  function closeSuccessDiv() {
+    document.getElementById("alert-success").classList.add("hide");
+  }
 
-// close the div in 7 secs
- window.setTimeout(closeSuccessDiv, 7000);
-
+  // close the div in 7 secs
+  window.setTimeout(closeSuccessDiv, 7000);
 
 
-// handlers
 
-window.showDetailView = (index) => showDetailView(index);
-window.pageChange = () => spaService.pageChange();
+  // handlers
+
+  window.showDetailView = (index) => showDetailView(index);
+  window.pageChange = () => spaService.pageChange();
 
 }, false);
 
@@ -750,11 +748,12 @@ window.pageChange = () => spaService.pageChange();
 
 let parallex = document.querySelectorAll(".para");
 for (let para of parallex) {
-  if(screen.width < 600){
-  para.classList.remove("rellax")
-}
-else{
-  para.classList.add("rellax")    }
+  if (screen.width < 600) {
+    para.classList.remove("rellax")
+  }
+  else {
+    para.classList.add("rellax")
+  }
 }
 
 var rellax = new Rellax('.rellax', {
@@ -783,7 +782,7 @@ function closeCookieConsent () {
  */
 
 
-(function() {
+(function () {
   if (!localStorage.getItem('cookieconsent')) {
     document.querySelector(".cookieconsent").innerHTML += /*html*/ `
       <div class="cookieconsent__content">
@@ -797,7 +796,7 @@ function closeCookieConsent () {
         <div class="cookie-btn">accepter <i class="fas fa-times-circle"></i></div>
         </div>
       `;
-    document.querySelector('.cookie-btn').onclick = function(e) {
+    document.querySelector('.cookie-btn').onclick = function (e) {
       e.preventDefault();
       document.querySelector('.cookieconsent').classList.add('vanish-cookieconsent');
       localStorage.setItem('cookieconsent', true);

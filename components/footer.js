@@ -1,12 +1,12 @@
 export default class Footer {
-    constructor() {
-      this.template();
-    }
+  constructor() {
+    this.template();
+  }
 
-    template() {
-      let footers = document.querySelectorAll("footer");
+  template() {
+    let footers = document.querySelectorAll("footer");
 
-      for (let footer of footers) {
+    for (let footer of footers) {
 
       footer.innerHTML += /*html*/ `
       <div class="footer-wrapper">
@@ -39,10 +39,9 @@ export default class Footer {
       <div class="footer-botmid">
       <div class="boring">
       <h4>Det Kedelige</h4>
-      <a href="#">Cookies</a>
-      <a href="#">Persondatapolitik</a>
-      <a href="#">Handelsbetingelser</a>
-      <a href="#">Serviceaftale</a>
+      <a href="cookies.html">Persondatapolitik
+      </a>
+      <a href="handelsbetingelser.html">Handelsbetingelser</a>
       </div>
 
 
@@ -84,6 +83,6 @@ export default class Footer {
       </div>
       <div class="footer-img" data-aos="fade-left" data-aos-delay="600"></div>
       `;
-      }
     }
   }
+}

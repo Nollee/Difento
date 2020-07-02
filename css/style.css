@@ -1947,6 +1947,35 @@ footer {
     .detail-reco {
       margin-bottom: 10vh; } }
 
+/* mediaqueries */
+/* @include desktop-sm {width: 125px; top: 20px;}
+    @include tablet {width: 100px;}
+    @include phone {display: block; width: 125px;}   */
+.infopage {
+  margin: auto;
+  width: 40%; }
+  .infopage h2 {
+    color: #F2F2F2;
+    font-size: 3em; }
+  .infopage h3 {
+    color: #FF593E;
+    font-size: 1.5em; }
+  .infopage p {
+    font-size: 1.3rem;
+    color: #F2F2F2; }
+
+.frontpagelink {
+  margin: 2% 22% 2% 15%;
+  display: flex;
+  justify-content: space-between; }
+  .frontpagelink .back-button {
+    display: flex;
+    color: white;
+    align-items: center;
+    font-size: 2em; }
+    .frontpagelink .back-button i {
+      margin-left: 0.4em; }
+
 .cookieconsent {
   position: fixed;
   display: flex;
