@@ -1152,10 +1152,10 @@ footer {
       .footer-bot h4 {
         font-size: 2rem;
         text-align: center; } }
-  .footer-bot a, .footer-bot p {
+  .footer-bot a, .footer-bot p, .footer-bot .contact-mail-footer {
     color: #F2F2F2;
     font-size: 1.3rem;
-    margin: 0.7vh 0;
+    margin: 0.7vh 0 !important;
     transition: ease .3s;
     /*   @include tablet{
           font-size: 3vw;
@@ -1173,7 +1173,7 @@ footer {
         align-items: center; } }
   .footer-bot .footer-botleft, .footer-bot .footer-botmid {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     flex-direction: column; }
   .footer-bot .footer-botright .opening {
     display: flex;
@@ -1214,9 +1214,12 @@ footer {
           width: 2vw;
           height: 2vw;
           margin-left: 2vw; } }
+  .footer-bot .cvr {
+    margin-top: 5%; }
   @media only screen and (max-width: 550px) {
     .footer-bot .adresse, .footer-bot .cvr, .footer-bot .boring {
-      margin-bottom: 4vh; } }
+      margin-bottom: 4vh;
+      margin-top: 0%; } }
 
 #proces h2 {
   position: relative;
@@ -1603,7 +1606,7 @@ footer {
     /* @include phone {margin: 4% 0%;} */ }
 
 .quote {
-  font-size: 1.7rem;
+  font-size: 1.4rem;
   width: 70%;
   font-style: italic;
   /* @include desktop-sm {text-align: center;} */ }
@@ -1616,7 +1619,7 @@ footer {
       font-size: 1.3rem; } }
 
 .client-logo {
-  width: 20vw !important;
+  width: 25% !important;
   margin-bottom: 4%;
   display: block !important; }
   @media only screen and (max-width: 1050px) {
@@ -1630,7 +1633,7 @@ footer {
 .client-name {
   text-transform: capitalize;
   color: #FF593E;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 700;
   margin: 2% 0%; }
   @media only screen and (max-width: 1050px) {
@@ -1813,13 +1816,11 @@ footer {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    font-size: 2vw; }
-    @media only screen and (max-width: 1260px) {
-      .case-intro ul {
-        font-size: 1.5vw; } }
+    font-size: 2rem;
+    /* @include desktop-lg {font-size: 1.5vw;} */ }
     @media only screen and (max-width: 1050px) {
       .case-intro ul {
-        font-size: 3vw;
+        /* font-size: 3vw;  */
         width: 100%;
         margin-top: 4%; } }
     @media only screen and (max-width: 550px) {
@@ -1903,25 +1904,25 @@ footer {
     margin: auto;
     display: flex;
     margin-top: 10vh;
-    justify-content: space-between;
+    justify-content: space-evenly;
     align-items: center; }
+    @media only screen and (max-width: 550px) {
+      .detail-reco .reco-wrapper {
+        margin-top: 5vh; } }
     .detail-reco .reco-wrapper .reco-left {
       width: 60%;
       display: flex;
-      flex-direction: column; }
+      flex-direction: column;
+      /* img{
+           width: 30%;
+          @include phone {display: block; width: 70%; margin-bottom: 0;}
+      } */ }
       @media only screen and (max-width: 550px) {
         .detail-reco .reco-wrapper .reco-left {
           width: 100%; } }
-      .detail-reco .reco-wrapper .reco-left img {
-        width: 100%; }
-        @media only screen and (max-width: 550px) {
-          .detail-reco .reco-wrapper .reco-left img {
-            display: block;
-            width: 70%;
-            margin-bottom: 0; } }
       .detail-reco .reco-wrapper .reco-left p {
-        margin: 3vh auto;
-        font-size: 2vw;
+        margin: 3vh 0;
+        font-size: 1.3rem;
         font-style: italic; }
         @media only screen and (max-width: 1050px) {
           .detail-reco .reco-wrapper .reco-left p {
@@ -1931,21 +1932,29 @@ footer {
             font-size: 5vw; } }
       .detail-reco .reco-wrapper .reco-left h5 {
         color: #FF593E;
-        font-size: 2.5vw; }
+        font-size: 2rem; }
         @media only screen and (max-width: 1050px) {
           .detail-reco .reco-wrapper .reco-left h5 {
             font-size: 3vw; } }
         @media only screen and (max-width: 550px) {
           .detail-reco .reco-wrapper .reco-left h5 {
             font-size: 6vw; } }
-    .detail-reco .reco-wrapper img {
-      width: 30%; }
-      @media only screen and (max-width: 550px) {
-        .detail-reco .reco-wrapper img {
-          display: none; } }
+    .detail-reco .reco-wrapper .reco-client-logo {
+      width: 30% !important; }
+      @media only screen and (max-width: 1050px) {
+        .detail-reco .reco-wrapper .reco-client-logo {
+          width: 70% !important; } }
   @media only screen and (max-width: 1050px) {
     .detail-reco {
       margin-bottom: 10vh; } }
+
+.reco-client-img {
+  width: 30vh !important;
+  height: 30vh !important;
+  object-fit: cover; }
+  @media only screen and (max-width: 1050px) {
+    .reco-client-img {
+      display: none; } }
 
 /* mediaqueries */
 /* @include desktop-sm {width: 125px; top: 20px;}
