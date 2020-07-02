@@ -50,7 +50,7 @@ export default class Footer {
       <div class="footer-botright">
       <div class="contact">
         <h4>Kontakt</h4>
-        <a href="mailto:kontakt@difento.dk">kontakt@difento.dk</a>
+        <a href="mailto:kontakt@difento.dk" class="contact-mail-footer">kontakt@difento.dk</a>
         <div class="footer-phone">
           <a href="tel:+4523677669">+45 23 67 76 69</a>
           <span class="phone-active"></span>

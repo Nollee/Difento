@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function () {
     observeParents: true,
     /* grabCursor: true, */
     autoplay: {
-      delay: 10000,
+      delay: 5000,
       disableOnInteraction: false,
     },
     pagination: {
@@ -355,11 +355,11 @@ document.addEventListener('DOMContentLoaded', function () {
       <div class="reco-wrapper">
 
       <div class="reco-left">
-      <img src="${info.client_logo.guid}">
+      <img src="${info.client_logo.guid}" class="reco-client-logo">
       <p>"${info.client_statement}"</p>
       <h5>- ${info.client_name}</h5>
       </div>
-      <img src="${info.client_img.guid}">
+     <img src="${info.client_img.guid}" class="reco-client-img">
       </div>
 
       </div>
@@ -432,11 +432,11 @@ document.addEventListener('DOMContentLoaded', function () {
           <div class="reco-wrapper">
 
           <div class="reco-left">
-          <img src="${detail.client_logo.guid}">
+          <img src="${detail.client_logo.guid}" class="reco-client-logo">
           <p>"${detail.client_statement}"</p>
           <h5>- ${detail.client_name}</h5>
           </div>
-          <img src="${detail.client_img.guid}">
+          <img src="${detail.client_img.guid}" class="reco-client-img">
           </div>
 
           </div>

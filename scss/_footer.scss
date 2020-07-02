@@ -139,10 +139,10 @@ footer{
             text-align: center;
         }
     }
-    a, p{
+    a, p, .contact-mail-footer{
         color: $grey;
         font-size: $p-size;
-        margin: 0.7vh 0;
+        margin: 0.7vh 0!important;
         transition: ease .3s;
       /*   @include tablet{
             font-size: 3vw;
@@ -165,7 +165,7 @@ footer{
 
     .footer-botleft, .footer-botmid{
         display: flex;
-        justify-content: space-between;
+        /* justify-content: space-between; */
         flex-direction: column;
     }
     .footer-botright{
@@ -215,9 +215,13 @@ footer{
         }
     }
 
+    .cvr {margin-top: 5%;}
+
     .adresse, .cvr, .boring{
         @include phone{
             margin-bottom: 4vh;
+            margin-top: 0%;
         }
     }
+
 }

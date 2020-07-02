@@ -54,7 +54,7 @@ h4 {font-size: 1.5rem;
 
 
 .quote {
-    font-size: 1.7rem;
+    font-size: 1.4rem;
     width: 70%;
     font-style: italic;
     @include desktop-lg {width: 90%;}
@@ -62,14 +62,14 @@ h4 {font-size: 1.5rem;
     @include phone {width: 100%; font-size: $p-size;}
 }
 
-.client-logo {width: 20vw !important; margin-bottom: 4%; display: block !important;
+.client-logo {width: 25% !important; margin-bottom: 4%; display: block !important;
     @include tablet {width: 40vw !important;}
     @include phone {width: 50vw !important; margin-bottom: 5%;}
 }
 
 .client-name {
     text-transform: capitalize; color: $main-orange;
-    font-size: 3rem; font-weight: 700;
+    font-size: 2rem; font-weight: 700;
     margin: 2% 0%;
      @include tablet {margin: 4% 0%;}
      @include phone {font-size: 1.5rem;}
