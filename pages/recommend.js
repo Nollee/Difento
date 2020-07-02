@@ -11,7 +11,7 @@ export default class Recommend {
 
 <div id="recommend-container"></div>
 
-<div class="swiper-container swiper3 para">
+<div class="swiper-container swiper3">
     <div class="swiper-wrapper slides3">
 
     </div>

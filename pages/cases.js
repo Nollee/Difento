@@ -9,7 +9,7 @@ export default class Cases {
     <div class="sub-wrapper case">
     <h2 class="lighth2 casehtag para" data-rellax-zindex="60"
     >CASES</h2>
-    <div class="swiper-container swiper1 para">
+    <div class="swiper-container swiper1 ">
     <!-- Additional required wrapper -->
 
     <div id="caseinfo" class="overlay">
