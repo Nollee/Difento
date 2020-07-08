@@ -402,7 +402,7 @@ document.addEventListener('DOMContentLoaded', function () {
           <h3>${detail.header1}</h3>
           <p>${detail.description1}</p>
           <img src="${detail.image1.guid}" onerror="this.style.display='none'">
-          <iframe class="video01" ${detail.video01}></iframe> 
+          <iframe class="video01" ${detail.video01}></iframe>
           </div>
 
           <div class="second-sec">

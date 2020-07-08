@@ -39,9 +39,9 @@ export default class Footer {
       <div class="footer-botmid">
       <div class="boring">
       <h4>Det Kedelige</h4>
-      <a href="cookies.html">Persondatapolitik
+      <a href="cookies.php">Persondatapolitik
       </a>
-      <a href="handelsbetingelser.html">Handelsbetingelser</a>
+      <a href="handelsbetingelser.php">Handelsbetingelser</a>
       </div>
 
 

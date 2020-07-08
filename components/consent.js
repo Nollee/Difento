@@ -11,7 +11,8 @@
       </div>
       til at forbedre din oplevelse af websitet. Ved brug af hjemmesiden, accepterer du dette.
       <div>
-        Du kan læse mere om vores brug af cookies <a href="#">her</a>
+        Du kan læse mere om vores brug af cookies <a href="cookies.php">Persondatapolitik
+        </a>
         </div>
         <div class="cookie-btn">accepter <i class="fas fa-times-circle"></i></div>
         </div>

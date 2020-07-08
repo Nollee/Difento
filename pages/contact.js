@@ -14,7 +14,7 @@ export default class Contact {
 
       <!-- contact form --->
       <!------------------------------------CONTACT FORM--------------------->
-      <form id="contact-form" role="form" method="post" action="#" class="form-horizontal">
+      <form id="contact-form" role="form" method="post" action="#content" class="form-horizontal">
 
              <div id="contact-form-top-input">
              <div>
