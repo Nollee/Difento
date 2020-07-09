@@ -291,6 +291,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // APPENDER DETAILVIEW FRA getProjects()
   function appendDetailView(i, swiper) {
+
     let detailslides = ""
     for (let project of projects) {
       detailslides += /* html */ `
@@ -301,6 +302,7 @@ document.addEventListener('DOMContentLoaded', function () {
       document.querySelector("#detail-slides").innerHTML = detailslides;
     };
     let info = projects[i]
+    let iframe = info.video01
     console.log(info);
     let detailTop = `
      <h2 class="lighth2 animation-fadein-delay">${info.title.rendered}</h2>
@@ -326,7 +328,7 @@ document.addEventListener('DOMContentLoaded', function () {
       <h3>${info.header1}</h3>
       <p>${info.description1}</p>
       <img src="${info.image1.guid}" onerror="this.style.display='none'">
-      <iframe class="video01" ${info.video01}></iframe> </div>
+      <iframe class="video01" ${iframe} onerror="this.style.display='none'"></iframe> </div>
 
       <div class="second-sec">
 
@@ -370,12 +372,19 @@ document.addEventListener('DOMContentLoaded', function () {
     document.querySelector(".swiper-bot").innerHTML = detailBot
 
 
+
+    if (iframe == "") {
+      document.querySelector('.video01').style.display = 'none';
+    }
+
+
     // ÆNDRER INDHOLD NÅR MAN SKIFTER I SLIDEREN
     swiper.on('slideChangeTransitionEnd', async function findDetailSlide() {
       let detailViews = document.querySelectorAll('.detail-slide');
       detailTop = "";
       detailBot = "";
       detailContent = "";
+
       for (let detailView of detailViews) {
         if (detailView.classList.contains('swiper-slide-active') === true) {
           let detail = await fetch(`https://difento.dk/wordpress/wp-json/wp/v2/cases/${detailView.id}`).then(res => res.json());
@@ -445,6 +454,12 @@ document.addEventListener('DOMContentLoaded', function () {
           document.querySelector(".swiper-top").innerHTML = detailTop
           document.querySelector(".detail-content").innerHTML = detailContent
           document.querySelector(".swiper-bot").innerHTML = detailBot
+
+          let iframe = detail.video01
+
+          if (iframe == "") {
+            document.querySelector('.video01').style.display = 'none';
+          }
         }
       }
     });
@@ -804,15 +819,3 @@ function closeCookieConsent () {
   }
 })();
 
-
-$(function() {
-  var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-  var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-  $("html, body").css({"width":w,"height":h});
-});
-
-(function() {
-  var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
-  var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
-  document.querySelector('html, body').style({"width":w, "height":h});
-})
