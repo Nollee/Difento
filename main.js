@@ -364,6 +364,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       </div>
     ` ;
+
     document.querySelector(".swiper-top").innerHTML = detailTop
     document.querySelector(".detail-content").innerHTML = detailContent
     document.querySelector(".swiper-bot").innerHTML = detailBot
@@ -802,3 +803,16 @@ function closeCookieConsent () {
     };
   }
 })();
+
+
+$(function() {
+  var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+  var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+  $("html, body").css({"width":w,"height":h});
+});
+
+(function() {
+  var w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+  var h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+  document.querySelector('html, body').style({"width":w, "height":h});
+})

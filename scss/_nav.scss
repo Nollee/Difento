@@ -140,7 +140,9 @@
     -webkit-transition: 0.4s ease;
     -o-transition: 0.4s ease;
     transition: 0.4s ease;
-
+    @media only screen and (max-height: 400px) {
+        display: none;
+    }
 }
 
 .tabbar-some {

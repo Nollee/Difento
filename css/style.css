@@ -83,6 +83,9 @@ html {
   @media only screen and (max-width: 550px) {
     .sub {
       height: auto; } }
+  @media only screen and (max-height: 400px) {
+    .sub {
+      height: 200vh !important; } }
 
 .sub-wrapper {
   height: 100vh;
@@ -582,6 +585,9 @@ a {
   -webkit-transition: 0.4s ease;
   -o-transition: 0.4s ease;
   transition: 0.4s ease; }
+  @media only screen and (max-height: 400px) {
+    .tabbar.pop {
+      display: none; } }
 
 .tabbar-some {
   display: flex;
@@ -1961,6 +1967,9 @@ footer {
     .reco-client-img {
       display: none; } }
 
+/* .video01 {
+    visibility: hidden;
+} */
 /* mediaqueries */
 /* @include desktop-sm {width: 125px; top: 20px;}
     @include tablet {width: 100px;}
